@@ -917,6 +917,7 @@ dialog#week-modal{max-width:min(720px,96vw)}
 .lj-pop hr{border:0;border-top:1px solid var(--line);margin:4px 0}.lj-new{display:flex;flex-direction:column;gap:4px;margin-top:4px}
 .rede-t td,.rede-t th{white-space:nowrap}
 .lj-f{display:flex;flex-direction:column;gap:3px;font-size:10.5px;color:var(--muted);margin-top:2px}.lj-geo{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:8px;padding:4px}.lj-hint{font-size:10.5px;color:var(--muted);margin:0 2px}
+.kb-t{width:100%;border-collapse:collapse;font-size:13px}.kb-t td{padding:6px 4px;border-bottom:1px solid var(--line)}.kb-t td:first-child{white-space:nowrap;width:1%;padding-right:14px}
 .lj-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 2px 0}
 </style>
 </head>
@@ -1060,6 +1061,22 @@ dialog#week-modal{max-width:min(720px,96vw)}
   <div class="modal-card">
     <header><h2 id="wk-title" class="px">Resumo da semana</h2><div class="row" style="gap:6px"><button type="button" class="btn btn-sm" data-action="week-copy">Copiar para os sócios</button><button type="button" class="btn btn-sm" data-action="modal-close">Fechar</button></div></header>
     <div class="mbody" id="wk-body"></div>
+  </div>
+</dialog>
+
+<dialog class="modal" id="kb-modal" aria-labelledby="kb-title">
+  <div class="modal-card" style="max-width:440px">
+    <header><h2 id="kb-title" class="px">Atalhos do teclado</h2><button type="button" class="btn btn-sm" data-action="modal-close">Fechar</button></header>
+    <div class="mbody"><table class="kb-t">
+      <tr><td><kbd>N</kbd></td><td>Novo lead (de qualquer lugar do escritório)</td></tr>
+      <tr><td><kbd>/</kbd></td><td>Abre o Comercial e busca um lead</td></tr>
+      <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Anda pela lista de leads (com o Comercial aberto)</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Abre ou fecha o lead selecionado</td></tr>
+      <tr><td><kbd>Ctrl</kbd> <kbd>K</kbd></td><td>Buscar em tudo</td></tr>
+      <tr><td><kbd>Ctrl</kbd> <kbd>J</kbd></td><td>Anotar</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Fecha o painel ou a janela aberta</td></tr>
+      <tr><td><kbd>?</kbd></td><td>Mostra esta lista</td></tr>
+    </table><p class="meta" style="margin:10px 0 0">No Mac, use <kbd>⌘</kbd> no lugar de <kbd>Ctrl</kbd>. Os atalhos não funcionam enquanto você digita num campo.</p></div>
   </div>
 </dialog>
 
@@ -1705,6 +1722,7 @@ function renderComercial(){
       <div class="row" style="gap:6px">
       <details class="more-menu"><summary class="btn btn-sm" aria-label="Mais opções">⋯</summary><div class="more-pop">
         <button type="button" data-action="lead-import-file">Importar planilha</button>
+        <button type="button" data-action="kb-help">Atalhos do teclado (?)</button>
         ${multiLoja()?'<button type="button" data-action="lead-export-rede">Exportar planilha da rede (todas as lojas)</button>':''}
         <button type="button" data-action="lead-export" title="O arquivo exportado tem os telefones de leads e clientes. Guarde em local privado e não envie em grupos.">Exportar planilha (ativos + arquivados)</button>
         ${UI.view==='ativos'?'<button type="button" data-action="sel-mode">Atribuir campanha em lote</button>':''}
@@ -4099,10 +4117,15 @@ document.addEventListener('click',e=>{const x=e.target.closest&&e.target.closest
     else if(x.dataset.npsRev){const n=(S.nps||[]).find(k=>k.id===x.dataset.npsRev);if(n){n.review=today();toast('Pedido de avaliação enviado')}}
     else if(x.dataset.avLead){const a=S.agenda.find(k=>k.id===x.dataset.avLead);if(a){const l=avulsoLead(a);toast(l?`${first(a.cliente)||'Cliente'} virou lead (origem Oficina) · follow-up em 2 dias`:'Telefone inválido')}}
     refresh()},50)});
-document.addEventListener('keydown',e=>{if(UI.room!=='comercial'||$('dialog[open]')||e.ctrlKey||e.metaKey||e.altKey)return;const tg=e.target,typing=tg.matches&&tg.matches('input,textarea,select,[contenteditable]');
-  if(e.key==='/'&&!typing){e.preventDefault();const go=()=>{const q=$('[data-input=lead-q]');if(q){q.focus();q.select()}};if(UI.tab!=='panel'){UI.tab='panel';renderTabs();renderBody();setTimeout(go,30)}else go();return}
-  if(typing){if(e.key==='Escape'&&tg.dataset&&tg.dataset.input==='lead-q'){tg.blur()}return}
-  if((e.key==='n'||e.key==='N')&&!e.shiftKey){e.preventDefault();openLeadModal();return}
+/* atalhos de teclado: N e / funcionam também da tela do escritório; ↑↓ e Enter dentro do Comercial; ? mostra a lista */
+document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.isComposing)return;const tg=e.target,typing=!!(tg.closest&&tg.closest('input,textarea,select,[contenteditable],[contenteditable=""]'));
+  if(typing){if(e.key==='Escape'&&tg.dataset&&tg.dataset.input==='lead-q')tg.blur();return}
+  if($('dialog[open]'))return;
+  if(e.key==='?'){e.preventDefault();$('#kb-modal').showModal();return}
+  if(e.key==='/'||e.code==='Slash'||e.code==='IntlRo'){e.preventDefault();const go=()=>{const q=$('[data-input=lead-q]');if(q){q.focus();q.select()}};
+    if(UI.room!=='comercial'){openDrawer('comercial','panel');setTimeout(go,80)}else if(UI.tab!=='panel'){UI.tab='panel';renderTabs();renderBody();setTimeout(go,40)}else go();return}
+  if((e.key==='n'||e.key==='N')&&!e.shiftKey&&(!UI.room||UI.room==='comercial')){e.preventDefault();openLeadModal();return}
+  if(UI.room!=='comercial')return;
   if(e.key==='ArrowDown'||e.key==='ArrowUp'){const cs=$$('[data-lead-card]');if(!cs.length)return;e.preventDefault();let i=cs.indexOf(document.activeElement);i=i<0?0:Math.max(0,Math.min(cs.length-1,i+(e.key==='ArrowDown'?1:-1)));cs[i].focus();cs[i].scrollIntoView({block:'nearest',behavior:'smooth'})}});
 /* card do lead: clicar em qualquer área livre abre/fecha os detalhes */
 function toggleLeadCard(c){const id=c.dataset.leadCard;if(UI.selMode){const s2=new Set(UI.sel||[]);s2.has(id)?s2.delete(id):s2.add(id);UI.sel=[...s2];const b=$('#d-body'),st=b.scrollTop;refresh();b.scrollTop=st;return}UI.openLead=UI.openLead===id?null:id;refresh();const n=$(`[data-lead-card="${CSS.escape(id)}"]`);if(n){n.focus({preventScroll:true});if(UI.openLead===id)n.scrollIntoView({block:'nearest',behavior:'smooth'})}}
@@ -5350,6 +5373,7 @@ document.addEventListener('click',e=>{
     const cn=c?(S.campanhas.find(k=>k.id===c)||{}).nome:'Nenhuma';toast(`${n} lead${n===1?'':'s'} → ${cn}`);UI.selMode=false;UI.sel=[];refresh()}
   else if(a==='loja-export'){$('#data-menu').open=false;exportarLoja()}
   else if(a==='loja-geo'){const l=(S.lojas||[]).find(x=>x.id===el.dataset.id);if(l)aplicarLocal(l,+el.dataset.lat,+el.dataset.lon,el.dataset.n)}
+  else if(a==='kb-help'){el.closest('details')&&(el.closest('details').open=false);$('#kb-modal').showModal()}
   else if(a==='loja-set'){$('#loja-menu').open=false;trocarLoja(el.dataset.v)}
   else if(a==='loja-rede'){$('#loja-menu').open=false;UI.revRede=true;openDrawer('financeiro','rev')}
   else if(a==='rev-rede'){UI.revRede=!UI.revRede;refresh()}
