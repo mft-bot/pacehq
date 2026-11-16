@@ -2,7 +2,7 @@
 
 Escritório virtual da PACE (loja de mobilidade elétrica no Estreito, Florianópolis).
 Ele reúne a operação inteira: vendas, test rides, oficina, pós-venda, metas e marketing.
-É uma página estática (`index.html`) com quatro agentes (Lia, Bento, Clara e Téo) e o clima automático do Estreito.
+É uma página estática (`index.html`) com quatro agentes, um por sala (Comercial, Oficina, Admin e Growth) e o clima automático de cada loja.
 
 ## Estrutura
 
@@ -10,8 +10,9 @@ Ele reúne a operação inteira: vendas, test rides, oficina, pós-venda, metas 
 |---|---|
 | `index.html` | O escritório inteiro (HTML, CSS e JS num arquivo só) |
 | `sprites/` | Imagens dos agentes |
-| `clima.json` | Clima do Estreito, atualizado sozinho pelo GitHub Actions |
-| `scripts/clima.mjs` | Busca a previsão de 8 dias na Open-Meteo (gratuita, sem chave) |
+| `clima.json` | Reserva do clima do Estreito, atualizada sozinha pelo GitHub Actions |
+| `api/clima.js` | Clima de qualquer loja pela Vercel (reserva automática, sem chave) |
+| `scripts/clima.mjs` | Busca a previsão de 8 dias de cada loja na Open-Meteo (gratuita, sem chave) |
 | `.github/workflows/clima.yml` | Roda o clima às 07:53, 11:53 e 16:53 (horário de Brasília) |
 | `api/claude.js` | Proxy da Vercel para os agentes falarem com o Claude (a chave fica só no servidor) |
 | `vercel.json` | Cabeçalhos de segurança e sem cache para o `clima.json` |
@@ -33,7 +34,7 @@ Ele reúne a operação inteira: vendas, test rides, oficina, pós-venda, metas 
 ## Dados e segurança (leia antes de usar)
 
 - **Cada navegador tem os seus dados.** Leads, vendas e carteira ficam no `localStorage`, não no servidor nem no repositório.
-  - Para passar dados entre os sócios, use **Dados → Backup / Importar**.
+  - Para passar dados entre os sócios ou para uma nova versão do HQ: **Menu → Exportar tudo (arquivo)** na versão antiga e **Menu → Importar tudo** na nova. O pacote leva todos os dados e preferências, mostra um resumo antes de substituir, e dá para voltar em **Desfazer última importação**.
   - Um banco de dados compartilhado é um próximo passo.
 - **Nunca versionar dados de clientes:** CSVs, planilhas e backups `.json` estão no `.gitignore`.
 - **Nunca entram no HQ:**
@@ -52,6 +53,13 @@ npx serve .
 ```
 
 Para atualizar o clima à mão: `node scripts/clima.mjs`.
+
+## Clima por loja (automático)
+
+Basta cadastrar a loja no HQ (seletor de loja → Nova loja) com **bairro e cidade**. O HQ acha a localização sozinho e passa a mostrar o clima daquela loja.
+- O navegador busca a previsão direto na Open-Meteo. Se não conseguir, usa `api/clima.js` aqui na Vercel (sem chave, com cache).
+- Para ajustar o ponto exato, edite **Local do clima** na loja (aceita coordenadas do Google Maps).
+- O `clima.json` do GitHub Actions continua como reserva do Estreito; não precisa mexer nele.
 
 ## Fluxo de trabalho entre os sócios
 

@@ -852,6 +852,49 @@ dialog#week-modal{max-width:min(720px,96vw)}
 .ag-cand{display:grid;grid-template-columns:auto auto 1fr auto;gap:8px;align-items:center;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--black);color:var(--off);text-align:left;cursor:pointer;font-size:12.5px}
 .ag-cand:hover{border-color:var(--neon)}
 .ag-pick{display:flex;align-items:center;gap:10px;padding:9px 11px;border:1px solid rgba(225,239,89,.4);border-radius:9px;background:rgba(225,239,89,.05)}
+.rv-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
+.rv-t{display:flex;flex-direction:column;gap:2px;padding:10px 12px;background:var(--black);border:1px solid var(--line);border-radius:10px}
+.rv-t span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}.rv-t b{font:700 20px "JetBrains Mono",monospace;color:var(--off)}.rv-t em{font-style:normal;font-size:11.5px;color:var(--muted)}
+.rv-d{font:600 11px "JetBrains Mono",monospace;color:var(--muted)}.rv-d.ok{color:#8fe8ad}.rv-d.bad{color:#ff9a9a}
+.rv-f{display:flex;align-items:center;gap:6px;margin-top:10px;flex-wrap:wrap}.rv-f>i{color:var(--muted);font-style:normal}
+.rv-s{flex:1;min-width:90px;display:flex;flex-direction:column;align-items:center;padding:8px;border:1px solid var(--line);border-radius:9px;background:rgba(240,238,231,.03)}
+.rv-s span{font-size:11px;color:var(--muted)}.rv-s b{font:700 18px "JetBrains Mono",monospace}.rv-s small{font-size:11px;color:var(--neon)}
+.nps-r{display:flex;align-items:center;gap:8px;padding:8px 12px;flex-wrap:wrap}.nps-r .grow{min-width:0}
+.nps-blk{margin-bottom:10px}.nps-h{text-transform:uppercase;letter-spacing:.06em;font-size:10.5px;margin:0 0 5px}
+.nps-blk.late .nps-r{border-color:rgba(255,120,120,.35)}
+.nps-prom{color:#8fe8ad}.nps-neut{color:var(--neon)}.nps-detr{color:#ff9a9a}
+.sel-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;margin-bottom:8px;border:1px solid var(--neon);border-radius:10px;background:#20262F}
+.sel-box{width:18px;height:18px;border:1.5px solid var(--line-2);border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:var(--daintree);flex:0 0 auto}
+.card.lead.sel-on{border-color:var(--neon)}.card.lead.sel-on .sel-box{background:var(--neon);border-color:var(--neon)}
+#day-prog.tr-alert{box-shadow:inset 0 0 0 1px rgba(255,120,120,.6)}
+.tpr-al{display:inline-flex;align-items:center;gap:6px;margin-left:10px;padding:5px 10px;border-radius:999px;border:1px solid rgba(255,120,120,.6);background:rgba(255,120,120,.12);color:#ffb3b3;font:600 12px Inter,system-ui,sans-serif;cursor:pointer}
+.tpr-al i{width:7px;height:7px;border-radius:50%;background:#ff7878;animation:tprp 1.2s infinite}@keyframes tprp{50%{opacity:.3}}
+.of-split{display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px dashed var(--line-2);border-radius:8px;font-size:12.5px}
+.of-risk{border-top:1px dashed rgba(255,120,120,.35);padding-top:6px;margin-top:4px}.of-risk b{color:#ff9a9a}
+.of-tk{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px}.of-tk span{display:flex;flex-direction:column;padding:7px 9px;border:1px solid var(--line);border-radius:8px}
+.os-pc{display:flex;flex-wrap:wrap;gap:5px;align-items:center}.os-pc .tagp{display:inline-flex;gap:5px;align-items:center}.os-pc .x{background:none;border:0;color:inherit;cursor:pointer;padding:0 2px}
+.pc-r{display:flex;align-items:center;gap:10px;padding:8px 12px;flex-wrap:wrap}
+.ah-r{grid-template-columns:.8fr repeat(6,1fr)}.ah-r small{display:block}
+.of-dia{display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;padding:7px 10px;border:1px solid var(--line);border-radius:8px;font-size:12.5px}
+.ag-dias{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.of-pin{width:30px;text-align:center;padding:0;margin:0 1px;font:600 12.5px 'JetBrains Mono',monospace;color:var(--neon);border-bottom:1px dashed rgba(225,239,89,.6)}
+.of-pin:focus{outline:1px solid var(--neon)}
+.rv-pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.rv-pipe>div{display:flex;flex-direction:column;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:rgba(225,239,89,.03)}
+.rv-pipe span{font-size:11px;color:var(--muted)}.rv-pipe b{font-size:15px;color:var(--neon)}.rv-pipe small{font-size:11px;color:var(--muted)}
+@media (max-width:720px){.rv-pipe{grid-template-columns:repeat(2,1fr)}}
+.im-res{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:4px 12px;margin:8px 0}.im-res span{display:flex;justify-content:space-between;font-size:12.5px;border-bottom:1px solid var(--line);padding:3px 0}
+.menu-av{display:block;font-size:11px;line-height:1.35;color:#ffb3b3;padding:2px 10px 6px;max-width:240px}
+.bk-av{margin-top:6px;padding:7px 9px;border:1px solid rgba(255,120,120,.45);border-radius:8px;color:#ffb3b3;font-size:12px}
+.loja-menu{position:relative}.loja-menu>summary{list-style:none;cursor:pointer}.loja-menu>summary::-webkit-details-marker{display:none}
+.loja-btn{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;column-gap:6px;align-items:center;padding:3px 8px;border-radius:8px;border:1px solid transparent}
+.loja-btn:hover{border-color:var(--line-2)}.loja-btn b{font:600 12px Inter,system-ui,sans-serif;color:var(--off)}.loja-btn span{grid-row:2;font-size:10.5px;color:var(--muted)}.loja-btn i{grid-row:1/3;grid-column:2;font-style:normal;color:var(--muted);font-size:10px}
+.lj-pop{position:absolute;top:calc(100% + 8px);left:0;z-index:70;width:270px;padding:8px;background:#20262F;border:1px solid rgba(240,238,231,.14);border-radius:10px;box-shadow:0 14px 34px rgba(2,34,38,.55);display:flex;flex-direction:column;gap:4px}
+.lj-pop>button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:7px 9px;border-radius:8px;border:1px solid transparent;background:none;color:var(--off);text-align:left;cursor:pointer}
+.lj-pop>button:hover{border-color:var(--line-2)}.lj-pop>button[aria-pressed=true]{border-color:var(--neon);background:rgba(225,239,89,.06)}.lj-pop small{font-size:11px;color:var(--muted)}
+.lj-pop hr{border:0;border-top:1px solid var(--line);margin:4px 0}.lj-new{display:flex;flex-direction:column;gap:4px;margin-top:4px}
+.rede-t td,.rede-t th{white-space:nowrap}
+.lj-f{display:flex;flex-direction:column;gap:3px;font-size:10.5px;color:var(--muted);margin-top:2px}.lj-geo{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:8px;padding:4px}.lj-hint{font-size:10.5px;color:var(--muted);margin:0 2px}
+.lj-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 2px 0}
 </style>
 </head>
 <body>
@@ -862,9 +905,9 @@ dialog#week-modal{max-width:min(720px,96vw)}
     <svg class="brand-sym" viewBox="115 115 850 850" role="img" aria-label="PACE"><path fill="#E1EF59" d="M902.11,177.89c-41.21-41.75-91.12-62.63-149.74-62.63H115.26v849.49h212.37c58.34,0,108.26-20.74,149.74-62.22,41.75-41.2,62.63-91.25,62.63-150.15h212.37c58.34,0,108.26-20.74,149.74-62.22,41.75-41.2,62.63-91.25,62.63-150.15v-212.38c0-58.34-20.88-108.26-62.63-149.74ZM752.37,433.4h-.02c0,.14.02.28.02.42,0,29.31-10.37,54.48-31.11,75.49-21.02,20.46-46.04,30.7-75.08,30.7s-54.48-10.23-75.49-30.7c-20.47-21.01-30.7-46.18-30.7-75.49,0-.14.02-.28.02-.42h-.02v-105.77h212.37v105.77Z"/></svg>
     <div>
       <h1 class="sr-only">PACE HQ</h1>
-      <p class="brand-loc">Loja Estreito<br>Florianópolis</p>
+      <details class="loja-menu" id="loja-menu"><summary class="loja-btn" id="loja-btn" aria-label="Trocar de loja"></summary><div id="loja-pop"></div></details>
     </div>
-    <div class="wx" id="wx" hidden tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><span class="wx-i" id="wx-i" aria-hidden="true"></span><span class="wx-t" id="wx-t"></span><span class="wx-r" id="wx-r"></span><div class="wx-pop" id="wx-pop" role="tooltip"></div></div>
+    <button type="button" class="tpr-al" id="tpr-al" hidden data-action="tpr-go"></button><div class="wx" id="wx" hidden tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><span class="wx-i" id="wx-i" aria-hidden="true"></span><span class="wx-t" id="wx-t"></span><span class="wx-r" id="wx-r"></span><div class="wx-pop" id="wx-pop" role="tooltip"></div></div>
   </div>
 
   <section class="kpis" aria-label="Indicadores da empresa">
@@ -880,7 +923,7 @@ dialog#week-modal{max-width:min(720px,96vw)}
       <div class="kpi-sub" id="k-leads-sub">—</div>
     </article>
     <article class="kpi">
-      <div class="kpi-label"><span>Test rides</span><b>Estreito</b></div>
+      <div class="kpi-label"><span>Test rides</span><b id="k-tr-loja">Estreito</b></div>
       <div class="kpi-value" id="k-tr">0 <small>agendados</small></div>
       <div class="kpi-sub" id="k-tr-sub">—</div>
     </article>
@@ -901,17 +944,19 @@ dialog#week-modal{max-width:min(720px,96vw)}
         <div class="menu-pop">
           <div class="menu-h"><span class="dot" aria-hidden="true"></span><span id="clock">--:--</span></div>
           <button type="button" data-action="meet" id="meet-btn">Reunião diária<span class="dot-ai" id="meet-dot" aria-hidden="true"></span></button>
+          <button type="button" data-action="week">Resumo da semana</button>
           <div class="menu-seg" role="group" aria-label="Modo de visualização"><span>Ver como</span>
             <button type="button" data-action="mode" data-mode="office" aria-pressed="true">Escritório</button>
             <button type="button" data-action="mode" data-mode="pocket" aria-pressed="false">Bolso</button></div>
           <button type="button" data-action="close-month">Fechamento do mês</button>
           <hr>
           <span class="menu-lbl" id="bk-txt">Backup</span>
-          <button type="button" data-action="backup-dl">Baixar backup (arquivo)</button>
-          <button type="button" data-action="backup-copy">Copiar backup (texto)</button>
-          <button type="button" data-action="week">Resumo da semana</button>
-          <button type="button" data-action="lead-import-file">Importar leads (planilha)</button>
-          <button type="button" data-action="backup-import">Importar backup</button>
+          <span class="menu-av">🔒 O arquivo exportado tem os telefones de leads e clientes. Guarde em local privado e não envie em grupos.</span>
+          <button type="button" data-action="backup-dl">Exportar tudo (arquivo)</button>
+          <button type="button" data-action="backup-copy">Copiar tudo (texto)</button>
+          <button type="button" data-action="loja-export">Exportar só a loja atual</button>
+          <button type="button" data-action="backup-import">Importar tudo (de outra versão)</button>
+          <button type="button" data-action="import-undo">Desfazer última importação</button>
           <hr>
           <button type="button" data-action="ai-setup">Conexão com o Claude</button>
           <button type="button" data-action="data-clear">Começar do zero (apagar exemplos)</button>
@@ -1033,13 +1078,13 @@ dialog#week-modal{max-width:min(720px,96vw)}
 <!-- ===================== MODAL: IMPORTAR ===================== -->
 <dialog class="modal" id="import-modal" aria-labelledby="im-title">
   <div class="modal-card">
-    <header><h2 id="im-title" class="px">Backup</h2><button type="button" class="btn btn-sm" data-action="modal-close">Fechar</button></header>
+    <header><h2 id="im-title" class="px">Dados do escritório</h2><button type="button" class="btn btn-sm" data-action="modal-close">Fechar</button></header>
     <div class="mbody stack">
       <p class="meta" id="im-help" style="margin:0">Cole aqui o texto de um backup do PACE HQ.</p>
       <label class="field" id="im-file-wrap">Arquivo de backup (.json)<input type="file" id="im-file" accept=".json,application/json"></label>
       <textarea class="inp" id="im-text" rows="8" spellcheck="false" placeholder="…ou cole aqui o texto do backup"></textarea>
     </div>
-    <footer><span class="meta">Os dados ficam só neste navegador.</span><button type="button" class="btn btn-primary" data-action="import-run" id="im-run">Importar</button></footer>
+    <footer><span class="meta">Os dados ficam só neste navegador. 🔒 O arquivo exportado tem os telefones de leads e clientes. Guarde em local privado e não envie em grupos.</span><button type="button" class="btn btn-primary" data-action="import-run" id="im-run">Importar</button></footer>
   </div>
 </dialog>
 
@@ -1077,7 +1122,7 @@ dialog#week-modal{max-width:min(720px,96vw)}
   <div class="modal-card">
     <header><h2 id="cm-title" class="px">Fechamento do mês</h2><div class="row"><select class="inp-sm" id="cm-mes" aria-label="Mês"></select><button type="button" class="btn btn-sm" data-action="modal-close">Fechar</button></div></header>
     <div class="mbody" id="cm-body"></div>
-    <footer><span class="meta">Sem custos, margens nem pisos.</span><div class="row"><button class="btn" data-action="cm-copy">Copiar resumo</button><button class="btn" data-action="cm-dl">Baixar relatório</button><button class="btn btn-primary" data-action="cm-ai" id="cm-ai">Análise da Clara</button></div></footer>
+    <footer><span class="meta">Sem custos, margens nem pisos.</span><div class="row"><button class="btn" data-action="cm-copy">Copiar resumo</button><button class="btn" data-action="cm-dl">Baixar relatório</button><button class="btn btn-primary" data-action="cm-ai" id="cm-ai">Análise do Admin</button></div></footer>
   </div>
 </dialog>
 
@@ -1218,7 +1263,7 @@ function syncCatalog(){Object.keys(MODELOS).forEach(k=>delete MODELOS[k]);(S.cat
 const ST_EST=['Disponível','Demonstração','Reservada','Encomendada','Vendida'];
 const MOTIVOS=['Comprou','Sem interesse agora','Achou caro','Sem resposta','Comprou em outro lugar','Fora do perfil','Outro'];
 const PLANOS={Essencial:0,Completo:490,Total:990};
-const ORIGENS=['Google Ads','Meta','Site'];
+const ORIGENS=['Google Ads','Meta','Site','Oficina'];
 const ETAPAS=['Novo','Contato','Proposta','Test Ride','Fechado','Perdido','Sem Perfil'];
 const ATIVAS=e=>e!=='Fechado'&&e!=='Perdido'&&e!=='Sem Perfil';
 const FUNIL=['Novo','Contato','Proposta','Test Ride','Fechado'];
@@ -1247,7 +1292,7 @@ function seed(){
   const inMonth=n=>{const r=rel(n);return r<mStart?mStart:r};
   return {
     v:2,
-    cfg:{cad:CAD_PADRAO.slice(),perfis:{},sla:SLA_PADRAO(),slots:['09:00','10:30','13:30','15:00','16:30'],fechado:[],trFechado:[],diasV2:1,waMode:'web',vendedor:'Equipe PACE',meta:120000,metaVendas:15,metaAval:10,metaOficina:0,servPreco:{'Manutenção Preventiva':150,'Manutenção Avançada':350,'Outro':0},saldo:52380,custoFixo:18900},
+    cfg:{cad:CAD_PADRAO.slice(),perfis:{},sla:SLA_PADRAO(),slots:['09:00','10:30','13:30','15:00','16:30'],fechado:[],trFechado:[],diasV2:1,waMode:'web',vendedor:'Equipe PACE',meta:120000,metaVendas:15,metaAval:10,metaOficina:0,garV2:1,garTol:10,garBateria:'não',ofMin:35,ofMax:45,servPreco:{'Manutenção Preventiva':150,'Manutenção Avançada':350,'Outro':0},saldo:52380,custoFixo:18900},
     leads:[
       {id:'l1',camp:'k3',criado:rel(-1),nome:'Mariana Souza',tel:'48991234567',email:'mariana.souza@gmail.com',origem:'Google Ads',modelo:'V40 Pro',etapa:'Test Ride',bairro:'Coqueiros',fu:rel(0),hora:'15:00',obs:'Vai usar para ir ao trabalho no Centro pela ponte'},
       {id:'l2',camp:'k1',criado:rel(-6),nome:'Lucas Andrade',tel:'48998761234',email:'lucas.andrade@outlook.com',origem:'Meta',modelo:'X18',etapa:'Proposta',bairro:'Trindade',fu:rel(0),hora:'10:30',obs:'Quer saber sobre financiamento'},
@@ -1351,7 +1396,7 @@ function estoqueSeed(){
 }
 function load(){
   try{const raw=localStorage.getItem(KEY);if(raw){const d=JSON.parse(raw);if(valid(d))return migrate(d)}}catch(e){}
-  return seed();
+  return migrate(seed());
 }
 /* Atualiza dados salvos de versões anteriores sem perder nada */
 function migrate(d){
@@ -1378,7 +1423,7 @@ function migrate(d){
   if(!Array.isArray(d.inbox))d.inbox=[];
   if(!d.revDemo&&d.passaportes.some(p=>p.id==='PACE-FLN-00031')){revDemo().forEach(x=>{if(!d.passaportes.some(p=>p.id===x.id))d.passaportes.push(x)})}
   d.revDemo=true;
-  if(d.cfg.metaVendas==null){d.cfg.metaVendas=15;d.cfg.metaAval=10}if(d.cfg.metaOficina==null)d.cfg.metaOficina=0;if(!d.cfg.diasV2){d.cfg.diasV2=1;d.cfg.fechado=[];d.cfg.trFechado=[]}if(!d.cfg.trFechado)d.cfg.trFechado=[];if(!d.cfg.servPreco||!('Manutenção Preventiva' in d.cfg.servPreco))d.cfg.servPreco={...SERV_PRECO_PADRAO}
+  if(d.cfg.metaVendas==null){d.cfg.metaVendas=15;d.cfg.metaAval=10}if(d.cfg.metaOficina==null)d.cfg.metaOficina=0;if(!d.pecas)d.pecas=[];if(!Array.isArray(d.lojas)||!d.lojas.length){d.lojas=[{id:'estreito',nome:'Loja Estreito',cidade:'Florianópolis',criada:today()}];d.lojaAtual='estreito'}if(!d.redeLojas)d.redeLojas={};if(!d.lojaAtual)d.lojaAtual=d.lojas[0].id;d.lojas.forEach(l=>{if(l.id==='estreito'&&l.lat==null){l.lat=-27.5935;l.lon=-48.5862;l.local=l.local||'Estreito, Florianópolis'}});(d.estoque||[]).forEach(u=>{if(!u.loja)u.loja=d.lojaAtual});(d.agenda||[]).forEach(a=>{if(!a.loja)a.loja=d.lojaAtual});(d.os||[]).forEach(o=>{if(!o.loja)o.loja=d.lojaAtual});if(d.cfg.diaria==null)d.cfg.diaria=300;if(!d.cfg.garV2){d.cfg.garV2=1;d.cfg.garTol=10;d.cfg.garBateria='não';if(d.cfg.ofMin==null){d.cfg.ofMin=35;d.cfg.ofMax=45}}if(!d.nps)d.nps=[];if(!d.cfg.diasV2){d.cfg.diasV2=1;d.cfg.fechado=[];d.cfg.trFechado=[]}if(!d.cfg.trFechado)d.cfg.trFechado=[];if(!d.cfg.servPreco||!('Manutenção Preventiva' in d.cfg.servPreco))d.cfg.servPreco={...SERV_PRECO_PADRAO}
   return d;
 }
 function valid(d){return d&&d.v===2&&['leads','vendas','os','passaportes','contas','admin','campanhas','pauta'].every(k=>Array.isArray(d[k]))&&d.cfg}
@@ -1470,10 +1515,10 @@ function statusOf(k){
    5. SALAS E AGENTES (definição)
    ========================================================= */
 const ROOMS={
-  financeiro:{n:'03',nome:'Gestão · Financeiro, Contábil & Admin',curto:'GESTÃO',agente:'Clara',papel:'Agente Finanças & Admin',acc:'#F0EEE7',x0:0,y0:0},
-  criativo:  {n:'04',nome:'Growth & Marca',curto:'GROWTH',agente:'Téo',papel:'Agente Growth & Marca',acc:'#ff9f6b',x0:7,y0:0},
-  oficina:   {n:'02',nome:'Oficina & Passaporte Digital',curto:'OFICINA',agente:'Bento',papel:'Agente Técnico',acc:'#7fd4c8',x0:0,y0:7},
-  comercial: {n:'01',nome:'Comercial & Vendas',curto:'COMERCIAL',agente:'Lia',papel:'Agente Comercial',acc:'#E1EF59',x0:7,y0:7}
+  financeiro:{n:'03',nome:'Gestão · Financeiro, Contábil & Admin',curto:'GESTÃO',agente:'Admin',papel:'Agente financeiro e administrativo',acc:'#F0EEE7',x0:0,y0:0},
+  criativo:  {n:'04',nome:'Growth & Marca',curto:'GROWTH',agente:'Growth',papel:'Agente de marketing e marca',acc:'#ff9f6b',x0:7,y0:0},
+  oficina:   {n:'02',nome:'Oficina & Passaporte Digital',curto:'OFICINA',agente:'Oficina',papel:'Agente técnico e pós-venda',acc:'#7fd4c8',x0:0,y0:7},
+  comercial: {n:'01',nome:'Comercial & Vendas',curto:'COMERCIAL',agente:'Comercial',papel:'Agente de vendas e test rides',acc:'#E1EF59',x0:7,y0:7}
 };
 const ROOM_ORDER=['comercial','oficina','financeiro','criativo'];
 
@@ -1482,7 +1527,7 @@ const ROOM_ORDER=['comercial','oficina','financeiro','criativo'];
    ========================================================= */
 const opt=(arr,sel)=>arr.map(v=>{const [val,lab]=Array.isArray(v)?v:[v,v];return `<option value="${esc(val)}"${val===sel?' selected':''}>${esc(lab)}</option>`}).join('');
 const pixbar=p=>{const on=Math.round(Math.min(1,Math.max(0,p))*20);return Array.from({length:20},(_,i)=>`<i class="${i<on?'on':''}"></i>`).join('')};
-const origemTag=o=>`<span class="tagp t-muted orig"><i style="background:${{'Google Ads':'#3987e5','Meta':'#d95926','Site':'#199e70'}[o]||'#8b95a3'}"></i>${esc(o)}</span>`;
+const origemTag=o=>`<span class="tagp t-muted orig"><i style="background:${{'Google Ads':'#3987e5','Meta':'#d95926','Site':'#199e70','Oficina':'#7fd4c8'}[o]||'#8b95a3'}"></i>${esc(o)}</span>`;
 /* Com WhatsApp Web, todos os botões usam a mesma aba ("pace-whatsapp") em vez de abrir uma nova a cada clique */
 const waBtn=(tel,msg,label='WhatsApp',extra='')=>`<a class="btn btn-wa btn-sm" href="${esc(waLink(tel,msg))}" target="${S.cfg.waMode==='web'&&!matchMedia('(pointer:coarse)').matches?'pace-whatsapp':'_blank'}" rel="noopener noreferrer" ${extra}>${label}</a>`;
 
@@ -1495,7 +1540,7 @@ function renderHUD(){
   $('#k-leads').textContent=NUM(m.leads);
   $('#k-conv').textContent='Conv. '+PCT(m.conv);
   $('#k-leads-sub').textContent=`Google ${m.byOrig['Google Ads']} · Meta ${m.byOrig['Meta']} · Site ${m.byOrig['Site']}`;
-  $('#k-tr').innerHTML=`${m.tr.length} <small>agendados</small>`;
+  $('#k-tr').innerHTML=`${m.tr.length} <small>agendados</small>`;{const kl=$('#k-tr-loja');if(kl)kl.textContent=wxLocal()||lojaAtual().nome}
   const p=m.tr[0];
   $('#k-tr-sub').textContent=p?`Próximo: ${p.fu===m.t?'hoje':ddmm(p.fu)} ${p.hora} · ${first(p.nome)} (${p.modelo})`:'Nenhum test ride agendado';
   $('#k-of').innerHTML=`${m.ativos.length} <small>em serviço</small>`;
@@ -1541,9 +1586,10 @@ function fuItem(l){
 function fuList(limit){const all=followups(),lim=limit||(UI.fuAll?99:5),f=all.slice(0,lim);if(!limit&&all.length>5){const more=`<button class="btn btn-sm" data-action="fu-all" style="align-self:center">${UI.fuAll?'Mostrar menos':`Ver todos (${all.length})`}</button>`;return `<div class="stack">${f.map(fuItem).join('')}${more}</div>`}return f.length?`<div class="stack">${f.map(fuItem).join('')}</div>`:`<div class="empty">Todos os follow-ups de hoje foram feitos.</div>`}
 function leadCard(l){
   const md=MODELOS[l.modelo],open=UI.openLead===l.id;
-  return `<div class="card lead ${open?'open':''}" data-lead-card="${esc(l.id)}" tabindex="0" aria-expanded="${open}" title="${open?'Clique para recolher':'Clique para ver detalhes'}">
+  const selOn=UI.selMode&&(UI.sel||[]).includes(l.id);
+  return `<div class="card lead ${open?'open':''} ${UI.selMode?'sel-mode':''} ${selOn?'sel-on':''}" data-lead-card="${esc(l.id)}" tabindex="0" aria-expanded="${open}" title="${open?'Clique para recolher':'Clique para ver detalhes'}">
     <div class="row between">
-      <div class="row" style="gap:7px;min-width:0">${nameField(l)}${statusTag(l)}</div>
+      <div class="row" style="gap:7px;min-width:0">${UI.selMode?`<span class="sel-box" aria-hidden="true">${selOn?'✓':''}</span>`:''}${nameField(l)}${statusTag(l)}${UI.selMode&&l.camp?`<span class="meta">${esc((S.campanhas.find(c=>c.id===l.camp)||{}).nome||'')}</span>`:''}</div>
       ${origemTag(l.origem)}
     </div>
     <div class="meta">${esc(l.modelo)}${ATIVAS(l.etapa)&&l.fu?` · próximo contato <b class="fu-when">${l.fu===today()?'hoje':l.fu===rel(1)?'amanhã':ddmm(l.fu)}${l.hora?' '+esc(l.hora):''}</b>`:''}</div>
@@ -1576,6 +1622,7 @@ function leadCard(l){
       <div class="meta">Cadastrado em ${ddmm(l.criado)} · ${dBucket(l)} · ${l.toques||0} toque(s)${slaTag(l)?' · '+slaTag(l):''}</div>
       <div class="form-grid">
         <label class="field">Campanha<select class="inp-sm" data-change="lead-camp" data-id="${esc(l.id)}">${opt([['','—'],...S.campanhas.map(c=>[c.id,c.nome])],l.camp||'')}</select></label>
+        ${multiLoja()?`<label class="field">Transferir para<select class="inp-sm" data-change="lead-transf" data-id="${esc(l.id)}"><option value="">— outra loja —</option>${S.lojas.filter(x=>x.id!==S.lojaAtual).map(x=>`<option value="${esc(x.id)}">${esc(x.nome)}</option>`).join('')}</select></label>`:''}
         <label class="field">Arquivar como<select class="inp-sm" data-change="lead-arq" data-id="${esc(l.id)}"><option value="">— escolher motivo —</option>${opt(MOTIVOS,'__')}</select></label>
       </div>
       <div class="row" style="justify-content:flex-end">${delBtn('leads',l.id)}</div>
@@ -1605,7 +1652,10 @@ function leadListHTML(){
   const q=UI.q.trim().toLowerCase();
   const list=S.leads.filter(l=>!l.arq&&(!UI.semNome||semNome(l))&&(UI.dFil==='Todos'||(ATIVAS(l.etapa)&&dBucket(l)===UI.dFil))&&(UI.etapa==='Todos'||l.etapa===UI.etapa)&&(UI.origem==='Todas'||l.origem===UI.origem)&&
     (!q||[l.nome,l.tel,l.email,l.bairro,l.modelo,l.obs].join(' ').toLowerCase().includes(q)));
-  return list.length?list.map(leadCard).join(''):'<div class="empty">Nenhum lead com esses filtros.</div>';
+  const bar=UI.selMode?`<div class="sel-bar"><b>${(UI.sel||[]).length} selecionado${(UI.sel||[]).length===1?'':'s'}</b><button class="btn btn-sm" data-action="sel-all">Selecionar todos do filtro (${list.length})</button>
+    <select class="inp-sm" id="sel-camp" aria-label="Campanha">${opt([['','Nenhuma / orgânico'],...S.campanhas.map(c=>[c.id,`${c.nome} (${c.canal})`])],'')}</select>
+    <button class="btn btn-sm btn-primary" data-action="sel-apply" ${(UI.sel||[]).length?'':'disabled'}>Aplicar</button><button class="btn btn-sm" data-action="sel-mode">Cancelar</button></div>`:'';
+  return bar+(list.length?list.map(leadCard).join(''):'<div class="empty">Nenhum lead com esses filtros.</div>');
 }
 function renderComercial(){
   const ativos=S.leads.filter(l=>!l.arq),arquivados=S.leads.filter(l=>l.arq),stale=staleLeads(),fu=followups(),fp=foraPrazo();
@@ -1616,7 +1666,9 @@ function renderComercial(){
   ${sec==='prefs'?`<section class="d-sec"><div class="card stack">
     <label class="field">Assinatura das mensagens<input class="inp-sm" data-change="vendedor" value="${esc(S.cfg.vendedor)}" maxlength="30"></label>
     <label class="field">Abrir WhatsApp em<select class="inp-sm" data-change="waMode">${opt([['app','App do aparelho (wa.me)'],['web','WhatsApp Web no navegador']],S.cfg.waMode||'web')}</select></label>
-    <span class="meta">No computador: WhatsApp Business Web aberto no navegador. No celular, os links abrem sempre o app.</span></div>
+    <span class="meta">No computador: WhatsApp Business Web aberto no navegador. No celular, os links abrem sempre o app.</span>
+    <label class="field">Alerta de lead sem resposta após (minutos)<input class="inp-sm" type="number" min="1" max="120" value="${S.cfg.tprAlert||5}" data-change="tpr-min"></label>
+    <span class="meta">Vale para leads cadastrados como Novo, sem a primeira resposta marcada.</span></div>
     <h3 style="margin-top:16px">Respostas rápidas <span class="meta" style="text-transform:none;font-family:Inter">aparecem na fila de vendas · use {nome} para o primeiro nome</span></h3>
     <div class="stack">${respList().map((r,i)=>`<div class="card stack" style="gap:6px"><div class="row between"><input class="inp-sm grow" data-change="resp-f" data-i="${i}" data-f="t" value="${esc(r.t)}" aria-label="Título">${delBtn('resp',String(i))}</div><textarea class="inp" rows="2" data-change="resp-f" data-i="${i}" data-f="x" aria-label="Texto">${esc(r.x)}</textarea></div>`).join('')}</div>
     <form data-form="resp" class="card stack" style="gap:6px;margin-top:8px"><input class="inp-sm" name="t" required maxlength="40" placeholder="Título (ex.: Troca de bateria)"><textarea class="inp" name="x" rows="2" required placeholder="Texto da resposta"></textarea><div class="row" style="justify-content:flex-end"><button class="btn btn-sm btn-primary" type="submit">Adicionar resposta</button></div></form>
@@ -1630,16 +1682,19 @@ function renderComercial(){
       <div class="row" style="gap:6px">
       <details class="more-menu"><summary class="btn btn-sm" aria-label="Mais opções">⋯</summary><div class="more-pop">
         <button type="button" data-action="lead-import-file">Importar planilha</button>
+        ${multiLoja()?'<button type="button" data-action="lead-export-rede">Exportar planilha da rede (todas as lojas)</button>':''}
+        <button type="button" data-action="lead-export" title="O arquivo exportado tem os telefones de leads e clientes. Guarde em local privado e não envie em grupos.">Exportar planilha (ativos + arquivados)</button>
+        ${UI.view==='ativos'?'<button type="button" data-action="sel-mode">Atribuir campanha em lote</button>':''}
         <button type="button" data-action="sec" data-v="scripts">Scripts de venda</button>
         <button type="button" data-action="sec" data-v="prefs">Preferências</button>
         ${UI.view==='ativos'&&stale.length?`<button type="button" data-action="arq-bulk">${arqArmed?`Confirmar: arquivar ${stale.length}`:`Arquivar parados (${stale.length})`}</button>`:''}
       </div></details>
-      <button class="btn btn-sm btn-primary" data-action="lead-new">+ Novo lead</button>
+      <button class="btn btn-sm btn-primary" data-action="lead-new" title="Atalho: N">+ Novo lead</button>
       </div>
-      ${UI.view==='ativos'?'':`<button class="btn btn-sm" data-action="arq-copy">Copiar lista p/ campanha</button>`}
+      ${UI.view==='ativos'?'':`<button class="btn btn-sm" data-action="arq-copy">Copiar lista p/ campanha</button><button class="btn btn-sm" data-action="lead-export">Exportar planilha</button>`}
     </div>
     <div class="filters ${UI.fOpen||(UI.view==='ativos'?(UI.etapa!=='Todos'||UI.dFil!=='Todos'||UI.origem!=='Todas'):false)?'f-open':''}">
-      <input class="inp-sm" type="search" data-input="lead-q" value="${esc(UI.q)}" placeholder="Buscar nome, telefone, etiqueta" aria-label="Buscar lead">
+      <input class="inp-sm" type="search" data-input="lead-q" value="${esc(UI.q)}" placeholder="Buscar nome, telefone, etiqueta  ( / )" aria-label="Buscar lead">
       ${UI.view==='ativos'&&(UI.semNome||S.leads.some(l=>!l.arq&&semNome(l)))?`<button type="button" class="btn btn-sm nm-chip" data-action="lead-semnome" aria-pressed="${!!UI.semNome}" title="Mostrar só os leads que ainda estão sem nome">Sem nome · ${S.leads.filter(l=>!l.arq&&semNome(l)).length}</button>`:''}
       <button type="button" class="btn btn-sm f-tog" data-action="f-tog" aria-label="Mostrar filtros">Filtros${UI.view==='ativos'?(()=>{const n=[UI.etapa!=='Todos',UI.dFil!=='Todos',UI.origem!=='Todas'].filter(Boolean).length;return n?` · ${n}`:''})():''}</button>
       ${UI.view==='ativos'?`
@@ -1740,7 +1795,7 @@ function renderEstoqueBody(){
   const stCls={'Disponível':'t-soon','Demonstração':'t-muted','Reservada':'t-muted','Encomendada':'t-muted','Vendida':'t-muted'};
   const unit=u=>`<div class="card lrow" style="padding:8px 12px">
       <div class="grow"><div class="row" style="gap:6px"><b>${esc(u.modelo)}</b><span class="mono" style="color:var(--muted)">${esc(u.ident||'—')}</span></div>${u.obs?`<div class="meta">${esc(u.obs)}</div>`:''}</div>
-      <div class="row" style="gap:6px;flex-wrap:nowrap"><select class="inp-sm" data-change="est-status" data-id="${esc(u.id)}" aria-label="Status">${opt(ST_EST,u.status)}</select>${delBtn('estoque',u.id)}</div>
+      <div class="row" style="gap:6px;flex-wrap:nowrap">${multiLoja()?`<select class="inp-sm" data-change="est-loja" data-id="${esc(u.id)}" aria-label="Loja onde está" title="Loja onde a bike está">${opt(S.lojas.map(l=>[l.id,l.nome]),u.loja||S.lojaAtual)}</select>`:''}<select class="inp-sm" data-change="est-status" data-id="${esc(u.id)}" aria-label="Status">${opt(ST_EST,u.status)}</select>${delBtn('estoque',u.id)}</div>
     </div>`;
   return `
   <div class="tiles">
@@ -1754,6 +1809,7 @@ function renderEstoqueBody(){
       <tbody>${Object.keys(MODELOS).map(m=>`<tr><td><b>${esc(m)}</b></td><td>${esc(MODELOS[m].cat||'')}</td><td class="num">${MODELOS[m].tabela?BRL0(MODELOS[m].tabela):'—'}</td><td class="num">${BRL0(MODELOS[m].pix)}</td><td class="num" style="color:${cnt(m,'Disponível')?'var(--neon)':'var(--late)'}">${cnt(m,'Disponível')}</td><td class="num">${cnt(m,'Demonstração')}</td><td class="num">${cnt(m,'Reservada')}</td><td class="num">${cnt(m,'Encomendada')}</td></tr>`).join('')}</tbody>
     </table></div>
   </section>
+  ${multiLoja()?`<section class="d-sec"><h3>Estoque da rede por loja</h3><div class="card tbl-wrap"><table><thead><tr><th>Modelo</th>${S.lojas.map(l=>`<th class="num">${esc(l.nome)}</th>`).join('')}<th class="num">Rede</th></tr></thead><tbody>${Object.keys(MODELOS).map(m=>{const c=lj=>S.estoque.filter(u=>u.modelo===m&&u.status==='Disponível'&&(lj==null||(u.loja||S.lojaAtual)===lj)).length;return `<tr><td><b>${esc(m)}</b></td>${S.lojas.map(l=>`<td class="num">${c(l.id)||'—'}</td>`).join('')}<td class="num"><b>${c(null)}</b></td></tr>`}).join('')}</tbody></table></div><p class="note">Bikes disponíveis em cada loja. Para transferir, troque a loja na unidade abaixo.</p></section>`:''}
   <section class="d-sec"><h3>Unidades <span class="count">${ativos.length}</span></h3>
     <div class="stack">${ativos.sort((a,b)=>a.modelo.localeCompare(b.modelo)||ST_EST.indexOf(a.status)-ST_EST.indexOf(b.status)).map(unit).join('')||'<div class="empty">Nenhuma bike no estoque.</div>'}</div>
     ${doneList(vendidas,unit,'Vendidas')}
@@ -1850,7 +1906,7 @@ function logLead(l,r){(l.log=l.log||[]).push({d:today(),r});l.ultimo=today()}
 function nextByCad(l){const n=proxToque(l);return n?(n.data<=today()?rel(1):n.data):rel(7)}
 
 /* =========================================================
-   INTELIGÊNCIA COMERCIAL · perfil do lead (coletado pela Lia, analisado pelo Téo)
+   INTELIGÊNCIA COMERCIAL · perfil do lead (coletado no Comercial, analisado no Growth)
    ========================================================= */
 const PERFIL={
   estilo:{t:'Estilo',o:[['urbana','E-bike urbana'],['scooter','Scooter'],['mtb','MTB/trilha'],['fat','Fat/praia'],['cargo','Cargo/delivery']]},
@@ -1890,7 +1946,7 @@ function intel(){
 }
 function intelInsights(I){
   const out=[],pct=x=>Math.round(x*100)+'%';
-  if(I.com<5)out.push(`Só ${I.com} lead(s) com perfil. Peça à Lia para marcar o perfil durante os follow-ups; com 15+ os números ficam confiáveis.`);
+  if(I.com<5)out.push(`Só ${I.com} lead(s) com perfil. Marque o perfil durante os follow-ups; com 15+ os números ficam confiáveis.`);
   const best=I.D.estilo.filter(x=>x.n>=2&&x.conv!=null).sort((a,b)=>b.conv-a.conv)[0];if(best&&best.conv>0)out.push(`<b>${esc(best.t)}</b> é o estilo que mais converte (${pct(best.conv)}): priorize esse público nas campanhas.`);
   if(I.gap.de>=3&&I.gap.n/I.gap.de>=.3)out.push(`<b>${pct(I.gap.n/I.gap.de)}</b> dos leads têm orçamento abaixo do PIX do modelo que querem: destaque o financiamento e a N77 como entrada.`);
   if(I.obj[0])out.push(`Objeção nº 1: <b>${esc(I.obj[0].t)}</b> (${I.obj[0].n} leads, mais em ${esc(I.obj[0].etapa)}). Vale uma peça e uma resposta rápida sobre isso.`);
@@ -1910,7 +1966,7 @@ function renderIntel(){
   </div>
   ${ins.length?`<div class="insight"><b>O que os dados dizem</b><ul class="ins-list">${ins.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:''}
   <section class="d-sec"><h3>Perfil da base · conversão por resposta</h3><div class="ib-grid">${PERF_KEYS.map(block).join('')}</div>
-    <p class="note">Conversão = % desses leads que já fecharam venda. A Lia marca o perfil com 1 clique no card do lead (botão Perfil) ou na fila de follow-up.</p></section>
+    <p class="note">Conversão = % desses leads que já fecharam venda. Marque o perfil com 1 clique no card do lead (botão Perfil) ou na fila de follow-up.</p></section>
   ${I.obj.length?`<section class="d-sec"><h3>Objeções em aberto · onde travam</h3><div class="card" style="padding:4px 12px">${I.obj.map(o=>`<div class="row between ib-line"><span>${esc(o.t)}</span><span class="meta">${o.n} lead${o.n===1?'':'s'} · mais em <b>${esc(o.etapa||'—')}</b></span></div>`).join('')}</div></section>`:''}
   <section class="d-sec"><h3>Demanda × estoque</h3><div class="card" style="padding:4px 12px">${I.demanda.map(d=>`<div class="row between ib-line"><span>${esc(d.k)}</span><span class="meta">${d.leads} lead${d.leads===1?'':'s'} em aberto · <b style="color:${d.disp?'var(--off)':'var(--late)'}">${d.disp} disponível${d.disp===1?'':'is'}</b></span></div>`).join('')||'<div class="meta" style="padding:8px 0">Sem leads em aberto.</div>'}
     ${I.foraCatalogo.length?`<div class="meta" style="padding:8px 0">Procuram estilos fora do catálogo: ${I.foraCatalogo.map(x=>`${esc(x.t)} (${x.n})`).join(', ')}.</div>`:''}</div></section>
@@ -1935,7 +1991,7 @@ function fqCard(l){
     <label class="field">${l.etapa==='Novo'||l.etapa==='Contato'?`Mensagem do ${t}º toque`:`Mensagem de ${l.etapa==='Proposta'?'proposta':l.etapa==='Test Ride'?'confirmação do test ride':'acompanhamento'}`} <span style="font-size:10px">(pode editar antes de enviar)</span>
       <textarea class="inp" rows="4" data-input="fq-msg" data-id="${esc(l.id)}">${esc(msg)}</textarea></label>
     <div class="row between">
-      <div class="row" style="gap:6px"><button class="btn btn-sm" data-action="fq-ai" data-id="${esc(l.id)}">Personalizar com a Lia</button><button class="btn btn-sm" data-action="fq-reset" data-id="${esc(l.id)}">Texto padrão</button></div>
+      <div class="row" style="gap:6px"><button class="btn btn-sm" data-action="fq-ai" data-id="${esc(l.id)}">Personalizar com IA</button><button class="btn btn-sm" data-action="fq-reset" data-id="${esc(l.id)}">Texto padrão</button></div>
       <a class="btn btn-wa" id="fq-wa" href="${esc(waLink(l.tel,msg))}" target="${S.cfg.waMode==='web'&&!matchMedia('(pointer:coarse)').matches?'pace-whatsapp':'_blank'}" rel="noopener noreferrer" data-wa-lead="${esc(l.id)}">Enviar no WhatsApp</a>
     </div>
     <details class="resp-d"><summary>Respostas rápidas <span class="mono">${respList().length}</span></summary><div class="resp-row">${respList().map((r,i)=>`<button class="btn btn-sm" data-action="resp-use" data-id="${esc(l.id)}" data-i="${i}" title="${esc(r.x)}">${esc(r.t)}</button>`).join('')}</div></details>
@@ -1977,7 +2033,7 @@ function renderFollowups(){
 }
 
 /* ---------- Comercial · Indicadores (comparativos visuais) ---------- */
-const ORIG_COLOR={'Google Ads':'var(--s-google)','Meta':'var(--s-meta)','Site':'var(--s-site)'};
+const ORIG_COLOR={'Google Ads':'var(--s-google)','Meta':'var(--s-meta)','Site':'var(--s-site)','Oficina':'#7fd4c8'};
 function hbars(rows,max){
   max=max||Math.max(...rows.map(r=>r.v))||1;
   return `<div class="hb">${rows.map(r=>`<span class="lab" title="${esc(r.label)}">${esc(r.label)}</span>
@@ -2051,9 +2107,10 @@ function osCard(o,compact){
     <div class="row between"><span class="id">${esc(o.id)}</span><div class="row">${o.plano!=='—'?`<span class="tagp t-plan">${esc(o.plano)}</span>`:''}${dueTag(o.prazo,o.status==='Pronta'?'Pronta':'')}</div></div>
     <div><div class="t-name">${esc(o.cliente)} · ${esc(o.modelo)}</div><div class="meta">${esc(o.servico)}${o.km?` · ${NUM(o.km)} km`:''}${o.nota?' · '+esc(o.nota):''}</div></div>
     <div class="steps" role="group" aria-label="Status de ${esc(o.id)}">${OS_ST.map((s,j)=>`<button data-action="os-status" data-id="${esc(o.id)}" data-v="${s}" aria-pressed="${o.status===s}" class="${i>j?'done':''}">${s}</button>`).join('')}</div>
+    ${osPecasHTML(o)}
     <div class="checks">${Object.keys(CHK).map(k=>`<label class="chk ${o.chk[k]?'done':''}"><input type="checkbox" data-change="os-chk" data-id="${esc(o.id)}" data-k="${k}" ${o.chk[k]?'checked':''}><span>${CHK[k]}</span></label>`).join('')}</div>
     <div class="row between">
-      <span class="meta">Checklist ${ok}/${tot} · R$ <input class="val-in" style="width:76px" type="number" min="0" step="10" value="${valorOS(o)||''}" placeholder="valor" data-change="os-valor" data-id="${esc(o.id)}" title="Valor do serviço (padrão da tabela de serviços)" aria-label="Valor da OS ${esc(o.id)}"></span>
+      <span class="meta">Checklist ${ok}/${tot}${pecasVal(o)?` · peças ${BRL0(pecasVal(o))}`:''} · mão de obra R$ <input class="val-in" style="width:76px" type="number" min="0" step="10" value="${valorOS(o)||''}" placeholder="valor" data-change="os-valor" data-id="${esc(o.id)}" title="Valor do serviço (padrão da tabela de serviços)" aria-label="Valor da OS ${esc(o.id)}"></span>
       <div class="row">
         ${o.id.startsWith('PACE')?`<button class="btn btn-sm" data-action="pass-open" data-id="${esc(o.id)}">Passaporte</button>`:''}
         ${o.status==='Pronta'?waBtn(o.tel,osMsg(o),'Avisar cliente')+`<button class="btn btn-sm btn-primary" data-action="os-deliver" data-id="${esc(o.id)}">Entregar</button>`:''}
@@ -2099,6 +2156,50 @@ function renderOficina(){
   </section>
   ${ofReceitaHTML()}`;
 }
+/* ---------- Peças: catálogo, estoque mínimo, pedido de compra (sem custos: só preço de venda) ---------- */
+const PECA_CAT=['Pneu / câmara','Freio','Elétrica','Bateria','Transmissão','Acessório','Outro'];
+const pecasVal=o=>sum((o.pecas||[]).filter(x=>!x.gar),x=>(Number(x.preco)||0)*(Number(x.qtd)||1));
+const pecasGar=o=>sum((o.pecas||[]).filter(x=>x.gar),x=>(Number(x.preco)||0)*(Number(x.qtd)||1));
+const totalOS=o=>valorOS(o)+pecasVal(o);
+function pecaBaixa(o){(o.pecas||[]).forEach(x=>{const p=(S.pecas||[]).find(k=>k.id===x.id);if(p)p.estoque=Math.max(0,(Number(p.estoque)||0)-(Number(x.qtd)||1))})}
+function pedidoText(){const L=(S.pecas||[]).filter(p=>(Number(p.estoque)||0)<=(Number(p.minimo)||0));
+  return `Pedido de peças · PACE Estreito · ${ddmm(today())}\n`+L.map(p=>`• ${p.nome}: ${Math.max(1,(Number(p.minimo)||1)*2-(Number(p.estoque)||0))} un. (estoque ${p.estoque||0}, mínimo ${p.minimo||0})`).join('\n')}
+function renderPecasOf(){const P=(S.pecas||[]).slice().sort((a,b)=>a.nome.localeCompare(b.nome)),baixo=P.filter(p=>(Number(p.estoque)||0)<=(Number(p.minimo)||0));
+  const mes=today().slice(0,7),ent=S.os.filter(o=>o.status==='Entregue'&&(o.saida||'').slice(0,7)===mes),gar={};
+  S.os.filter(o=>o.status==='Entregue').forEach(o=>{const v=pecasGar(o);if(v){const k=o.modelo||'—';gar[k]=(gar[k]||0)+v}});
+  return `<div class="tiles">
+    <div class="card"><div class="l">Peças cadastradas</div><div class="v">${P.length}</div></div>
+    <div class="card"><div class="l">Abaixo do mínimo</div><div class="v ${baixo.length?'red':''}">${baixo.length}</div></div>
+    <div class="card"><div class="l">Peças vendidas no mês</div><div class="v">${BRL0(sum(ent,pecasVal))}</div></div>
+  </div>
+  ${baixo.length?`<section class="d-sec"><h3>Pedido de compra <span class="count late">${baixo.length}</span><span class="sp"></span><button class="btn btn-sm" data-action="ped-copy" style="text-transform:none;font-family:Inter">Copiar pedido p/ fornecedor</button></h3>
+    <div class="meta">Sugestão: repor até o dobro do mínimo.</div></section>`:''}
+  <section class="d-sec"><h3>Estoque de peças</h3><div class="stack">${P.map(p=>{const low=(Number(p.estoque)||0)<=(Number(p.minimo)||0);return `<div class="card pc-r ${low?'is-late':''}">
+    <div class="grow"><b>${esc(p.nome)}</b> <span class="meta">${esc(p.cat||'')} · ${BRL(Number(p.preco)||0)}</span></div>
+    <div class="row" style="gap:6px;align-items:center"><button class="btn btn-sm" data-action="pc-q" data-id="${esc(p.id)}" data-v="-1" aria-label="Menos">−</button><b class="mono" style="min-width:28px;text-align:center">${p.estoque||0}</b><button class="btn btn-sm" data-action="pc-q" data-id="${esc(p.id)}" data-v="1" aria-label="Mais">+</button>
+      <span class="meta">mín.</span><input class="val-in" style="width:44px" type="number" min="0" value="${p.minimo||0}" data-change="pc-min" data-id="${esc(p.id)}" aria-label="Estoque mínimo">${delBtn('pecas',p.id)}</div></div>`}).join('')||'<div class="empty">Nenhuma peça cadastrada.</div>'}</div>
+    <details class="inline" style="margin-top:8px"><summary>+ Cadastrar peça</summary><form data-form="peca-new" class="form-grid">
+      <label class="field full">Nome<input name="nome" required maxlength="60" placeholder="Ex.: Pastilha de freio dianteira"></label>
+      <label class="field">Categoria<select name="cat">${opt(PECA_CAT,'Freio')}</select></label>
+      <label class="field">Preço de venda (R$)<input name="preco" type="number" min="0" step="0.01" required></label>
+      <label class="field">Estoque atual<input name="estoque" type="number" min="0" value="0"></label>
+      <label class="field">Estoque mínimo<input name="minimo" type="number" min="0" value="2"></label>
+      <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary" type="submit">Cadastrar</button></div></form>
+      <p class="note" style="padding:0 12px 12px">Só o preço de venda: custos de compra não entram no escritório.</p></details>
+  </section>
+  ${Object.keys(gar).length?`<section class="d-sec"><h3>Custo de garantia por modelo</h3><div class="stack">${Object.entries(gar).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="card row between" style="padding:8px 12px"><b>${esc(k)}</b><span class="mono">${BRL0(v)}</span></div>`).join('')}</div><p class="note">Peças trocadas em garantia, pelo preço de venda (não cobrado do cliente).</p></section>`:''}`}
+function osPecasHTML(o){const P=S.pecas||[],L=o.pecas||[];
+  return `<div class="os-pc">${L.map((x,i)=>`<span class="tagp ${x.gar?'t-plan':'t-muted'}">${esc(x.nome)} ×${x.qtd}${x.gar?' · garantia':` · ${BRL0(x.preco*x.qtd)}`}<button class="x" data-action="os-pc-x" data-id="${esc(o.id)}" data-i="${i}" aria-label="Remover">×</button></span>`).join('')}
+    ${P.length?`<select class="inp-sm" data-change="os-pc-add" data-id="${esc(o.id)}" aria-label="Adicionar peça"><option value="">+ peça…</option>${P.map(p=>`<option value="${esc(p.id)}">${esc(p.nome)} (${p.estoque||0})</option>`).join('')}</select><label class="chk" style="font-size:11.5px"><input type="checkbox" data-change="os-pc-gar" data-id="${esc(o.id)}" ${UI.pcGar===o.id?'checked':''}><span>em garantia</span></label>`:''}</div>`}
+
+function diariasMes(){const mes=today().slice(0,7),by={};S.agenda.filter(a=>a.status!=='Cancelado'&&a.status!=='Faltou'&&a.data.slice(0,7)===mes).forEach(a=>{by[a.data]=(by[a.data]||0)+1});
+  const d=Object.keys(by).length;return{dias:d,media:d?Math.round(Object.values(by).reduce((x,y)=>x+y,0)/d*10)/10:0}}
+/* dias sugeridos para a oficina: primeiro os que já têm manutenção agendada (concentra a diária), depois os livres */
+function diasOficina(n,from){const out=[];for(let i=from||0;i<21;i++){const dt=rel(i),l=livres(dt);if(l.length)out.push({dt,l,n:agendaDia(dt).length})}
+  return out.sort((a,b)=>(b.n>0)-(a.n>0)||a.dt.localeCompare(b.dt)).slice(0,n)}
+function ofRisco(){const mes=today().slice(0,7);let n=0;S.passaportes.forEach(p=>{const i=csInfo(p);if(!i.prox||i.prox.slice(0,7)!==mes)return;
+  const ag=S.agenda.some(a=>a.status!=='Cancelado'&&a.data>=today()&&(a.pid===p.id));if(!ag&&i.prox>=today().slice(0,8)+'01')n++});return{n,v:n*precoServ('Manutenção Preventiva')}}
+function ofTicket(ent){const g={};ent.forEach(o=>{const k=servTipo(o.servico);(g[k]=g[k]||[]).push(_tot(o))});return Object.entries(g).map(([k,v])=>({k,n:v.length,m:v.reduce((a,b)=>a+b,0)/v.length}))}
 function ofReceitaHTML(){
   const o=oficinaMes(),meta=S.cfg.metaOficina||0,p=meta?o.real/meta:0,pp=meta?o.previsto/meta:0;
   const mes=new Date().toLocaleDateString('pt-BR',{month:'long'});
@@ -2107,13 +2208,22 @@ function ofReceitaHTML(){
     <div class="card stack" style="gap:8px">
       <div class="row between" style="align-items:baseline"><span class="mono" style="font-size:20px;font-weight:700">${BRL0(o.real)}</span><span class="meta">previsto <b class="mono" style="color:var(--neon)">${BRL0(o.previsto)}</b>${meta?` · meta ${BRL0(meta)}`:''}</span></div>
       ${meta?`<div class="pixbar" title="${PCT(p)} realizado · ${PCT(pp)} com a previsão">${pixbar(p)}</div>`:''}
+      ${(()=>{const mn=S.cfg.ofMin,mx=S.cfg.ofMax;if(mn==null||mx==null)return `<button type="button" class="btn btn-sm" data-action="of-faixa" style="align-self:flex-start">Definir faixa de lucro da oficina</button>`;const base=sum(o.ent.filter(x=>servTipo(x.servico)!=='Outro'),valorOS),prev=base+sum(o.abertas.filter(x=>servTipo(x.servico)!=='Outro'),valorOS)+sum(o.fut.filter(a=>servTipo(a.servico)!=='Outro'),a=>precoServ(a.servico));
+        return `<div class="of-split"><span>Manutenções (bruto) <b class="mono">${BRL0(base)}</b></span><span>Lucro da oficina (<input class="val-in of-pin" type="number" min="0" max="100" value="${mn}" data-change="of-min" aria-label="Lucro mínimo %" title="Clique para editar">–<input class="val-in of-pin" type="number" min="0" max="100" value="${mx}" data-change="of-max" aria-label="Lucro máximo %" title="Clique para editar">%) <b class="mono" style="color:var(--neon)">${BRL0(base*mn/100)} a ${BRL0(base*mx/100)}</b></span></div><div class="meta" style="font-size:11px;margin-top:-4px">Previsto no mês: ${BRL0(prev*mn/100)} a ${BRL0(prev*mx/100)} de lucro sobre ${BRL0(prev)} em manutenções preventivas e avançadas.</div>`})()}
+      ${(()=>{const mes=today().slice(0,7),ag=S.agenda.filter(a=>a.status!=='Cancelado'&&a.status!=='Faltou'&&a.data.slice(0,7)===mes),dias=new Set(ag.map(a=>a.data)).size,dv=S.cfg.diaria||0;if(!ag.length)return '';
+        return `<div class="of-dia"><span>Mecânico: <b class="mono">${dias}</b> diária${dias===1?'':'s'} × R$ <input class="val-in" style="width:56px" type="number" min="0" step="10" value="${dv}" data-change="diaria" aria-label="Valor da diária"> = <b class="mono">${BRL0(dias*dv)}</b></span><span class="meta">se fosse 1 por dia: ${BRL0(ag.length*dv)} · <b style="color:#8fe8ad">economia ${BRL0((ag.length-dias)*dv)}</b></span></div>`})()}
+      ${(()=>{const d=diariasMes();return d.dias?`<div class="of-dia"><span><b class="mono">${d.dias}</b> diária${d.dias===1?'':'s'} no mês</span><span><b class="mono">${String(d.media).replace('.',',')}</b> manutenç${d.media===1?'ão':'ões'} por diária</span><span class="meta">${d.media<3?'Concentre mais manutenções no mesmo dia para diluir a diária do profissional.':'Boa concentração: a diária está bem aproveitada.'}</span></div>`:''})()}
+      ${o.pc?`<div class="meta">Mão de obra ${BRL0(o.mo)} · peças ${BRL0(o.pc)}</div>`:''}
       <div class="stack" style="gap:2px">
         ${linha('Entregues',`${o.ent.length} OS`,o.real)}
         ${linha('Na bancada',`${o.abertas.length} OS`,o.bancada)}
         ${linha('Agendadas até o fim do mês',`${o.fut.length}`,o.agFut)}
+        ${(()=>{const r=ofRisco();return r.n?`<div class="row between of-ln of-risk"><span>Receita em risco <small class="meta" style="display:block">manutenções da garantia que vencem no mês sem agendamento</small></span><span class="meta">${r.n}</span><b class="mono">${BRL0(r.v)}</b></div>${r.n?`<button class="btn btn-sm" data-action="tab" data-v="pass" style="align-self:flex-start;margin-top:4px">Convidar em Pós-venda</button>`:''}`:''})()}
       </div>
+      ${(()=>{const t=ofTicket(o.ent);return t.length?`<div class="of-tk">${t.map(x=>`<span><small class="meta">${esc(x.k)}</small><b class="mono">${BRL0(x.m)}</b><small class="meta">${x.n} OS</small></span>`).join('')}</div><div class="meta" style="font-size:11px;margin-top:-4px">Ticket médio por serviço no mês (mão de obra + peças)</div>`:''})()}
       <details class="of-precos"><summary>Valores dos serviços</summary>
         <div class="stack" style="gap:6px;margin-top:8px">${SERVICOS.map(sv=>`<label class="row between of-ln"><span>${esc(sv)}<small class="meta" style="display:block">${esc(SERV_DESC[sv]||'')}</small></span><span class="meta" style="white-space:nowrap">R$ <input class="val-in" style="width:80px" type="number" min="0" step="10" value="${Number((S.cfg.servPreco||{})[sv])||''}" placeholder="0" data-change="serv-preco" data-s="${esc(sv)}" aria-label="Valor ${esc(sv)}"></span></label>`).join('')}</div>
+        <label class="row between of-ln" style="margin-top:6px"><span>Lucro da oficina sobre preventiva e avançada<small class="meta" style="display:block">faixa estimada, com o profissional pago por diária</small></span><span class="meta" style="white-space:nowrap"><input class="val-in" style="width:44px" type="number" min="0" max="100" value="${S.cfg.ofMin??''}" data-change="of-min" aria-label="Mínimo"> a <input class="val-in" style="width:44px" type="number" min="0" max="100" value="${S.cfg.ofMax??''}" data-change="of-max" aria-label="Máximo"> %</span></label>
         <p class="note">A previsão usa estes valores para as manutenções agendadas. Em cada OS da bancada dá para ajustar o valor.</p>
       </details>
     </div>
@@ -2212,6 +2322,172 @@ function csText(list,tel){return list.map(({p,i})=>[p.id,first(p.cliente),p.mode
 function csCSV(list,tel){const h=['PACE ID','Primeiro nome','Modelo','Proxima manutencao','Garantia'].concat(tel?['Telefone']:[]);
   const esc2=v=>`"${String(v??'').replace(/"/g,'""')}"`;
   return '﻿'+[h,...list.map(({p,i})=>[p.id,first(p.cliente),p.modelo,i.prox?ddmm(i.prox)+'/'+i.prox.slice(0,4):'',({ativa:'Ativa',atencao:'Manutenção chegando',perdida:'Perdida',cumprida:'Cumprida',anulada:'Anulada'})[i.estado]||i.estado].concat(tel?[fmtTel(p.tel||'')]:[]))].map(r=>r.map(esc2).join(';')).join('\r\n')}
+/* =========================================================
+   SATISFAÇÃO (NPS) · pós-venda e pós-oficina
+   ========================================================= */
+function npsQueue(tipo,ref,nome,tel,modelo){S.nps=S.nps||[];if(!ref||S.nps.some(x=>x.ref===ref))return;
+  S.nps.push({id:uid(),tipo,ref,nome:first(nome||''),tel:digits(tel||''),modelo:modelo||'',criado:today(),envio:rel(tipo==='venda'?3:1),st:'pendente'})}
+function npsMsg(x){const n=x.nome?`, ${x.nome}`:'';return x.tipo==='venda'
+  ?`Oi${n}! ${quem()}. Já faz uns dias que sua ${x.modelo||'bike'} chegou: como está sendo? De 0 a 10, quanto você recomendaria a PACE para um amigo? Sua resposta ajuda muito a gente.`
+  :`Oi${n}! Aqui é da oficina PACE Estreito. Como ficou sua ${x.modelo||'bike'} depois do serviço? De 0 a 10, quanto você recomendaria a nossa oficina para um amigo?`}
+function npsReviewMsg(x){const link=(S.cfg.googleReview||'').trim();const n=x.nome?`, ${x.nome}`:'';
+  return `Que bom saber${n}! Se puder, deixa sua avaliação no Google: leva 1 minuto e ajuda muito a PACE a crescer.${link?' '+link:''} E se tiver alguém pensando em uma elétrica, pode indicar: a gente cuida bem! Quem vende, cuida.`}
+function npsScore(list){const r=list.filter(x=>x.nota!=null);if(!r.length)return null;const p=r.filter(x=>x.nota>=9).length,d=r.filter(x=>x.nota<=6).length;return{n:r.length,score:Math.round((p-d)/r.length*100),p,d}}
+const npsCls=n=>n>=9?'prom':n>=7?'neut':'detr';
+function npsHTML(){const L=S.nps||[],t=today();
+  const pend=L.filter(x=>x.st==='pendente').sort((a,b)=>a.envio.localeCompare(b.envio)),env=L.filter(x=>x.st==='enviada'),
+    det=L.filter(x=>x.nota!=null&&x.nota<=6&&!x.tratado),prom=L.filter(x=>x.nota>=9&&!x.review),sc=npsScore(L.filter(x=>(x.resp||'').slice(0,7)===t.slice(0,7)));
+  const row=(x,acts)=>`<div class="card nps-r"><div class="grow"><b>${esc(x.nome||'Cliente')}</b> <span class="meta">${x.tipo==='venda'?'compra':'oficina'} · ${esc(x.modelo||'')}${x.nota!=null?` · nota <b class="nps-${npsCls(x.nota)}">${x.nota}</b>`:''}${x.st==='pendente'&&x.envio>t?` · enviar a partir de ${ddmm(x.envio)}`:''}</span></div><div class="row" style="gap:5px;flex-wrap:wrap">${acts}</div></div>`;
+  const notas=x=>`<select class="inp-sm" data-change="nps-nota" data-id="${esc(x.id)}" aria-label="Nota recebida"><option value="">nota…</option>${Array.from({length:11},(_,i)=>`<option>${i}</option>`).join('')}</select>`;
+  const blk=(t2,arr,fn,cls='')=>arr.length?`<div class="nps-blk ${cls}"><div class="meta nps-h">${t2} · ${arr.length}</div><div class="stack" style="gap:6px">${arr.slice(0,8).map(fn).join('')}</div></div>`:'';
+  return `<section class="d-sec"><h3>Satisfação (NPS) <span class="count">${pend.filter(x=>x.envio<=t).length+env.length+det.length}</span><span class="sp"></span>${sc?`<span class="tagp ${sc.score>=50?'t-soon':sc.score>=0?'t-plan':'t-late'}">NPS do mês ${sc.score} · ${sc.n} resp.</span>`:''}</h3>
+    ${blk('Insatisfeitos para tratar',det,x=>row(x,`${x.tel?waBtn(x.tel,`Oi${x.nome?', '+x.nome:''}! Obrigado pela sinceridade. Quero entender o que não foi bem e resolver: posso te ligar hoje?`,'Falar agora'):''}<button class="btn btn-sm" data-action="nps-ok" data-id="${esc(x.id)}">Tratado</button>`),'late')}
+    ${blk('Promotores: pedir avaliação e indicação',prom,x=>row(x,`${x.tel?waBtn(x.tel,npsReviewMsg(x),'Pedir avaliação',`data-nps-rev="${esc(x.id)}"`):''}<button class="btn btn-sm" data-action="nps-rev" data-id="${esc(x.id)}">Feito</button>`))}
+    ${blk('Para enviar a pesquisa',pend,x=>row(x,`${x.tel?waBtn(x.tel,npsMsg(x),'Enviar pesquisa',`data-nps-env="${esc(x.id)}"`):'<span class="meta">sem telefone</span>'}<button class="btn btn-sm" data-action="nps-del" data-id="${esc(x.id)}" title="Não enviar">×</button>`))}
+    ${blk('Aguardando resposta',env,x=>row(x,`${notas(x)}<button class="btn btn-sm" data-action="nps-del" data-id="${esc(x.id)}" title="Sem resposta">×</button>`))}
+    ${!L.length?'<div class="empty">As pesquisas aparecem aqui sozinhas: 3 dias depois de cada venda e 1 dia depois de cada entrega da oficina.</div>':''}
+    <details class="inline" style="margin-top:8px"><summary>Link de avaliação no Google</summary><div style="padding:12px"><label class="field">Link (Google Meu Negócio → Pedir avaliações)<input class="inp-sm" type="url" data-change="g-review" value="${esc(S.cfg.googleReview||'')}" placeholder="https://g.page/r/..."></label></div></details>
+  </section>`}
+
+/* =========================================================
+   PAINEL DO SÓCIO · visão de RevOps em uma tela
+   ========================================================= */
+function revRange(p,off){const t=new Date();t.setHours(12,0,0,0);
+  if(p==='mes'){const d=t.getDate(),a=new Date(t.getFullYear(),t.getMonth()-off,1),b=new Date(t.getFullYear(),t.getMonth()-off,Math.min(d,new Date(t.getFullYear(),t.getMonth()-off+1,0).getDate()));return[iso(a),iso(b)]}
+  const b=new Date(t);b.setDate(t.getDate()-7*off);const a=new Date(b);a.setDate(b.getDate()-6);return[iso(a),iso(b)]}
+function revData(a,b){const inR=d=>d&&d>=a&&d<=b;
+  const leads=S.leads.filter(l=>inR(l.criado)),reach=k=>leads.filter(l=>maxStage(l)>=FUNIL.indexOf(k)).length;
+  const vendas=S.vendas.filter(v=>inR(v.data)),fat=sum(vendas,valorVenda);
+  let trc=0,trf=0;S.leads.forEach(l=>(l.trH||[]).forEach(h=>{if(inR(h.d)){if(h.st==='Compareceu')trc++;else if(h.st==='Faltou')trf++}}));
+  const trAg=S.leads.filter(l=>(l.hist||[]).some(h=>h.e==='Test Ride'&&inR(h.d))).length;
+  const tp=tprStats(a,b),osE=S.os.filter(o=>o.status==='Entregue'&&inR(o.saida)),nps=npsScore((S.nps||[]).filter(x=>inR(x.resp)));
+  const av=S.agenda.filter(x=>x.tipo==='avulso'&&inR(x.data)).length,avL=S.leads.filter(l=>l.origem==='Oficina'&&inR(l.criado)).length;
+  return{leads:leads.length,contato:reach('Contato'),proposta:reach('Proposta'),tr:reach('Test Ride'),venda:reach('Fechado'),vendas:vendas.length,fat,ticket:vendas.length?fat/vendas.length:0,
+    tpr:tp?tp.media:null,tprOk:tp?tp.ok/tp.n:null,trAg,trc,trf,show:trc+trf?trc/(trc+trf):null,trConv:trc?S.leads.filter(l=>(l.trH||[]).some(h=>h.st==='Compareceu'&&inR(h.d))&&l.etapa==='Fechado').length/trc:null,
+    of:sum(osE,_tot),osN:osE.length,nps,av,avL,semPerfil:leads.filter(l=>l.etapa==='Sem Perfil').length,
+    ind:vendas.filter(v=>v.ind).length,aval:vendas.filter(v=>v.aval).length,osPace:osE.filter(o=>/^PACE/.test(o.id)).length,rec:fat+sum(osE,_tot)}}
+const PIPE_P={Novo:.05,Contato:.1,Proposta:.25,'Test Ride':.6};
+function pipeline(){const L=S.leads.filter(l=>!l.arq&&PIPE_P[l.etapa]!=null),by={};L.forEach(l=>{const v=(MODELOS[l.modelo]||{}).pix||0;const x=by[l.etapa]||(by[l.etapa]={n:0,v:0,w:0});x.n++;x.v+=v;x.w+=v*PIPE_P[l.etapa]});
+  return{by,total:sum(Object.values(by),'v'),pond:sum(Object.values(by),'w')}}
+function csSaude(){const A=S.passaportes.map(p=>csInfo(p)),n=A.length,emDia=A.filter(i=>['ativa','atencao','cumprida'].includes(i.estado)&&!(i.n!=null&&i.n<0)).length;
+  const rec90=S.passaportes.reduce((t,p)=>t+((p.revs&&p.revs.length?p.revs.filter(r=>r.st==='agendada').map(r=>r.d):[csInfo(p).prox]).filter(d=>d&&d>=today()&&diffDays(d)<=90).length),0)*precoServ('Manutenção Preventiva');
+  return{n,emDia,pct:n?emDia/n:null,risco:A.filter(i=>i.n!=null&&i.n<0).length,perdida:A.filter(i=>['perdida','anulada'].includes(i.estado)).length,rec90}}
+/* =========================================================
+   LOJAS · cada loja é um perfil; estoque, oficina, PACE ID, catálogo e regras são da rede.
+   A loja ativa fica no nível de cima de S (o código existente continua igual);
+   as outras ficam guardadas em S.redeLojas[id].
+   ========================================================= */
+const LOJA_ARR=['leads','vendas','contas','admin','campanhas','adsHist','nps','inbox'];
+const LOJA_OBJ=['aval','diaHist','dias','fechAI'];
+const LOJA_CFG=['meta','metaVendas','metaAval','metaOficina','saldo','custoFixo','vendedor','trSlots','trFechado','trExc','tprAlert','googleReview','cad','sla','rotina','metaContatos','metaTR','lastBackup'];
+const lojaAtual=()=>(S.lojas||[]).find(l=>l.id===S.lojaAtual)||(S.lojas||[])[0]||{id:'estreito',nome:'Loja Estreito',cidade:'Florianópolis'};
+const lojaNome=id=>((S.lojas||[]).find(l=>l.id===id)||{}).nome||id||'—';
+const multiLoja=()=>(S.lojas||[]).length>1;
+function lojaPack(){const o={cfg:{}};LOJA_ARR.forEach(k=>o[k]=S[k]||[]);LOJA_OBJ.forEach(k=>{if(S[k]!==undefined)o[k]=S[k]});LOJA_CFG.forEach(k=>{if(S.cfg[k]!==undefined)o.cfg[k]=S.cfg[k]});return o}
+function lojaUnpack(o){LOJA_ARR.forEach(k=>S[k]=Array.isArray(o[k])?o[k]:[]);LOJA_OBJ.forEach(k=>{if(o[k]!==undefined)S[k]=o[k];else delete S[k]});if(!S.aval)S.aval={};
+  LOJA_CFG.forEach(k=>{if(o.cfg&&o.cfg[k]!==undefined)S.cfg[k]=o.cfg[k]})}
+function trocarLoja(id,silent){if(id===S.lojaAtual||!(S.lojas||[]).some(l=>l.id===id))return;S.redeLojas=S.redeLojas||{};
+  S.redeLojas[S.lojaAtual]=lojaPack();const alvo=S.redeLojas[id]||{cfg:{}};delete S.redeLojas[id];lojaUnpack(alvo);S.lojaAtual=id;
+  if(!silent){UI.etapa='Todos';UI.q='';UI.openLead=null;try{localStorage.setItem('pace-hq-loja',id)}catch(e){}syncLojaBtn();refresh();loadWX();clock();toast(`Agora em ${lojaNome(id)}`)}}
+function comLoja(id,fn){const cur=S.lojaAtual;if(id===cur)return fn();trocarLoja(id,true);try{return fn()}finally{trocarLoja(cur,true)}}
+function novaLoja(nome,cidade){const id=normTxt(nome).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'loja-'+((S.lojas||[]).length+1);
+  if((S.lojas||[]).some(l=>l.id===id)){toast('Já existe uma loja com esse nome');return null}
+  const base=lojaPack();const cfg={};LOJA_CFG.forEach(k=>{if(['saldo','lastBackup','googleReview'].includes(k))return;if(base.cfg[k]!==undefined)cfg[k]=JSON.parse(JSON.stringify(base.cfg[k]))});cfg.saldo=0;
+  S.lojas.push({id,nome:nome.trim(),cidade:(cidade||'').trim(),criada:today()});(S.redeLojas=S.redeLojas||{})[id]={leads:[],vendas:[],contas:[],admin:[],campanhas:[],adsHist:[],nps:[],inbox:[],aval:{},cfg};return id}
+function transferirLead(id,dest){const l=findLead(id);if(!l||dest===S.lojaAtual)return;S.leads=S.leads.filter(x=>x.id!==id);
+  (l.log=l.log||[]).push({d:today(),r:`transferido de ${lojaNome(S.lojaAtual)} para ${lojaNome(dest)}`});l.de=S.lojaAtual;
+  const R=(S.redeLojas=S.redeLojas||{});R[dest]=R[dest]||{leads:[],cfg:{}};(R[dest].leads=R[dest].leads||[]).unshift(l);UI.openLead=null;toast(`${first(l.nome)||'Lead'} transferido para ${lojaNome(dest)}`);refresh()}
+function syncLojaBtn(){const b=$('#loja-btn');if(!b)return;const l=lojaAtual();b.innerHTML=`<b>${esc(l.nome)}</b><span>${esc(l.cidade||'')}${multiLoja()?` · ${S.lojas.length} lojas`:''}</span><i aria-hidden="true">▾</i>`}
+function lojaMenuHTML(){const L=S.lojas||[];return `<div class="lj-pop">
+  ${L.map(l=>`<button type="button" data-action="loja-set" data-v="${esc(l.id)}" aria-pressed="${l.id===S.lojaAtual}"><b>${esc(l.nome)}</b><small>${esc(l.cidade||'')}</small></button>`).join('')}
+  ${L.length>1?`<button type="button" data-action="loja-rede"><b>Visão da rede</b><small>RevOps de todas as lojas</small></button>`:''}
+  <hr><span class="lj-lbl">Nova loja</span><form data-form="loja-new" class="lj-new"><input class="inp-sm" name="nome" required maxlength="40" placeholder="Nome da nova loja"><input class="inp-sm" name="cidade" maxlength="40" placeholder="Bairro, cidade"><button class="btn btn-sm btn-primary" type="submit">+ Criar loja</button><small class="lj-hint">O clima da loja é ajustado sozinho pelo bairro e cidade.</small></form>
+  <span class="lj-lbl">Editar ${esc(lojaAtual().nome)}</span><form data-form="loja-ren" class="lj-new"><input class="inp-sm" name="nome" maxlength="40" value="${esc(lojaAtual().nome)}" aria-label="Nome da loja atual"><input class="inp-sm" name="cidade" maxlength="40" value="${esc(lojaAtual().cidade||'')}" aria-label="Cidade da loja atual"><label class="lj-f">Local do clima<input class="inp-sm" name="local" maxlength="80" value="${esc(lojaAtual().local||'')}" placeholder="Automático pelo bairro e cidade"></label><div id="lj-geo" class="lj-geo" hidden></div><button class="btn btn-sm" type="submit">Salvar loja atual</button></form>
+  </div>`}
+/* visão da rede (RevOps consolidado) */
+function redeData(a,b){return (S.lojas||[]).map(l=>comLoja(l.id,()=>{const R=revData(a,b),m=midiaResumo(),pp=pipeline();return{l,R,inv:m.inv,cac:m.cac,pond:pp.pond,meta:(S.cfg.meta||0),fatMes:M().fat}}))}
+function redeHTML(){const P=UI.revP||'semana',[a,b]=revRange(P,0),D=redeData(a,b),T=k=>D.reduce((s2,x)=>s2+(Number(typeof k==='function'?k(x):x.R[k])||0),0);
+  const col=(lbl,f)=>`<tr><td>${lbl}</td>${D.map(x=>`<td class="num">${f(x)}</td>`).join('')}<td class="num"><b>${f(null)}</b></td></tr>`;
+  const v=(x,k,fmt=String)=>fmt(x?x.R[k]:T(k));
+  return `<section class="d-sec"><h3>Rede · ${D.length} lojas <span class="sp"></span><span class="meta" style="text-transform:none;font-family:Inter">${ddmm(a)} a ${ddmm(b)}</span></h3>
+  <div class="card tbl-wrap"><table class="rede-t"><thead><tr><th></th>${D.map(x=>`<th class="num">${esc(x.l.nome)}</th>`).join('')}<th class="num">Rede</th></tr></thead><tbody>
+    ${col('Receita (vendas + oficina)',x=>BRL0(x?x.R.rec:T('rec')))}
+    ${col('Vendas',x=>v(x,'vendas'))}
+    ${col('Faturamento de vendas',x=>BRL0(x?x.R.fat:T('fat')))}
+    ${col('Leads novos',x=>v(x,'leads'))}
+    ${col('Test rides (chegaram)',x=>v(x,'tr'))}
+    ${col('Comparecimento',x=>x?(x.R.show==null?'—':PCT(x.R.show)):(()=>{const c=T('trc'),f=T('trf');return c+f?PCT(c/(c+f)):'—'})())}
+    ${col('Pipeline ponderado',x=>BRL0(x?x.pond:T(y=>y.pond)))}
+    ${col('Investido em anúncios',x=>BRL0(x?x.inv:T(y=>y.inv)))}
+    ${col('Custo por venda',x=>x?(x.cac?BRL0(x.cac):'—'):(()=>{const i=T(y=>y.inv),vv=D.reduce((s2,y)=>s2+(y.inv?y.R.vendas:0),0);return vv?BRL0(i/vv):'—'})())}
+    ${col('NPS',x=>x?(x.R.nps?x.R.nps.score:'—'):'—')}
+  </tbody></table></div>
+  <p class="note">Oficina, estoque e carteira PACE ID são da rede: aparecem consolidados nas seções abaixo.</p></section>`}
+
+function renderRevOps(){const P=UI.revP||'semana',[a,b]=revRange(P,0),[a2,b2]=revRange(P,1),R=revData(a,b),Q=revData(a2,b2),m=midiaResumo();
+  const cart=S.passaportes.map(p=>csInfo(p)),c30=cart.filter(i=>i.n!=null&&i.n>=0&&i.n<=30).length,cAt=cart.filter(i=>i.n!=null&&i.n<0).length;
+  const dl=(x,y,inv,fmt)=>{if(x==null||y==null||x===y)return '<small class="rv-d">=</small>';const up=x>y,good=inv?!up:up;return `<small class="rv-d ${good?'ok':'bad'}">${up?'▲':'▼'} ${fmt?fmt(Math.abs(x-y)):Math.abs(Math.round((x-y)*10)/10)}</small>`};
+  const pc=v=>v==null?'—':PCT(v);
+  const tile=(l,v,d,sub='')=>`<div class="rv-t"><span>${l}</span><b>${v}</b>${d}${sub?`<em>${sub}</em>`:''}</div>`;
+  const conv=(x,y)=>y?x/y:null;
+  const steps=[['Lead',R.leads,Q.leads],['Contato',R.contato,Q.contato],['Proposta',R.proposta,Q.proposta],['Test ride',R.tr,Q.tr],['Venda',R.venda,Q.venda]];
+  return `${multiLoja()?`<div class="row between" style="margin-bottom:8px"><div class="toggle" role="group"><button type="button" data-action="rev-rede" aria-pressed="${!UI.revRede}">${esc(lojaAtual().nome)}</button><button type="button" data-action="rev-rede" aria-pressed="${!!UI.revRede}">Rede (todas)</button></div></div>`:''}${multiLoja()&&UI.revRede?redeHTML():''}<div class="row between" style="margin-bottom:10px;flex-wrap:wrap;gap:8px"><div class="toggle" role="group"><button type="button" data-action="rev-p" data-v="semana" aria-pressed="${P==='semana'}">7 dias</button><button type="button" data-action="rev-p" data-v="mes" aria-pressed="${P==='mes'}">Mês</button></div>
+    <span class="meta">${ddmm(a)} a ${ddmm(b)} · comparado com ${ddmm(a2)} a ${ddmm(b2)}</span><button class="btn btn-sm" data-action="rev-copy">Copiar para os sócios</button></div>
+  ${(()=>{const pp=pipeline(),mm=M(),metaT=(S.cfg.meta||0)+(S.cfg.metaOficina||0),realM=mm.fat+oficinaMes().real;return `<section class="d-sec"><h3>Receita</h3><div class="rv-g">
+    ${tile('Receita total',BRL0(R.rec),dl(R.rec,Q.rec,false,BRL0),`vendas ${BRL0(R.fat)} · oficina ${BRL0(R.of)}`)}
+    ${tile('Meta do mês',metaT?PCT(realM/metaT):'—','',metaT?`${BRL0(realM)} de ${BRL0(metaT)} (vendas + oficina)`:'defina as metas em Metas')}
+    ${tile('Pipeline ponderado',BRL0(pp.pond),'',`${BRL0(pp.total)} em aberto no preço PIX`)}
+    ${tile('Receita recorrente prevista',BRL0(csSaude().rec90),'','manutenções da carteira nos próximos 90 dias')}
+  </div>
+  <div class="rv-pipe">${['Novo','Contato','Proposta','Test Ride'].map(e=>{const x=pp.by[e]||{n:0,v:0,w:0};return `<div><span>${e==='Novo'?'Lead':e} · ${Math.round(PIPE_P[e]*100)}%</span><b class="mono">${BRL0(x.w)}</b><small>${x.n} lead${x.n===1?'':'s'} · ${BRL0(x.v)}</small></div>`}).join('')}</div>
+  <p class="note">Pipeline ponderado = valor PIX de cada lead ativo × chance de fechar na etapa (Lead 5%, Contato 10%, Proposta 25%, Test ride 60%).</p></section>`})()}
+  <section class="d-sec"><h3>Aquisição e vendas</h3><div class="rv-g">
+    ${tile('Leads novos',R.leads,dl(R.leads,Q.leads),R.semPerfil?`${R.semPerfil} sem perfil`:'')}
+    ${tile('1ª resposta (TPR)',R.tpr==null?'—':String(R.tpr).replace('.',',')+' min',dl(R.tpr,Q.tpr,true),R.tprOk!=null?`${pc(R.tprOk)} em até 2 min`:'')}
+    ${tile('Vendas',R.vendas,dl(R.vendas,Q.vendas),BRL0(R.fat))}
+    ${tile('Ticket médio',R.ticket?BRL0(R.ticket):'—',dl(R.ticket,Q.ticket,false,BRL0))}
+  </div>
+  <div class="rv-f">${steps.map((s,i)=>`<div class="rv-s"><span>${s[0]}</span><b>${s[1]}</b>${i?`<small>${pc(conv(s[1],steps[i-1][1]))}</small>`:'<small>&nbsp;</small>'}</div>`).join('<i>›</i>')}</div>
+  <p class="note">Funil dos leads que entraram no período: quantos chegaram a cada etapa e a % que passou da anterior.</p></section>
+  <section class="d-sec"><h3>Test rides</h3><div class="rv-g">
+    ${tile('Agendados',R.trAg,dl(R.trAg,Q.trAg))}
+    ${tile('Comparecimento',pc(R.show),dl(R.show==null?null:Math.round(R.show*100),Q.show==null?null:Math.round(Q.show*100),false,v=>v+' p.p.'),`${R.trc} vieram · ${R.trf} faltaram`)}
+    ${tile('Venda após test ride',pc(R.trConv),'')}
+  </div></section>
+  <section class="d-sec"><h3>Mídia paga</h3><div class="rv-g">
+    ${tile('Investido',BRL0(m.inv),'',m.ini?`${ddmm(m.ini)} a ${ddmm(m.fim)}`:'última importação')}
+    ${tile('Custo por lead',m.cpl?BRL0(m.cpl):'—','')}
+    ${tile('Custo por venda',m.cac?BRL0(m.cac):'—','',m.canais.map(c=>`${c.o} ${c.cac?BRL0(c.cac):'—'}`).join(' · '))}
+    ${tile('Retorno',m.roas?m.roas.toLocaleString('pt-BR',{maximumFractionDigits:1})+'×':'—','')}
+  </div></section>
+  ${(()=>{const h=csSaude();return `<section class="d-sec"><h3>Sucesso do cliente</h3><div class="rv-g">
+    ${tile('Saúde da carteira',h.pct==null?'—':PCT(h.pct),'',`${h.emDia} de ${h.n} PACE IDs com manutenção em dia`)}
+    ${tile('Garantia em risco',h.risco+h.perdida,'',`${h.risco} manutenção atrasada · ${h.perdida} perdida/anulada`)}
+    ${tile('NPS',R.nps?R.nps.score:'—',dl(R.nps?R.nps.score:null,Q.nps?Q.nps.score:null),R.nps?`${R.nps.n} respostas · ${R.nps.p} promotores · ${R.nps.d} insatisfeitos`:'sem respostas no período')}
+    ${tile('Avaliações e indicações',`${R.aval} · ${R.ind}`,'',`avaliaram · indicaram (clientes do período)`)}
+  </div></section>
+  <section class="d-sec"><h3>Oficina</h3><div class="rv-g">
+    ${tile('Receita da oficina',BRL0(R.of),dl(R.of,Q.of,false,BRL0),`${R.osN} OS · ${R.osPace} de clientes PACE`)}
+    ${tile('Lucro estimado',S.cfg.ofMin!=null?`${BRL0(R.of*S.cfg.ofMin/100)}–${BRL0(R.of*S.cfg.ofMax/100)}`:'—','',S.cfg.ofMin!=null?`${S.cfg.ofMin}–${S.cfg.ofMax}% sobre o serviço`:'')}
+    ${tile('Manutenções por diária',String(diariasMes().media).replace('.',','),'',`${diariasMes().dias} diárias no mês`)}
+    ${tile('Avulsos na oficina',R.av,dl(R.av,Q.av),`${R.avL} viraram lead de test ride`)}
+  </div></section>`})()}`}
+function revText(){const P=UI.revP||'semana',[a,b]=revRange(P,0),R=revData(a,b),m=midiaResumo(),pc=v=>v==null?'—':PCT(v);
+  const pp=pipeline(),h=csSaude();
+  return `PACE · RevOps ${P==='mes'?'do mês':'dos últimos 7 dias'} (${ddmm(a)} a ${ddmm(b)})
+• Receita: ${BRL0(R.rec)} (vendas ${BRL0(R.fat)} · oficina ${BRL0(R.of)}) · pipeline ponderado ${BRL0(pp.pond)} · recorrente 90 dias ${BRL0(h.rec90)}
+• Leads: ${R.leads} · TPR ${R.tpr==null?'—':String(R.tpr).replace('.',',')+' min'}
+• Funil: ${R.leads} → ${R.contato} contato → ${R.proposta} proposta → ${R.tr} test ride → ${R.venda} venda
+• Vendas: ${R.vendas} · ${BRL0(R.fat)} · ticket ${R.ticket?BRL0(R.ticket):'—'}
+• Test rides: ${R.trAg} agendados · comparecimento ${pc(R.show)}
+• Mídia: ${BRL0(m.inv)} investidos · custo por venda ${m.cac?BRL0(m.cac):'—'}
+• Oficina: ${BRL0(R.of)} · ${R.osN} OS · ${R.av} avulsos
+• Sucesso do cliente: carteira em dia ${h.pct==null?'—':PCT(h.pct)} · ${h.risco+h.perdida} garantias em risco · NPS ${R.nps?R.nps.score+` (${R.nps.n} respostas)`:'—'} · ${R.aval} avaliações · ${R.ind} indicações`}
+/* avulso da oficina → lead de test ride */
+function avulsoMsg(a){const n=first(a.cliente);return `Oi${n?', '+n:''}! Aqui é da PACE Estreito. Obrigado por confiar sua ${String(a.veic||a.modelo||'bike').split(' ·')[0].toLowerCase()} à nossa oficina. Já pensou em experimentar uma elétrica PACE? O test ride é gratuito e sem compromisso: posso reservar um horário pra você?`}
+function avulsoLead(a){const tel=normTel(a.tel||'');if(!telOk(tel))return null;const ex=telExiste(tel);if(ex)return ex;
+  const l=novoLead({nome:titleCase(first(a.cliente))||('Lead '+tel.slice(-4)),tel,origem:'Oficina',obs:`[OFICINA] cliente avulso · ${a.modelo||''}`});l.etapa='Contato';l.hist.push({e:'Contato',d:today()});l.fu=rel(2);S.leads.unshift(l);a.trLead=l.id;return l}
+
 function renderPassaporte(){
   const all=S.passaportes.map(p=>({p,i:csInfo(p)})),L=csList(),t=today();
   const n30=all.filter(x=>x.i.n!=null&&x.i.n>=0&&x.i.n<=30).length,atr=all.filter(x=>x.i.n!=null&&x.i.n<0).length,risco=all.filter(x=>['perdida','anulada'].includes(x.i.estado)).length;
@@ -2223,6 +2499,7 @@ function renderPassaporte(){
     <div class="card"><div class="l">Manutenção em 30 dias</div><div class="v" style="color:var(--neon)">${n30}</div></div>
     <div class="card"><div class="l">Atrasadas · garantia em risco</div><div class="v ${atr+risco?'red':''}">${atr} · ${risco}</div></div>
   </div>
+  ${npsHTML()}
   <section class="d-sec"><h3>Pós-venda · carteira PACE ID <span class="sp"></span>${(()=>{const n=S.passaportes.filter(p=>p.fonte!=='gestao').length;return n&&S.passaportes.some(p=>p.fonte==='gestao')?`<button class="btn btn-sm" data-action="cs-demo-x" style="text-transform:none;font-family:Inter">Remover ${n} de exemplo</button>`:''})()}<button class="btn btn-sm" data-action="cs-imp" style="text-transform:none;font-family:Inter">Importar do painel de gestão</button></h3>
     <div class="row" style="gap:6px;flex-wrap:wrap;margin-bottom:8px">
       <input class="inp-sm" type="search" data-input="cs-q" value="${esc(UI.csQ||'')}" placeholder="Buscar PACE ID, nome ou modelo" style="flex:1;min-width:180px">
@@ -2241,14 +2518,14 @@ function renderPassaporte(){
       <label class="field">Mensagem (use {nome}, {modelo}, {data}, {meses})<textarea class="inp" rows="3" data-input="cs-msg">${esc(msg)}</textarea></label>
       <div class="row between" style="flex-wrap:wrap;gap:6px"><label class="chk"><input type="checkbox" data-change="cs-tel" ${UI.csTel?'checked':''}><span>Incluir telefones na exportação</span></label>
         <div class="row" style="gap:6px"><button class="btn btn-sm" data-action="cs-copy">Copiar lista</button><button class="btn btn-sm btn-primary" data-action="cs-csv">Baixar CSV</button></div></div>
-      <p class="note">O botão Convidar de cada cliente já usa esta mensagem. A exportação leva PACE ID, primeiro nome, modelo, próxima manutenção e status da garantia${UI.csTel?' e telefone: guarde o arquivo em local privado':''}. Nada de CPF, endereço ou e-mail.</p>
+      <p class="note">O botão Convidar de cada cliente já usa esta mensagem. A exportação leva PACE ID, primeiro nome, modelo, próxima manutenção e status da garantia${UI.csTel?` e telefone. 🔒 ${AVISO_BK}`:''}. Nada de CPF, endereço ou e-mail.</p>
     </div></details></section>
   <section class="d-sec"><details class="inline"><summary>Regras da garantia</summary>
     <div style="padding:12px" class="stack">
       <div class="meta">3 meses pelo fabricante + 12 meses pela loja. A garantia da loja exige manutenção a cada 3 meses (3, 6, 9 e 12 meses), preventiva ou avançada. Quando a carteira vem do painel, as datas das manutenções são as do painel.</div>
       <form data-form="gar-cfg" class="form-grid">
         <label class="field">Tolerância após o vencimento (dias)<input name="tol" type="number" min="0" max="60" value="${garTol()}"></label>
-        <label class="field">Bateria coberta pela garantia da loja?<select name="bat">${opt(['a confirmar','sim','não'],S.cfg.garBateria||'a confirmar')}</select></label>
+        <label class="field">Bateria coberta pela garantia da loja?<select name="bat">${opt([['não','Não: só pelo fabricante (3 meses)'],['sim','Sim'],['a confirmar','A confirmar']],S.cfg.garBateria||'não')}</select></label>
         <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary btn-sm" type="submit">Salvar regras</button></div>
       </form></div></details></section>`;
 }
@@ -2259,7 +2536,7 @@ function renderPassaporte(){
 /* ---------- Garantia PACE: 3 meses fabricante + 12 meses loja, com manutenção a cada 3 meses ---------- */
 const REV_MARCOS=[{d:90,n:'Manutenção dos 3 meses'},{d:180,n:'Manutenção dos 6 meses'},{d:270,n:'Manutenção dos 9 meses'},{d:365,n:'Manutenção dos 12 meses'}];
 const GAR={fab:90,loja:365};
-const garTol=()=>S.cfg.garTol!=null?S.cfg.garTol:15;
+const garTol=()=>S.cfg.garTol!=null?S.cfg.garTol:10;
 const isManut=e=>/^(Revisão|Manutenção)/.test(e.t);
 const addD=(d,n)=>{const x=new Date(d+'T12:00:00');x.setDate(x.getDate()+n);return iso(x)};
 function garantia(p){
@@ -2280,7 +2557,7 @@ function garantiaHTML(p){const g=garantia(p);if(!g)return '';const [lb,cl]=GAR_L
     <div class="gar-row"><span>Fabricante · 3 meses</span><b class="mono">até ${ddmm(g.fabAte)}/${g.fabAte.slice(2,4)}</b><span class="tagp ${g.fabAtiva?'t-soon':'t-muted'}">${g.fabAtiva?'ativa':'encerrada'}</span></div>
     <div class="gar-row"><span>Loja · 12 meses</span><b class="mono">até ${ddmm(g.lojaAte)}/${g.lojaAte.slice(2,4)}</b><span class="tagp ${cl}">${lb}</span></div>
     <div class="gar-m">${g.marcos.map(m=>`<div class="gm gm-${m.st}" title="${esc(m.n)} · vence ${ddmm(m.due)} (tolerância até ${ddmm(m.lim)})${m.feita?` · feita em ${ddmm(m.feita)}`:''}"><i>${ic[m.st]}</i><span>${m.d<365?m.d/30:12}m</span><small>${m.feita?ddmm(m.feita):ddmm(m.due)}</small></div>`).join('')}</div>
-    <div class="meta">${g.estado==='perdida'?`A ${esc(g.perdida.m.n.toLowerCase())} venceu em ${ddmm(g.perdida.due)}${g.perdida.feita?` e só foi feita em ${ddmm(g.perdida.feita)}`:' e não foi feita'}.`:g.prox?`Próxima: ${esc(g.prox.m.n.toLowerCase())} até ${ddmm(g.prox.lim)} (preventiva ${BRL0(precoServ('Manutenção Preventiva'))} ou avançada ${BRL0(precoServ('Manutenção Avançada'))}).`:'Todas as manutenções do período foram feitas.'} Bateria: ${esc(S.cfg.garBateria||'a confirmar')}.</div>
+    <div class="meta">${g.estado==='perdida'?`A ${esc(g.perdida.m.n.toLowerCase())} venceu em ${ddmm(g.perdida.due)}${g.perdida.feita?` e só foi feita em ${ddmm(g.perdida.feita)}`:' e não foi feita'}.`:g.prox?`Próxima: ${esc(g.prox.m.n.toLowerCase())} até ${ddmm(g.prox.lim)} (preventiva ${BRL0(precoServ('Manutenção Preventiva'))} ou avançada ${BRL0(precoServ('Manutenção Avançada'))}).`:'Todas as manutenções do período foram feitas.'} Bateria: ${S.cfg.garBateria==='sim'?'coberta pela loja':S.cfg.garBateria==='a confirmar'?'a confirmar':'só pelo fabricante (3 meses)'}.</div>
   </div>`}
 function telCliente(nome,pid){const n=String(nome||'').trim().toLowerCase();
   const pp=pid&&S.passaportes.find(x=>x.id===pid);if(pp&&pp.tel)return pp.tel;
@@ -2304,7 +2581,7 @@ function revisoes(){
   return out.sort((a,b)=>a.venc.localeCompare(b.venc));
 }
 function revMsg(r){
-  const n=first(r.p.cliente),slots=[];for(let i=1;i<8&&slots.length<3;i++){const l=livres(rel(i));if(l.length)slots.push(`${WD[new Date(rel(i)+'T12:00:00').getDay()]} ${ddmm(rel(i))} às ${l[0]}`)}
+  const n=first(r.p.cliente),slots=diasOficina(3,1).map(x=>`${WD[new Date(x.dt+'T12:00:00').getDay()]} ${ddmm(x.dt)} às ${x.l[0]}`);
   return `Oi, ${n}! Aqui é da oficina PACE Estreito. Está chegando a ${r.marco.n.toLowerCase()} da sua ${r.p.modelo} (Passaporte ${r.p.id})${!r.marco.fora&&!r.marco.semGar?', que mantém a garantia de 12 meses da loja':''}.${slots.length?` Tenho estes horários: ${slots.join(', ')}. Qual fica melhor?`:' Qual o melhor dia pra você trazer?'} Quem vende, cuida!`;
 }
 function revisoesHTML(){
@@ -2323,11 +2600,12 @@ const AG_ST=['Agendado','Confirmado','Chegou','Faltou','Cancelado'];
 function servTipo(sv){const n=normTxt(sv);return SERVICOS.find(x=>normTxt(x)===n)||(/avancad|desmont|verificacao completa/.test(n)?'Manutenção Avançada':/revis|preventiv|regulag|apert|ajuste/.test(n)?'Manutenção Preventiva':'Outro')}
 function precoServ(sv){const P=(S.cfg&&S.cfg.servPreco)||{},k=servTipo(sv);return Number(P[k]!=null&&P[k]!==''?P[k]:SERV_PRECO_PADRAO[k])||0}
 const valorOS=o=>o.valor!=null&&o.valor!==''?Number(o.valor)||0:precoServ(o.servico);
+const _tot=o=>valorOS(o)+sum((o.pecas||[]).filter(x=>!x.gar),x=>(Number(x.preco)||0)*(Number(x.qtd)||1));
 function oficinaMes(mes){mes=mes||today().slice(0,7);const t=today(),inM=d=>(d||'').slice(0,7)===mes;
   const ent=S.os.filter(o=>o.status==='Entregue'&&inM(o.saida)),abertas=S.os.filter(o=>o.status!=='Entregue'),
     ag=S.agenda.filter(a=>inM(a.data)&&a.status!=='Cancelado'&&a.status!=='Faltou'),fut=ag.filter(a=>a.data>=t&&(a.status==='Agendado'||a.status==='Confirmado'));
-  const real=sum(ent,valorOS),bancada=sum(abertas,valorOS),agFut=sum(fut,a=>precoServ(a.servico));
-  return{ent,abertas,ag,fut,real,bancada,agFut,previsto:real+bancada+agFut,semPreco:!Object.values(S.cfg.servPreco||{}).some(v=>+v>0)}}
+  const real=sum(ent,_tot),mo=sum(ent,valorOS),bancada=sum(abertas,_tot),agFut=sum(fut,a=>precoServ(a.servico));
+  return{ent,abertas,ag,fut,real,mo,pc:real-mo,bancada,agFut,previsto:real+bancada+agFut,semPreco:!Object.values(S.cfg.servPreco||{}).some(v=>+v>0)}}
 const SERVICOS=['Manutenção Preventiva','Manutenção Avançada','Outro'];
 const SERV_DESC={'Manutenção Preventiva':'apertar e regular o que precisa','Manutenção Avançada':'desmontagem para verificação completa','Outro':'serviço avulso / outras marcas'};
 const SERV_PRECO_PADRAO={'Manutenção Preventiva':150,'Manutenção Avançada':350,'Outro':0};
@@ -2386,6 +2664,7 @@ function trWxHTML(){
     return `<div class="trw ${d&&d.rain>=60?'wet':''}"><span class="trw-l">${lbl(dt)}</span>${d?`<span class="trw-i" title="${WX_TXT[d.kind]||''}">${WX_SVG[d.kind]||WX_SVG.nuvem}</span><span class="trw-t mono">${Math.round(d.lo)}° / ${Math.round(d.hi)}°</span><span class="trw-r mono" title="Chance de chuva">chuva ${Math.round(d.rain)}%</span>`:`<span class="trw-na">previsão ainda não disponível</span>`}<span class="trw-n">${n?`${n} test ride${n===1?'':'s'}`:'livre'}</span></div>`}).join('');
   const wet=ds.filter(dt=>{const d=wxDia(dt);return d&&d.rain>=60&&trDia(dt).length});
   const tip=wet.length?`<div class="trw-tip">Chuva provável ${wet.map(dt=>dt===t1?'amanhã':['no domingo','na segunda','na terça','na quarta','na quinta','na sexta','no sábado'][new Date(dt+'T12:00:00').getDay()]).join(' e ')}: confirme esses test rides mais cedo e ofereça um horário alternativo, para manter o comparecimento.</div>`:'';
+  if(!wxPos())return `<div id="tr-wx" class="trw-strip"><span class="trw-na">Buscando o clima desta loja… Se não aparecer, confira o bairro e cidade no seletor de loja (topo).</span></div>`;
   return `<div id="tr-wx" class="trw-strip">${cards}</div>${tip?tip.replace('<div class="trw-tip">','<div class="trw-tip" id="tr-wx-tip">'):''}`;
 }
 function renderTestRides(){
@@ -2456,7 +2735,7 @@ function trResult(l,v){
 }
 
 function freeText(){
-  const out=[];for(let i=0;i<10&&out.length<6;i++){const dt=rel(i),l=livres(dt);if(l.length)out.push(`${WD[new Date(dt+'T12:00:00').getDay()]} ${ddmm(dt)}: ${l.join(', ')}`)}
+  const out=diasOficina(5,0).sort((a,b)=>a.dt.localeCompare(b.dt)).map(x=>`${WD[new Date(x.dt+'T12:00:00').getDay()]} ${ddmm(x.dt)}: ${x.l.join(', ')}`);
   return `Horários livres na oficina PACE (Estreito):\n${out.join('\n')}\nResponda com o melhor horário que eu já reservo pra você.`;
 }
 function agFormHTML(sel,livresSel){
@@ -2465,11 +2744,12 @@ function agFormHTML(sel,livresSel){
   const q=normTxt(UI.agQ||'');
   const cands=S.passaportes.map(p=>({p,i:csInfo(p)})).filter(({p})=>!q||normTxt([p.id,p.cliente,p.modelo].join(' ')).includes(q))
     .sort((a,b)=>(a.i.prox||'9').localeCompare(b.i.prox||'9')).slice(0,q?8:5);
-  let dd=F.data||(sel>=t&&livres(sel).length?sel:'');if(!dd){for(let k=0;k<21;k++){if(livres(rel(k)).length){dd=rel(k);break}}dd=dd||t}
+  const sug=diasOficina(4,0);let dd=F.data||(sel>=t&&livres(sel).length&&agendaDia(sel).length?sel:'');if(!dd)dd=(sug[0]||{}).dt||(sel>=t&&livres(sel).length?sel:t);
   const lv=livres(dd);
   const dataHora=`<label class="field">Data<input name="data" type="date" min="${t}" required value="${dd}"></label>
         <label class="field">Horário<select name="hora">${opt(lv.length?lv:S.cfg.slots,F.hora||lv[0]||S.cfg.slots[0])}</select></label>`;
-  const fim=`<div class="full row between"><label class="chk"><input type="checkbox" name="conf"><span>Já confirmado com o cliente</span></label><button class="btn btn-primary" type="submit">Agendar</button></div>`;
+  const chips=sug.length?`<div class="full ag-dias"><span class="meta">Concentre na mesma diária:</span>${sug.map(x=>`<button type="button" class="btn btn-sm ${x.dt===dd?'pill-on':''}" data-action="ag-dia-pick" data-v="${x.dt}">${WD[new Date(x.dt+'T12:00:00').getDay()]} ${ddmm(x.dt)}${x.n?` · ${x.n} agendada${x.n===1?'':'s'}`:' · livre'}</button>`).join('')}</div>`:'';
+  const fim=chips+`<div class="full row between"><label class="chk"><input type="checkbox" name="conf"><span>Já confirmado com o cliente</span></label><button class="btn btn-primary" type="submit">Agendar</button></div>`;
   return `<details class="inline" id="ag-form-wrap" ${UI.agForm||UI.agTipo?'open':''}><summary>+ Novo agendamento</summary>
     <div style="padding:12px 12px 0" class="stack">
       <div class="seg" role="tablist">
@@ -2505,11 +2785,12 @@ function agFormHTML(sel,livresSel){
 function agCard(a){
   const os=a.osId&&S.os.find(o=>o.id===a.osId);
   return `<div class="card stack ${a.status==='Faltou'?'is-late':''}" style="gap:5px">
-    <div class="row between"><div class="row"><span class="mono" style="color:var(--c-ofi);font-weight:700">${esc(a.hora)}</span><span class="t-name">${esc(a.cliente)}</span>${a.tipo==='avulso'||(!a.pid&&/Outra/.test(a.modelo||''))?'<span class="tagp t-muted">Avulso</span>':a.pid?'<span class="tagp t-soon">PACE</span>':''}</div>
+    <div class="row between"><div class="row"><span class="mono" style="color:var(--c-ofi);font-weight:700">${esc(a.hora)}</span><span class="t-name">${esc(a.cliente)}</span>${multiLoja()&&a.loja?`<span class="tagp t-muted">${esc(lojaNome(a.loja))}</span>`:''}${a.tipo==='avulso'||(!a.pid&&/Outra/.test(a.modelo||''))?'<span class="tagp t-muted">Avulso</span>':a.pid?'<span class="tagp t-soon">PACE</span>':''}</div>
       <select class="inp-sm" data-change="ag-status" data-id="${esc(a.id)}" aria-label="Status">${opt(AG_ST,a.status)}</select></div>
     <div class="meta">${esc(a.modelo)} · ${esc(a.servico)}${a.pid?` · <span class="id">${esc(a.pid)}</span>`:''}${a.obs?' · '+esc(a.obs):''}</div>
     <div class="row" style="justify-content:flex-end">
       ${a.tel?waBtn(a.tel,agMsg(a),'Confirmar no WhatsApp'):''}
+      ${a.tipo==='avulso'&&a.tel?(a.trLead?'<span class="tagp t-soon">Lead de test ride</span>':waBtn(a.tel,avulsoMsg(a),'Oferecer test ride',`data-av-lead="${esc(a.id)}"`)):''}
       ${os?`<span class="tagp t-soon">Na bancada · ${esc(os.id)}</span>`:a.status!=='Faltou'?`<button class="btn btn-sm btn-primary" data-action="ag-entrada" data-id="${esc(a.id)}">Chegou · dar entrada</button>`:''}
       ${delBtn('agenda',a.id)}
     </div>
@@ -2798,7 +3079,7 @@ function renderFluxo(){
         <input class="inp-sm grow" name="o_${e}" value="${esc(v.o)}" maxlength="70" placeholder="O que precisa acontecer" aria-label="Regra da etapa ${esc(ETAPA_LBL[e])}">
       </div>`}).join('')}
       <div class="sla-row" style="grid-template-columns:80px 1fr"><b>Cadência</b><label class="meta">Toques nos dias <input class="inp-sm" name="cad" value="${esc((S.cfg.cad||CAD_PADRAO).join(', '))}" style="width:160px" aria-label="Dias da cadência"> após o cadastro (D1, D5, D8, D15, D30). Depois do último, o lead vira D30+ e o sistema sugere arquivar.</label></div>
-      <div class="row between" style="padding:8px 0 4px"><span class="meta">0 dia = no mesmo dia. Lead parado além do prazo vira alerta na Lia, nos follow-ups e na reunião diária.</span><button class="btn btn-sm btn-primary" type="submit">Salvar prazos</button></div>
+      <div class="row between" style="padding:8px 0 4px"><span class="meta">0 dia = no mesmo dia. Lead parado além do prazo vira alerta no Comercial, nos follow-ups e na reunião diária.</span><button class="btn btn-sm btn-primary" type="submit">Salvar prazos</button></div>
     </form>
   </section>
   <section class="d-sec"><h3>O que cada etapa pede</h3>
@@ -2867,7 +3148,7 @@ function campRec(c,f,ref){
   return{t:'Manter',k:'t-plan',x:'Dentro do esperado. Acompanhe a próxima atualização.'};
 }
 function midiaResumo(){const cs=S.campanhas,inv=sum(cs,'invest'),R=cs.map(c=>campResult(c)),v=sum(R,'vendas'),fat=sum(R,'fat'),lc=sum(R,'leads'),lp=sum(cs,c=>c.leads||0);
-  const canais=ORIGENS.filter(o=>o!=='Site').map(o=>{const k=cs.filter(c=>c.canal===o),rr=k.map(c=>campResult(c)),i=sum(k,'invest'),vv=sum(rr,'vendas'),ll=sum(rr,'leads');return{o,inv:i,leads:ll,tr:sum(rr,'tr'),vendas:vv,cpl:ll?i/ll:null,cac:vv?i/vv:null}}).filter(x=>x.inv||x.leads);
+  const canais=['Google Ads','Meta'].map(o=>{const k=cs.filter(c=>c.canal===o),rr=k.map(c=>campResult(c)),i=sum(k,'invest'),vv=sum(rr,'vendas'),ll=sum(rr,'leads');return{o,inv:i,leads:ll,tr:sum(rr,'tr'),vendas:vv,cpl:ll?i/ll:null,cac:vv?i/vv:null}}).filter(x=>x.inv||x.leads);
   const up=cs.map(c=>c.atualizado).filter(Boolean).sort().pop(),ini=cs.map(c=>c.ini).filter(Boolean).sort()[0],fim=cs.map(c=>c.fim).filter(Boolean).sort().pop();
   return{inv,v,fat,lc,lp,cpl:lc?inv/lc:null,cac:v?inv/v:null,roas:inv?fat/inv:null,aprov:lp?lc/lp:null,canais,up,ini,fim}}
 function midiaText(){const m=midiaResumo(),L=S.campanhas.filter(c=>c.invest).map(c=>{const f=campFull(c),r=campRec(c,f,m);return`• ${c.nome} (${c.canal}): ${BRL0(c.invest)} · ${f.leads} leads no CRM · ${f.tr} test rides · ${f.vendas} vendas${f.cac?` · CAC ${BRL0(f.cac)}`:''}${r?` → ${r.t}`:''}`});
@@ -2882,8 +3163,22 @@ function renderMidia(){const m=midiaResumo();
       <div class="card"><div class="l">CAC · retorno</div><div class="v" style="color:var(--neon)">${m.cac?BRL0(m.cac):'—'}</div><div class="meta" style="font-size:11px">${m.roas?`cada R$ 1 virou ${BRL(m.roas)}`:'sem venda atribuída'}</div></div>
     </div>
     ${m.canais.length>1?`<div class="card md-can"><div class="md-r md-hd"><span>Canal</span><span>Invest.</span><span>Leads</span><span>CPL</span><span>Test rides</span><span>Vendas</span><span>CAC</span></div>${m.canais.map(c=>`<div class="md-r"><span>${origemTag(c.o)}</span><span class="mono">${BRL0(c.inv)}</span><span class="mono">${c.leads}</span><span class="mono">${c.cpl?BRL0(c.cpl):'—'}</span><span class="mono">${c.tr}</span><span class="mono">${c.vendas}</span><b class="mono">${c.cac?BRL0(c.cac):'—'}</b></div>`).join('')}</div>`:''}
+    ${adsHistHTML()}
     <div class="row" style="justify-content:flex-end;margin-top:8px"><button class="btn btn-sm" data-action="ads-copy">Copiar resumo p/ sócios</button></div>
   </section>`}
+
+function adsMeses(){const H=S.adsHist||[],by={};
+  H.forEach(h=>{const m=(h.fim||h.ini||h.em||'').slice(0,7);if(!m)return;const k=m+'|'+normTxt(h.nome);if(!by[k]||h.em>=by[k].em)by[k]={...h,mes:m}});
+  const M={};Object.values(by).forEach(h=>{const x=M[h.mes]||(M[h.mes]={mes:h.mes,inv:0,lp:0,cl:0,im:0,camps:0,nomes:new Set()});x.nomes.add(normTxt(h.nome));x.inv+=Number(h.invest)||0;x.lp+=Number(h.leads)||0;x.cl+=Number(h.cliques)||0;x.im+=Number(h.impr)||0;x.camps++});
+  return Object.values(M).sort((a,b)=>b.mes.localeCompare(a.mes)).slice(0,6).map(x=>{const ids=new Set(S.campanhas.filter(c=>x.nomes.has(normTxt(c.nome))).map(c=>c.id));
+    const lc=S.leads.filter(l=>l.camp&&ids.has(l.camp)&&(l.criado||'').slice(0,7)===x.mes).length,vs=S.vendas.filter(v=>v.camp&&ids.has(v.camp)&&(v.data||'').slice(0,7)===x.mes);
+    return{...x,lc,v:vs.length,fat:sum(vs,valorVenda),cpl:lc?x.inv/lc:null,cac:vs.length?x.inv/vs.length:null}})}
+function adsHistHTML(){const L=adsMeses();if(!L.length)return '';const ml=m=>{const d=new Date(m+'-15T12:00:00'),s2=d.toLocaleDateString('pt-BR',{month:'short',year:'2-digit'});return s2.replace('.','')};
+  const dl=(a,b,inv)=>a==null||b==null||!b?'':`<small class="rv-d ${(a>b)!==!!inv?'ok':'bad'}">${a>b?'▲':'▼'}${Math.abs(Math.round((a-b)/b*100))}%</small>`;
+  return `<details class="inline" style="margin-top:10px"><summary>Histórico mês a mês · ${L.length} ${L.length===1?'mês':'meses'}</summary><div style="padding:10px 12px">
+    <div class="md-r md-hd ah-r"><span>Mês</span><span>Invest.</span><span>Leads plat.</span><span>Leads CRM</span><span>CPL</span><span>Vendas</span><span>CAC</span></div>
+    ${L.map((x,i)=>{const p=L[i+1];return `<div class="md-r ah-r"><b>${ml(x.mes)}</b><span class="mono">${BRL0(x.inv)}${p?dl(x.inv,p.inv,true):''}</span><span class="mono">${x.lp}${p?dl(x.lp,p.lp):''}</span><span class="mono">${x.lc}${p?dl(x.lc,p.lc):''}</span><span class="mono">${x.cpl?BRL0(x.cpl):'—'}${p?dl(x.cpl,p.cpl,true):''}</span><span class="mono">${x.v}${p?dl(x.v,p.v):''}</span><b class="mono">${x.cac?BRL0(x.cac):'—'}${p?dl(x.cac,p.cac,true):''}</b></div>`}).join('')}
+    <p class="note">Cada mês usa a última importação de cada campanha naquele período. Leads e vendas vêm do CRM (leads com a campanha marcada).</p></div></details>`}
 
 function renderCampanhas(){
   const rows=S.campanhas.map(c=>({c,r:campResult(c)}));
@@ -3017,13 +3312,13 @@ function openDrawer(k,tab){
 function renderTabs(){
   const r=ROOMS[UI.room];
   const T={comercial:[['panel','Leads'],['fu','Follow-ups'],['tr','Test Rides'],['jor','Jornada'],['cli','Clientes']],
-    oficina:[['panel','Hoje'],['banc','Bancada'],['ag','Agenda'],['pass','Pós-venda']],
-    financeiro:[['panel','Visão geral'],['ind','Metas'],['est','Estoque'],['canais','Canais']],
+    oficina:[['panel','Hoje'],['banc','Bancada'],['ag','Agenda'],['pass','Pós-venda'],['pc','Peças']],
+    financeiro:[['panel','Visão geral'],['rev','RevOps'],['ind','Metas'],['est','Estoque'],['canais','Canais']],
     criativo:[['camp','Campanhas'],['intel','Inteligência'],['pecas','Peças'],['fluxo','Fluxo']]}[UI.room]||[['panel','Painel']];
   const badge=v=>UI.room==='comercial'&&v==='tr'?(()=>{const n=S.leads.filter(l=>!l.arq&&l.etapa==='Test Ride'&&!l.trOk&&l.fu<=today()).length;return n?` <span class="tab-n">${n}</span>`:''})():UI.room==='comercial'&&v==='fu'?(()=>{const f=followups(),late=f.filter(l=>l.fu<today()).length;return f.length?` <span class="tab-n ${late?'late':''}">${f.length}</span>`:''})():'';
   $('#d-tabs').innerHTML=T.map(([v,l])=>`<button role="tab" data-action="tab" data-v="${v}" aria-selected="${UI.tab===v}">${l}${badge(v)}</button>`).join('')+`<button role="tab" class="tab-chat" data-action="tab" data-v="chat" aria-selected="${UI.tab==='chat'}"><span class="dot-ai" aria-hidden="true"></span>${esc(r.agente)}</button>`;
 }
-const TABR=()=>UI.tab==='tr'?renderTestRides():UI.tab==='intel'?renderIntel():UI.tab==='jor'?renderJornada():UI.tab==='fu'?renderFollowups():UI.tab==='banc'?renderBancada():UI.tab==='pass'?renderPassaporte():UI.tab==='contas'?renderFinanceiro():UI.tab==='canais'?renderFinCanais():UI.tab==='fluxo'?renderFluxo():UI.tab==='camp'?renderCampanhas():UI.tab==='pecas'?renderPecas():UI.tab==='ag'?renderAgenda():UI.tab==='cli'?renderClientes():UI.tab==='ind'?renderIndicadores():UI.tab==='est'?renderEstoque():RENDER[UI.room]();
+const TABR=()=>UI.tab==='pc'&&UI.room==='oficina'?renderPecasOf():UI.tab==='rev'?renderRevOps():UI.tab==='tr'?renderTestRides():UI.tab==='intel'?renderIntel():UI.tab==='jor'?renderJornada():UI.tab==='fu'?renderFollowups():UI.tab==='banc'?renderBancada():UI.tab==='pass'?renderPassaporte():UI.tab==='contas'?renderFinanceiro():UI.tab==='canais'?renderFinCanais():UI.tab==='fluxo'?renderFluxo():UI.tab==='camp'?renderCampanhas():UI.tab==='pecas'?renderPecas():UI.tab==='ag'?renderAgenda():UI.tab==='cli'?renderClientes():UI.tab==='ind'?renderIndicadores():UI.tab==='est'?renderEstoque():RENDER[UI.room]();
 function renderBody(){$('#d-body').innerHTML=UI.tab==='chat'?chatHTML(UI.room):TABR()}
 function closeDrawer(){
   UI.room=null;$('#drawer').classList.remove('open');$('#drawer').setAttribute('aria-hidden','true');$('#scrim').classList.remove('open');
@@ -3041,7 +3336,9 @@ function refresh(){
   }
   syncOverlay();
 }
-function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2400)}
+const AVISO_BK='O arquivo exportado tem os telefones de leads e clientes. Guarde em local privado e não envie em grupos.';
+function toast(msg,ms){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),ms||2400)}
+const toastBk=m=>toast(`${m} · ${AVISO_BK}`,7000);
 function copyText(txt,ok='Texto copiado'){
   const fallback=()=>{const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
     try{document.execCommand('copy');toast(ok)}catch(_){toast('Não deu para copiar automaticamente')}ta.remove()};
@@ -3112,7 +3409,8 @@ function splitLeadBlocks(txt){
   return withTel.length>1?withTel:[String(txt)];
 }
 const telExiste=t=>S.leads.find(l=>digits(l.tel)===t);
-function novoLead(d){const et=ETAPAS.includes(d.etapa)?d.etapa:'Novo',hi=[{e:'Novo',d:d.criado||today()}];if(et!=='Novo')hi.push({e:et,d:today()});return{id:uid(),camp:d.camp||'',hist:hi,criado:d.criado||today(),nome:d.nome,tel:d.tel,email:d.email||'',origem:ORIGENS.includes(d.origem)?d.origem:(LAST_ORIGEM||'Meta'),modelo:MODELOS[d.modelo]?d.modelo:(Object.keys(MODELOS)[1]||Object.keys(MODELOS)[0]),etapa:et,bairro:d.bairro||'',fu:d.fu!==undefined?d.fu:today(),hora:'',obs:d.obs||''}}
+function novoLead(d){return Object.assign(_novoLead(d),{ts:d.ts||null})}
+function _novoLead(d){const et=ETAPAS.includes(d.etapa)?d.etapa:'Novo',hi=[{e:'Novo',d:d.criado||today()}];if(et!=='Novo')hi.push({e:et,d:today()});return{id:uid(),camp:d.camp||'',hist:hi,criado:d.criado||today(),nome:d.nome,tel:d.tel,email:d.email||'',origem:ORIGENS.includes(d.origem)?d.origem:(LAST_ORIGEM||'Meta'),modelo:MODELOS[d.modelo]?d.modelo:(Object.keys(MODELOS)[1]||Object.keys(MODELOS)[0]),etapa:et,bairro:d.bairro||'',fu:d.fu!==undefined?d.fu:today(),hora:'',obs:d.obs||''}}
 let LAST_ORIGEM=null,IMP=null;
 /* colar no cadastro: 1 lead preenche o formulário; vários abrem a conferência em lote */
 function smartPaste(txt){
@@ -3247,7 +3545,7 @@ function metasCtx(){const m=M(),mes=today().slice(0,7);return{faturamento:{reali
 const NEGOCIO=()=>`## A PACE
 Loja de mobilidade elétrica (e-bikes e scooters) no Estreito, Florianópolis/SC. Site: lojapace.com.
 Posicionamento: "a loja onde você experimenta antes, compra certo e tem quem cuide depois". Assinatura: "Quem vende, cuida."
-Garantia: 3 meses pelo fabricante + 12 meses pela loja. A garantia da loja exige manutenção a cada 3 meses (3, 6, 9 e 12 meses), Preventiva (apertar e regular, R$ 150) ou Avançada (desmontagem e verificação completa, R$ 350). Cobertura da bateria: a confirmar com os sócios.
+Garantia: 3 meses pelo fabricante + 12 meses pela loja. A garantia da loja exige manutenção a cada 3 meses (3, 6, 9 e 12 meses), Preventiva (apertar e regular, R$ 150) ou Avançada (desmontagem e verificação completa, R$ 350). Tolerância: até 10 dias após o vencimento de cada manutenção. Bateria: NÃO é coberta pela garantia da loja, só pela do fabricante nos 3 primeiros meses.
 Diferencial: Passaporte Digital / PACE ID — cada bike tem um ID (PACE-00000000), emitido pelo painel de gestão da loja, com revisões, garantia e histórico. Oficina própria na loja.
 
 ## Regras do negócio (nunca contrariar)
@@ -3260,9 +3558,9 @@ Diferencial: Passaporte Digital / PACE ID — cada bike tem um ID (PACE-00000000
 
 const AGENT_AI={
   comercial:{
-    intro:'Oi! Sou a Lia, do Comercial. Priorizo seus follow-ups, escrevo as mensagens de WhatsApp de cada lead e te ajudo a contornar objeções até o test ride e a venda.',
+    intro:'Oi! Sou o agente Comercial. Priorizo seus follow-ups, escrevo as mensagens de WhatsApp de cada lead e te ajudo a contornar objeções até o test ride e a venda.',
     chips:['Quais follow-ups faço primeiro hoje e por quê?','Escreva as mensagens dos follow-ups atrasados','O cliente disse "achei caro". Como respondo?','Monte a proposta da X18 para o Lucas'],
-    papel:`Você é a Lia, agente comercial. Sua meta é transformar lead em test ride e test ride em venda.
+    papel:`Você é o agente Comercial da PACE. Sua meta é transformar lead em test ride e test ride em venda.
 - Cadência de toques: D1, D5, D8, D15 e D30 após o cadastro (cadenciaDias). Cada lead tem faixa (D1…D30+) e toquesFeitos; adapte a mensagem ao número do toque (1º = apresentação, 2º = test ride, 3º = prova social, 4º = condição/urgência, último = despedida aberta). Leads D30+ são candidatos a arquivar.
 - Respeite os prazosDoFluxo (dias máximos por etapa e responsável). Leads em leadsForaDoPrazo vêm primeiro.
 - Priorize por: atrasados > test ride de hoje > propostas > novos leads > contatos. Explique em 1 linha por lead.
@@ -3278,9 +3576,9 @@ const AGENT_AI={
       leads:S.leads.filter(l=>!l.arq&&(ATIVAS(l.etapa)||diffDays(l.fu||today())>-30)).map(l=>({id:l.id,nome:l.nome,origem:l.origem,modelo:l.modelo,etapa:l.etapa,bairro:l.bairro,followup:l.fu,hora:l.hora,obs:l.obs,ultimoContato:l.ultimo||null,idadeDias:leadIdade(l),faixa:dBucket(l),toquesFeitos:l.toques||0,historico:(l.log||[]).slice(-5)}))})
   },
   oficina:{
-    intro:'Oi! Sou o Bento, da Oficina. Organizo a bancada, aviso clientes quando a bike fica pronta, cuido dos registros no Passaporte Digital e encontro oportunidades de venda nas revisões.',
+    intro:'Oi! Sou o agente da Oficina. Organizo a bancada, aviso clientes quando a bike fica pronta, cuido dos registros no Passaporte Digital e encontro oportunidades de venda nas revisões.',
     chips:['Quais revisões estão vencendo e como encaixo na agenda?','O que está atrasado na bancada e o que faço agora?','Escreva o aviso de retirada da bike pronta','Quanto a oficina deve faturar este mês com a agenda atual?','Explique o Passaporte Digital para um cliente em 3 frases'],
-    papel:`Você é o Bento, agente técnico da oficina. Sua meta é entregar no prazo, manter o Passaporte Digital completo e transformar cada revisão em fidelização (avaliação no Google, indicação, retorno para as próximas revisões).
+    papel:`Você é o agente da Oficina da PACE. Sua meta é entregar no prazo, manter o Passaporte Digital completo e transformar cada revisão em fidelização (avaliação no Google, indicação, retorno para as próximas revisões).
 - Não invente diagnóstico técnico: diga o que conferir.
 - Bikes de outras marcas (ID EXT-) não têm Passaporte Digital; podem virar venda de uma PACE.
 - A oficina trabalha com agendamento prévio: só sugira horários que estão em horariosLivresProximos7Dias. Ação para reservar: <acao tipo="agendamento" cliente="Nome" modelo="Modelo" servico="…" data="AAAA-MM-DD" hora="HH:MM"/>.
@@ -3293,9 +3591,9 @@ const AGENT_AI={
       passaportes:S.passaportes.length})
   },
   financeiro:{
-    intro:'Oi! Sou a Clara, do Financeiro. Acompanho caixa, contas, meta do mês e o custo por cliente de cada canal, e simulo condições de pagamento para ajudar a fechar vendas.',
+    intro:'Oi! Sou o agente Admin (financeiro e administrativo). Acompanho caixa, contas, meta do mês e o custo por cliente de cada canal, e simulo condições de pagamento para ajudar a fechar vendas.',
     chips:['Resumo do caixa e do que vence nos próximos 7 dias','Google Ads ou Meta: onde coloco o próximo R$ 1.000?','Como está a receita da oficina contra a meta do mês?','Quantas vendas faltam para bater a meta do mês?'],
-    papel:`Você é a Clara, agente de finanças e administrativo. Sua meta é proteger o caixa (reserva mínima = 1 mês de custo fixo), cumprir prazos e mostrar quais canais trazem venda mais barata.
+    papel:`Você é o agente Admin da PACE (finanças e administrativo). Sua meta é proteger o caixa (reserva mínima = 1 mês de custo fixo), cumprir prazos e mostrar quais canais trazem venda mais barata.
 - Contas: cite valor e vencimento; destaque atrasados e o que vence em 7 dias.
 - CAC = investimento ÷ vendas do canal; CPL = investimento ÷ leads. Recomende com números e cautela (amostra pequena).
 - Impostos (DAS/Simples), contratos e questões jurídicas: organize e sugira confirmar com o contador ou um advogado.
@@ -3308,9 +3606,9 @@ const AGENT_AI={
       checklistAdmin:S.admin.map(a=>({tarefa:a.t,prazo:a.due,feito:a.ok}))}}
   },
   criativo:{
-    intro:'Oi! Sou o Téo, de Growth & Marca. Leio o funil para achar onde a venda trava, transformo isso em briefs criativos no padrão da PACE e acompanho quais campanhas e peças viram venda, não só curtida.',
+    intro:'Oi! Sou o agente de Growth & Marca. Leio o funil para achar onde a venda trava, transformo isso em briefs criativos no padrão da PACE e acompanho quais campanhas e peças viram venda, não só curtida.',
     chips:['Qual o gargalo do funil e que experimento você sugere para esta semana?','Escreva um brief criativo para a etapa com pior conversão','Com o último relatório de anúncios, onde coloco a verba da próxima semana?','Que peça de prova social posso fazer com os clientes recentes?'],
-    papel:`Você é o Téo, agente de growth e marca. Você conversa com um sócio especialista em marketing e estética, que precisa de um olhar de vendas. Sua meta é conectar cada peça a uma etapa da jornada de compra e a um resultado (test ride, proposta, venda, avaliação).
+    papel:`Você é o agente de Growth & Marca da PACE. Você conversa com um sócio especialista em marketing e estética, que precisa de um olhar de vendas. Sua meta é conectar cada peça a uma etapa da jornada de compra e a um resultado (test ride, proposta, venda, avaliação).
 - Comece pelos números da jornada: aponte o gargalo (menor % de passagem entre etapas) e onde não há peça no ar.
 - Experimentos: 1 por vez, com hipótese, peça, etapa, CTA, métrica e prazo (ex.: 2 semanas).
 - Brief criativo: objetivo · etapa do funil · público · mensagem-chave · formato · referências visuais na identidade PACE · CTA · métrica de sucesso.
@@ -3542,7 +3840,7 @@ async function runMeetingAI(){
   const btn=$('#meet-ai-btn'),out=$('#meet-ai-out');btn.disabled=true;btn.textContent='Analisando…';
   out.innerHTML='<div class="meet-ai"><span class="typing">Os agentes estão conversando…</span></div>';
   const ctx={};ROOM_ORDER.forEach(k=>ctx[ROOMS[k].agente]=AGENT_AI[k].ctx());
-  const sys=`Você conduz a reunião diária do escritório virtual da PACE com os quatro agentes: Lia (Comercial), Bento (Oficina), Clara (Financeiro) e Téo (Criativo). Fala com os sócios, em português do Brasil.
+  const sys=`Você conduz a reunião diária do escritório virtual da PACE com os quatro agentes: Comercial, Oficina, Admin e Growth. Fala com os sócios, em português do Brasil.
 
 ${NEGOCIO()}
 
@@ -3550,10 +3848,10 @@ ${ROOM_ORDER.map(k=>{const t=perfilPrompt(k).trim();return t?`Orientações para
 
 ## Formato da resposta (siga exatamente, sem tags, sem tabelas, sem títulos com #)
 **Foco do dia:** uma frase com a prioridade número 1 para vender mais hoje.
-**Lia:** 2 ou 3 itens curtos começando com "- ", com nomes e horários.
-**Bento:** 2 ou 3 itens.
-**Clara:** 2 ou 3 itens, com valores em R$ e datas dd/mm.
-**Téo:** 2 ou 3 itens.
+**Comercial:** 2 ou 3 itens curtos começando com "- ", com nomes e horários.
+**Oficina:** 2 ou 3 itens.
+**Admin:** 2 ou 3 itens, com valores em R$ e datas dd/mm.
+**Growth:** 2 ou 3 itens.
 **Alerta:** só se houver algo atrasado ou arriscado; senão, omita a linha.
 Use só os dados abaixo. Hoje é ${new Date().toLocaleDateString('pt-BR',{weekday:'long'})}, ${ddmm(today())}. Máximo ~220 palavras.
 
@@ -3631,7 +3929,9 @@ function agoraHTML(){
   const semN=S.leads.filter(l=>!l.arq&&ATIVAS(l.etapa)&&semNome(l)&&quente(l)).sort((a,b)=>(a.fu||'9').localeCompare(b.fu||'9'));
   const more=(n,tab,lbl)=>n>max?`<button class="btn btn-sm ag-more" data-action="day-go" data-v="${tab}">${lbl} (${n}) →</button>`:'';
   const blk=(cls,title,n,items,foot)=>n?`<div class="ag-b ${cls}"><div class="ag-h"><b>${title}</b><span class="count ${cls==='late'?'late':''}">${n}</span></div><div class="ag-l">${items}</div>${foot}</div>`:'';
+  const sr=semResposta();
   const body=
+    blk('late','Leads sem resposta',sr.length,sr.slice(0,max).map(l=>`<div class="ag-r"><span class="grow"><b>${esc(l.nome)}</b><small>há ${Math.round((Date.now()-l.ts)/60000)} min · ${esc(l.origem)}</small></span>${waBtn(l.tel,leadMsg(l),'Responder',`data-wa-lead="${esc(l.id)}"`)}</div>`).join(''),'')+
     blk('tr','Test rides a confirmar',trC.length+trP.length,
       trP.slice(0,2).map(l=>`<div class="ag-r"><span class="grow"><b>${esc(l.nome)}</b><small>era ${ddmm(l.fu)} · veio?</small></span><button class="btn btn-sm" data-action="tr-res" data-v="veio" data-id="${esc(l.id)}">Veio</button><button class="btn btn-sm" data-action="tr-res" data-v="faltou" data-id="${esc(l.id)}">Faltou</button></div>`).join('')+
       trC.slice(0,max).map(l=>`<div class="ag-r"><span class="grow"><b>${l.fu===t?'Hoje':'Amanhã'} ${esc(l.hora||'')} · ${esc(l.nome)}</b><small>${esc(l.modelo)}</small></span><button class="btn btn-sm" data-action="tr-conf" data-id="${esc(l.id)}" title="Cliente confirmou">✓</button>${waBtn(l.tel,trMsg(l),'Confirmar')}</div>`).join(''),
@@ -3639,6 +3939,10 @@ function agoraHTML(){
     blk('late','Follow-ups atrasados',late.length,
       late.slice(0,max).map(l=>`<div class="ag-r"><span class="grow"><b>${esc(l.nome)}</b><small>${esc(l.etapa)} · ${-diffDays(l.fu)}d de atraso</small></span><button class="btn btn-sm" data-action="fu-done" data-id="${esc(l.id)}">Feito</button><button class="btn btn-sm" data-action="fu-snooze" data-id="${esc(l.id)}">Amanhã</button>${waBtn(l.tel,cadMsg(l),'WhatsApp',`data-wa-lead="${esc(l.id)}"`)}</div>`).join(''),
       more(late.length,'fu','Ver fila'))+
+    blk('late','Clientes insatisfeitos',(S.nps||[]).filter(x=>x.nota!=null&&x.nota<=6&&!x.tratado).length,
+      (S.nps||[]).filter(x=>x.nota!=null&&x.nota<=6&&!x.tratado).slice(0,max).map(x=>`<div class="ag-r"><span class="grow"><b>${esc(x.nome||'Cliente')} · nota ${x.nota}</b><small>${x.tipo==='venda'?'compra':'oficina'} · ${esc(x.modelo||'')}</small></span>${x.tel?waBtn(x.tel,`Oi${x.nome?', '+x.nome:''}! Obrigado pela sinceridade. Quero entender o que não foi bem e resolver: posso te ligar hoje?`,'Falar'):''}<button class="btn btn-sm" data-action="nps-ok" data-id="${esc(x.id)}">Tratado</button></div>`).join(''),'')+
+    blk('tr','Pesquisas para enviar',(S.nps||[]).filter(x=>x.st==='pendente'&&x.envio<=t&&x.tel).length,
+      (S.nps||[]).filter(x=>x.st==='pendente'&&x.envio<=t&&x.tel).slice(0,max).map(x=>`<div class="ag-r"><span class="grow"><b>${esc(x.nome||'Cliente')}</b><small>${x.tipo==='venda'?'pós-compra':'pós-oficina'} · ${esc(x.modelo||'')}</small></span>${waBtn(x.tel,npsMsg(x),'Enviar',`data-nps-env="${esc(x.id)}"`)}</div>`).join(''),'')+
     blk('nm','Quentes sem nome',semN.length,
       semN.slice(0,max).map(l=>`<div class="ag-r"><span class="grow">${nameField(l)}<small>${esc(l.etapa)}${l.fu?` · contato ${l.fu===t?'hoje':ddmm(l.fu)}`:''}</small></span>${waBtn(l.tel,'','Conversa')}</div>`).join(''),
       more(semN.length,'semnome','Nomear todos'));
@@ -3767,8 +4071,18 @@ function renameLead(el){const l=findLead(el.dataset.rename);if(!l)return false;c
   const c=$('.nm-chip');if(c){const n=S.leads.filter(x=>!x.arq&&semNome(x)).length;c.textContent=`Sem nome · ${n}`}return true}
 document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.rename)renameLead(e.target)});
 document.addEventListener('click',e=>{const c=e.target.closest&&e.target.closest('[data-cs]');if(!c||e.target.closest('a,button,input,select,.cs-det'))return;UI.csOpen=UI.csOpen===c.dataset.cs?null:c.dataset.cs;refresh()});
+document.addEventListener('click',e=>{const x=e.target.closest&&e.target.closest('[data-nps-env],[data-nps-rev],[data-av-lead]');if(!x)return;
+  setTimeout(()=>{if(x.dataset.npsEnv){const n=(S.nps||[]).find(k=>k.id===x.dataset.npsEnv);if(n){n.st='enviada';n.env=today();toast('Pesquisa enviada · registre a nota quando o cliente responder')}}
+    else if(x.dataset.npsRev){const n=(S.nps||[]).find(k=>k.id===x.dataset.npsRev);if(n){n.review=today();toast('Pedido de avaliação enviado')}}
+    else if(x.dataset.avLead){const a=S.agenda.find(k=>k.id===x.dataset.avLead);if(a){const l=avulsoLead(a);toast(l?`${first(a.cliente)||'Cliente'} virou lead (origem Oficina) · follow-up em 2 dias`:'Telefone inválido')}}
+    refresh()},50)});
+document.addEventListener('keydown',e=>{if(UI.room!=='comercial'||$('dialog[open]')||e.ctrlKey||e.metaKey||e.altKey)return;const tg=e.target,typing=tg.matches&&tg.matches('input,textarea,select,[contenteditable]');
+  if(e.key==='/'&&!typing){e.preventDefault();const go=()=>{const q=$('[data-input=lead-q]');if(q){q.focus();q.select()}};if(UI.tab!=='panel'){UI.tab='panel';renderTabs();renderBody();setTimeout(go,30)}else go();return}
+  if(typing){if(e.key==='Escape'&&tg.dataset&&tg.dataset.input==='lead-q'){tg.blur()}return}
+  if((e.key==='n'||e.key==='N')&&!e.shiftKey){e.preventDefault();openLeadModal();return}
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){const cs=$$('[data-lead-card]');if(!cs.length)return;e.preventDefault();let i=cs.indexOf(document.activeElement);i=i<0?0:Math.max(0,Math.min(cs.length-1,i+(e.key==='ArrowDown'?1:-1)));cs[i].focus();cs[i].scrollIntoView({block:'nearest',behavior:'smooth'})}});
 /* card do lead: clicar em qualquer área livre abre/fecha os detalhes */
-function toggleLeadCard(c){const id=c.dataset.leadCard;UI.openLead=UI.openLead===id?null:id;refresh();const n=$(`[data-lead-card="${CSS.escape(id)}"]`);if(n){n.focus({preventScroll:true});if(UI.openLead===id)n.scrollIntoView({block:'nearest',behavior:'smooth'})}}
+function toggleLeadCard(c){const id=c.dataset.leadCard;if(UI.selMode){const s2=new Set(UI.sel||[]);s2.has(id)?s2.delete(id):s2.add(id);UI.sel=[...s2];const b=$('#d-body'),st=b.scrollTop;refresh();b.scrollTop=st;return}UI.openLead=UI.openLead===id?null:id;refresh();const n=$(`[data-lead-card="${CSS.escape(id)}"]`);if(n){n.focus({preventScroll:true});if(UI.openLead===id)n.scrollIntoView({block:'nearest',behavior:'smooth'})}}
 document.addEventListener('click',e=>{const c=e.target.closest&&e.target.closest('[data-lead-card]');if(!c)return;
   if(e.target.closest('button,a,input,select,textarea,label,summary,details,.lead-more,.perf-pick,.fu-pick,.wa-ask'))return;
   if(String(getSelection()).trim())return;toggleLeadCard(c)});
@@ -3802,7 +4116,7 @@ function fechamento(mes){
     leads:leads.length,leadsOrig:by(leads,l=>l.origem),conv:leads.length?vendas.length/leads.length:0,
     camp,osEnt:osEnt.length,revisoes:osEnt.filter(o=>/revis/i.test(o.servico)).length,agendados:ag.length,faltas:ag.filter(a=>a.status==='Faltou').length,
     pago:sum(pagos.filter(c=>c.tipo==='pagar'),'valor'),recebido:sum(pagos.filter(c=>c.tipo==='receber'),'valor'),
-    aval:S.aval[mes]||0,indic:vendas.filter(v=>v.ind).length,ofReal:sum(osEnt,valorOS),
+    aval:S.aval[mes]||0,indic:vendas.filter(v=>v.ind).length,ofReal:sum(osEnt,_tot),
     meta:S.cfg.meta,metaVendas:S.cfg.metaVendas,metaAval:S.cfg.metaAval,metaOficina:S.cfg.metaOficina||0};
 }
 function mesLabel(m){const d=new Date(m+'-15T12:00:00'),s2=d.toLocaleDateString('pt-BR',{month:'long',year:'numeric'});return s2.charAt(0).toUpperCase()+s2.slice(1)}
@@ -3848,7 +4162,7 @@ Receita da oficina: ${BRL0(f.ofReal)}${f.metaOficina?` (meta ${BRL0(f.metaOficin
 Leads: ${f.leads} (${l(f.leadsOrig)}) · conversão ${PCT(f.conv)}
 Avaliações Google: ${f.aval} de ${f.metaAval} · indicações: ${f.indic}
 Oficina: ${f.osEnt} entregues (${f.revisoes} revisões) · ${f.agendados} agendamentos, ${f.faltas} faltas
-Caixa: pago ${BRL(f.pago)} · recebido ${BRL(f.recebido)} · saldo hoje ${BRL(S.cfg.saldo)}${S.fechAI&&S.fechAI[f.mes]?'\n\nAnálise da Clara:\n'+S.fechAI[f.mes].replace(/\*\*/g,''):''}`;
+Caixa: pago ${BRL(f.pago)} · recebido ${BRL(f.recebido)} · saldo hoje ${BRL(S.cfg.saldo)}${S.fechAI&&S.fechAI[f.mes]?'\n\nAnálise do Admin:\n'+S.fechAI[f.mes].replace(/\*\*/g,''):''}`;
 }
 function openClose(){
   const meses=[...new Set([today().slice(0,7),...S.vendas.map(v=>v.data.slice(0,7)),...S.leads.map(l=>(l.criado||'').slice(0,7))].filter(Boolean))].sort().reverse().slice(0,12);
@@ -3858,8 +4172,8 @@ function openClose(){
 }
 async function closeAI(){
   const tr=transport();if(!tr||UI.cmBusy)return;UI.cmBusy=true;const f=fechamento(UI.cmMes),out=$('#cm-ai-out'),btn=$('#cm-ai');btn.disabled=true;btn.textContent='Analisando…';
-  out.innerHTML='<div class="meet-ai"><span class="typing">A Clara está analisando o mês…</span></div>';
-  const sys=`Você é a Clara, agente de finanças e administração da PACE, preparando a análise do fechamento do mês para a reunião de sócios, em português do Brasil.
+  out.innerHTML='<div class="meet-ai"><span class="typing">O agente Admin está analisando o mês…</span></div>';
+  const sys=`Você é o agente Admin da PACE (finanças e administração), preparando a análise do fechamento do mês para a reunião de sócios, em português do Brasil.
 ${NEGOCIO()}
 ${perfilPrompt('financeiro')}
 Formato (sem tabelas, sem títulos com #): **Resumo:** 2 frases. **O que foi bem:** 2 itens com "- ". **O que preocupa:** 2 itens. **Decisões para os sócios:** 2 ou 3 itens práticos para o próximo mês. Use só os dados abaixo, com valores em R$ e porcentagens. Impostos: sugerir confirmar com o contador. Máximo ~200 palavras.
@@ -4666,11 +4980,11 @@ const MAP_ROOM={bento:'oficina',lia:'comercial',clara:'financeiro',teo:'criativo
 const mapEl=$('#map');
 function mapStatus(k){
   const m=M(),mes=m.t.slice(0,7),c=roomCounts(MAP_ROOM[k]),late=c.late?`<span class="late" title="${c.late} atrasado(s)">!</span>`:'';
-  if(k==='bento'){const ent=S.os.filter(o=>o.status==='Entregue'&&(o.saida||'').slice(0,7)===mes).length;return`<b>Bento</b>${m.ativos.length} OS abertas<br>${ent} entregue${ent===1?'':'s'} no mês${late}`}
-  if(k==='lia'){const h=m.tr.filter(l=>l.fu===m.t),p=h[0];return`<b>Lia</b>${h.length} test ride${h.length===1?'':'s'} hoje<br>${p?`próx. ${esc(p.hora||'')} · ${esc(first(p.nome))}`:`${m.fu.length} follow-ups`}${late}`}
-  if(k==='clara'){const p=Math.min(1,m.pct);return`<b>Clara</b>Meta ${Math.round(m.pct*100)}% · ${BRL0(m.fat)}<span class="bar"><i style="width:${Math.round(p*100)}%"></i></span>${late}`}
+  if(k==='bento'){const ent=S.os.filter(o=>o.status==='Entregue'&&(o.saida||'').slice(0,7)===mes).length;return`<b>Oficina</b>${m.ativos.length} OS abertas<br>${ent} entregue${ent===1?'':'s'} no mês${late}`}
+  if(k==='lia'){const h=m.tr.filter(l=>l.fu===m.t),p=h[0];return`<b>Comercial</b>${h.length} test ride${h.length===1?'':'s'} hoje<br>${p?`próx. ${esc(p.hora||'')} · ${esc(first(p.nome))}`:`${m.fu.length} follow-ups`}${late}`}
+  if(k==='clara'){const p=Math.min(1,m.pct);return`<b>Admin</b>Meta ${Math.round(m.pct*100)}% · ${BRL0(m.fat)}<span class="bar"><i style="width:${Math.round(p*100)}%"></i></span>${late}`}
   const at=S.campanhas.filter(c=>c.ativa).length,ar=S.pauta.filter(p=>p.status==='No ar').length;
-  return`<b>Téo</b>${at} campanha${at===1?'':'s'} ativa${at===1?'':'s'}<br>${ar} peça${ar===1?'':'s'} no ar${late}`;
+  return`<b>Growth</b>${at} campanha${at===1?'':'s'} ativa${at===1?'':'s'}<br>${ar} peça${ar===1?'':'s'} no ar${late}`;
 }
 function mapShort(k){
   const m=M(),c=roomCounts(MAP_ROOM[k]),dot=c.late?'<i class="ld" title="atrasado"></i>':'',N=ROOMS[MAP_ROOM[k]].agente;
@@ -4812,7 +5126,33 @@ setAmbient();sizeAgents();
    1º tenta a previsão direto da internet (funciona abrindo o arquivo no computador);
    2º lê o clima.json publicado junto do HQ (atualizado por uma tarefa agendada no Claude).
    ========================================================= */
-const WX_POS={lat:-27.5935,lon:-48.5862};
+const WX_PADRAO={lat:-27.5935,lon:-48.5862};
+/* cada loja guarda lat/lon/local; sem local definido, a loja não mostra clima (nunca mostra o clima de outra loja) */
+function wxPos(){const l=lojaAtual();return l&&l.lat!=null&&l.lon!=null?{id:l.id,lat:+l.lat,lon:+l.lon,local:l.local||l.cidade||l.nome}:null}
+function wxLocal(){const p=wxPos();return p?(String(p.local||'').split(',')[0].trim()||lojaAtual().nome):''}
+const NA_WEB=location.protocol==='https:'&&!/claude|anthropic/i.test(location.hostname);
+async function wxFetch(direto,proxy,ms=5000){for(const u of [direto,...(NA_WEB?[proxy]:[])]){try{const ac=new AbortController(),to=setTimeout(()=>ac.abort(),ms);const r=await fetch(u,{signal:ac.signal});clearTimeout(to);if(r.ok)return await r.json()}catch(e){}}throw new Error('sem rede')}
+const wxPerto=(a,b,c,d)=>Math.abs(a-c)<0.03&&Math.abs(b-d)<0.03;
+const COORD_RE=/(-?\d{1,2}[.,]\d+)\s*[,; ]\s*(-?\d{1,3}[.,]\d+)/;
+function aplicarLocal(l,lat,lon,nome){l.geoAuto=1;l.lat=Math.round(lat*1e4)/1e4;l.lon=Math.round(lon*1e4)/1e4;l.local=String(nome||l.cidade||l.nome).slice(0,60);save();
+  const pop=$('#loja-menu');if(pop)pop.open=false;if(l.id===S.lojaAtual){loadWX();clock()}toast(`Clima de ${l.nome}: ${l.local}`)}
+async function definirLocal(id,q,auto){const l=(S.lojas||[]).find(x=>x.id===id);q=String(q||'').trim();if(!l)return;
+  if(!q){delete l.lat;delete l.lon;delete l.local;save();if(id===S.lojaAtual){loadWX();clock()}toast('Local do clima removido');return}
+  const m=q.match(COORD_RE);if(m){const lat=+m[1].replace(',','.'),lon=+m[2].replace(',','.');
+    if(Math.abs(lat)<=90&&Math.abs(lon)<=180)return aplicarLocal(l,lat,lon,q.replace(COORD_RE,'').replace(/^[\s,·;-]+|[\s,·;-]+$/g,'')||l.cidade||l.nome)}
+  const partes=q.split(/[,·]/).map(x=>x.trim()).filter(Boolean),resto=normTxt(partes.slice(1).join(' ')).split(/\s+/).filter(w=>w.length>1);
+  const nm0=encodeURIComponent(partes[0]||q);let res=[];
+  try{res=(await wxFetch(`https://geocoding-api.open-meteo.com/v1/search?name=${nm0}&count=10&language=pt&countryCode=BR&format=json`,`/api/clima?q=${nm0}`,6000)).results||[]}
+  catch(e){if(auto)return;toast('Não consegui buscar o local agora. Cole as coordenadas do Google Maps (ex.: -27.5935, -48.5862).',8000);return}
+  if(resto.length){const f=res.filter(r=>{const t=normTxt([r.admin1,r.admin2,r.admin3,r.admin4].filter(Boolean).join(' '));return resto.some(w=>t.includes(w)||(w.length===2&&normTxt(r.admin1||'').startsWith(w)))});if(f.length)res=f}
+  if(!res.length){if(auto)return;toast('Local não encontrado. Tente "Bairro, Cidade" ou cole as coordenadas do Google Maps.',8000);return}
+  const nm=r=>[r.name,r.admin2&&r.admin2!==r.name?r.admin2:'',UF[r.admin1]||r.admin1||''].filter(Boolean).join(', ');
+  if(auto){res.sort((a,b)=>(b.admin1==='Santa Catarina')-(a.admin1==='Santa Catarina'))}
+  if(res.length===1||auto)return aplicarLocal(l,res[0].latitude,res[0].longitude,nm(res[0]));
+  const mn=$('#loja-menu'),show=()=>{const box=$('#lj-geo');if(!box)return aplicarLocal(l,res[0].latitude,res[0].longitude,nm(res[0]));
+  box.innerHTML=`<span class="lj-lbl">Qual destes?</span>`+res.slice(0,6).map(r=>`<button type="button" data-action="loja-geo" data-id="${esc(id)}" data-lat="${r.latitude}" data-lon="${r.longitude}" data-n="${esc(nm(r))}"><b>${esc(r.name)}</b><small>${esc([r.admin2,r.admin1].filter(Boolean).join(' · '))}</small></button>`).join('');box.hidden=false;box.scrollIntoView({block:'nearest'})};
+  if(mn&&!mn.open){mn.open=true;setTimeout(show,80)}else show()}
+const UF={'Santa Catarina':'SC','Paraná':'PR','Rio Grande do Sul':'RS','São Paulo':'SP','Rio de Janeiro':'RJ','Minas Gerais':'MG'};
 const WX_SVG=(()=>{const a='fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
   const cloud='<path d="M7 18h10.5a3.5 3.5 0 0 0 .4-7A5 5 0 0 0 8.3 9.6 4.2 4.2 0 0 0 7 18z"/>';
   return{
@@ -4831,36 +5171,44 @@ function wxKindFromCode(code,isDay){if(code==null)return'nuvem';if(code>=95)retu
 const WX_TXT={sol:'Céu limpo',lua:'Céu limpo',nuvem:'Nublado',chuva:'Chuva',tempestade:'Temporal',vento:'Vento forte'};
 let WX_CUR=null;
 function renderWX(w){
-  const el=$('#wx');if(!el)return;if(!w){el.hidden=true;return}WX_CUR=w;setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);
+  const el=$('#wx');if(!el)return;const trw=()=>setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);if(!w){el.hidden=true;WX_CUR=null;trw();return}WX_CUR=w;setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);
   const age=(Date.now()-new Date(w.updated).getTime())/36e5,rain=w.today?.rain??0;
   $('#wx-i').innerHTML=WX_SVG[w.kind]||WX_SVG.nuvem;$('#wx-t').textContent=Math.round(w.now.temp)+'°';$('#wx-r').textContent=`${rain}%`;
   el.classList.toggle('rainy',rain>=40||w.kind==='chuva'||w.kind==='tempestade');el.classList.toggle('stale',age>8);
   const hh=new Date(w.updated).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-  el.title=`${WX_TXT[w.kind]} no Estreito · hoje ${Math.round(w.today.lo)}°/${Math.round(w.today.hi)}°, chuva ${rain}%`+(w.tomorrow?` · amanhã ${Math.round(w.tomorrow.lo)}°/${Math.round(w.tomorrow.hi)}°, chuva ${w.tomorrow.rain}%`:'')+` · atualizado às ${hh}`;
+  el.title=`${WX_TXT[w.kind]} em ${wxLocal()} · hoje ${Math.round(w.today.lo)}°/${Math.round(w.today.hi)}°, chuva ${rain}%`+(w.tomorrow?` · amanhã ${Math.round(w.tomorrow.lo)}°/${Math.round(w.tomorrow.hi)}°, chuva ${w.tomorrow.rain}%`:'')+` · atualizado às ${hh}`;
   el.setAttribute('aria-label',el.title);el.removeAttribute('title');el.hidden=false;
   const days=(w.days&&w.days.length?w.days:[{date:w.today.date||today(),...w.today},...(w.tomorrow?[{date:w.tomorrow.date||rel(1),...w.tomorrow}]:[])]).slice(0,5);
   const lbl=d=>{const n=diffDays(d);if(n===0)return'Hoje';if(n===1)return'Amanhã';const x=new Date(d+'T12:00:00');return x.toLocaleDateString('pt-BR',{weekday:'short'}).replace('.','').replace(/^./,c=>c.toUpperCase())+' '+ddmm(d)};
   const lo=Math.min(...days.map(d=>d.lo)),hi=Math.max(...days.map(d=>d.hi)),sp=Math.max(1,hi-lo);
-  $('#wx-pop').innerHTML=`<div class="wxp-h"><b>${WX_TXT[w.kind]||''} · ${Math.round(w.now.temp)}°</b><span>Estreito · ${hh}</span></div>`+
+  $('#wx-pop').innerHTML=`<div class="wxp-h"><b>${WX_TXT[w.kind]||''} · ${Math.round(w.now.temp)}°</b><span>${esc(wxLocal())} · ${hh}</span></div>`+
     days.map(d=>{const k=d.kind||wxKindFromText(d.cond,true);return `<div class="wxp-r ${d.rain>=40?'rainy':''}"><span class="wxp-d">${lbl(d.date)}</span><span class="wxp-i" title="${WX_TXT[k]||''}">${WX_SVG[k]||WX_SVG.nuvem}</span>
       <span class="wxp-rain">${Math.round(d.rain)}%</span><span class="wxp-lo">${Math.round(d.lo)}°</span><span class="wxp-bar"><i style="left:${(d.lo-lo)/sp*100}%;right:${(hi-d.hi)/sp*100}%"></i></span><span class="wxp-hi">${Math.round(d.hi)}°</span></div>`}).join('')+
     (age>8?`<div class="wxp-f">Dado de ${Math.round(age)} h atrás</div>`:'');
 }
 document.addEventListener('click',e=>{const wx=$('#wx');if(!wx)return;if(wx.contains(e.target)&&matchMedia('(hover:none)').matches){const o=wx.classList.toggle('open');wx.setAttribute('aria-expanded',o)}else if(!wx.contains(e.target))wx.classList.remove('open')});
-async function loadWX(){
-  try{const ac=new AbortController(),to=setTimeout(()=>ac.abort(),4000);
-    const r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${WX_POS.lat}&longitude=${WX_POS.lon}&current=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America%2FSao_Paulo&forecast_days=8`,{signal:ac.signal});clearTimeout(to);
-    if(!r.ok)throw 0;const j=await r.json(),d=j.daily;
-    return renderWX({updated:new Date().toISOString(),kind:wxKindFromCode(j.current.weather_code,!!j.current.is_day),now:{temp:j.current.temperature_2m,cond:'',is_day:!!j.current.is_day},
+let WX_REQ=0;
+async function loadWX(){const tk=++WX_REQ,P=wxPos(),vale=()=>tk===WX_REQ;
+  if(!P){renderWX(null);const l=lojaAtual();if(l&&!l.geoTentou&&(l.cidade||'').trim()){l.geoTentou=1;save();definirLocal(l.id,l.cidade,true)}return}
+  const key='pace-hq-wx:'+P.id,guarda=w=>{try{localStorage.setItem(key,JSON.stringify({...w,lat:P.lat,lon:P.lon}))}catch(e){}};
+  let cache=null;try{cache=JSON.parse(localStorage.getItem(key)||'null')}catch(e){}
+  if(cache&&cache.now&&cache.lat!=null&&wxPerto(cache.lat,cache.lon,P.lat,P.lon)){cache.kind=cache.kind||wxKindFromText(cache.now.cond,cache.now.is_day);renderWX(cache)}else{cache=null;WX_CUR=null;const el=$('#wx');if(el)el.hidden=true}
+  try{const j=await wxFetch(`https://api.open-meteo.com/v1/forecast?latitude=${P.lat}&longitude=${P.lon}&current=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America%2FSao_Paulo&forecast_days=8`,`/api/clima?lat=${P.lat}&lon=${P.lon}`),d=j.daily;if(!vale())return;
+    const w={updated:new Date().toISOString(),kind:wxKindFromCode(j.current.weather_code,!!j.current.is_day),now:{temp:j.current.temperature_2m,cond:'',is_day:!!j.current.is_day},
       today:{hi:d.temperature_2m_max[0],lo:d.temperature_2m_min[0],rain:d.precipitation_probability_max[0]??0},tomorrow:{hi:d.temperature_2m_max[1],lo:d.temperature_2m_min[1],rain:d.precipitation_probability_max[1]??0},
-      days:d.time.map((t,i)=>({date:t,kind:wxKindFromCode(d.weather_code[i],true),hi:d.temperature_2m_max[i],lo:d.temperature_2m_min[i],rain:d.precipitation_probability_max[i]??0}))});
+      days:d.time.map((t,i)=>({date:t,kind:wxKindFromCode(d.weather_code[i],true),hi:d.temperature_2m_max[i],lo:d.temperature_2m_min[i],rain:d.precipitation_probability_max[i]??0}))};
+    guarda(w);return renderWX(w);
   }catch(e){}
+  /* reserva: clima.json do GitHub, que traz uma previsão por loja (lojas.json) */
+  const daLoja=j=>{if(!j)return null;const x=j.lojas&&j.lojas[P.id];if(x&&x.now&&x.today&&(x.lat==null||wxPerto(x.lat,x.lon,P.lat,P.lon)))return x;
+    const la=j.lat??WX_PADRAO.lat,lo=j.lon??WX_PADRAO.lon;return j.now&&j.today&&wxPerto(la,lo,P.lat,P.lon)?j:null};
   for(const u of ['clima.json?t='+Date.now(),new URL('clima.json',location.href).href,'https://raw.githubusercontent.com/mft-bot/pace-clima/main/clima.json']){
-    try{const ac=new AbortController(),to=setTimeout(()=>ac.abort(),5000);const r=await fetch(u,{cache:'no-store',signal:ac.signal});clearTimeout(to);if(!r.ok)continue;const w=await r.json();
-      if(!w||!w.now||!w.today)continue;w.kind=wxKindFromText(w.now.cond,w.now.is_day);try{localStorage.setItem('pace-hq-wx',JSON.stringify(w))}catch(e){}return renderWX(w)}catch(e){}}
-  /* sem rede: mostra o último clima conhecido (fica esmaecido se tiver mais de 8 h) */
+    try{const ac=new AbortController(),to=setTimeout(()=>ac.abort(),5000);const r=await fetch(u,{cache:'no-store',signal:ac.signal});clearTimeout(to);if(!r.ok)continue;const w=daLoja(await r.json());
+      if(!w)continue;if(!vale())return;w.kind=wxKindFromText(w.now.cond,w.now.is_day);guarda(w);return renderWX(w)}catch(e){}}
+  if(!vale()||cache)return;
+  /* sem rede: último clima conhecido (esmaecido se tiver mais de 8 h); o exemplo embutido só vale para o Estreito */
   let w=null;try{w=JSON.parse(localStorage.getItem('pace-hq-wx')||'null')}catch(e){}
-  if(!w||!w.now)w=WX_LAST;if(w&&w.now){w.kind=w.kind||wxKindFromText(w.now.cond,w.now.is_day);renderWX(w)}else renderWX(null)
+  if(!w||!w.now)w=WX_LAST;if(w&&w.now&&wxPerto(WX_PADRAO.lat,WX_PADRAO.lon,P.lat,P.lon)){w.kind=w.kind||wxKindFromText(w.now.cond,w.now.is_day);renderWX(w)}else renderWX(null)
 }
 const WX_LAST={"updated":"2026-11-12T19:54:00-03:00","place":"Estreito, Florianópolis","now":{"temp":22.2,"cond":"clear","is_day":false},"today":{"date":"2026-11-12","cond":"drizzle","hi":26.9,"lo":17.8,"rain":100},"tomorrow":{"date":"2026-11-13","cond":"drizzle","hi":26.2,"lo":18.3,"rain":13},"days":[{"date":"2026-11-12","cond":"drizzle","hi":26.9,"lo":17.8,"rain":100},{"date":"2026-11-13","cond":"drizzle","hi":26.2,"lo":18.3,"rain":13},{"date":"2026-11-14","cond":"fog","hi":27.3,"lo":17.8,"rain":37},{"date":"2026-11-15","cond":"drizzle","hi":29.3,"lo":18.7,"rain":60}]};
 
@@ -4872,7 +5220,7 @@ function weekData(off=0){
   const[a,b]=weekRange(off),inR=d=>d&&d>=a&&d<=b;
   const leads=S.leads.filter(l=>inR(l.criado)),byO={};ORIGENS.forEach(o=>byO[o]=leads.filter(l=>l.origem===o).length);
   const reach=e=>S.leads.filter(l=>(l.hist||[]).some(h=>h.e===e&&inR(h.d))).length;
-  const vendas=S.vendas.filter(v=>inR(v.data)),fat=sum(vendas,valorVenda),ofR=sum(S.os.filter(o=>o.status==='Entregue'&&inR(o.saida)),valorOS);
+  const vendas=S.vendas.filter(v=>inR(v.data)),fat=sum(vendas,valorVenda),ofR=sum(S.os.filter(o=>o.status==='Entregue'&&inR(o.saida)),_tot);
   const camp={};leads.forEach(l=>{if(l.camp)camp[l.camp]=(camp[l.camp]||0)+1});const topC=Object.entries(camp).sort((x,y)=>y[1]-x[1])[0];
   const os=S.os.filter(o=>o.status==='Entregue'&&inR(o.saida)).length,toques=S.leads.reduce((n,l)=>n+(l.log||[]).filter(x=>inR(x.d)&&!/agendado para/.test(x.r)).length,0);
   return{a,b,leads:leads.length,byO,contato:reach('Contato'),tr:reach('Test Ride'),prop:reach('Proposta'),vendas:vendas.length,fat,ofR,topC:topC?[(S.campanhas.find(c=>c.id===topC[0])||{}).nome||'—',topC[1]]:null,os,toques};
@@ -4923,7 +5271,7 @@ function archiveLead(l,motivo){l.arq=true;l.arqEm=today();l.arqMotivo=motivo;l.a
 function setEtapa(l,etapa){
   const prev=l.etapa;l.etapa=etapa;(l.hist=l.hist||[]).push({e:etapa,d:today()});
   if(etapa==='Fechado'&&prev!=='Fechado'&&!S.vendas.some(v=>v.leadId===l.id)){
-    S.vendas.push({id:uid(),leadId:l.id,camp:l.camp||'',data:today(),cliente:l.nome,modelo:l.modelo,plano:'Essencial',pag:'PIX',canal:l.origem});
+    S.vendas.push({id:uid(),leadId:l.id,camp:l.camp||'',data:today(),cliente:l.nome,modelo:l.modelo,plano:'Essencial',pag:'PIX',canal:l.origem});npsQueue('venda','L'+l.id,l.nome,l.tel,l.modelo);
     toast(`Venda registrada: ${first(l.nome)} · ${l.modelo} (${BRL0(MODELOS[l.modelo]?.pix)}) → Financeiro`);
   }else if(prev==='Fechado'&&etapa!=='Fechado'){S.vendas=S.vendas.filter(v=>v.leadId!==l.id);toast(`${first(l.nome)} → ${etapa} · venda removida do mês`)}
   else toast(`${first(l.nome)} → ${etapa}`);
@@ -4960,7 +5308,7 @@ document.addEventListener('click',e=>{
   else if(a==='cs-demo-x'){const n=S.passaportes.filter(p=>p.fonte!=='gestao').length;S.passaportes=S.passaportes.filter(p=>p.fonte==='gestao');toast(`${n} passaporte(s) de exemplo removido(s)`);refresh()}
   else if(a==='cs-tpl'){UI.csTpl=el.dataset.v;UI.csMsgTxt=null;UI.csCamp=true;refresh()}
   else if(a==='cs-copy'){copyText(csText(csList(),UI.csTel),`${csList().length} clientes copiados`)}
-  else if(a==='cs-csv'){const b=new Blob([csCSV(csList(),UI.csTel)],{type:'text/csv;charset=utf-8'}),u=URL.createObjectURL(b),x=document.createElement('a');x.href=u;x.download=`pace-campanha-manutencao-${today()}.csv`;document.body.appendChild(x);x.click();x.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast('CSV da campanha baixado')}
+  else if(a==='cs-csv'){const b=new Blob([csCSV(csList(),UI.csTel)],{type:'text/csv;charset=utf-8'}),u=URL.createObjectURL(b),x=document.createElement('a');x.href=u;x.download=`pace-campanha-manutencao-${today()}.csv`;document.body.appendChild(x);x.click();x.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);UI.csTel?toastBk('CSV da campanha baixado'):toast('CSV da campanha baixado')}
   else if(a==='ads-imp'){const f=$('#ads-file');f.value='';f.click()}
   else if(a==='ads-run'){runAds()}
   else if(a==='ads-copy'){copyText(midiaText(),'Resumo de mídia copiado')}
@@ -4968,10 +5316,32 @@ document.addEventListener('click',e=>{
   else if(a==='dia-tog'){const k=el.dataset.area==='tr'?'trFechado':'fechado',v=+el.dataset.v,f=S.cfg[k]||[];S.cfg[k]=f.includes(v)?f.filter(x=>x!==v):[...f,v].sort();toast(`${el.dataset.area==='tr'?'Test rides':'Oficina'}: ${DIAS_NOME[v].toLowerCase()} ${S.cfg[k].includes(v)?'fechado':'aberto'}`);refresh()}
   else if(a==='dia-exc'){const area=el.dataset.area,k=area==='tr'?'trExc':'ofExc',dt=el.dataset.v,E=S.cfg[k]=S.cfg[k]||{};const base=(S.cfg[area==='tr'?'trFechado':'fechado']||[]).includes(new Date(dt+'T12:00:00').getDay());
     if(E[dt])delete E[dt];else E[dt]=base?'aberto':'fechado';Object.keys(E).forEach(d=>{if(d<today())delete E[d]});toast(`${ddmm(dt)}: ${diaFechado(area,dt)?'fechado':'aberto'}${E[dt]?' (exceção)':''}`);refresh()}
+  else if(a==='nps-ok'){const n=(S.nps||[]).find(k=>k.id===id);if(n){n.tratado=today();toast('Marcado como tratado')}refresh()}
+  else if(a==='nps-rev'){const n=(S.nps||[]).find(k=>k.id===id);if(n)n.review=today();refresh()}
+  else if(a==='nps-del'){S.nps=(S.nps||[]).filter(k=>k.id!==id);refresh()}
+  else if(a==='rev-p'){UI.revP=el.dataset.v;refresh()}
+  else if(a==='rev-copy'){copyText(revText(),'Resumo copiado para os sócios')}
+  else if(a==='sel-mode'){UI.selMode=!UI.selMode;UI.sel=[];$$('details.more-menu').forEach(d=>d.open=false);refresh()}
+  else if(a==='sel-all'){const vis=$$('[data-lead-card]').map(c=>c.dataset.leadCard);UI.sel=[...new Set([...(UI.sel||[]),...vis])];refresh()}
+  else if(a==='sel-apply'){const c=$('#sel-camp').value;let n=0;(UI.sel||[]).forEach(i=>{const l=findLead(i);if(l){l.camp=c;S.vendas.forEach(v=>{if(v.leadId===l.id)v.camp=c});n++}});
+    const cn=c?(S.campanhas.find(k=>k.id===c)||{}).nome:'Nenhuma';toast(`${n} lead${n===1?'':'s'} → ${cn}`);UI.selMode=false;UI.sel=[];refresh()}
+  else if(a==='loja-export'){$('#data-menu').open=false;exportarLoja()}
+  else if(a==='loja-geo'){const l=(S.lojas||[]).find(x=>x.id===el.dataset.id);if(l)aplicarLocal(l,+el.dataset.lat,+el.dataset.lon,el.dataset.n)}
+  else if(a==='loja-set'){$('#loja-menu').open=false;trocarLoja(el.dataset.v)}
+  else if(a==='loja-rede'){$('#loja-menu').open=false;UI.revRede=true;openDrawer('financeiro','rev')}
+  else if(a==='rev-rede'){UI.revRede=!UI.revRede;refresh()}
+  else if(a==='lead-export'){$$('details.more-menu').forEach(d=>d.open=false);exportLeads()}
+  else if(a==='lead-export-rede'){$$('details.more-menu').forEach(d=>d.open=false);exportLeads(true)}
+  else if(a==='tpr-go'){UI.etapa='Novo';UI.view='ativos';UI.q='';UI.semNome=false;openDrawer('comercial','panel')}
+  else if(a==='ped-copy'){copyText(pedidoText(),'Pedido copiado · cole no WhatsApp do fornecedor')}
+  else if(a==='pc-q'){const p=(S.pecas||[]).find(x=>x.id===id);if(p){p.estoque=Math.max(0,(Number(p.estoque)||0)+Number(el.dataset.v))}refresh()}
+  else if(a==='os-pc-x'){const o=S.os.find(x=>x.id===id);if(o){o.pecas.splice(+el.dataset.i,1)}refresh()}
   else if(a==='tr-faltou-x'){UI.trFaltou=null;refresh()}
   else if(a==='tr-conf'){const l=findLead(id);l.trSt='Confirmado';logLead(l,'confirmou o test ride');toast(`${first(l.nome)||'Lead'}: test ride confirmado`);refresh()}
   else if(a==='tr-rem'){UI.trRem=UI.trRem===id?null:id;refresh()}
   else if(a==='tr-res'){trResult(findLead(id),el.dataset.v)}
+  else if(a==='of-faixa'){S.cfg.ofMin=35;S.cfg.ofMax=45;refresh();setTimeout(()=>{const x=$('[data-change=of-min]');x&&(x.focus(),x.select())},60)}
+  else if(a==='ag-dia-pick'){UI.agForm={...(UI.agForm||{}),data:el.dataset.v,hora:null};refresh()}
   else if(a==='ag-tipo'){UI.agTipo=el.dataset.v;UI.agForm={...(UI.agForm||{}),pid:null};refresh();setTimeout(()=>{const x=$(el.dataset.v==='pace'?'[data-input=ag-q]':'form[data-form=ag] [name=cliente]');x&&x.focus()},60)}
   else if(a==='ag-pick'){UI.agTipo='pace';UI.agForm={...(UI.agForm||{}),pid:el.dataset.v};refresh()}
   else if(a==='ag-unpick'){UI.agForm={...(UI.agForm||{}),pid:null};refresh();setTimeout(()=>{const x=$('[data-input=ag-q]');x&&x.focus()},60)}
@@ -4989,7 +5359,7 @@ document.addEventListener('click',e=>{
     if(S.os.some(o=>o.id===oid&&o.status!=='Entregue')){toast(`${oid} já está na bancada`);return}
     let p=S.passaportes.find(x=>x.id===oid);
     if(!p&&/^PACE/.test(oid))toast(`${oid} não está na carteira: importe do painel de gestão para acompanhar a garantia`);
-    S.os.push({id:oid,cliente:ag.cliente,tel:ag.tel,modelo:ag.modelo,plano:p?p.plano:'—',servico:ag.servico,status:'Recebida',entrada:today(),prazo:rel(2),km:0,chk:{freios:false,eletrica:false,transmissao:false,aperto:false,teste:false},nota:ag.obs||''});
+    S.os.push({id:oid,loja:ag.loja||S.lojaAtual,cliente:ag.cliente,tel:ag.tel,modelo:ag.modelo,plano:p?p.plano:'—',servico:ag.servico,status:'Recebida',entrada:today(),prazo:rel(2),km:0,chk:{freios:false,eletrica:false,transmissao:false,aperto:false,teste:false},nota:ag.obs||''});
     ag.status='Chegou';ag.osId=oid;toast(`${ag.cliente.split(' ')[0]} na bancada · ${oid}`);refresh();
   }
   else if(a==='g-brief'){const e=el.dataset.v;UI.tab='chat';renderTabs();renderBody();sendAI('criativo',`Escreva um brief criativo para destravar a passagem de “${ETAPA_LBL[e]}” para a próxima etapa, que é o gargalo do mês. Inclua: objetivo, etapa do funil, público, mensagem-chave, formato sugerido, referências visuais dentro da identidade PACE, CTA e a métrica para medir se funcionou. No final, proponha a peça como ação.`)}
@@ -5098,32 +5468,84 @@ document.addEventListener('click',e=>{
   else if(a==='fu-snooze'){const l=findLead(id);l.fu=rel(1);toast(`${first(l.nome)} adiado para ${ddmm(l.fu)}`);refresh()}
   else if(a==='os-status'){const o=S.os.find(x=>x.id===id);o.status=el.dataset.v;toast(`${o.id} → ${o.status}`);refresh()}
   else if(a==='os-deliver'){
-    const o=S.os.find(x=>x.id===id);o.status='Entregue';o.saida=today();if(o.valor==null||o.valor==='')o.valor=precoServ(o.servico);
-    const p=S.passaportes.find(x=>x.id===o.id);if(p){const tp=servTipo(o.servico);p.ev.push({d:today(),t:tp==='Outro'?'Serviço':tp,x:o.servico+(o.nota?` (${o.nota})`:''),km:o.km||0})}
+    const o=S.os.find(x=>x.id===id);o.status='Entregue';o.saida=today();pecaBaixa(o);npsQueue('oficina','O'+o.id+o.saida,o.cliente,o.tel,o.modelo);if(o.valor==null||o.valor==='')o.valor=precoServ(o.servico);
+    const p=S.passaportes.find(x=>x.id===o.id);if(p){const tp=servTipo(o.servico);p.ev.push({d:today(),t:tp==='Outro'?'Serviço':tp,x:o.servico+(o.nota?` (${o.nota})`:'')+((o.pecas||[]).length?' · peças: '+o.pecas.map(x=>`${x.nome} ×${x.qtd}${x.gar?' (garantia)':''}`).join(', '):''),km:o.km||0})}
     toast(p?`${o.id} entregue · registrado no Passaporte Digital`:`${o.id} entregue`);refresh();
   }
   else if(a==='pass-open'){UI.csOpen=id;UI.csQ='';UI.csF='todos';UI.tab='pass';renderTabs();renderBody()}
   else if(a==='camp'){const c=S.campanhas.find(x=>x.id===id);c.ativa=!c.ativa;toast(`${c.nome}: ${c.ativa?'ativada':'pausada'}`);refresh()}
   else if(a==='copy-script'){copyText(SCRIPTS[+el.dataset.i].m(scriptVars()))}
-  else if(a==='backup-copy'){$('#data-menu').open=false;const txt=JSON.stringify(S);
-    if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(txt).then(()=>{markBackup();toast('Backup copiado · cole num lugar seguro')},()=>showBackup(txt));else showBackup(txt)}
+  else if(a==='backup-copy'){$('#data-menu').open=false;const txt=JSON.stringify(pacote());
+    if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(txt).then(()=>{markBackup();toastBk('Dados copiados')},()=>showBackup(txt));else showBackup(txt)}
   else if(a==='backup-dl'){$('#data-menu').open=false;downloadBackup()}
   else if(a==='bk-later'){try{localStorage.setItem('pace-hq-bk-snooze',today())}catch(e){}syncBackupBar()}
-  else if(a==='backup-import'){$('#data-menu').open=false;$('#im-help').textContent='Cole aqui o texto de um backup do PACE HQ. Os dados atuais serão substituídos.';$('#im-text').value='';$('#im-file').value='';$('#im-file-wrap').hidden=false;$('#im-run').hidden=false;$('#import-modal').showModal()}
+  else if(a==='import-undo'){$('#data-menu').open=false;desfazerImport()}
+  else if(a==='backup-import'){$('#data-menu').open=false;const rb=$('#im-run');delete rb.dataset.ok;rb.textContent='Revisar';$('#im-help').textContent='Escolha o arquivo exportado (.json) ou cole o texto. Antes de substituir, você vê o resumo do que será importado.';$('#im-text').value='';$('#im-file').value='';$('#im-file-wrap').hidden=false;$('#im-run').hidden=false;$('#import-modal').showModal()}
   else if(a==='import-run'){
-    try{const d=JSON.parse($('#im-text').value);if(!valid(d))throw 0;S=migrate(d);syncCatalog();$('#import-modal').close();toast('Backup importado');refresh()}
-    catch(_){toast('Backup inválido: confira se copiou o texto inteiro')}
+    let p;try{p=lerPacote($('#im-text').value);if(!valid(p.d))throw 0}catch(_){toast('Arquivo inválido: confira se é uma exportação do PACE HQ');return}
+    if(!el.dataset.ok){const r=resumoDados(p.loja?p.loja.dados:p.d),m=p.meta;el.dataset.ok='1';el.textContent='Confirmar importação';
+      $('#im-help').innerHTML=`<b>${p.loja?`Loja: ${esc(p.loja.loja.nome)} · `:''}${m?`Exportação de ${new Date(m.geradoEm).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})} · versão ${esc(m.versao||'—')}`:'Backup no formato antigo'}</b><div class="im-res">${r.map(([k,v])=>`<span>${k}<b class="mono">${v}</b></span>`).join('')}</div><span class="meta">Os dados atuais deste navegador serão substituídos. Uma cópia deles fica guardada e dá para voltar em Menu → Desfazer última importação.</span>`;return}
+    delete el.dataset.ok;el.textContent='Importar';aplicarPacote(p);$('#import-modal').close();toast('Dados importados · tudo atualizado para esta versão');refresh()
   }
   else if(a==='backup-reset'){$('#data-menu').open=false;if(el.dataset.confirm){S=seed();delete el.dataset.confirm;el.textContent='Restaurar dados de exemplo';toast('Dados de exemplo restaurados');refresh()}else{el.dataset.confirm='1';el.textContent='Clique de novo para confirmar';$('#data-menu').open=true;setTimeout(()=>{delete el.dataset.confirm;el.textContent='Restaurar dados de exemplo'},4000)}}
 });
 let DL=null;
 if(window.claude&&typeof window.claude.use==='function')window.claude.use('downloads').then(d=>{DL=d||null}).catch(()=>{});
 function markBackup(){S.cfg.lastBackup=today();save();syncBackupBar()}
+/* ---------- Exportar leads (ativos + arquivados) com perfil e interesses ---------- */
+function leadRow(l,arq){const P=l.perf||{},pl=k=>{const o=PERFIL[k].o.find(x=>x[0]===P[k]);return o?o[1]:''};
+  const c=l.camp&&S.campanhas.find(x=>x.id===l.camp),trs=(l.trH||[]).map(h=>`${ddmm(h.d)} ${h.st.toLowerCase()}`).join(' · ');
+  const r={'Loja':lojaNome(S.lojaAtual),'Nome':l.nome,'Telefone':fmtTel(l.tel||''),'Etapa':l.etapa,'Origem':l.origem||'','Campanha':c?c.nome:'','Modelo de interesse':l.modelo||'','Bairro':l.bairro||''};
+  PERF_KEYS.forEach(k=>r['Perfil · '+PERFIL[k].t]=pl(k));
+  Object.assign(r,{'Perfil preenchido':`${perfN(l)}/${PERF_KEYS.length}`,'Cadastrado em':l.criado?ddmm(l.criado)+'/'+l.criado.slice(0,4):'','Próximo contato':l.fu&&!arq?ddmm(l.fu)+'/'+l.fu.slice(0,4):'','Contatos feitos':l.toques||0,
+    '1ª resposta (min)':l.tpr!=null?l.tpr:'','Último contato':l.ultimo?ddmm(l.ultimo)+'/'+l.ultimo.slice(0,4):'','Test rides':trs,'Observação':l.obs||''});
+  if(arq)Object.assign(r,{'Arquivado em':l.arqEm?ddmm(l.arqEm)+'/'+l.arqEm.slice(0,4):'','Motivo':l.arqMotivo||'','Parou em':l.arqEtapa||l.etapa});
+  return r}
+function perfResumo(){const out=[];PERF_KEYS.forEach(k=>PERFIL[k].o.forEach(o=>{const ls=S.leads.filter(l=>(l.perf||{})[k]===o[0]),v=ls.filter(l=>l.etapa==='Fechado').length;
+  if(ls.length)out.push({'Pergunta':PERFIL[k].t,'Resposta':o[1],'Leads':ls.length,'Vendas':v,'Conversão':ls.length?Math.round(v/ls.length*1000)/10+'%':''})}));return out}
+function csvOf(rows){if(!rows.length)return '';const h=Object.keys(rows[0]),q=v=>`"${String(v??'').replace(/"/g,'""')}"`;return [h,...rows.map(r=>h.map(k=>r[k]))].map(r=>r.map(q).join(';')).join('\r\n')}
+async function exportLeads(rede){
+  const ids=rede?S.lojas.map(l=>l.id):[S.lojaAtual],at=[],ar=[];ids.forEach(id=>comLoja(id,()=>{S.leads.forEach(l=>(l.arq?ar:at).push(leadRow(l,!!l.arq)))}));const pr=perfResumo();
+  const base=`pace-leads-${rede?'rede':normTxt(lojaAtual().nome).replace(/[^a-z0-9]+/g,'-')}-${today()}`;
+  const fallbackCSV=async()=>{const txt='﻿'+'LEADS ATIVOS\r\n'+csvOf(at)+'\r\n\r\nARQUIVADOS\r\n'+csvOf(ar);
+    if(DL){try{await DL.save({filename:base+'.csv',data:txt});toastBk('Planilha (CSV) salva');return}catch(e){}}
+    const u=URL.createObjectURL(new Blob([txt],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download=base+'.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toastBk('Planilha (CSV) baixada')};
+  try{
+    if(!window.XLSX){await new Promise((ok,err)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';s.onload=ok;s.onerror=err;document.head.appendChild(s)})}
+    const wb=XLSX.utils.book_new();
+    const add=(rows,name)=>{const ws=XLSX.utils.json_to_sheet(rows.length?rows:[{'':'Nenhum registro'}]);const h=rows.length?Object.keys(rows[0]):[''];
+      ws['!cols']=h.map(k=>({wch:Math.min(40,Math.max(k.length+2,...rows.slice(0,200).map(r=>String(r[k]??'').length+1)))}));if(rows.length)ws['!autofilter']={ref:ws['!ref']};XLSX.utils.book_append_sheet(wb,ws,name)};
+    add(at,'Leads ativos');add(ar,'Arquivados');add(pr,'Perfil (resumo)');
+    const buf=XLSX.write(wb,{bookType:'xlsx',type:'array'});
+    if(DL){try{await DL.save({filename:base+'.xlsx',data:new Uint8Array(buf)});toastBk('Planilha salva');return}catch(e){if(e&&e.code==='declined'){toast('Download cancelado');return}return fallbackCSV()}}
+    const u=URL.createObjectURL(new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})),a=document.createElement('a');a.href=u;a.download=base+'.xlsx';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);
+    toastBk(`Planilha baixada: ${at.length} ativos · ${ar.length} arquivados`)}
+  catch(e){await fallbackCSV()}
+}
+/* ---------- Pacote completo: exportar/importar TODOS os dados (para trocar de versão sem perder nada) ---------- */
+const APP_VERSAO='2026.11.16';
+const PREF_KEYS=()=>{const o=[];try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('pace-hq-')&&k!==KEY&&k!=='pace-hq-v2-anterior')o.push(k)}}catch(e){}return o};
+function resumoDados(d){const n=k=>Array.isArray(d[k])?d[k].length:0;
+  return[['Leads ativos',(d.leads||[]).filter(l=>!l.arq).length],['Leads arquivados',(d.leads||[]).filter(l=>l.arq).length],['Vendas',n('vendas')],['Ordens de serviço',n('os')],['Agendamentos da oficina',n('agenda')],
+    ['PACE IDs (pós-venda)',n('passaportes')],['Pesquisas NPS',n('nps')],['Campanhas',n('campanhas')],['Histórico de anúncios',n('adsHist')],['Peças',n('pecas')],['Bikes em estoque',n('estoque')],
+    ['Contas',n('contas')],['Checklist admin',n('admin')],['Peças de conteúdo',n('pauta')],['Anotações',n('inbox')]].filter(x=>x[1])}
+function pacote(){const pref={};PREF_KEYS().forEach(k=>{try{pref[k]=localStorage.getItem(k)}catch(e){}});
+  return{app:'PACE HQ',tipo:'pacote-completo',formato:1,versao:APP_VERSAO,geradoEm:new Date().toISOString(),resumo:Object.fromEntries(resumoDados(S)),dados:S,preferencias:pref}}
+function lerPacote(txt){const j=JSON.parse(txt);if(j&&j.tipo==='pacote-loja'&&j.dados&&j.loja){const d={...S,v:2};return{d,pref:{},meta:j,loja:j}}if(j&&j.tipo==='pacote-completo'&&j.dados)return{d:j.dados,pref:j.preferencias||{},meta:j};return{d:j,pref:{},meta:null}}
+function aplicarPacote(p){try{localStorage.setItem('pace-hq-v2-anterior',JSON.stringify({em:new Date().toISOString(),dados:S}))}catch(e){}
+  if(p.loja){const L=p.loja.loja;if(!S.lojas.some(x=>x.id===L.id))S.lojas.push({...L});if(L.id===S.lojaAtual)lojaUnpack(p.loja.dados);else{(S.redeLojas=S.redeLojas||{})[L.id]=p.loja.dados}save();return}
+  S=migrate(p.d);Object.entries(p.pref||{}).forEach(([k,v])=>{if(k.startsWith('pace-hq-')&&k!==KEY&&typeof v==='string'){try{localStorage.setItem(k,v)}catch(e){}}});syncCatalog();save()}
+function desfazerImport(){let a=null;try{a=JSON.parse(localStorage.getItem('pace-hq-v2-anterior')||'null')}catch(e){}if(!a||!valid(a.dados)){toast('Não há importação para desfazer');return}
+  S=migrate(a.dados);try{localStorage.removeItem('pace-hq-v2-anterior')}catch(e){}syncCatalog();save();toast('Importação desfeita: dados anteriores restaurados');refresh()}
+async function exportarLoja(){const l=lojaAtual(),pk={app:'PACE HQ',tipo:'pacote-loja',formato:1,versao:APP_VERSAO,geradoEm:new Date().toISOString(),loja:l,resumo:Object.fromEntries(resumoDados(S)),dados:lojaPack()};
+  const name=`pace-hq-${normTxt(l.nome).replace(/[^a-z0-9]+/g,'-')}-${today()}.json`,data=JSON.stringify(pk,null,1);
+  if(DL){try{await DL.save({filename:name,data});toastBk(`${l.nome} exportada`);return}catch(e){if(e&&e.code==='declined'){toast('Download cancelado');return}}}
+  const url=URL.createObjectURL(new Blob([data],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);toastBk(`${l.nome} exportada`)}
 async function downloadBackup(){
-  const name=`pace-hq-backup-${today()}.json`,data=JSON.stringify(S,null,1);
-  if(DL){try{await DL.save({filename:name,data});markBackup();toast('Backup salvo · guarde o arquivo em local seguro')}catch(e){if(e&&e.code==='declined')toast('Download cancelado');else showBackup(JSON.stringify(S))}return}
-  try{const url=URL.createObjectURL(new Blob([data],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);markBackup();toast('Backup baixado')}
-  catch(_){showBackup(JSON.stringify(S))}
+  const name=`pace-hq-completo-${today()}.json`,data=JSON.stringify(pacote(),null,1);
+  if(DL){try{await DL.save({filename:name,data});markBackup();toastBk('Exportação completa salva')}catch(e){if(e&&e.code==='declined')toast('Download cancelado');else showBackup(JSON.stringify(pacote()))}return}
+  try{const url=URL.createObjectURL(new Blob([data],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);markBackup();toastBk('Exportação completa baixada')}
+  catch(_){showBackup(JSON.stringify(pacote()))}
 }
 function syncDayBtn(){const p=diaProgress(),cur=blocoAtual(),r=S.cfg.rotina||ROTINA_PADRAO(),b=r.find(x=>x.id===cur);$('#day-prog').innerHTML=`Meu dia <small>${p.done}/${p.total}${b&&!diaState().done[b.id]?' · '+esc(b.n.split(' ·')[0]):''}</small>`}
 function syncBackupBar(){
@@ -5134,7 +5556,7 @@ function syncBackupBar(){
   $('#bk-txt').innerHTML=need?`<b style="color:var(--late)">● ${days==null?'Nenhum backup feito ainda':'Último backup há '+days+' dias'}</b>`:`Backup${last?' · último em '+ddmm(last):''}`;
 }
 document.addEventListener('change',e=>{if(e.target.id!=='im-file'||!e.target.files[0])return;const r=new FileReader();r.onload=()=>{$('#im-text').value=String(r.result||'')};r.readAsText(e.target.files[0])});
-function showBackup(txt){markBackup();$('#im-help').textContent='Selecione tudo e copie (Ctrl/Cmd + C). Guarde num lugar seguro.';$('#im-text').value=txt;$('#im-run').hidden=true;$('#im-file-wrap').hidden=true;$('#import-modal').showModal();$('#im-text').select()}
+function showBackup(txt){markBackup();$('#im-help').innerHTML='Selecione tudo e copie (Ctrl/Cmd + C).<div class="bk-av">🔒 '+AVISO_BK+'</div>';$('#im-text').value=txt;$('#im-run').hidden=true;$('#im-file-wrap').hidden=true;$('#import-modal').showModal();$('#im-text').select()}
 
 document.addEventListener('change',e=>{
   const el=e.target,k=el.dataset.change,id=el.dataset.id;if(!k)return;
@@ -5142,6 +5564,17 @@ document.addEventListener('change',e=>{
   if(k==='ads-on'){ADS.list[+el.dataset.i].on=el.checked;renderAds()}
   if(k==='cs-on'){CSI.list[+el.dataset.i].on=el.checked;renderCSI()}
   if(k==='cs-f'){UI.csF=el.value;refresh()}
+  if(k==='est-loja'){const u=S.estoque.find(x=>x.id===el.dataset.id);if(u){const de=u.loja;u.loja=el.value;u.obs=((u.obs||'')+` · transferida de ${lojaNome(de)} em ${ddmm(today())}`).replace(/^ · /,'');toast(`${u.modelo} agora em ${lojaNome(el.value)}`)}refresh()}
+  if(k==='lead-transf'&&el.value){transferirLead(el.dataset.id,el.value)}
+  if(k==='diaria'){S.cfg.diaria=Math.max(0,Number(el.value)||0);toast('Valor da diária atualizado');refresh()}
+  if(k==='of-min'||k==='of-max'){const v=el.value===''?null:Math.max(0,Math.min(100,Number(el.value)||0));S.cfg[k==='of-min'?'ofMin':'ofMax']=v;if(S.cfg.ofMin!=null&&S.cfg.ofMax!=null&&S.cfg.ofMin>S.cfg.ofMax){const t=S.cfg.ofMin;S.cfg.ofMin=S.cfg.ofMax;S.cfg.ofMax=t}toast('Faixa de lucro da oficina atualizada');refresh()}
+  if(k==='of-pct'){const v=el.value===''?null:Math.max(0,Math.min(100,Number(el.value)||0));S.cfg.ofPct=v;toast(v==null?'% da oficina removido':`Oficina fica com ${v}%`);refresh()}
+  if(k==='pc-min'){const p=(S.pecas||[]).find(x=>x.id===el.dataset.id);if(p){p.minimo=Math.max(0,Number(el.value)||0)}refresh()}
+  if(k==='os-pc-gar'){UI.pcGar=el.checked?el.dataset.id:null}
+  if(k==='os-pc-add'&&el.value){const o=S.os.find(x=>x.id===el.dataset.id),pc=(S.pecas||[]).find(x=>x.id===el.value);if(o&&pc){const gar=UI.pcGar===o.id;(o.pecas=o.pecas||[]).push({id:pc.id,nome:pc.nome,qtd:1,preco:Number(pc.preco)||0,gar});toast(`${pc.nome} na ${o.id}${gar?' (garantia)':''}`)}refresh()}
+  if(k==='tpr-min'){S.cfg.tprAlert=Math.max(1,Math.min(120,parseInt(el.value)||5));toast(`Alerta após ${S.cfg.tprAlert} min sem resposta`);refresh()}
+  if(k==='nps-nota'&&el.value!==''){const n=(S.nps||[]).find(x=>x.id===el.dataset.id);if(n){n.nota=+el.value;n.st='respondida';n.resp=today();toast(n.nota>=9?'Promotor! Peça a avaliação no Google':n.nota<=6?'Insatisfeito: entra em "Resolver agora"':'Nota registrada')}refresh()}
+  if(k==='g-review'){S.cfg.googleReview=el.value.trim();save();toast('Link de avaliação salvo')}
   if(k==='cs-tel'){UI.csTel=el.checked;UI.csCamp=true;refresh()}
   else if(k==='lead-etapa'){setEtapa(findLead(id),el.value);refresh()}
   else if(k==='lead-fu-date'){if(!el.value)return;const l=findLead(id);l.fu=el.value<today()?today():el.value;(l.log=l.log||[]).push({d:today(),r:`follow-up agendado para ${ddmm(l.fu)}`});toast(`${first(l.nome)}: próximo contato em ${ddmm(l.fu)}${l.hora?' às '+l.hora:''}`);refresh()}
@@ -5195,7 +5628,7 @@ document.addEventListener('submit',e=>{
     const tel=normTel(d.tel);if(!telOk(tel)){toast('Telefone inválido: use DDD + número');f.tel.focus();return}
     {const dup=telExiste(tel);if(dup){toast(`Esse telefone já é do lead ${first(dup.nome)} (${dup.etapa}). Nada foi duplicado.`);return}}
     LAST_ORIGEM=d.origem;
-    const l={id:uid(),camp:d.camp||'',hist:[{e:d.etapa,d:today()}],criado:today(),nome:d.nome.trim(),tel,email:d.email.trim(),origem:d.origem,modelo:d.modelo,etapa:d.etapa,bairro:d.bairro.trim(),fu:today(),hora:'',obs:d.obs.trim(),criado:today()};
+    const l={id:uid(),ts:Date.now(),camp:d.camp||'',hist:[{e:d.etapa,d:today()}],criado:today(),nome:d.nome.trim(),tel,email:d.email.trim(),origem:d.origem,modelo:d.modelo,etapa:d.etapa,bairro:d.bairro.trim(),fu:today(),hora:'',obs:d.obs.trim(),criado:today()};
     const tpr=d.tpr!==''&&d.tpr!=null?Math.max(0,Math.round(+d.tpr)):null;if(tpr!=null&&!isNaN(tpr))l.tpr=tpr;
     if(d.resp){l.toques=1;(l.log=l.log||[]).push({d:today(),r:'primeira resposta no WhatsApp'+(l.tpr!=null?` (TPR ${l.tpr} min)`:'')});l.ultimo=today();if(l.etapa==='Novo'){l.etapa='Contato';l.hist.push({e:'Contato',d:today()})}l.fu=nextByCad(l)}
     S.leads.unshift(l);UI.etapa='Todos';UI.origem='Todas';UI.q='';
@@ -5213,8 +5646,11 @@ document.addEventListener('submit',e=>{
       a={id:uid(),data:d.data,hora:d.hora,cliente:first(p.cliente)||p.cliente,tel,modelo:p.modelo||'',pid:p.id,servico:d.servico,obs:(d.obs||'').trim(),tipo:'pace',status:d.conf?'Confirmado':'Agendado'}}
     else{const tel=normTel(d.tel||'');if(!telOk(tel)){toast('Telefone inválido: use DDD + número');return}
       a={id:uid(),data:d.data,hora:d.hora,cliente:titleCase(first(d.cliente.trim())),tel,modelo:`${d.veic}${d.marca?' · '+d.marca.trim():''}`,veic:d.veic,pid:'',servico:d.servico,obs:(d.obs||'').trim(),tipo:'avulso',status:d.conf?'Confirmado':'Agendado'}}
-    S.agenda.push(a);UI.agDia=d.data;UI.agMes=d.data.slice(0,7);UI.agForm=null;UI.agTipo=null;UI.agQ='';toast(`Agendado: ${a.cliente} · ${ddmm(d.data)} ${d.hora}`);refresh();
+    a.loja=S.lojaAtual;S.agenda.push(a);UI.agDia=d.data;UI.agMes=d.data.slice(0,7);UI.agForm=null;UI.agTipo=null;UI.agQ='';toast(`Agendado: ${a.cliente} · ${ddmm(d.data)} ${d.hora}`);refresh();
   }
+  else if(kind==='loja-new'){const id=novaLoja(d.nome,d.cidade);if(id){$('#loja-menu').open=false;trocarLoja(id);if((d.cidade||'').trim()){const nl=S.lojas.find(x=>x.id===id);if(nl)nl.geoTentou=1;setTimeout(()=>definirLocal(id,d.cidade,true),300)}toast(`${d.nome.trim()} criada · estoque, oficina, PACE ID e catálogo já são compartilhados`)}}
+  else if(kind==='loja-ren'){const l=lojaAtual();if(d.nome&&d.nome.trim())l.nome=d.nome.trim();l.cidade=(d.cidade||'').trim();syncLojaBtn();save();const q=(d.local||'').trim()||l.cidade;if(q&&q!==(l.local||''))definirLocal(l.id,q);else{$('#loja-menu').open=false;toast('Loja atualizada')}}
+  else if(kind==='peca-new'){(S.pecas=S.pecas||[]).push({id:uid(),nome:d.nome.trim(),cat:d.cat,preco:Math.max(0,Number(d.preco)||0),estoque:Math.max(0,parseInt(d.estoque)||0),minimo:Math.max(0,parseInt(d.minimo)||0)});toast('Peça cadastrada');refresh()}
   else if(kind==='tr-rem'){const l=findLead(f.dataset.id);l.fu=d.d;l.hora=d.h;l.trSt=null;l.trOk=null;logLead(l,`test ride remarcado para ${ddmm(d.d)} ${d.h}`);UI.trRem=null;UI.trDia=d.d;UI.trMes=d.d.slice(0,7);toast(`Test ride remarcado: ${ddmm(d.d)} às ${d.h}`);refresh()}
   else if(kind==='tr-cfg'){const sl=String(d.slots||'').split(/[,;\s]+/).map(x=>x.trim()).filter(x=>/^\d{1,2}:\d{2}$/.test(x)).map(x=>x.padStart(5,'0')).sort();if(sl.length){S.cfg.trSlots=sl;toast('Horários de test ride salvos')}refresh()}
   else if(kind==='tr-new'){let l=d.lead?findLead(d.lead):null;
@@ -5235,11 +5671,11 @@ document.addEventListener('submit',e=>{
   else if(kind==='venda'){
     const v={id:uid(),camp:d.camp||'',data:d.data||today(),cliente:d.cliente.trim(),tel:digits(d.tel),modelo:d.modelo,plano:'Essencial',pag:d.pag,canal:d.canal};
     if(d.valor!=='')v.valor=Math.round(Number(d.valor)*100)/100;
-    S.vendas.push(v);let extra='';
+    S.vendas.push(v);npsQueue('venda','V'+v.id,v.cliente,v.tel,v.modelo);let extra='';
     if(d.baixa){const u=S.estoque.find(x=>x.modelo===d.modelo&&x.status==='Disponível');if(u){u.status='Vendida';u.obs=(u.obs?u.obs+' · ':'')+'Vendida p/ '+v.cliente;extra=' · baixa no estoque'}else extra=' · sem unidade disponível p/ baixa'}
     toast(`Venda registrada: ${first(v.cliente)} · ${v.modelo} · ${BRL(valorVenda(v))}${extra}`);refresh();
   }
-  else if(kind==='est'){const n=Math.min(20,Math.max(1,parseInt(d.qtd)||1));for(let i=0;i<n;i++)S.estoque.push({id:uid(),modelo:d.modelo,status:d.status,ident:(d.ident||'').trim()||'—',obs:(d.obs||'').trim(),entrada:today()});toast(`${n} × ${d.modelo} no estoque`);refresh()}
+  else if(kind==='est'){const n=Math.min(20,Math.max(1,parseInt(d.qtd)||1));for(let i=0;i<n;i++)S.estoque.push({id:uid(),loja:S.lojaAtual,modelo:d.modelo,status:d.status,ident:(d.ident||'').trim()||'—',obs:(d.obs||'').trim(),entrada:today()});toast(`${n} × ${d.modelo} no estoque`);refresh()}
   else if(kind==='cat'){const nome=d.nome.trim();if(MODELOS[nome]){toast('Esse modelo já existe');return}const tb=Math.round(Number(d.tabela)||0),px=Math.round(Number(d.pix)||0),ps=Math.round(Number(d.piso)||0);if(px>tb||(ps&&ps>px)){toast('Confira os valores: piso ≤ PIX ≤ tabela');return}S.catalogo.push({nome,cat:d.cat,tabela:tb,pix:px,piso:ps||undefined});syncCatalog();toast(`Modelo ${nome} adicionado`);refresh()}
   else if(kind==='pass'){UI.pass=d.id.trim().toUpperCase();refresh()}
   else if(kind==='gar-cfg'){S.cfg.garTol=Math.max(0,Math.min(60,parseInt(d.tol)||0));S.cfg.garBateria=d.bat;toast('Regras da garantia salvas');refresh()}
@@ -5251,7 +5687,7 @@ document.addEventListener('submit',e=>{
     if(S.os.some(o=>o.id===id&&o.status!=='Entregue')){toast(`${id} já está na bancada`);return}
     let p=S.passaportes.find(x=>x.id===id);
     if(!p&&/^PACE/.test(id))toast(`${id} não está na carteira: importe do painel de gestão para acompanhar a garantia`);
-    S.os.push({id,cliente:d.cliente.trim(),tel,modelo:d.modelo,plano:p?p.plano:'—',servico:d.servico.trim(),status:'Recebida',entrada:today(),prazo:d.prazo,km:Number(d.km)||0,chk:{freios:false,eletrica:false,transmissao:false,aperto:false,teste:false},nota:''});
+    S.os.push({id,loja:S.lojaAtual,cliente:d.cliente.trim(),tel,modelo:d.modelo,plano:p?p.plano:'—',servico:d.servico.trim(),status:'Recebida',entrada:today(),prazo:d.prazo,km:Number(d.km)||0,chk:{freios:false,eletrica:false,transmissao:false,aperto:false,teste:false},nota:''});
     toast(`${id} na bancada · prazo ${ddmm(d.prazo)}`);refresh();
   }
   else if(kind==='conta'){S.contas.push({id:uid(),tipo:d.tipo,rec:!!d.rec,desc:d.desc.trim(),valor:Math.round(Number(d.valor)*100)/100,venc:d.venc,ok:false});toast(d.rec?'Conta fixa adicionada · repete todo mês':'Conta adicionada');refresh()}
@@ -5261,7 +5697,7 @@ document.addEventListener('submit',e=>{
   else if(kind==='camp'){S.campanhas.push({id:uid(),nome:d.nome.trim(),canal:d.canal,etapa:d.etapa,cta:d.cta.trim(),ativa:true,invest:Math.max(0,Number(d.invest)||0),leads:0});toast('Campanha criada');refresh()}
 });
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&UI.room&&!$('dialog[open]')&&!(e.target.dataset&&e.target.dataset.rename))closeDrawer();
+  if(e.key==='Escape'&&UI.room&&!$('dialog[open]')&&!(e.target.matches&&e.target.matches('input,textarea,select')))closeDrawer();
   if(e.key==='Enter'&&!e.shiftKey&&e.target.matches('textarea[name=q]')){e.preventDefault();e.target.form.requestSubmit()}
 });
 document.addEventListener('click',e=>{const m=$('#data-menu');if(m.open&&!m.contains(e.target))m.open=false});
@@ -5269,7 +5705,7 @@ document.addEventListener('click',e=>{const m=$('#data-menu');if(m.open&&!m.cont
 /* =========================================================
    11. BOOT
    ========================================================= */
-function clock(){$('#clock').textContent='Estreito · '+new Date().toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).replace(',','')}
+function clock(){$('#clock').textContent=(wxLocal()||lojaAtual().nome)+' · '+new Date().toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).replace(',','')}
 clock();setInterval(clock,30000);
 syncLive();buildWalls();renderHUD();syncOverlay();resize();save();
 /* padrão um pouco maior (125%), centralizado; o usuário pode "Ajustar" para ver tudo */
@@ -5280,7 +5716,15 @@ syncBackupBar();syncDayBtn();
 {let m0=null;try{m0=localStorage.getItem('pace-hq-mode')}catch(e){}if(m0!=='office'&&m0!=='pocket')m0=innerWidth<=720?'pocket':'office';if(m0==='pocket')setMode('pocket')}
 initMap();loadWX();weekAuto();setInterval(loadWX,20*60000);
 requestAnimationFrame(frame);
-setInterval(()=>{renderHUD();syncOverlay();if(UI.mode==='pocket')renderPocket()},60000);
+function semResposta(){const lim=(S.cfg.tprAlert||5)*60000,now=Date.now();return S.leads.filter(l=>!l.arq&&l.etapa==='Novo'&&!(l.toques>0)&&l.ts&&now-l.ts>lim).sort((a,b)=>a.ts-b.ts)}
+function tprAlert(){const L=semResposta(),b=$('#tpr-al');if(!b)return;if(!L.length){b.hidden=true;return}const m=Math.round((Date.now()-L[0].ts)/60000);
+  b.hidden=false;b.innerHTML=`<i></i>${L.length} lead${L.length===1?'':'s'} sem resposta · ${m} min`;b.title=L.map(l=>`${l.nome} · ${Math.round((Date.now()-l.ts)/60000)} min`).join('\n')}
+function trReminder(){const d=new Date();if(d.getHours()<9)return;const t=today();let k='';try{k=localStorage.getItem('pace-hq-tr9')||''}catch(e){}if(k===t)return;
+  const n=S.leads.filter(l=>!l.arq&&l.etapa==='Test Ride'&&!l.trOk&&l.fu===t&&l.trSt!=='Confirmado').length;if(!n)return;
+  try{localStorage.setItem('pace-hq-tr9',t)}catch(e){}toast(`${n} test ride${n===1?'':'s'} de hoje ainda sem confirmação · veja em Meu dia`);const b=$('#day-prog');b&&b.classList.add('tr-alert')}
+setTimeout(trReminder,2500);syncLojaBtn();$('#loja-menu').addEventListener('toggle',e=>{if(e.target.open)$('#loja-pop').innerHTML=lojaMenuHTML()});
+setInterval(tprAlert,30000);setTimeout(tprAlert,1500);
+setInterval(()=>{renderHUD();syncOverlay();trReminder();if(UI.mode==='pocket')renderPocket()},60000);
 </script>
 </body>
 </html>
