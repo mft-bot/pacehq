@@ -300,6 +300,8 @@ button.kcard:hover{border-color:var(--line-2)}
 .menu-seg button{padding:5px 9px!important;border-radius:7px;border:1px solid var(--line-2)!important;font-size:12px!important}
 .menu-seg button[aria-pressed="true"]{background:var(--neon)!important;color:var(--daintree);border-color:var(--neon)!important}
 .menu-pop{min-width:250px}
+/* menus nunca passam da tela: em janelas baixas ganham rolagem */
+.menu-pop,.lj-pop{max-height:calc(100vh - 72px);max-height:calc(100dvh - 72px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
 .menu-dot{position:relative;top:-6px;margin-left:4px}
 .menu-dot.warn{background:var(--late);box-shadow:0 0 6px var(--late)}
 /* ações secundárias aparecem ao passar o mouse (no celular ficam sempre visíveis) */
