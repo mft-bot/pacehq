@@ -1108,6 +1108,7 @@ html,body{overflow-x:clip}
 .pc2 .del{opacity:1;color:#ff9a8f}
 .pc2-sell{grid-column:1/-1;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;padding:8px 10px;border:1px dashed var(--line-2);border-radius:8px}.pc2-sell label{display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--muted)}
 .pc-aj{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}@media (max-width:720px){.pc-aj{grid-template-columns:1fr}}
+.wx-set{background:none;border:1px dashed var(--line-2);border-radius:8px;padding:4px 9px;font:500 11.5px Inter,system-ui,sans-serif;color:var(--muted);cursor:pointer;align-self:center}.wx-set:hover{color:var(--neon);border-color:var(--neon)}
 .lj-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 2px 0}
 </style>
 </head>
@@ -1121,7 +1122,7 @@ html,body{overflow-x:clip}
       <h1 class="sr-only">PACE HQ</h1>
       <details class="loja-menu" id="loja-menu"><summary class="loja-btn" id="loja-btn" aria-label="Trocar de loja"></summary><div id="loja-pop"></div></details>
     </div>
-    <button type="button" class="tpr-al" id="tpr-al" hidden data-action="tpr-go"></button><div class="wx" id="wx" hidden tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><span class="wx-i" id="wx-i" aria-hidden="true"></span><span class="wx-t" id="wx-t"></span><span class="wx-r" id="wx-r"></span><div class="wx-pop" id="wx-pop" role="tooltip"></div></div>
+    <button type="button" class="tpr-al" id="tpr-al" hidden data-action="tpr-go"></button><button type="button" class="wx-set" id="wx-set" hidden data-action="cfg" data-v="lojas" title="Não consegui achar o local desta loja. Defina em Configurações → Lojas → Editar → Local do clima.">☁ definir local do clima</button><div class="wx" id="wx" hidden tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><span class="wx-i" id="wx-i" aria-hidden="true"></span><span class="wx-t" id="wx-t"></span><span class="wx-r" id="wx-r"></span><div class="wx-pop" id="wx-pop" role="tooltip"></div></div>
   </div>
 
   <section class="kpis" aria-label="Indicadores da empresa">
@@ -3768,6 +3769,15 @@ function cfgGrowth(){const dias=adsDias(),WDF=['dom','seg','ter','qua','qui','se
 function cfgDados(){return `<h3 class="cfg-h">Conexão com o Claude</h3><p class="note">Onde os agentes das salas buscam as respostas (servidor da Vercel ou o próprio Claude).</p><button type="button" class="btn btn-sm" data-action="ai-setup">Configurar conexão</button>
   <h3 class="cfg-h">Backup</h3><p class="note">🔒 ${AVISO_BK}</p><div class="row" style="gap:6px;flex-wrap:wrap"><button type="button" class="btn btn-sm" data-action="backup-dl">Exportar tudo (arquivo)</button><button type="button" class="btn btn-sm" data-action="backup-import">Importar tudo</button><button type="button" class="btn btn-sm" data-action="import-undo">Desfazer última importação</button></div>
   <h3 class="cfg-h">Dados de exemplo</h3><div class="row" style="gap:6px;flex-wrap:wrap"><button type="button" class="btn btn-sm" data-action="data-clear">Começar do zero (apagar exemplos)</button><button type="button" class="btn btn-sm" data-action="backup-reset">Restaurar dados de exemplo</button></div>`}
+/* exemplos e limpeza valem só para a loja aberta: as outras lojas e a lista de lojas ficam intactas */
+function limparLoja(){const id=S.lojaAtual,so=!multiLoja();LOJA_ARR.forEach(k=>S[k]=[]);S.aval={};S.reuniao=null;S.pauta=[];
+  ['agenda','os','estoque'].forEach(k=>S[k]=(S[k]||[]).filter(x=>x.loja&&x.loja!==id));if(so)S.passaportes=[];
+  (S.campanhas||[]).forEach(c=>{c.invest=0;c.leads=0});S.cfg.saldo=0}
+function exemplosLoja(){const ex=migrate(seed()),id=S.lojaAtual;
+  if(!multiLoja()){const lj=S.lojas,cur=S.lojaAtual;S=ex;S.lojas=lj;S.lojaAtual=cur;S.redeLojas={};['agenda','os','estoque'].forEach(k=>(S[k]||[]).forEach(x=>x.loja=cur));return}
+  LOJA_ARR.forEach(k=>S[k]=JSON.parse(JSON.stringify(ex[k]||[])));S.aval=JSON.parse(JSON.stringify(ex.aval||{}));
+  ['agenda','os','estoque'].forEach(k=>{const outras=(S[k]||[]).filter(x=>x.loja&&x.loja!==id);const novos=(ex[k]||[]).map(x=>({...JSON.parse(JSON.stringify(x)),loja:id,id:k==='os'?x.id+'-'+id.slice(0,3).toUpperCase():(x.id?uid():x.id)}));S[k]=[...outras,...novos]});
+  LOJA_CFG.forEach(k=>{if(['lastBackup'].includes(k))return;if(ex.cfg[k]!==undefined)S.cfg[k]=JSON.parse(JSON.stringify(ex.cfg[k]))})}
 function excluirLoja(id){const L=S.lojas||[];if(L.length<2)return;const resto=L.find(x=>x.id!==id);if(id===S.lojaAtual)trocarLoja(resto.id,true);
   const alvo=(S.lojaAtual===resto.id?resto.id:S.lojaAtual);['estoque','agenda','os'].forEach(k=>(S[k]||[]).forEach(x=>{if(x.loja===id)x.loja=alvo}));
   if(S.redeLojas)delete S.redeLojas[id];S.lojas=L.filter(x=>x.id!==id);try{if(localStorage.getItem('pace-hq-loja')===id)localStorage.setItem('pace-hq-loja',S.lojaAtual)}catch(e){}
@@ -5643,7 +5653,7 @@ function wxKindFromText(c,isDay){c=String(c||'').toLowerCase();
 function wxKindFromCode(code,isDay){if(code==null)return'nuvem';if(code>=95)return'tempestade';if(code>=51)return'chuva';if(code>=2)return'nuvem';return isDay===false?'lua':'sol'}
 const WX_TXT={sol:'Céu limpo',lua:'Céu limpo',nuvem:'Nublado',chuva:'Chuva',tempestade:'Temporal',vento:'Vento forte'};
 let WX_CUR=null;
-function renderWX(w){
+function renderWX(w){{const sb=$('#wx-set');if(sb&&w)sb.hidden=true}
   const el=$('#wx');if(!el)return;const trw=()=>setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);if(!w){el.hidden=true;WX_CUR=null;trw();return}WX_CUR=w;setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);
   const age=(Date.now()-new Date(w.updated).getTime())/36e5,rain=w.today?.rain??0;
   $('#wx-i').innerHTML=WX_SVG[w.kind]||WX_SVG.nuvem;$('#wx-t').textContent=Math.round(w.now.temp)+'°';$('#wx-r').textContent=`${rain}%`;
@@ -5662,7 +5672,10 @@ function renderWX(w){
 document.addEventListener('click',e=>{const wx=$('#wx');if(!wx)return;if(wx.contains(e.target)&&matchMedia('(hover:none)').matches){const o=wx.classList.toggle('open');wx.setAttribute('aria-expanded',o)}else if(!wx.contains(e.target))wx.classList.remove('open')});
 let WX_REQ=0;
 async function loadWX(){const tk=++WX_REQ,P=wxPos(),vale=()=>tk===WX_REQ;
-  if(!P){renderWX(null);const l=lojaAtual();if(l&&!l.geoTentou&&(l.cidade||'').trim()){l.geoTentou=1;save();definirLocal(l.id,l.cidade,true)}return}
+  if(!P){renderWX(null);const l=lojaAtual();if(!l)return;const q=(l.cidade||'').trim()||String(l.nome||'').replace(/^loja\s+/i,'').trim();
+    /* tenta achar o local de novo a cada 5 min enquanto não tiver (rede pode ter falhado na criação) */
+    if(q&&(!l.geoTentou||Date.now()-Number(l.geoTentou)>3e5)){l.geoTentou=Date.now();save();await definirLocal(l.id,q,true);if(wxPos()&&vale())return loadWX()}
+    const sb=$('#wx-set');if(sb)sb.hidden=!!wxPos();return}
   const key='pace-hq-wx:'+P.id,guarda=w=>{try{localStorage.setItem(key,JSON.stringify({...w,lat:P.lat,lon:P.lon}))}catch(e){}};
   let cache=null;try{cache=JSON.parse(localStorage.getItem(key)||'null')}catch(e){}
   if(cache&&cache.now&&cache.lat!=null&&wxPerto(cache.lat,cache.lon,P.lat,P.lon)){cache.kind=cache.kind||wxKindFromText(cache.now.cond,cache.now.is_day);renderWX(cache)}else{cache=null;WX_CUR=null;const el=$('#wx');if(el)el.hidden=true}
@@ -5901,9 +5914,7 @@ document.addEventListener('click',e=>{
   else if(a==='data-clear'){
     if(!el.dataset.confirm){el.dataset.confirm='1';el.textContent='Clique de novo: apagar exemplos';$('#data-menu').open=true;setTimeout(()=>{delete el.dataset.confirm;el.textContent='Começar do zero (apagar exemplos)'},4000);return}
     $('#data-menu').open=false;delete el.dataset.confirm;el.textContent='Começar do zero (apagar exemplos)';
-    Object.assign(S,{agenda:[],leads:[],vendas:[],os:[],passaportes:[],contas:[],admin:[],pauta:[],estoque:[],aval:{},reuniao:null});
-    S.campanhas.forEach(c=>{c.invest=0;c.leads=0});S.cfg.saldo=0;
-    toast('Exemplos apagados · catálogo, metas e campanhas mantidos');refresh();
+    limparLoja();toast(multiLoja()?`Dados de ${lojaAtual().nome} apagados · as outras lojas não mudam`:'Exemplos apagados · catálogo, metas e campanhas mantidos');refresh();
   }
   else if(a==='ai-apply')applyCard(el.dataset.k,+el.dataset.m,+el.dataset.c);
   else if(a==='ai-copy'){const m=UI.chats[el.dataset.k][+el.dataset.m];copyText(m.cards[+el.dataset.c].msg,'Mensagem copiada')}
@@ -5979,7 +5990,7 @@ document.addEventListener('click',e=>{
       $('#im-help').innerHTML=`<b>${p.loja?`Loja: ${esc(p.loja.loja.nome)} · `:''}${m?`Exportação de ${new Date(m.geradoEm).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})} · versão ${esc(m.versao||'—')}`:'Backup no formato antigo'}</b><div class="im-res">${r.map(([k,v])=>`<span>${k}<b class="mono">${v}</b></span>`).join('')}</div><span class="meta">Os dados atuais deste navegador serão substituídos. Uma cópia deles fica guardada e dá para voltar em Menu → Desfazer última importação.</span>`;return}
     delete el.dataset.ok;el.textContent='Importar';aplicarPacote(p);$('#import-modal').close();toast('Dados importados · tudo atualizado para esta versão');refresh()
   }
-  else if(a==='backup-reset'){$('#data-menu').open=false;if(el.dataset.confirm){S=seed();delete el.dataset.confirm;el.textContent='Restaurar dados de exemplo';toast('Dados de exemplo restaurados');refresh()}else{el.dataset.confirm='1';el.textContent='Clique de novo para confirmar';$('#data-menu').open=true;setTimeout(()=>{delete el.dataset.confirm;el.textContent='Restaurar dados de exemplo'},4000)}}
+  else if(a==='backup-reset'){$('#data-menu').open=false;if(el.dataset.confirm){exemplosLoja();delete el.dataset.confirm;el.textContent='Restaurar dados de exemplo';syncLojaBtn();toast(multiLoja()?`Exemplos gerados em ${lojaAtual().nome} · as outras lojas não mudam`:'Dados de exemplo restaurados');refresh()}else{el.dataset.confirm='1';el.textContent='Clique de novo para confirmar';$('#data-menu').open=true;setTimeout(()=>{delete el.dataset.confirm;el.textContent='Restaurar dados de exemplo'},4000)}}
 });
 let DL=null;
 if(window.claude&&typeof window.claude.use==='function')window.claude.use('downloads').then(d=>{DL=d||null}).catch(()=>{});
@@ -6148,7 +6159,7 @@ document.addEventListener('submit',e=>{
       a={id:uid(),data:d.data,hora:d.hora,cliente:titleCase(first(d.cliente.trim())),tel,modelo:`${d.veic}${d.marca?' · '+d.marca.trim():''}`,veic:d.veic,pid:'',servico:d.servico,obs:(d.obs||'').trim(),tipo:'avulso',status:d.conf?'Confirmado':'Agendado'}}
     a.loja=S.lojaAtual;S.agenda.push(a);UI.agDia=d.data;UI.agMes=d.data.slice(0,7);UI.agForm=null;UI.agTipo=null;UI.agQ='';toast(`Agendado: ${a.cliente} · ${ddmm(d.data)} ${d.hora}`);refresh();
   }
-  else if(kind==='loja-new'){const id=novaLoja(d.nome,d.cidade);if(id){$('#loja-menu').open=false;const cm=$('#cfg-modal');if(cm&&cm.open)cm.close();trocarLoja(id);if((d.cidade||'').trim()){const nl=S.lojas.find(x=>x.id===id);if(nl)nl.geoTentou=1;setTimeout(()=>definirLocal(id,d.cidade,true),300)}toast(`${d.nome.trim()} criada · estoque, oficina, PACE ID e catálogo já são compartilhados`)}}
+  else if(kind==='loja-new'){const id=novaLoja(d.nome,d.cidade);if(id){$('#loja-menu').open=false;const cm=$('#cfg-modal');if(cm&&cm.open)cm.close();trocarLoja(id);if((d.cidade||'').trim()){const nl=S.lojas.find(x=>x.id===id);if(nl)nl.geoTentou=Date.now();setTimeout(()=>definirLocal(id,d.cidade,true),300)}toast(`${d.nome.trim()} criada · estoque, oficina, PACE ID e catálogo já são compartilhados`)}}
   else if(kind==='loja-ed'){const l=(S.lojas||[]).find(x=>x.id===f.dataset.id);if(!l)return;l.nome=(d.nome||'').trim()||l.nome;l.cidade=(d.cidade||'').trim();const mg=(d.msg||'').trim();if(mg)l.msg=mg;else delete l.msg;syncLojaBtn();save();
     const q=(d.local||'').trim()||l.cidade;if(q&&q!==(l.local||''))definirLocal(l.id,q);else toast('Loja atualizada');UI.lojaEd=null;refresh()}
   else if(kind==='loja-ren'){const l=lojaAtual();if(d.nome&&d.nome.trim())l.nome=d.nome.trim();l.cidade=(d.cidade||'').trim();syncLojaBtn();save();const q=(d.local||'').trim()||l.cidade;if(q&&q!==(l.local||''))definirLocal(l.id,q);else{$('#loja-menu').open=false;toast('Loja atualizada')}}
