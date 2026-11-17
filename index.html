@@ -846,7 +846,7 @@ dialog#week-modal{max-width:min(720px,96vw)}
 .dh-d{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 4px;border:1px solid var(--line);border-radius:10px;background:var(--black);color:var(--off);cursor:pointer;font:inherit;min-width:0}.dh-d:hover{border-color:var(--line-2)}.dh-d.on{border-color:var(--neon);box-shadow:inset 0 0 0 1px rgba(225,239,89,.35)}.dh-d.fds .dh-n{color:var(--neon)}.dh-d.fech{opacity:.55}
 .dh-n{font-size:11.5px;color:var(--muted);font-weight:600}.dh-d.hoje .dh-n{color:var(--off)}
 .dh-wx{display:inline-flex;align-items:center;gap:3px;font-size:12px}.dh-wx svg{width:16px;height:16px}.dh-wx b{font:700 12px "JetBrains Mono",monospace}.dh-wx.wet{color:#7fd4c8}
-.dh-c{font-size:10.5px;color:var(--muted);text-align:center;line-height:1.3}.dh-c em{font-style:normal;color:var(--c)}
+.dh-c{font-size:10.5px;color:var(--muted);text-align:center;line-height:1.3}.dh-c em{font-style:normal;color:var(--c);font:700 12.5px 'JetBrains Mono',monospace}.dh-sl{font-style:normal;color:var(--muted);margin:0 4px;opacity:.6}
 .dh-g{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:10px;align-items:start}.dh-side{display:flex;flex-direction:column;gap:10px}
 .dh-box{background:var(--black);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.dh-box h4{display:flex;align-items:center;gap:8px;margin:0 0 6px;font:600 11px Inter,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}.dh-box h4 small{text-transform:none;letter-spacing:0;font-weight:400}
 .dh-leg{margin-left:auto;display:flex;align-items:center;gap:5px;text-transform:none;letter-spacing:0;font-weight:400;font-size:10.5px}.dh-leg i{width:6px;height:6px;border-radius:50%;background:var(--c);margin-left:6px}
@@ -872,11 +872,19 @@ dialog#week-modal{max-width:min(720px,96vw)}
 .dm-c .mono{font-size:12px}.dm-b{display:flex;gap:3px;flex-direction:column;align-items:flex-start}.dm-b em{font:700 10.5px "JetBrains Mono",monospace;font-style:normal;color:#022226;background:var(--c);border-radius:4px;padding:0 5px}
 @media (max-width:860px){.dh-g{grid-template-columns:1fr}.dw-g{grid-template-columns:repeat(2,minmax(0,1fr))}.dw-c{min-height:0}}
 @media (max-width:720px){.dh-wk{display:flex;overflow-x:auto;scrollbar-width:none;margin:0 -12px 10px;padding:0 12px}.dh-d{flex:0 0 74px}.dl-r{flex-wrap:wrap;row-gap:4px}.dl-n{flex-basis:calc(100% - 70px)}.dl-a{margin-left:58px}.dl-in{margin-left:0}.dm-c{min-height:46px;padding:3px}.dm-b{flex-direction:row;flex-wrap:wrap}.dm-b em span{display:none}.dm-top .ag-f{margin-left:0}.dv-tg{order:-1}}
+.rt h4{margin-bottom:4px}.rt-tot{margin-left:auto;text-transform:none;letter-spacing:0;color:var(--off)}
+.rt-a{border-top:1px solid var(--line)}.rt-a:first-of-type{border-top:0}
+.rt-h{display:flex;align-items:center;gap:8px;width:100%;background:none;border:0;padding:7px 0;color:var(--off);font:inherit;cursor:pointer;text-align:left}.rt-h b{font-size:12.5px;font-weight:600}.rt-h .mono{font-size:11px;color:var(--muted)}.rt-h .sp{flex:1}.rt-car{color:var(--muted);font-size:10px}.rt-ok{color:var(--neon);font-size:12px}.rt-a.ok .rt-h b{color:var(--muted)}
+.rt-r{display:flex;align-items:center;gap:8px;padding:4px 0 4px 2px;min-height:32px;flex-wrap:wrap}.rt-r input{margin:0;width:16px;height:16px;flex:none;accent-color:#E1EF59;cursor:pointer}
+.rt-t{background:none;border:0;padding:0;color:var(--off);font:500 13px Inter,sans-serif;text-align:left}button.rt-t{cursor:pointer}button.rt-t:hover{text-decoration:underline;text-underline-offset:3px}
+.rt-r small{margin-left:auto;font:500 11px "JetBrains Mono",monospace;color:var(--muted)}.rt-r small.late{color:#ff9a8f}
+.rt-r.done .rt-t{color:var(--muted);text-decoration:line-through}
+.rt-cfg{display:flex;flex-direction:column;gap:10px}.rt-cfg fieldset{border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:6px;margin:0}.rt-cfg legend{font-size:11px;color:var(--muted);padding:0 4px}
 .res-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.res-k{display:flex;align-items:baseline;gap:8px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--black);color:var(--off);text-decoration:none}.res-k b{font:700 22px "JetBrains Mono",monospace}.res-k span{font-size:12px;color:var(--muted)}.res-k.p1 b{color:#ff9a8f}.res-k.p1{border-color:rgba(255,120,120,.35)}.res-k.p2 b{color:var(--neon)}.res-k.zero{opacity:.45}
 .ag-r2{flex-wrap:wrap}.ag-nb{background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer}.ag-nb i{font-style:normal;color:var(--muted);font-size:10px}.ag-nb:hover b{text-decoration:underline;text-underline-offset:3px}
 .ag-r2.open{background:rgba(240,238,231,.03)}.ag-det{flex-basis:100%;margin:4px 0 4px 94px;padding:10px 12px;border-left:2px solid var(--line-2);display:flex;flex-direction:column;gap:8px;font-size:12.5px}.ag-det .vc-r{margin:0;border-color:var(--line-2);background:none}
 .rd-info{color:var(--off)}.rd-obs{color:var(--muted);font-style:italic}.rd-ctl{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}.rd-ctl .field{margin:0}
-.ag-r2.open .ag-a [data-action=ag-open]{display:none}.dh-q .ag-tp{width:64px}
+.ag-r2.open .ag-a [data-action=ag-open]{display:none}.dh-q .ag-tp{width:76px;white-space:nowrap}
 .res-tip{margin:0;font-size:11.5px;color:var(--muted);text-align:center}.res-ok{display:flex;flex-direction:column;gap:4px;align-items:center;padding:40px 10px;color:var(--muted)}.res-ok b{color:var(--neon);font-size:15px}
 @media (max-width:720px){.ag-det{margin-left:0}.res-k{flex-direction:column;gap:0}.res-k b{font-size:18px}}
 .day-res{display:flex;align-items:center;gap:10px;width:100%;margin:12px 0 4px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--black);color:var(--off);font:500 13px Inter,sans-serif;cursor:pointer;text-align:left}.day-res:hover{border-color:var(--line-2)}.day-res b{color:#ff9a8f;font-weight:600}.day-res-go{margin-left:auto;color:var(--neon);font-weight:600;font-size:12.5px}
@@ -4589,7 +4597,29 @@ function streak(){
 }
 function diffDaysBetween(a,b){return Math.round((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/864e5)}
 function blocoAtual(){const r=S.cfg.rotina||ROTINA_PADRAO(),now=new Date(),hm=pad(now.getHours())+':'+pad(now.getMinutes());let cur=null;r.forEach(b=>{if(b.h<=hm)cur=b.id});return cur}
-function diaProgress(){const st=diaState(),r=S.cfg.rotina||ROTINA_PADRAO();return{done:r.filter(b=>st.done[b.id]).length,total:r.length}}
+/* Rotina por área: checklist curto; cada tarefa padrão tem um número ao vivo e leva ao lugar certo */
+const ROT_AREAS=[['vendas','Vendas'],['oficina','Oficina'],['fin','Financeiro'],['dia','Abertura e fechamento']];
+const ROT2_PADRAO=()=>[{id:'r_fum',a:'vendas',t:'Follow-ups da manhã',k:'fu'},{id:'r_fut',a:'vendas',t:'Follow-ups da tarde',k:'fu'},{id:'r_tra',a:'vendas',t:'Confirmar test rides de amanhã',k:'tra'},
+  {id:'r_ofa',a:'oficina',t:'Conferir agenda e bancada',k:'ofa'},{id:'r_ofp',a:'oficina',t:'Avisar bikes prontas',k:'ofp'},
+  {id:'r_fct',a:'fin',t:'Contas do dia',k:'fct'},{id:'r_frg',a:'fin',t:'Registrar vendas e repasses',k:'frg'},
+  {id:'r_reu',a:'dia',t:'Reunião diária',k:'reu'},{id:'r_fec',a:'dia',t:'Fechar o dia',k:'fec'}];
+const rotList=()=>S.cfg.rot2||ROT2_PADRAO();
+function rotInfo(k){const t=today();
+  if(k==='fu'){const q=followups(),l=q.filter(x=>x.fu<t).length;return{n:q.length?`${q.length} na fila${l?` · ${l} atrasado${l===1?'':'s'}`:''}`:'',late:l>0,go:['comercial','fu']}}
+  if(k==='tra'){const n=trDia(rel(1)).filter(l=>l.trSt!=='Confirmado').length;return{n:n?`${n} a confirmar`:'',go:['comercial','tr',rel(1)]}}
+  if(k==='ofa'){const n=agendaDia(t).length,b=M().ativos.length;return{n:`${n} hoje · ${b} na bancada`,go:['oficina','panel']}}
+  if(k==='ofp'){const n=M().prontas.length;return{n:n?`${n} pronta${n===1?'':'s'}`:'',go:['oficina','banc']}}
+  if(k==='fct'){const v=S.contas.filter(c=>!c.ok&&c.venc<t).length,h=S.contas.filter(c=>!c.ok&&c.venc===t).length;return{n:[v?`${v} vencida${v===1?'':'s'}`:'',h?`${h} hoje`:''].filter(Boolean).join(' · '),late:v>0,go:['financeiro','panel']}}
+  if(k==='frg'){const n=vendasConf().length;return{n:n?`${n} venda${n===1?'':'s'} a confirmar`:'',late:n>0,go:['comercial','cli']}}
+  if(k==='reu')return{n:'',act:'meet'};
+  if(k==='fec'){const n=followups().filter(l=>!(l.log||[]).some(x=>x.d===t)).length;return{n:n?`${n} sem contato hoje`:'',act:'rot-fec'}}
+  return{n:''}}
+function rotinaHTML(){const st=diaState(),L=rotList();
+  return ROT_AREAS.map(([a,nome])=>{const T=L.filter(x=>x.a===a);if(!T.length)return'';const feitas=T.filter(x=>st.done[x.id]).length,ok=feitas===T.length,aberta=UI.rotOpen&&UI.rotOpen[a]!=null?UI.rotOpen[a]:!ok;
+    return `<div class="rt-a ${ok?'ok':''}"><button type="button" class="rt-h" data-action="rot-area" data-v="${a}" aria-expanded="${aberta}"><b>${esc(nome)}</b><span class="mono">${feitas}/${T.length}</span>${ok?'<span class="rt-ok">✓</span>':''}<span class="sp"></span><span class="rt-car">${aberta?'▾':'▸'}</span></button>
+    ${aberta?T.map(x=>{const I=rotInfo(x.k),done=!!st.done[x.id];return `<div class="rt-r ${done?'done':''}"><input type="checkbox" data-change="day-done" data-id="${esc(x.id)}" ${done?'checked':''} aria-label="Marcar ${esc(x.t)}">${I.go||I.act?`<button type="button" class="rt-t" data-action="${I.act||'res-go'}" ${I.go?`data-room="${I.go[0]}" data-tab="${I.go[1]}"${I.go[2]?` data-d="${I.go[2]}"`:''}`:''} title="${x.k==='fec'?'Fecha o dia e passa os follow-ups sem contato para amanhã':'Abrir'}">${x.k==='fec'&&UI.armed==='fec'?'Confirmar: fechar o dia':esc(x.t)}</button>`:`<span class="rt-t">${esc(x.t)}</span>`}${I.n&&!done?`<small class="${I.late?'late':''}">${esc(I.n)}</small>`:''}</div>`}).join(''):''}</div>`}).join('')}
+function diaProgress(){const st=diaState(),L=rotList();return{done:L.filter(x=>st.done[x.id]).length,total:L.length}}
+function diaProgressOld(){const st=diaState(),r=S.cfg.rotina||ROTINA_PADRAO();return{done:r.filter(b=>st.done[b.id]).length,total:r.length}}
 function blocoBody(b){
   const t=today(),m=M(),q=followups(),ag=agendaDia(t),trs=S.leads.filter(l=>!l.arq&&l.etapa==='Test Ride'&&l.fu===t).sort((a,b2)=>(a.hora||'').localeCompare(b2.hora||''));
   const contasHoje=S.contas.filter(c=>!c.ok&&c.venc<=t),inbox=(S.inbox||[]).filter(x=>!x.feito);
@@ -4611,7 +4641,7 @@ function diaDados(d){const pz=[...S.contas.filter(c=>!c.ok&&c.venc===d).map(c=>(
   return{tr:trDia(d),of:agendaDia(d),pz,fTR:isClosedTR(d),fOF:isClosed(d)}}
 const WXI=d=>{const w=wxDia(d);return w?`<span class="dh-wx ${w.kind==='chuva'||w.kind==='tempestade'?'wet':''}" title="${WX_TXT[w.kind]||''}">${WX_SVG[w.kind]||''}<b>${Math.round(w.hi)}°</b></span>`:''};
 function diaLinha(d){const t=today(),ehHoje=d===t,now=new Date(),hm=pad(now.getHours())+':'+pad(now.getMinutes()),D=diaDados(d),R=[];
-  if(ehHoje){const st=diaState(),r=S.cfg.rotina||ROTINA_PADRAO(),cur=blocoAtual();r.forEach(b=>{const done=!!st.done[b.id],nowB=cur===b.id&&!done,open=UI.dayOpen===b.id||(!UI.dayOpen&&nowB);
+  if(false){const st=diaState(),r=S.cfg.rotina||ROTINA_PADRAO(),cur=blocoAtual();r.forEach(b=>{const done=!!st.done[b.id],nowB=cur===b.id&&!done,open=UI.dayOpen===b.id||(!UI.dayOpen&&nowB);
     R.push({h:b.h,o:0,html:`<div class="dl-r rot ${done?'done':''} ${nowB?'now':''}"><span class="dl-h mono">${esc(b.h)}</span><label class="dl-ck"><input type="checkbox" data-change="day-done" data-id="${b.id}" ${done?'checked':''} aria-label="Concluir ${esc(b.n)}"></label><button type="button" class="dl-n" data-action="day-open" data-id="${b.id}"><b>${esc(b.n)}</b>${nowB?'<span class="tagp t-soon">agora</span>':''}<small>rotina</small></button></div>${open&&!done?`<div class="dl-in day-in">${blocoBody(b)}</div>`:''}`})})}
   D.tr.forEach(l=>{const passou=ehHoje&&(l.hora||'99')<=hm,conf=l.trSt==='Confirmado';R.push({h:l.hora||'99:99',o:1,html:`<div class="dl-r tr"><span class="dl-h mono">${esc(l.hora||'--:--')}</span><i class="dl-dot"></i><span class="dl-n"><b>${esc(l.nome)}</b><small>test ride · ${esc(l.modelo)}${conf?' · confirmado':''}</small></span><span class="dl-a">${passou?`<button class="btn btn-sm" data-action="tr-res" data-v="veio" data-id="${esc(l.id)}">Veio</button><button class="btn btn-sm" data-action="tr-res" data-v="faltou" data-id="${esc(l.id)}">Faltou</button>`:conf?'':`<button class="btn btn-sm" data-action="tr-conf" data-id="${esc(l.id)}">Confirmado</button>${waMini(l.tel,trMsg(l),'Pedir confirmação no WhatsApp')}`}</span></div>`})});
   D.of.forEach(a=>R.push({h:a.hora,o:2,html:`<div class="dl-r of"><span class="dl-h mono">${esc(a.hora)}</span><i class="dl-dot"></i><span class="dl-n"><b>${esc(a.cliente)}</b><small>oficina · ${esc(a.servico)} · ${esc(a.status)}</small></span><span class="dl-a">${a.status==='Agendado'&&a.tel?waMini(a.tel,agMsg(a),'Confirmar no WhatsApp'):''}${a.osId?'<span class="meta">na bancada</span>':ehHoje&&a.status!=='Faltou'?`<button class="btn btn-sm" data-action="ag-entrada" data-id="${esc(a.id)}">Chegou</button>`:''}</span></div>`}));
@@ -4628,7 +4658,7 @@ function avisosSemana(){const t=today(),A=[],cap=Math.max(1,(S.cfg.slots||[]).le
   return A}
 function diaSemanaStrip(){const t=today(),sel=UI.dSel||t;
   return `<div class="dh-wk">${[...Array(7)].map((_,i)=>{const d=rel(i),D=diaDados(d),dw=new Date(d+'T12:00:00').getDay(),fe=D.fTR&&D.fOF;
-    return `<button type="button" class="dh-d ${d===sel?'on':''} ${d===t?'hoje':''} ${dw===0||dw===6?'fds':''} ${fe?'fech':''}" data-action="dsel" data-v="${d}"><span class="dh-n">${d===t?'Hoje':WD[dw]} <span class="mono">${d.slice(8)}</span></span>${WXI(d)}<span class="dh-c">${fe?'fechado':[D.tr.length?`<em class="c-tr">${D.tr.length} TR</em>`:'',D.of.length?`<em class="c-of">${D.of.length} of</em>`:'',D.pz.length?`<em class="c-pz">${D.pz.length} prazo${D.pz.length===1?'':'s'}</em>`:''].filter(Boolean).join(' · ')||'livre'}</span></button>`}).join('')}</div>`}
+    return `<button type="button" class="dh-d ${d===sel?'on':''} ${d===t?'hoje':''} ${dw===0||dw===6?'fds':''} ${fe?'fech':''}" data-action="dsel" data-v="${d}"><span class="dh-n">${d===t?'Hoje':WD[dw]} <span class="mono">${d.slice(8)}</span></span>${WXI(d)}<span class="dh-c">${fe?'fechado':[D.tr.length?`<em class="c-tr" title="${D.tr.length} test ride${D.tr.length===1?'':'s'}">${D.tr.length}</em>`:'',D.of.length?`<em class="c-of" title="${D.of.length} na oficina">${D.of.length}</em>`:'',D.pz.length?`<em class="c-pz" title="${D.pz.length} prazo${D.pz.length===1?'':'s'}">${D.pz.length}</em>`:''].filter(Boolean).join('<i class="dh-sl">/</i>')||'livre'}</span></button>`}).join('')}</div>`}
 function diaSemanaCols(){const t=today();return `<div class="dw-g">${[...Array(7)].map((_,i)=>{const d=rel(i),D=diaDados(d),dw=new Date(d+'T12:00:00').getDay();
   const it=[...D.tr.map(l=>({h:l.hora||'--:--',c:'tr',n:first(l.nome)})),...D.of.map(a=>({h:a.hora,c:'of',n:first(a.cliente)}))].sort((a,b)=>a.h.localeCompare(b.h));
   return `<div class="dw-c ${d===t?'hoje':''}"><button type="button" class="dw-h" data-action="dsel" data-v="${d}"><b>${d===t?'Hoje':WD[dw]} ${ddmm(d)}</b>${WXI(d)}</button>${it.map(x=>`<div class="dw-i c-${x.c}"><span class="mono">${esc(x.h)}</span>${esc(x.n)}</div>`).join('')}${D.pz.map(x=>`<div class="dw-i c-pz"><span class="mono">!</span>${esc(x.t==='ct'?x.c.desc:x.a.t)}</div>`).join('')}${!it.length&&!D.pz.length?`<div class="dw-vz">${D.fTR&&D.fOF?'fechado':'livre'}</div>`:''}</div>`}).join('')}</div>`}
@@ -4646,7 +4676,9 @@ function diaHubHTML(){const v=UI.dView||'dia',t=today(),sel=UI.dSel||t;
   const urg=agoraItens(),u=urg.filter(x=>x.pr===1),av=avisosSemana(),dt=new Date(sel+'T12:00:00');
   return `${diaSemanaStrip()}
   <div class="dh-g">
-    <section class="dh-box"><h4>${sel===t?'Linha do dia':`${DIAS_NOME[dt.getDay()]}, ${ddmm(sel)}`}<span class="dh-leg"><i class="c-tr"></i>test ride<i class="c-of"></i>oficina<i class="c-pz"></i>prazo</span></h4>${diaLinha(sel)}</section>
+    <div class="dh-side"><section class="dh-box"><h4>${sel===t?'Linha do dia':`${DIAS_NOME[dt.getDay()]}, ${ddmm(sel)}`}<span class="dh-leg"><i class="c-tr"></i>test ride<i class="c-of"></i>oficina<i class="c-pz"></i>prazo</span></h4>${diaLinha(sel)}</section>
+    ${sel===t?`<section class="dh-box rt"><h4>Rotina <span class="mono rt-tot">${diaProgress().done}/${diaProgress().total}</span></h4>${rotinaHTML()}</section>`:''}
+    </div>
     <div class="dh-side">
       <section class="dh-box"><h4>Resolver <span class="count ${u.length?'late':''}">${u.length}</span><small>urgente${u.length===1?'':'s'}</small></h4>
         ${u.length?`<div class="ag-q dh-q">${u.slice(0,5).map(x=>resRow(x,false)).join('')}</div>`:'<div class="dl-vz">Nada urgente agora.</div>'}
@@ -4660,7 +4692,7 @@ function renderDay(){
   $('#day-title').textContent=`Meu dia · ${d.toLocaleDateString('pt-BR',{weekday:'long'})}, ${ddmm(today())}`;
   $('#day-body').innerHTML=`
   <div class="day-top">
-    <div><b class="day-hi">${saud}${S.cfg.vendedor&&S.cfg.vendedor!=='Equipe PACE'?', '+esc(first(S.cfg.vendedor)):''}!</b><span class="meta">${diaProgress().done} de ${r.length} blocos concluídos</span></div>
+    <div><b class="day-hi">${saud}${S.cfg.vendedor&&S.cfg.vendedor!=='Equipe PACE'?', '+esc(first(S.cfg.vendedor)):''}!</b><span class="meta">${diaProgress().done} de ${diaProgress().total} tarefas da rotina</span></div>
     <div class="dv-tg" role="group" aria-label="Visão">${[['dia','Dia'],['semana','Semana'],['mes','Mês']].map(([k,t])=>`<button type="button" data-action="dv" data-v="${k}" aria-pressed="${(UI.dView||'dia')===k}">${t}</button>`).join('')}</div>
     <div class="day-goals">
       <div><span>Contatos</span><b class="${fh>=mc?'ok':''}">${fh}/${mc}</b><div class="pixbar">${pixbar(fh/mc)}</div></div>
@@ -4669,12 +4701,13 @@ function renderDay(){
     </div>
   </div>
   ${diaHubHTML(r,st,cur)}
-  <details class="inline" style="margin-top:12px"><summary>Ajustar rotina e metas</summary>
-    <form data-form="day-cfg" class="form-grid" style="padding:12px">
-      ${r.map(b=>`<label class="field">${esc(b.n)}<input type="time" name="h_${b.id}" value="${esc(b.h)}"></label>`).join('')}
-      <label class="field">Meta de contatos por dia<input type="number" min="1" max="100" name="mc" value="${mc}"></label>
-      <label class="field">Meta de test rides marcados por dia<input type="number" min="0" max="20" name="mt" value="${mt}"></label>
-      <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary btn-sm" type="submit">Salvar</button></div>
+  <details class="inline" style="margin-top:12px" ${UI.rotCfg?'open':''}><summary>Ajustar rotina e metas</summary>
+    <form data-form="day-cfg" class="rt-cfg" style="padding:12px">
+      ${ROT_AREAS.map(([a,nome])=>`<fieldset><legend>${esc(nome)}</legend>${rotList().filter(x=>x.a===a).map(x=>`<div class="row" style="gap:6px"><input class="inp-sm grow" name="t_${esc(x.id)}" value="${esc(x.t)}" maxlength="60" aria-label="Tarefa"><button type="button" class="btn btn-sm" data-action="rot-del" data-id="${esc(x.id)}" title="Tirar da rotina">Tirar</button></div>`).join('')}</fieldset>`).join('')}
+      <div class="row" style="gap:6px;flex-wrap:wrap"><select class="inp-sm" name="na" aria-label="Área da nova tarefa">${opt(ROT_AREAS,'vendas')}</select><input class="inp-sm grow" name="nt" maxlength="60" placeholder="Nova tarefa (opcional)"></div>
+      <div class="form-grid"><label class="field">Meta de contatos por dia<input type="number" min="1" max="100" name="mc" value="${mc}"></label>
+      <label class="field">Meta de test rides marcados por dia<input type="number" min="0" max="20" name="mt" value="${mt}"></label></div>
+      <div class="row" style="justify-content:space-between"><button type="button" class="btn btn-sm" data-action="rot-reset">Voltar ao padrão</button><button class="btn btn-primary btn-sm" type="submit">Salvar</button></div>
     </form></details>`;
 }
 /* Resolver agora: uma fila só, uma linha por pendência, filtro por tipo. Mostra 5 e abre o resto sob demanda. */
@@ -6115,6 +6148,10 @@ document.addEventListener('click',e=>{
   else if(a==='ads-imp'){const f=$('#ads-file');f.value='';f.click()}
   else if(a==='ads-run'){runAds()}
   else if(a==='ads-copy'){copyText(midiaText(),'Resumo de mídia copiado')}
+  else if(a==='rot-area'){UI.rotOpen=UI.rotOpen||{};const g=el.closest('.rt-a');UI.rotOpen[el.dataset.v]=el.getAttribute('aria-expanded')!=='true';renderDay()}
+  else if(a==='rot-del'){S.cfg.rot2=rotList().filter(x=>x.id!==id);UI.rotCfg=true;save();toast('Tarefa tirada da rotina');renderDay()}
+  else if(a==='rot-fec'){if(UI.armed!=='fec'){UI.armed='fec';renderDay();return}UI.armed=null;closeDayAction();diaState().done.r_fec=true;save();renderDay()}
+  else if(a==='rot-reset'){delete S.cfg.rot2;UI.rotCfg=true;save();toast('Rotina padrão restaurada');renderDay()}
   else if(a==='dv'){UI.dView=el.dataset.v;renderDay()}
   else if(a==='dsel'){UI.dSel=el.dataset.v;UI.dView='dia';UI.dayOpen=null;renderDay()}
   else if(a==='dmes'){const [y,m]=(UI.dMes||today().slice(0,7)).split('-').map(Number),dd=new Date(y,m-1+Number(el.dataset.v),1);UI.dMes=`${dd.getFullYear()}-${pad(dd.getMonth()+1)}`;renderDay()}
@@ -6385,7 +6422,7 @@ async function downloadBackup(){
   try{const url=URL.createObjectURL(new Blob([data],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);markBackup();toastBk('Exportação completa baixada')}
   catch(_){showBackup(JSON.stringify(pacote()))}
 }
-function syncDayBtn(){try{syncResBtn()}catch(e){}const p=diaProgress(),cur=blocoAtual(),r=S.cfg.rotina||ROTINA_PADRAO(),b=r.find(x=>x.id===cur);$('#day-prog').innerHTML=`Meu dia <small>${p.done}/${p.total}${b&&!diaState().done[b.id]?' · '+esc(b.n.split(' ·')[0]):''}</small>`}
+function syncDayBtn(){try{syncResBtn()}catch(e){}const p=diaProgress(),cur=blocoAtual(),r=S.cfg.rotina||ROTINA_PADRAO(),b=r.find(x=>x.id===cur);$('#day-prog').textContent='Meu dia';$('#day-prog').parentElement.title=`Rotina do dia · ${p.done} de ${p.total} blocos${b&&!diaState().done[b.id]?' · agora: '+b.n:''}`}
 function syncBackupBar(){
   const last=S.cfg.lastBackup,days=last?-diffDays(last):null;
   const need=(days==null||days>=7)&&(S.leads.length+S.vendas.length+S.os.length)>0;
@@ -6518,7 +6555,7 @@ document.addEventListener('submit',e=>{
     if(d.modelo)l.modelo=d.modelo;logLead(l,`agendou test ride ${ddmm(d.data)} ${d.hora}`);if(l.etapa!=='Test Ride')setEtapa(l,'Test Ride');l.fu=d.data;l.hora=d.hora;l.trOk=null;l.trSt=d.conf?'Confirmado':null;
     UI.trForm=null;UI.trDia=d.data;UI.trMes=d.data.slice(0,7);toast(`Test ride de ${first(l.nome)||'lead'}: ${ddmm(d.data)} às ${d.hora}`);refresh()}
   else if(kind==='fq-tr'){UI.waAsk=null;const l=findLead(f.dataset.id);logLead(l,`agendou test ride ${ddmm(d.d)} ${d.h}`);setEtapa(l,'Test Ride');l.fu=d.d;l.hora=d.h;l.trSt=null;l.trOk=null;delete UI.fqMsg[l.id];UI.fqTR=false;toast(`Test ride de ${first(l.nome)}: ${ddmm(d.d)} às ${d.h}`);refresh()}
-  else if(kind==='day-cfg'){const r=S.cfg.rotina||ROTINA_PADRAO();r.forEach(b=>{if(d['h_'+b.id])b.h=d['h_'+b.id]});S.cfg.rotina=r;S.cfg.metaContatos=Math.max(1,parseInt(d.mc)||10);S.cfg.metaTR=Math.max(0,parseInt(d.mt)||0);save();toast('Rotina e metas salvas');renderDay();refresh()}
+  else if(kind==='day-cfg'){const L=[];rotList().forEach(x=>{const v=d['t_'+x.id];if(v===undefined)L.push(x);else if(String(v).trim())L.push({...x,t:String(v).trim()})});const nt=(d.nt||'').trim();if(nt)L.push({id:'r_'+uid(),a:d.na||'vendas',t:nt,k:''});S.cfg.rot2=L;UI.rotCfg=true;S.cfg.metaContatos=Math.max(1,parseInt(d.mc)||10);S.cfg.metaTR=Math.max(0,parseInt(d.mt)||0);save();toast('Rotina e metas salvas');renderDay();refresh()}
   else if(kind==='resp'){respList().push({t:d.t.trim(),x:d.x.trim()});save();toast('Resposta adicionada');refresh()}
   else if(kind==='perfil'){const k=f.dataset.k;(S.cfg.perfis=S.cfg.perfis||{})[k]={tom:d.tom,texto:(d.texto||'').trim()};toast(`Perfil de ${ROOMS[k].agente} salvo`);save();rerenderChat(k)}
   else if(kind==='sla'){const cad=[...new Set(String(d.cad||'').split(/[^0-9]+/).map(Number).filter(n=>n>0&&n<=365))].sort((a,b)=>a-b);if(cad.length)S.cfg.cad=cad;FUNIL.slice(0,4).forEach(e=>{S.cfg.sla[e]={d:Math.max(0,parseInt(d['d_'+e])||0),r:(d['r_'+e]||'').trim(),o:(d['o_'+e]||'').trim()}});toast('Prazos do fluxo salvos');refresh()}
