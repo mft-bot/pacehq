@@ -871,7 +871,7 @@ dialog#week-modal{max-width:min(720px,96vw)}
 .dm-c{min-height:62px;display:flex;flex-direction:column;gap:4px;padding:5px 6px;border:1px solid var(--line);border-radius:8px;background:var(--black);color:var(--off);cursor:pointer;font:inherit;text-align:left}.dm-c:hover{border-color:var(--line-2)}.dm-c.vz{border:0;background:none;cursor:default}.dm-c.hoje{border-color:var(--neon)}.dm-c.past{opacity:.55}.dm-c.fech{background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(240,238,231,.03) 6px 12px),var(--black)}
 .dm-c .mono{font-size:12px}.dm-b{display:flex;gap:3px;flex-direction:column;align-items:flex-start}.dm-b em{font:700 10.5px "JetBrains Mono",monospace;font-style:normal;color:#022226;background:var(--c);border-radius:4px;padding:0 5px}
 @media (max-width:860px){.dh-g{grid-template-columns:1fr}.dw-g{grid-template-columns:repeat(2,minmax(0,1fr))}.dw-c{min-height:0}}
-@media (max-width:720px){.dh-wk{display:flex;overflow-x:auto;scrollbar-width:none;margin:0 -12px 10px;padding:0 12px}.dh-d{flex:0 0 74px}.dl-r{flex-wrap:wrap;row-gap:4px}.dl-n{flex-basis:calc(100% - 70px)}.dl-a{margin-left:58px}.dl-in{margin-left:0}.dm-c{min-height:46px;padding:3px}.dm-b{flex-direction:row;flex-wrap:wrap}.dm-b em span{display:none}.dm-top .ag-f{margin-left:0}.dv-tg{order:-1}}
+@media (max-width:720px){.dh-wk{display:flex;overflow-x:auto;scrollbar-width:none;margin:0 -12px 10px;padding:0 12px}.dh-d{flex:0 0 74px}.dl-r{flex-wrap:wrap;row-gap:4px}.dl-n{flex-basis:calc(100% - 90px)}.dl-a{margin-left:58px}.dl-in{margin-left:0}.dm-c{min-height:46px;padding:3px}.dm-b{flex-direction:row;flex-wrap:wrap}.dm-b em span{display:none}.dm-top .ag-f{margin-left:0}.dv-tg{order:-1}}
 .rt h4{margin-bottom:4px}.rt-tot{margin-left:auto;text-transform:none;letter-spacing:0;color:var(--off)}
 .rt-a{border-top:1px solid var(--line)}.rt-a:first-of-type{border-top:0}
 .rt-h{display:flex;align-items:center;gap:8px;width:100%;background:none;border:0;padding:7px 0;color:var(--off);font:inherit;cursor:pointer;text-align:left}.rt-h b{font-size:12.5px;font-weight:600}.rt-h .mono{font-size:11px;color:var(--muted)}.rt-h .sp{flex:1}.rt-car{color:var(--muted);font-size:10px}.rt-ok{color:var(--neon);font-size:12px}.rt-a.ok .rt-h b{color:var(--muted)}
@@ -880,6 +880,28 @@ dialog#week-modal{max-width:min(720px,96vw)}
 .rt-r small{margin-left:auto;font:500 11px "JetBrains Mono",monospace;color:var(--muted)}.rt-r small.late{color:#ff9a8f}
 .rt-r.done .rt-t{color:var(--muted);text-decoration:line-through}
 .rt-cfg{display:flex;flex-direction:column;gap:10px}.rt-cfg fieldset{border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:6px;margin:0}.rt-cfg legend{font-size:11px;color:var(--muted);padding:0 4px}
+.dt2{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}.dt2-hi{font-size:17px;letter-spacing:-.01em;margin-right:6px}
+.dt2-g{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}.dt2-g b{font:700 12px "JetBrains Mono",monospace;color:var(--off);margin-left:3px}.dt2-g.ok b{color:var(--neon)}
+.dt2 .dv-tg{margin-left:auto}
+@media (min-width:861px){.dh-g{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+@media (max-width:720px){.dt2 .dv-tg{order:0;margin-left:0}.dt2-hi{flex-basis:100%}.dh-tabs .dtb{overflow-x:auto;scrollbar-width:none}}
+.dtb{display:flex;gap:2px;border-bottom:1px solid var(--line);margin:-4px -2px 6px}.dtb button{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:6px 10px 8px;color:var(--muted);font:600 12.5px Inter,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px}.dtb button[aria-selected=true]{color:var(--off);border-bottom-color:var(--neon)}
+.dtb-n{font:600 10.5px "JetBrains Mono",monospace;padding:1px 6px;border-radius:999px;background:rgba(240,238,231,.08);color:var(--off)}.dtb-n.late{background:#ff6b5e;color:#fff}.dtb-n.ok{background:var(--neon);color:#022226}
+.dtb-c .rt-a:first-child{border-top:0}
+.dl-r.past{opacity:.45}.dl-r.next{background:rgba(225,239,89,.05);margin:0 -12px;padding-left:12px;padding-right:12px;box-shadow:inset 2px 0 0 var(--neon)}.dl-r.next .dl-h{color:var(--neon)}
+.dl-r.next .dl-h{width:54px}.dl-q{display:block;font:600 10px Inter,sans-serif;font-style:normal;color:var(--neon);margin-top:1px}
+.dh-wk{gap:5px}.dh-d{padding:5px 4px;gap:2px}
+.wk-mini{display:flex;gap:4px;align-items:center;margin-bottom:10px;overflow-x:auto;scrollbar-width:none}
+.wkd{display:inline-flex;align-items:baseline;gap:5px;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:none;color:var(--muted);font:500 12px Inter,sans-serif;cursor:pointer;white-space:nowrap;flex:none}.wkd b{color:var(--off);font-size:12px}.wkd:hover{border-color:var(--line-2)}
+.wkd.on{border-color:var(--neon);background:rgba(225,239,89,.08);color:var(--off)}.wkd.hoje span{color:var(--off);font-weight:600}.wkd.fech{opacity:.45}
+.wk-n{font:700 10px "JetBrains Mono",monospace;font-style:normal;color:var(--off);background:rgba(240,238,231,.1);border-radius:999px;padding:0 5px}
+.wk-tg{margin-left:auto;flex:none;background:none;border:0;color:var(--muted);font:500 12px Inter,sans-serif;cursor:pointer;padding:5px 4px}.wk-tg:hover{color:var(--off)}.wk-wrap .wk-tg{display:block;margin:-4px 0 8px auto}
+.dh-mais{display:block;margin:4px 0 0;background:none;border:0;color:var(--muted);font:500 12px Inter,sans-serif;cursor:pointer;padding:4px 0}.dh-mais:hover{color:var(--off)}
+#day-body :is(.dl-a,.ag-a)>*{display:none}
+#day-body :is(.dl-a,.ag-a)>:is(button,a.btn):first-child,#day-body :is(.dl-a,.ag-a)>a.ag-wa:first-child+button,#day-body :is(.dl-a,.ag-a):not(:has(button,a.btn))>:first-child{display:inline-flex}
+#day-body :is(.dl-r,.ag-r2):is(:hover,:focus-within,.rv) :is(.dl-a,.ag-a)>*{display:inline-flex}
+#day-body :is(.dl-a,.ag-a)>a.ag-wa{display:none}#day-body :is(.dl-a,.ag-a):not(:has(button,a.btn))>a.ag-wa:first-child,#day-body :is(.dl-r,.ag-r2):is(:hover,:focus-within,.rv) :is(.dl-a,.ag-a)>a.ag-wa{display:inline-grid}
+#day-body :is(.dl-a,.ag-a)>span.meta{align-self:center}
 .res-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.res-k{display:flex;align-items:baseline;gap:8px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--black);color:var(--off);text-decoration:none}.res-k b{font:700 22px "JetBrains Mono",monospace}.res-k span{font-size:12px;color:var(--muted)}.res-k.p1 b{color:#ff9a8f}.res-k.p1{border-color:rgba(255,120,120,.35)}.res-k.p2 b{color:var(--neon)}.res-k.zero{opacity:.45}
 .ag-r2{flex-wrap:wrap}.ag-nb{background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer}.ag-nb i{font-style:normal;color:var(--muted);font-size:10px}.ag-nb:hover b{text-decoration:underline;text-underline-offset:3px}
 .ag-r2.open{background:rgba(240,238,231,.03)}.ag-det{flex-basis:100%;margin:4px 0 4px 94px;padding:10px 12px;border-left:2px solid var(--line-2);display:flex;flex-direction:column;gap:8px;font-size:12.5px}.ag-det .vc-r{margin:0;border-color:var(--line-2);background:none}
@@ -1233,7 +1255,7 @@ html,body{overflow-x:clip}
 
 @media (min-width:721px){
   dialog#day-modal{max-width:none;width:fit-content;margin:auto;padding:0;max-height:none}
-  #day-modal .modal-card{width:min(96vw,max(1100px,72vw),1320px);height:calc(100dvh - 32px);max-height:none}
+  #day-modal .modal-card{width:min(96vw,max(1100px,72vw),1320px);height:auto;min-height:min(620px,calc(100dvh - 32px));max-height:calc(100dvh - 32px)}
   #day-modal .mbody{max-height:none;flex:1 1 auto}
   dialog#res-modal{max-width:none;width:fit-content;margin:auto;padding:0}
   #res-modal .modal-card{width:min(94vw,860px);max-height:calc(100dvh - 32px)}
@@ -4655,6 +4677,7 @@ function diaLinha(d){const t=today(),ehHoje=d===t,now=new Date(),hm=pad(now.getH
   D.tr.forEach(l=>{const passou=ehHoje&&(l.hora||'99')<=hm,conf=l.trSt==='Confirmado';R.push({h:l.hora||'99:99',o:1,html:`<div class="dl-r tr"><span class="dl-h mono">${esc(l.hora||'--:--')}</span><i class="dl-dot"></i><span class="dl-n"><b>${esc(l.nome)}</b><small>test ride · ${esc(l.modelo)}${conf?' · confirmado':''}</small></span><span class="dl-a">${passou?`<button class="btn btn-sm" data-action="tr-res" data-v="veio" data-id="${esc(l.id)}">Veio</button><button class="btn btn-sm" data-action="tr-res" data-v="faltou" data-id="${esc(l.id)}">Faltou</button>`:conf?'':`<button class="btn btn-sm" data-action="tr-conf" data-id="${esc(l.id)}">Confirmado</button>${waMini(l.tel,trMsg(l),'Pedir confirmação no WhatsApp')}`}</span></div>`})});
   D.of.forEach(a=>R.push({h:a.hora,o:2,html:`<div class="dl-r of"><span class="dl-h mono">${esc(a.hora)}</span><i class="dl-dot"></i><span class="dl-n"><b>${esc(a.cliente)}</b><small>oficina · ${esc(a.servico)} · ${esc(a.status)}</small></span><span class="dl-a">${a.status==='Agendado'&&a.tel?waMini(a.tel,agMsg(a),'Confirmar no WhatsApp'):''}${a.osId?'<span class="meta">na bancada</span>':ehHoje&&a.status!=='Faltou'?`<button class="btn btn-sm" data-action="ag-entrada" data-id="${esc(a.id)}">Chegou</button>`:''}</span></div>`}));
   R.sort((a,b)=>a.h.localeCompare(b.h)||a.o-b.o);
+  if(ehHoje){const nx=R.find(x=>x.h>hm);R.forEach(x=>{if(x.h<=hm&&x.h!=='99:99')x.html=x.html.replace('class="dl-r ','class="dl-r past ');else if(x===nx){const mins=(+x.h.slice(0,2)*60+ +x.h.slice(3,5))-(now.getHours()*60+now.getMinutes()),q=mins<60?`em ${mins} min`:`em ${Math.floor(mins/60)}h${mins%60?String(mins%60).padStart(2,'0'):''}`;x.html=x.html.replace('class="dl-r ','class="dl-r next ').replace('</span><i class="dl-dot"></i>',`<em class="dl-q">${q}</em></span><i class="dl-dot"></i>`)}})}
   const pz=D.pz.map(x=>x.t==='ct'?`<div class="dl-r pz"><span class="dl-h mono">prazo</span><i class="dl-dot"></i><span class="dl-n"><b>${esc(x.c.desc)}</b><small>${x.c.tipo==='pagar'?'pagar':'receber'} ${BRL(x.c.valor)}</small></span><span class="dl-a"><button class="btn btn-sm" data-action="res-conta" data-id="${esc(x.c.id)}">${x.c.tipo==='pagar'?'Paguei':'Recebi'}</button></span></div>`:`<div class="dl-r pz"><span class="dl-h mono">prazo</span><i class="dl-dot"></i><span class="dl-n"><b>${esc(x.a.t)}</b><small>tarefa</small></span><span class="dl-a"><button class="btn btn-sm" data-action="res-admin" data-id="${esc(x.a.id)}">Feito</button></span></div>`).join('');
   const vazio=!R.length&&!pz;
   return `${R.map(x=>x.html).join('')}${pz}${vazio?`<div class="dl-vz">${D.fTR&&D.fOF?'Loja e oficina fechadas neste dia.':'Nada marcado neste dia.'}</div>`:''}
@@ -4665,9 +4688,13 @@ function avisosSemana(){const t=today(),A=[],cap=Math.max(1,(S.cfg.slots||[]).le
   dias.forEach(d=>{const w=wxDia(d),n=trDia(d).length;if(w&&(w.kind==='chuva'||w.kind==='tempestade')&&n)A.push({c:'wx',t:`Chuva prevista ${nome(d)} com ${n} test ride${n===1?'':'s'}: confirme cedo`})});
   dias.forEach(d=>{const n=agendaDia(d).filter(a=>a.status!=='Faltou').length;if(!isClosed(d)&&n>=cap)A.push({c:'of',t:`Oficina lotada ${nome(d)} (${n} de ${cap} horários)`})});
   return A}
-function diaSemanaStrip(){const t=today(),sel=UI.dSel||t;
+function diaSemanaStripFull(){const t=today(),sel=UI.dSel||t;
   return `<div class="dh-wk">${[...Array(7)].map((_,i)=>{const d=rel(i),D=diaDados(d),dw=new Date(d+'T12:00:00').getDay(),fe=D.fTR&&D.fOF;
     return `<button type="button" class="dh-d ${d===sel?'on':''} ${d===t?'hoje':''} ${dw===0||dw===6?'fds':''} ${fe?'fech':''}" data-action="dsel" data-v="${d}"><span class="dh-n">${d===t?'Hoje':WD[dw]} <span class="mono">${d.slice(8)}</span></span>${WXI(d)}<span class="dh-c">${fe?'fechado':[D.tr.length?`<em class="c-tr" title="${D.tr.length} test ride${D.tr.length===1?'':'s'}">${D.tr.length}</em>`:'',D.of.length?`<em class="c-of" title="${D.of.length} na oficina">${D.of.length}</em>`:'',D.pz.length?`<em class="c-pz" title="${D.pz.length} prazo${D.pz.length===1?'':'s'}">${D.pz.length}</em>`:''].filter(Boolean).join('<i class="dh-sl">/</i>')||'livre'}</span></button>`}).join('')}</div>`}
+function diaSemanaStrip(){const t=today(),sel=UI.dSel||t;
+  if(UI.wkOpen)return `<div class="wk-wrap">${diaSemanaStripFull()}<button type="button" class="wk-tg" data-action="wk-tg" aria-expanded="true">Recolher semana ▴</button></div>`;
+  return `<div class="wk-mini">${[...Array(7)].map((_,i)=>{const d=rel(i),D=diaDados(d),dw=new Date(d+'T12:00:00').getDay(),n=D.tr.length+D.of.length+D.pz.length,fe=D.fTR&&D.fOF;
+    return `<button type="button" class="wkd ${d===sel?'on':''} ${d===t?'hoje':''} ${fe?'fech':''}" data-action="dsel" data-v="${d}" title="${fe?'fechado':n?`${D.tr.length} test ride(s) · ${D.of.length} oficina · ${D.pz.length} prazo(s)`:'livre'}"><span>${d===t?'Hoje':WD[dw]}</span><b class="mono">${d.slice(8)}</b>${n&&!fe?`<i class="wk-n">${n}</i>`:''}</button>`}).join('')}<button type="button" class="wk-tg" data-action="wk-tg" aria-expanded="false">Semana ▾</button></div>`}
 function diaSemanaCols(){const t=today();return `<div class="dw-g">${[...Array(7)].map((_,i)=>{const d=rel(i),D=diaDados(d),dw=new Date(d+'T12:00:00').getDay();
   const it=[...D.tr.map(l=>({h:l.hora||'--:--',c:'tr',n:first(l.nome)})),...D.of.map(a=>({h:a.hora,c:'of',n:first(a.cliente)}))].sort((a,b)=>a.h.localeCompare(b.h));
   return `<div class="dw-c ${d===t?'hoje':''}"><button type="button" class="dw-h" data-action="dsel" data-v="${d}"><b>${d===t?'Hoje':WD[dw]} ${ddmm(d)}</b>${WXI(d)}</button>${it.map(x=>`<div class="dw-i c-${x.c}"><span class="mono">${esc(x.h)}</span>${esc(x.n)}</div>`).join('')}${D.pz.map(x=>`<div class="dw-i c-pz"><span class="mono">!</span>${esc(x.t==='ct'?x.c.desc:x.a.t)}</div>`).join('')}${!it.length&&!D.pz.length?`<div class="dw-vz">${D.fTR&&D.fOF?'fechado':'livre'}</div>`:''}</div>`}).join('')}</div>`}
@@ -4679,45 +4706,41 @@ function diaMes(){const t=today(),mes=UI.dMes||t.slice(0,7),[y,m]=mes.split('-')
   return `<div class="dm-top"><button type="button" class="btn btn-sm" data-action="dmes" data-v="-1" aria-label="Mês anterior">‹</button><b>${mn.charAt(0).toUpperCase()+mn.slice(1)}</b><button type="button" class="btn btn-sm" data-action="dmes" data-v="1" aria-label="Próximo mês">›</button>
     <div class="ag-f">${[['tudo','Tudo'],['tr','Test rides'],['of','Oficina'],['pz','Prazos']].map(([k,l])=>`<button type="button" data-action="dfil" data-v="${k}" aria-pressed="${f===k}">${k!=='tudo'?`<i class="c-${k}"></i>`:''}${l}</button>`).join('')}</div></div>
   <div class="dm-g">${WD.map(w=>`<span class="dm-w">${w}</span>`).join('')}${cells.join('')}</div>`}
-function diaHubHTML(){const v=UI.dView||'dia',t=today(),sel=UI.dSel||t;
-  if(v==='semana')return diaSemanaCols();
-  if(v==='mes')return diaMes();
-  const urg=agoraItens(),u=urg.filter(x=>x.pr===1),av=avisosSemana(),dt=new Date(sel+'T12:00:00');
-  return `${diaSemanaStrip()}
-  <div class="dh-g">
-    <div class="dh-side"><section class="dh-box"><h4>${sel===t?'Linha do dia':`${DIAS_NOME[dt.getDay()]}, ${ddmm(sel)}`}<span class="dh-leg"><i class="c-tr"></i>test ride<i class="c-of"></i>oficina<i class="c-pz"></i>prazo</span></h4>${diaLinha(sel)}</section>
-    ${sel===t?`<section class="dh-box rt"><h4>Rotina <span class="mono rt-tot">${diaProgress().done}/${diaProgress().total}</span></h4>${rotinaHTML()}</section>`:''}
-    </div>
-    <div class="dh-side">
-      <section class="dh-box"><h4>Resolver <span class="count ${u.length?'late':''}">${u.length}</span><small>urgente${u.length===1?'':'s'}</small></h4>
-        ${u.length?`<div class="ag-q dh-q">${u.slice(0,5).map(x=>resRow(x,false)).join('')}</div>`:'<div class="dl-vz">Nada urgente agora.</div>'}
-        <button type="button" class="dh-all" data-action="res">${urg.length?`Ver todas as ${urg.length} pendências →`:'Abrir Resolver →'}</button></section>
-      ${av.length?`<section class="dh-box dh-av"><h4>Avisos da semana</h4>${av.map(a=>`<div class="av-r c-${a.c}"><i></i>${esc(a.t)}</div>`).join('')}</section>`:''}
-    </div>
-  </div>`}
-function renderDay(){
-  const st=diaState(),r=S.cfg.rotina||ROTINA_PADRAO(),cur=blocoAtual(),mc=S.cfg.metaContatos||10,mt=S.cfg.metaTR||2,fh=feitosHoje(),th=trHoje(),sk=streak();
-  const d=new Date(),h=d.getHours(),saud=h<12?'Bom dia':h<18?'Boa tarde':'Boa noite';
-  $('#day-title').textContent=`Meu dia · ${d.toLocaleDateString('pt-BR',{weekday:'long'})}, ${ddmm(today())}`;
-  $('#day-body').innerHTML=`
-  <div class="day-top">
-    <div><b class="day-hi">${saud}${S.cfg.vendedor&&S.cfg.vendedor!=='Equipe PACE'?', '+esc(first(S.cfg.vendedor)):''}!</b><span class="meta">${diaProgress().done} de ${diaProgress().total} tarefas da rotina</span></div>
-    <div class="dv-tg" role="group" aria-label="Visão">${[['dia','Dia'],['semana','Semana'],['mes','Mês']].map(([k,t])=>`<button type="button" data-action="dv" data-v="${k}" aria-pressed="${(UI.dView||'dia')===k}">${t}</button>`).join('')}</div>
-    <div class="day-goals">
-      <div><span>Contatos</span><b class="${fh>=mc?'ok':''}">${fh}/${mc}</b><div class="pixbar">${pixbar(fh/mc)}</div></div>
-      <div><span>Test rides marcados</span><b class="${th>=mt?'ok':''}">${th}/${mt}</b><div class="pixbar">${pixbar(th/mt)}</div></div>
-      <div><span>Sequência</span><b>${sk} dia${sk===1?'':'s'}</b><small>batendo as metas</small></div>
-    </div>
-  </div>
-  ${diaHubHTML(r,st,cur)}
-  <details class="inline" style="margin-top:12px" ${UI.rotCfg?'open':''}><summary>Ajustar rotina e metas</summary>
+function rotCfgHTML(){const mc=S.cfg.metaContatos||10,mt=S.cfg.metaTR||2;return `  <details class="inline" style="margin-top:8px" ${UI.rotCfg?'open':''}><summary>Ajustar rotina e metas</summary>
     <form data-form="day-cfg" class="rt-cfg" style="padding:12px">
       ${ROT_AREAS.map(([a,nome])=>`<fieldset><legend>${esc(nome)}</legend>${rotList().filter(x=>x.a===a).map(x=>`<div class="row" style="gap:6px"><input class="inp-sm grow" name="t_${esc(x.id)}" value="${esc(x.t)}" maxlength="60" aria-label="Tarefa"><button type="button" class="btn btn-sm" data-action="rot-del" data-id="${esc(x.id)}" title="Tirar da rotina">Tirar</button></div>`).join('')}</fieldset>`).join('')}
       <div class="row" style="gap:6px;flex-wrap:wrap"><select class="inp-sm" name="na" aria-label="Área da nova tarefa">${opt(ROT_AREAS,'vendas')}</select><input class="inp-sm grow" name="nt" maxlength="60" placeholder="Nova tarefa (opcional)"></div>
       <div class="form-grid"><label class="field">Meta de contatos por dia<input type="number" min="1" max="100" name="mc" value="${mc}"></label>
       <label class="field">Meta de test rides marcados por dia<input type="number" min="0" max="20" name="mt" value="${mt}"></label></div>
       <div class="row" style="justify-content:space-between"><button type="button" class="btn btn-sm" data-action="rot-reset">Voltar ao padrão</button><button class="btn btn-primary btn-sm" type="submit">Salvar</button></div>
-    </form></details>`;
+    </form></details>`}
+function diaHubHTML(){const v=UI.dView||'dia',t=today(),sel=UI.dSel||t;
+  if(v==='semana')return diaSemanaCols();
+  if(v==='mes')return diaMes();
+  const urg=agoraItens(),u=urg.filter(x=>x.pr===1),av=avisosSemana(),dt=new Date(sel+'T12:00:00'),pg=diaProgress();
+  let tab=UI.dTab||(u.length?'urg':'rot');if(sel!==t&&tab==='rot')tab='urg';
+  const tabs=[['urg','Urgentes',u.length,u.length?'late':''],...(sel===t?[['rot','Rotina',`${pg.done}/${pg.total}`,pg.done===pg.total?'ok':'']]:[]),['av','Avisos',av.length,'']];
+  const corpo=tab==='rot'?`${rotinaHTML()}${rotCfgHTML()}`:tab==='av'?(av.length?av.map(a=>`<div class="av-r c-${a.c}"><i></i>${esc(a.t)}</div>`).join(''):'<div class="dl-vz">Semana tranquila: nenhum aviso.</div>')
+    :`${u.length?`<div class="ag-q dh-q">${u.slice(0,UI.urgAll?99:3).map(x=>resRow(x,false)).join('')}</div>${u.length>3?`<button type="button" class="dh-mais" data-action="urg-all">${UI.urgAll?'Mostrar menos':`Ver mais ${u.length-3}`}</button>`:''}`:'<div class="dl-vz">✓ Nada urgente agora.</div>'}<button type="button" class="dh-all" data-action="res">${urg.length?`Abrir Resolver · ${urg.length} pendência${urg.length===1?'':'s'} →`:'Abrir Resolver →'}</button>`;
+  return `${diaSemanaStrip()}
+  <div class="dh-g">
+    <section class="dh-box"><h4>${sel===t?'Agenda de hoje':`${DIAS_NOME[dt.getDay()]}, ${ddmm(sel)}`}<span class="dh-leg"><i class="c-tr"></i>test ride<i class="c-of"></i>oficina<i class="c-pz"></i>prazo</span></h4>${diaLinha(sel)}</section>
+    <section class="dh-box dh-tabs"><div class="dtb" role="tablist">${tabs.map(([k,l,n,c])=>`<button type="button" role="tab" data-action="dtab" data-v="${k}" aria-selected="${tab===k}">${l} <span class="dtb-n ${c}">${n}</span></button>`).join('')}</div><div class="dtb-c">${corpo}</div></section>
+  </div>`}
+function renderDay(){
+  const st=diaState(),r=S.cfg.rotina||ROTINA_PADRAO(),cur=blocoAtual(),mc=S.cfg.metaContatos||10,mt=S.cfg.metaTR||2,fh=feitosHoje(),th=trHoje(),sk=streak();
+  const d=new Date(),h=d.getHours(),saud=h<12?'Bom dia':h<18?'Boa tarde':'Boa noite';
+  $('#day-title').textContent=`Meu dia · ${d.toLocaleDateString('pt-BR',{weekday:'long'})}, ${ddmm(today())}`;
+  $('#day-body').innerHTML=`
+  <div class="dt2">
+    <b class="dt2-hi">${saud}${S.cfg.vendedor&&S.cfg.vendedor!=='Equipe PACE'?', '+esc(first(S.cfg.vendedor)):''}!</b>
+    <span class="dt2-g ${fh>=mc?'ok':''}" title="Contatos feitos hoje / meta">Contatos <b>${fh}/${mc}</b></span>
+    <span class="dt2-g ${th>=mt?'ok':''}" title="Test rides marcados hoje / meta">Test rides <b>${th}/${mt}</b></span>
+    <span class="dt2-g" title="Dias seguidos batendo as metas">Sequência <b>${sk}</b></span>
+    <div class="dv-tg" role="group" aria-label="Visão">${[['dia','Dia'],['semana','Semana'],['mes','Mês']].map(([k,t])=>`<button type="button" data-action="dv" data-v="${k}" aria-pressed="${(UI.dView||'dia')===k}">${t}</button>`).join('')}</div>
+  </div>
+  ${diaHubHTML(r,st,cur)}
+`;
 }
 /* Resolver agora: uma fila só, uma linha por pendência, filtro por tipo. Mostra 5 e abre o resto sob demanda. */
 const waMini=(tel,msg,title,extra='')=>tel?`<a class="ag-wa" href="${esc(waLink(tel,msg))}" target="${S.cfg.waMode==='web'&&!matchMedia('(pointer:coarse)').matches?'pace-whatsapp':'_blank'}" rel="noopener noreferrer" title="${esc(title)}" aria-label="${esc(title)}" ${extra}>${WA_ICO}</a>`:'';
@@ -6161,6 +6184,9 @@ document.addEventListener('click',e=>{
   else if(a==='rot-del'){S.cfg.rot2=rotList().filter(x=>x.id!==id);UI.rotCfg=true;save();toast('Tarefa tirada da rotina');renderDay()}
   else if(a==='rot-fec'){if(UI.armed!=='fec'){UI.armed='fec';renderDay();return}UI.armed=null;closeDayAction();diaState().done.r_fec=true;save();renderDay()}
   else if(a==='rot-reset'){delete S.cfg.rot2;UI.rotCfg=true;save();toast('Rotina padrão restaurada');renderDay()}
+  else if(a==='wk-tg'){UI.wkOpen=!UI.wkOpen;renderDay()}
+  else if(a==='urg-all'){UI.urgAll=!UI.urgAll;renderDay()}
+  else if(a==='dtab'){UI.dTab=el.dataset.v;renderDay()}
   else if(a==='dv'){UI.dView=el.dataset.v;renderDay()}
   else if(a==='dsel'){UI.dSel=el.dataset.v;UI.dView='dia';UI.dayOpen=null;renderDay()}
   else if(a==='dmes'){const [y,m]=(UI.dMes||today().slice(0,7)).split('-').map(Number),dd=new Date(y,m-1+Number(el.dataset.v),1);UI.dMes=`${dd.getFullYear()}-${pad(dd.getMonth()+1)}`;renderDay()}
@@ -6623,6 +6649,7 @@ syncBackupBar();syncDayBtn();
 const EH_CELULAR=()=>Math.min(screen.width,screen.height)<=600||innerWidth<=720||(matchMedia('(pointer:coarse)').matches&&!matchMedia('(hover:hover)').matches&&Math.min(screen.width,screen.height)<=820);
 {let m0=null;try{m0=localStorage.getItem('pace-hq-mode')}catch(e){}if(EH_CELULAR())m0='pocket';else if(m0!=='office'&&m0!=='pocket')m0='office';if(m0==='pocket')setMode('pocket')}
 initMap();loadWX();weekAuto();setInterval(loadWX,15*60000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&WX_CUR&&Date.now()-new Date(WX_CUR.updated).getTime()>10*60000)loadWX()});
+document.addEventListener('click',e=>{const r=e.target.closest&&e.target.closest('#day-body .dl-r,#day-body .ag-r2');if(!r||e.target.closest('button,a,input,select,label'))return;document.querySelectorAll('#day-body .rv').forEach(x=>{if(x!==r)x.classList.remove('rv')});r.classList.toggle('rv')});
 window.addEventListener('popstate',()=>{const d=$('#drawer');if(d&&d.classList.contains('open'))closeDrawer(true)});
 requestAnimationFrame(frame);
 function semResposta(){const lim=(S.cfg.tprAlert||5)*60000,now=Date.now();return S.leads.filter(l=>!l.arq&&l.etapa==='Novo'&&!(l.toques>0)&&l.ts&&now-l.ts>lim).sort((a,b)=>a.ts-b.ts)}
