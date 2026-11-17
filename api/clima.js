@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     }
     const la = Math.round(Number(lat) * 100) / 100, lo = Math.round(Number(lon) * 100) / 100;
     if (!Number.isFinite(la) || !Number.isFinite(lo) || Math.abs(la) > 90 || Math.abs(lo) > 180) return res.status(400).json({ error: 'Coordenadas inválidas' });
-    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America%2FSao_Paulo&forecast_days=8`, { signal: AbortSignal.timeout(8000) });
+    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m,weather_code,is_day,precipitation,cloud_cover&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,cloud_cover_mean&timezone=America%2FSao_Paulo&past_days=6&forecast_days=8`, { signal: AbortSignal.timeout(8000) });
     if (!r.ok) return res.status(502).json({ error: 'Previsão indisponível' });
     const j = await r.json();
     res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=3600');
