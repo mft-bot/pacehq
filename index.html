@@ -463,6 +463,8 @@ dialog.modal::backdrop{background:rgba(0,0,0,.65)}
 #meet-dot.seen{display:none}
 dialog.meet{max-width:min(980px,96vw)}
 dialog.meet .mbody{max-height:calc(100vh - 190px);overflow-y:auto}
+/* janelas nunca passam da tela: o corpo rola e o rodapé fica visível */
+dialog.modal>.modal-card{max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);display:flex;flex-direction:column}dialog.modal>.modal-card>.mbody{overflow-y:auto;min-height:0;flex:1 1 auto}dialog.modal>.modal-card>header,dialog.modal>.modal-card>footer{flex:none}
 dialog.meet .modal-card header{flex-wrap:wrap;gap:8px}
 .meet-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 .meet-col{background:var(--graphite);border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
@@ -718,7 +720,7 @@ dialog.modal::backdrop{background:rgba(2,10,12,.55)}
 .ib-row{display:grid;grid-template-columns:118px 1fr 28px 38px;gap:8px;align-items:center;font-size:12px}
 .ib-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ib-bar{height:6px;background:rgba(240,238,231,.08);border-radius:3px;overflow:hidden}
-.ib-bar i{display:block;height:100%;background:var(--neon)}
+.ib-bar i{display:block;height:100%;background:#8b95a3}
 .ib-n{text-align:right;font-size:11px}.ib-c{text-align:right;font-size:11px;color:var(--muted)}
 .ib-line{padding:7px 0;border-bottom:1px solid var(--line)}.ib-line:last-child{border-bottom:0}
 .ins-list{margin:6px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
@@ -893,7 +895,7 @@ dialog#week-modal{max-width:min(720px,96vw)}
 .sel-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;margin-bottom:8px;border:1px solid var(--neon);border-radius:10px;background:#20262F}
 .sel-box{width:18px;height:18px;border:1.5px solid var(--line-2);border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:var(--daintree);flex:0 0 auto}
 .card.lead.sel-on{border-color:var(--neon)}.card.lead.sel-on .sel-box{background:var(--neon);border-color:var(--neon)}
-#day-prog.tr-alert{box-shadow:inset 0 0 0 1px rgba(255,120,120,.6)}
+#day-prog.tr-alert::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff7a70;margin-right:6px;vertical-align:middle;box-shadow:0 0 0 3px rgba(255,122,112,.18)}
 .tpr-al{display:inline-flex;align-items:center;gap:6px;margin-left:10px;padding:5px 10px;border-radius:999px;border:1px solid rgba(255,120,120,.6);background:rgba(255,120,120,.12);color:#ffb3b3;font:600 12px Inter,system-ui,sans-serif;cursor:pointer}
 .tpr-al i{width:7px;height:7px;border-radius:50%;background:#ff7878;animation:tprp 1.2s infinite}@keyframes tprp{50%{opacity:.3}}
 .of-split{display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border:1px dashed var(--line-2);border-radius:8px;font-size:12.5px}
@@ -922,6 +924,138 @@ dialog#week-modal{max-width:min(720px,96vw)}
 .rede-t td,.rede-t th{white-space:nowrap}
 .lj-f{display:flex;flex-direction:column;gap:3px;font-size:10.5px;color:var(--muted);margin-top:2px}.lj-geo{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:8px;padding:4px}.lj-hint{font-size:10.5px;color:var(--muted);margin:0 2px}
 .kb-t{width:100%;border-collapse:collapse;font-size:13px}.kb-t td{padding:6px 4px;border-bottom:1px solid var(--line)}.kb-t td:first-child{white-space:nowrap;width:1%;padding-right:14px}
+.go-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}.go-row>span{margin-right:2px}
+.go-chip{display:inline-flex;align-items:center;gap:5px;background:var(--graphite);border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--offwhite,#F0EEE7);font:500 12px Inter,system-ui,sans-serif;cursor:pointer}
+.go-chip:hover{border-color:var(--neon)}.go-chip b{font-family:"JetBrains Mono",monospace;font-size:13px}.go-chip.is-red b{color:#ff8a80}.go-chip.is-red{border-color:rgba(255,138,128,.45)}.go-chip.is-ok b{color:var(--neon)}
+.kgrid.kg3{grid-template-columns:repeat(3,minmax(0,1fr))}.kgrid.kg4{grid-template-columns:repeat(4,minmax(0,1fr))}@media (max-width:900px){.kgrid.kg4{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:720px){.kgrid.kg3{grid-template-columns:1fr}}
+.rv-link{text-align:left;cursor:pointer;font:inherit;color:inherit}.rv-link:hover{border-color:var(--neon)}
+.mt-charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:start}
+@media (max-width:900px){.mt-charts{grid-template-columns:1fr}}
+.mt-c{padding:12px 14px}.mt-c h4{display:flex;align-items:center;gap:8px;font-size:13px}
+.mt-go{margin-left:auto;background:none;border:0;padding:0;font:500 11px Inter,system-ui,sans-serif;color:var(--muted);cursor:pointer}.mt-go:hover{color:var(--neon)}
+.mt-say{margin:4px 0 10px;font-size:12px;line-height:1.45;color:var(--muted)}.mt-say b{color:var(--offwhite,#F0EEE7);font-weight:600}
+.mt-foot{margin:8px 0 0;font-size:10.5px;color:var(--muted);opacity:.8}
+.tr-up{color:#7fd4a8}.tr-dn{color:#ff9a8f}.tr-eq{color:var(--muted)}
+.rk{display:flex;flex-direction:column;gap:9px}
+.rk-t{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:12px}
+.rk-n{font-weight:600;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.rk-n i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.rk-ctx{color:var(--muted);font-size:11px;white-space:nowrap}
+.rk-m{display:grid;grid-template-columns:minmax(0,1fr) 42px auto;align-items:center;gap:8px;margin-top:3px}
+.rk-bar{height:6px;border-radius:3px;background:rgba(240,238,231,.08);overflow:hidden}.rk-bar i{display:block;height:100%;border-radius:3px;background:#8b95a3}
+.rk-r.dest .rk-bar i{background:var(--neon)}.rk-r.dest .rk-v{color:var(--neon)}
+.rk-v{font:600 12px "JetBrains Mono",monospace;text-align:right}
+.rk-x{font:500 10.5px "JetBrains Mono",monospace;color:var(--muted);white-space:nowrap;min-width:78px;text-align:right}.rk-x.dest{color:var(--neon)}
+.wk-r,.wk-x{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:end;gap:8px}
+.wk-r+.wk-r{margin-top:10px}.wk-l{font-size:11px;color:var(--muted);padding-bottom:2px}
+.wk-bars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.wk-c{height:52px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:2px}
+.wk-c i{display:block;width:100%;max-width:34px;border-radius:3px 3px 0 0;background:rgba(139,149,163,.45)}.wk-c.cur i{background:var(--neon)}
+.wk-c span{font:600 10.5px "JetBrains Mono",monospace;color:var(--muted);line-height:1}.wk-c.cur span{color:var(--offwhite,#F0EEE7)}
+.wk-x{margin-top:4px}.wk-x .wk-bars span{text-align:center;font-size:10.5px;color:var(--muted)}.wk-x .wk-bars span.cur{color:var(--neon);font-weight:600}
+.dc-imp{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:var(--graphite);border:1px solid var(--line)}
+.dc-imp b{display:block;font-size:13.5px}.dc-imp span{display:block;font-size:12px;color:var(--muted);margin-top:2px}.dc-imp span b{display:inline;color:var(--offwhite,#F0EEE7);font-size:12px}
+.dc-imp.pend{border-color:var(--neon);background:linear-gradient(0deg,rgba(225,239,89,.06),rgba(225,239,89,.06)),var(--graphite)}
+.dc-say{margin:10px 2px 12px}.dc-k{margin-bottom:4px}
+.dc-res{font:500 12px Inter,system-ui,sans-serif;text-transform:none;letter-spacing:0;color:var(--muted)}.dc-res b{color:var(--offwhite,#F0EEE7)}
+.dc-list{display:flex;flex-direction:column;gap:8px}
+.dc-card{background:var(--graphite);border:1px solid var(--line);border-left:3px solid #8b95a3;border-radius:10px;padding:10px 12px}
+.dc-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.dc-top b{font-size:13.5px}
+.dc-v{font:700 10.5px Inter,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:999px;background:rgba(139,149,163,.18);color:#c9ced6}
+.dc-escalar{border-left-color:var(--neon)}.dc-escalar .dc-v{background:var(--neon);color:var(--daintree,#022226)}
+.dc-ajustar{border-left-color:#e8b04a}.dc-ajustar .dc-v{background:rgba(232,176,74,.18);color:#f0c46e}
+.dc-pausar{border-left-color:#ff8a80}.dc-pausar .dc-v{background:rgba(255,138,128,.16);color:#ff9a8f}
+.dc-why{font-size:12.5px;margin:5px 0 4px;line-height:1.4}
+.dc-path{font:500 11.5px "JetBrains Mono",monospace;color:var(--muted)}.dc-path b{color:var(--offwhite,#F0EEE7)}
+.dc-tetos{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:12px;font-size:12px;color:var(--muted)}.dc-tetos input{width:70px}
+.dc-dias{margin-left:auto;display:inline-flex;align-items:center;gap:3px}
+.dc-d{background:none;border:1px solid var(--line);border-radius:6px;padding:3px 6px;font:500 11px Inter,system-ui,sans-serif;color:var(--muted);cursor:pointer}.dc-d[aria-pressed="true"]{border-color:var(--neon);color:var(--neon)}
+.evo{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;align-items:end;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+.evo-l{font-size:10.5px;color:var(--muted);line-height:1.3}
+.evo-b{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.evo-b .wk-c{height:auto}.evo-b small{font-size:9.5px;color:var(--muted);font-family:"JetBrains Mono",monospace}.evo-b .cur small{color:var(--offwhite,#F0EEE7)}
+.dc-imp{padding:8px 12px;gap:10px;font-size:12.5px;color:var(--muted)}.dc-imp>span{flex:1;display:block;margin:0;font-size:12.5px}.dc-imp>span b{color:var(--offwhite,#F0EEE7);font-size:12.5px;display:inline}
+.dc-imp.pend{background:var(--graphite);border-color:rgba(225,239,89,.45)}
+.dc-dot{width:8px;height:8px;border-radius:50%;background:var(--neon);flex:none;box-shadow:0 0 0 3px rgba(225,239,89,.15)}.dc-dot.late{background:#ff8a80;box-shadow:0 0 0 3px rgba(255,138,128,.15)}
+.dc-btn{background:none;border:1px solid var(--line-2);border-radius:7px;padding:4px 10px;font:600 11.5px Inter,system-ui,sans-serif;color:var(--offwhite,#F0EEE7);cursor:pointer;white-space:nowrap}.dc-btn:hover{border-color:var(--neon);color:var(--neon)}.pend .dc-btn{border-color:var(--neon);color:var(--neon)}
+.ev6{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}@media (max-width:900px){.ev6{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ev6-c{display:flex;gap:10px;align-items:flex-start;background:var(--graphite);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.ev6-d{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:38px;height:40px;border-radius:7px;background:rgba(240,238,231,.06)}.ev6-d b{font:700 15px "JetBrains Mono",monospace;line-height:1}.ev6-d span{font-size:9.5px;text-transform:uppercase;color:var(--muted);letter-spacing:.05em}
+.ev6-c.ev6-hot .ev6-d{background:var(--neon);color:var(--daintree,#022226)}.ev6-c.ev6-hot .ev6-d span{color:var(--daintree,#022226)}
+.ev6-t{min-width:0;flex:1}.ev6-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.ev6-h b{font-size:12.5px}.ev6-h em{font:500 10.5px "JetBrains Mono",monospace;font-style:normal;color:var(--muted);white-space:nowrap}.ev6-c.ev6-hot .ev6-h em{color:var(--neon)}.ev6-t small{display:block;font-size:11px;line-height:1.35;color:var(--muted);margin-top:2px}
+.ib-h{display:grid;grid-template-columns:auto minmax(30px,1fr) auto;align-items:center;gap:8px;margin-bottom:6px}.ib-h .meta{font-size:11px}
+.ib-cob{height:4px;border-radius:2px;background:rgba(240,238,231,.08);overflow:hidden}.ib-cob i{display:block;height:100%;background:#8b95a3}
+.ib-row.dest .ib-bar i{background:var(--neon)}.ib-row.dest .ib-c{color:var(--neon)}
+.ib-c.poucos{color:var(--muted);font-size:10px}
+.ib-sem,.ib-vazio{font-size:11px;color:var(--muted);margin-top:4px}
+.dc-go{display:flex;align-items:center;gap:12px;width:100%;margin:12px 0 4px;padding:10px 14px;background:var(--graphite);border:1px solid var(--line);border-radius:10px;font:600 13px Inter,system-ui,sans-serif;color:var(--offwhite,#F0EEE7);cursor:pointer;text-align:left}.dc-go:hover{border-color:var(--neon)}.dc-go .mt-go{margin-left:auto}
+.dc-dias-r{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:6px 2px 0}
+.cp-top{display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--muted);margin-bottom:8px}.cp-top>span:first-child{flex:1}.cp-top b{color:var(--offwhite,#F0EEE7)}
+.cp-t{background:var(--graphite);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cp-r{display:grid;grid-template-columns:minmax(220px,2.4fr) repeat(9,minmax(52px,1fr));align-items:center;column-gap:6px;padding:8px 12px;border-top:1px solid var(--line);font-size:12px}
+.cp-r.cp-h{border-top:0;font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding:7px 12px}
+.cp-r.off{opacity:.55}
+.cp-r .num{text-align:right;font-family:"JetBrains Mono",monospace;display:flex;flex-direction:column;align-items:flex-end}.cp-r .num small{font-size:9.5px;color:var(--muted)}.cp-r .num small.bad,.cp-r .num.bad{color:#ff9a8f}.cp-r .num.best{color:var(--neon);font-weight:700}
+.cp-c1{display:flex;align-items:center;gap:8px;min-width:0}.cp-nm{min-width:0;display:flex;flex-direction:column}.cp-nm b{font-size:12.5px;line-height:1.3}.cp-nm small{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.cp-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.cp-c1 .dc-v{min-width:66px;text-align:center}.dc-none{background:rgba(139,149,163,.12)!important;color:var(--muted)!important}
+.cp-why{grid-column:1/-1;font-size:11.5px;color:var(--muted);margin-top:4px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.cp-ed{margin-left:auto}.cp-ed summary{cursor:pointer;font-size:11px;color:var(--muted)}.cp-ed[open]{display:flex;gap:10px;align-items:center;flex-wrap:wrap;width:100%;justify-content:flex-end}.cp-ed .val-in{width:70px}
+.cp-sp{display:inline-flex;align-items:flex-end;gap:2px;height:20px}.cp-sp i{display:block;width:5px;border-radius:1px;background:rgba(139,149,163,.55)}.cp-sp i.cur{background:var(--neon)}
+.pq-list{background:var(--graphite);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.pq summary{display:grid;grid-template-columns:minmax(110px,1fr) minmax(130px,1.3fr) minmax(150px,1.5fr) 150px;gap:10px;align-items:center;padding:9px 12px;border-top:1px solid var(--line);cursor:pointer;list-style:none;font-size:12.5px}
+.pq:first-child summary{border-top:0}.pq summary::-webkit-details-marker{display:none}.pq summary:hover{background:rgba(240,238,231,.03)}
+.pq-n{font-weight:600}.pq-n i{font-style:normal;color:var(--neon);font-size:8px;margin-left:5px;vertical-align:middle}
+.pq small{color:var(--muted);font-size:11px}.pq-best b{color:var(--neon);font-weight:600}
+.pq-cob{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center}
+.pq-b{padding:4px 12px 10px}.pq-leg{font:500 11px Inter,system-ui,sans-serif;text-transform:none;letter-spacing:0;color:var(--muted)}
+.pq-say{font-size:12px;color:var(--muted);margin:8px 2px 0}.pq-say b{color:var(--offwhite,#F0EEE7);font-weight:600}
+.pb-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:4px}@media (max-width:720px){.pb-grid{grid-template-columns:1fr}}
+.pb{padding:10px 12px}.pb-t{display:block;font-size:12.5px;margin-bottom:4px}.pb-r{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:3px 0;border-top:1px solid var(--line)}.pb-r:first-of-type{border-top:0}
+.pdv{border:1px solid rgba(225,239,89,.35);border-radius:10px;padding:8px 10px;background:rgba(225,239,89,.04)}
+.pdv-h{display:flex;align-items:center;gap:10px}.pdv-h b{font-size:12.5px}.pdv-h .dc-btn{margin-left:auto}
+.pdv-q{font-size:12.5px;margin:4px 0 6px;color:var(--offwhite,#F0EEE7)}
+.lm-q{display:flex;flex-direction:column;gap:5px;border-top:1px dashed var(--line);padding-top:8px}
+.lm-qr{display:flex;align-items:center;gap:5px;flex-wrap:wrap}.lm-qr>span{font-size:11.5px;color:var(--muted);min-width:92px}
+.chip-r input{position:absolute;opacity:0;pointer-events:none}.chip-r span{display:inline-block;padding:4px 9px;border:1px solid var(--line-2);border-radius:999px;font-size:11.5px;cursor:pointer}.chip-r input:checked+span{background:var(--neon);color:var(--daintree,#022226);border-color:var(--neon)}.chip-r input:focus-visible+span{outline:2px solid var(--neon)}
+.fa-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.fa-grid.one{grid-template-columns:1fr}@media (max-width:860px){.fa-grid{grid-template-columns:1fr}}
+.fa-card{background:var(--graphite);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.fa-h{display:flex;align-items:center;gap:8px;margin-bottom:8px}.fa-h b{font-size:14px}.fa-cov{margin-left:auto;font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 8px}
+.fa-f{display:flex;flex-direction:column}
+.fa-f .fa-s{display:grid;grid-template-columns:140px 92px minmax(0,1fr);align-items:baseline;gap:10px;padding:6px 0;border-top:1px solid var(--line)}.fa-f .fa-s:first-child{border-top:0}
+.fa-s .fa-l{font-size:11.5px;color:var(--muted)}.fa-s b{font:600 13px "JetBrains Mono",monospace;text-align:right}.fa-s small{font-size:11px;color:var(--muted)}
+.fa-s.weak b,.fa-s.weak small{color:#ff9a8f}.fa-s.strong b{color:var(--neon)}
+.fa-prov{margin-top:8px;padding:8px 10px;border-radius:8px;background:rgba(240,238,231,.04);font-size:11.5px;line-height:1.45}.fa-prov span{color:var(--muted)}
+.cc2-list{display:flex;flex-direction:column;gap:8px}
+.cc2{background:var(--graphite);border:1px solid var(--line);border-left:3px solid #8b95a3;border-radius:10px;padding:10px 12px}.cc2.off{opacity:.55}
+.cc2.dc-escalar{border-left-color:var(--neon)}.cc2.dc-ajustar{border-left-color:#e8b04a}.cc2.dc-pausar{border-left-color:#ff8a80}
+.cc2-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.cc2-h b{font-size:13.5px}.cc2-ch{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--muted)}
+.cc2-cod{font:600 11px "JetBrains Mono",monospace;color:var(--offwhite,#F0EEE7);background:rgba(240,238,231,.07);border-radius:5px;padding:2px 6px}.cc2-h .meta{margin-left:auto;font-size:11px}
+.cc2-why{font-size:12px;margin:5px 0 2px;color:var(--offwhite,#F0EEE7);line-height:1.4}
+.cc2-f{display:flex;align-items:stretch;gap:4px;margin-top:8px;overflow-x:auto}
+.cc2-f .fa-s{flex:1 1 0;min-width:84px;display:flex;flex-direction:column;gap:1px;padding:6px 8px;border-radius:8px;background:rgba(240,238,231,.04)}
+.cc2-f .fa-s b{text-align:left;font-size:13px}.cc2-f .fa-s small{font-size:10.5px;line-height:1.3}
+.cc2-f .fa-s.weak{background:rgba(255,138,128,.10)}
+.fa-ar{align-self:center;color:var(--muted);font-style:normal;font-size:13px}
+.cc2-q{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:7px;font-size:11.5px;color:var(--muted)}.cq-i{display:inline-flex;align-items:center;gap:6px}.cq-i.bad{color:#ff9a8f}
+.cc2-q .cp-ed{margin-left:auto}
+.cp-edb{margin-left:auto}.cc2-q .cp-edb{margin-left:auto}
+.cp-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 10px;margin-top:8px;padding:10px;border:1px dashed var(--line-2);border-radius:8px}@media (max-width:720px){.cp-form{grid-template-columns:1fr}}
+.cp-form-a{grid-column:1/-1;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.cp-form-a .meta{flex:1;font-size:11px}
+.cp-form .del{opacity:1!important;color:#ff9a8f;border:1px solid rgba(255,138,128,.5);padding:5px 12px;font-size:12px;font-weight:600}.cp-form .del:hover{background:rgba(255,138,128,.12);color:#ffb3aa}.cp-form .del.armed{background:var(--late);color:#1a0705;border-color:var(--late)}
+.pb-say{font-size:12px;color:var(--muted);margin:2px 0 8px;line-height:1.4}.pb-say b{color:var(--offwhite,#F0EEE7)}
+.pl-r{display:grid;grid-template-columns:minmax(110px,1.3fr) minmax(40px,1fr) 70px minmax(90px,1fr);gap:8px;align-items:center;font-size:12px;padding:4px 0;border-top:1px solid var(--line)}
+.pl-r .pl-n{text-align:right;font-size:11px}.pl-r .pl-e{font-size:11px;color:var(--muted)}.pl-r.dest .ib-bar i{background:var(--neon)}
+.cm-h,.cm-r{display:grid;grid-template-columns:100px minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:baseline;font-size:12px}
+.cm-h{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding-bottom:4px}.cm-r{padding:5px 0;border-top:1px solid var(--line)}.cm-r small{color:var(--muted);font-size:10.5px}.cm-r.dest b{color:var(--neon)}
+.vc-r{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 10px;border:1px solid rgba(255,138,128,.35);border-radius:8px;margin-top:6px;background:rgba(255,138,128,.04)}.vc-r .grow{min-width:180px;display:flex;flex-direction:column}.vc-r small{font-size:11px;color:var(--muted)}
+#cfg-modal{max-width:min(920px,96vw)}
+.cfg-wrap{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;padding:14px 16px}@media (max-width:720px){.cfg-wrap{grid-template-columns:1fr}}
+.cfg-nav{display:flex;flex-direction:column;gap:2px;position:sticky;top:0;align-self:start}@media (max-width:720px){.cfg-nav{flex-direction:row;flex-wrap:wrap;position:static}}
+.cfg-nav button{text-align:left;background:none;border:0;border-radius:7px;padding:7px 10px;font:500 13px Inter,system-ui,sans-serif;color:var(--muted);cursor:pointer}.cfg-nav button:hover{color:var(--offwhite,#F0EEE7);background:rgba(240,238,231,.05)}.cfg-nav button[aria-pressed="true"]{color:var(--daintree,#022226);background:var(--neon);font-weight:600}
+.cfg-body{min-width:0}.cfg-body section{margin:0}.cfg-h{font:600 11px Inter,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:14px 0 8px}.cfg-h:first-child{margin-top:0}
+.cfg-loja{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}.cfg-loja.cur{border-color:rgba(225,239,89,.4)}
+.del-v{background:none;border:1px solid rgba(255,138,128,.5);border-radius:7px;padding:4px 10px;font:600 11.5px Inter,system-ui,sans-serif;color:#ff9a8f;cursor:pointer}.del-v:hover{background:rgba(255,138,128,.1)}.del-v.armed{background:var(--late);color:#1a0705;border-color:var(--late)}
+.cfg-link{background:none;border:0;padding:4px 0;font:500 12px Inter,system-ui,sans-serif;color:var(--muted);cursor:pointer;text-align:left}.cfg-link:hover{color:var(--neon)}
 .lj-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 2px 0}
 </style>
 </head>
@@ -983,9 +1117,11 @@ dialog#week-modal{max-width:min(720px,96vw)}
           <button type="button" data-action="backup-import">Importar tudo (de outra versão)</button>
           <button type="button" data-action="import-undo">Desfazer última importação</button>
           <hr>
-          <button type="button" data-action="ai-setup">Conexão com o Claude</button>
-          <button type="button" data-action="data-clear">Começar do zero (apagar exemplos)</button>
-          <button type="button" data-action="backup-reset">Restaurar dados de exemplo</button>
+          <span class="menu-lbl">Lojas</span>
+          <button type="button" data-action="loja-rede" id="menu-rede">Visão da rede</button>
+          <button type="button" data-action="cfg" data-v="lojas">Nova loja ou editar lojas</button>
+          <hr>
+          <button type="button" data-action="cfg" data-v="lojas">⚙ Configurações</button>
         </div>
       </details>
     </div>
@@ -1050,6 +1186,7 @@ dialog#week-modal{max-width:min(720px,96vw)}
       <label class="field">Campanha / peça<select name="camp"></select></label>
       <label class="field">Bairro / cidade<input name="bairro" maxlength="60" placeholder="Ex.: Estreito"></label>
       <label class="field full">Observação<input name="obs" maxlength="160" placeholder="Ex.: quer usar para ir ao trabalho pela ponte"></label>
+      <div class="full lm-q" id="lm-q"></div>
     </div>
     <footer>
       <button type="button" class="btn" data-action="lead-sample" title="Preenche com um lead fictício, como se tivesse chegado do site ou de um anúncio">Simular captura</button>
@@ -1079,6 +1216,13 @@ dialog#week-modal{max-width:min(720px,96vw)}
       <tr><td><kbd>Esc</kbd></td><td>Fecha o painel ou a janela aberta</td></tr>
       <tr><td><kbd>?</kbd></td><td>Mostra esta lista</td></tr>
     </table><p class="meta" style="margin:10px 0 0">No Mac, use <kbd>⌘</kbd> no lugar de <kbd>Ctrl</kbd>. Os atalhos não funcionam enquanto você digita num campo.</p></div>
+  </div>
+</dialog>
+
+<dialog class="modal cfg-modal" id="cfg-modal" aria-labelledby="cfg-title">
+  <div class="modal-card">
+    <header><h2 id="cfg-title" class="px">Configurações</h2><button type="button" class="btn btn-sm" data-action="modal-close">Fechar</button></header>
+    <div class="mbody cfg-wrap"><nav class="cfg-nav" id="cfg-nav" aria-label="Seções"></nav><div class="cfg-body" id="cfg-body"></div></div>
   </div>
 </dialog>
 
@@ -1303,7 +1447,7 @@ const CATALOGO_PADRAO=[
 const MODELOS={};
 function syncCatalog(){Object.keys(MODELOS).forEach(k=>delete MODELOS[k]);(S.catalogo||CATALOGO_PADRAO).forEach(c=>{MODELOS[c.nome]={pix:Number(c.pix)||0,tabela:Number(c.tabela)||0,cat:c.cat}})}
 const ST_EST=['Disponível','Demonstração','Reservada','Encomendada','Vendida'];
-const MOTIVOS=['Comprou','Sem interesse agora','Achou caro','Sem resposta','Comprou em outro lugar','Fora do perfil','Outro'];
+const MOTIVOS=['Comprou','Sem interesse agora','Recusa financeira','Sem resposta','Comprou em outro lugar','Fora do perfil','Outro'];
 const PLANOS={Essencial:0,Completo:490,Total:990};
 const ORIGENS=['Google Ads','Meta','Site','Oficina'];
 const ETAPAS=['Novo','Contato','Proposta','Test Ride','Fechado','Perdido','Sem Perfil'];
@@ -1465,7 +1609,7 @@ function migrate(d){
   if(!Array.isArray(d.inbox))d.inbox=[];
   if(!d.revDemo&&d.passaportes.some(p=>p.id==='PACE-FLN-00031')){revDemo().forEach(x=>{if(!d.passaportes.some(p=>p.id===x.id))d.passaportes.push(x)})}
   d.revDemo=true;
-  if(d.cfg.metaVendas==null){d.cfg.metaVendas=15;d.cfg.metaAval=10}if(d.cfg.metaOficina==null)d.cfg.metaOficina=0;if(!d.pecas)d.pecas=[];if(!Array.isArray(d.lojas)||!d.lojas.length){d.lojas=[{id:'estreito',nome:'Loja Estreito',cidade:'Florianópolis',criada:today()}];d.lojaAtual='estreito'}if(!d.redeLojas)d.redeLojas={};if(!d.lojaAtual)d.lojaAtual=d.lojas[0].id;d.lojas.forEach(l=>{if(l.id==='estreito'&&l.lat==null){l.lat=-27.5935;l.lon=-48.5862;l.local=l.local||'Estreito, Florianópolis'}});(d.estoque||[]).forEach(u=>{if(!u.loja)u.loja=d.lojaAtual});(d.agenda||[]).forEach(a=>{if(!a.loja)a.loja=d.lojaAtual});(d.os||[]).forEach(o=>{if(!o.loja)o.loja=d.lojaAtual});if(d.cfg.diaria==null)d.cfg.diaria=300;if(!d.cfg.garV2){d.cfg.garV2=1;d.cfg.garTol=10;d.cfg.garBateria='não';if(d.cfg.ofMin==null){d.cfg.ofMin=35;d.cfg.ofMax=45}}if(!d.nps)d.nps=[];if(!d.cfg.diasV2){d.cfg.diasV2=1;d.cfg.fechado=[];d.cfg.trFechado=[]}if(!d.cfg.trFechado)d.cfg.trFechado=[];if(!d.cfg.servPreco||!('Manutenção Preventiva' in d.cfg.servPreco))d.cfg.servPreco={...SERV_PRECO_PADRAO}
+  if(d.cfg.metaVendas==null){d.cfg.metaVendas=15;d.cfg.metaAval=10}if(d.cfg.metaOficina==null)d.cfg.metaOficina=0;if(!d.pecas)d.pecas=[];if(!Array.isArray(d.lojas)||!d.lojas.length){d.lojas=[{id:'estreito',nome:'Loja Estreito',cidade:'Florianópolis',criada:today()}];d.lojaAtual='estreito'}if(!d.redeLojas)d.redeLojas={};if(!d.lojaAtual)d.lojaAtual=d.lojas[0].id;d.lojas.forEach(l=>{if(l.id==='estreito'&&l.lat==null){l.lat=-27.5935;l.lon=-48.5862;l.local=l.local||'Estreito, Florianópolis'}});(d.estoque||[]).forEach(u=>{if(!u.loja)u.loja=d.lojaAtual});(d.agenda||[]).forEach(a=>{if(!a.loja)a.loja=d.lojaAtual});(d.os||[]).forEach(o=>{if(!o.loja)o.loja=d.lojaAtual});if(d.cfg.diaria==null)d.cfg.diaria=300;if(!d.cfg.garV2){d.cfg.garV2=1;d.cfg.garTol=10;d.cfg.garBateria='não';if(d.cfg.ofMin==null){d.cfg.ofMin=35;d.cfg.ofMax=45}}if(!d.nps)d.nps=[];(d.leads||[]).forEach(l=>{if(l.arqMotivo==='Achou caro')l.arqMotivo='Recusa financeira'});if(!d.cfg.diasV2){d.cfg.diasV2=1;d.cfg.fechado=[];d.cfg.trFechado=[]}if(!d.cfg.trFechado)d.cfg.trFechado=[];if(!d.cfg.servPreco||!('Manutenção Preventiva' in d.cfg.servPreco))d.cfg.servPreco={...SERV_PRECO_PADRAO}
   return d;
 }
 function valid(d){return d&&d.v===2&&['leads','vendas','os','passaportes','contas','admin','campanhas','pauta'].every(k=>Array.isArray(d[k]))&&d.cfg}
@@ -1479,7 +1623,15 @@ const UI={fqMode:'fila',fqSkip:[],fqTR:false,fqMsg:{},dFil:'Todos',agMes:today()
    ========================================================= */
 /* Preço base: PIX tem desconto; demais formas usam o preço de tabela (cheio), se informado */
 const precoBase=(modelo,pag)=>{const md=MODELOS[modelo]||{};return pag==='PIX'?(md.pix||0):(md.tabela||md.pix||0)};
-const valorVenda=v=>v.valor!=null&&v.valor!==''?Number(v.valor):precoBase(v.modelo,v.pag)+(PLANOS[v.plano]||0);
+/* venda criada ao mudar a etapa do lead: falta confirmar pagamento, valor e baixa no estoque */
+const vendasConf=()=>S.vendas.filter(v=>v.pagDef&&!v.conf);
+const dispMod=k=>S.estoque.filter(u=>u.modelo===k&&u.status==='Disponível').length;
+function vendaConfHTML(v){const d=dispMod(v.modelo);return `<div class="vc-r" data-vc="${esc(v.id)}"><span class="grow"><b>${esc(v.cliente)}</b><small>${esc(v.modelo)} · fechou em ${ddmm(v.data)} · ${d?`${d} disponível${d===1?'':'is'} no estoque`:'<span style="color:var(--late)">sem unidade disponível no estoque</span>'}</small></span>
+  <select class="inp-sm" data-vc-pag aria-label="Forma de pagamento">${opt(['PIX','Cartão 12x','Financiamento'],v.pag||'PIX')}</select>
+  <input class="inp-sm" style="width:96px" type="number" min="0" step="10" data-vc-val placeholder="${precoBase(v.modelo,'PIX')}" aria-label="Valor da venda (vazio = preço da tabela)">
+  <label class="chk"><input type="checkbox" data-vc-bx ${d?'checked':'disabled'}><span>baixa</span></label>
+  <button type="button" class="btn btn-sm btn-primary" data-action="venda-conf" data-id="${esc(v.id)}">Confirmar</button></div>`}
+const valorVenda=v=>v.valor!=null&&v.valor!==''?Number(v.valor):precoBase(v.modelo,v.pag); /* a PACE não vende planos: o valor é só o da bike */
 function slaInfo(l){
   const sl=S.cfg.sla&&S.cfg.sla[l.etapa];if(!sl||l.arq||!ATIVAS(l.etapa))return null;
   const h=(l.hist||[]).filter(x=>x.e===l.etapa).pop(),since=h?h.d:l.criado,dias=Math.max(0,-diffDays(since||today()));
@@ -1543,14 +1695,14 @@ function roomCounts(k){
   if(k==='financeiro'){
     const c=S.contas.filter(c=>!c.ok&&c.tipo==='pagar'&&diffDays(c.venc)<=7),a=S.admin.filter(x=>!x.ok&&diffDays(x.due)<=7);
     return{open:c.length+a.length,late:c.filter(x=>x.venc<t).length+a.filter(x=>x.due<t).length}}
-  const p=S.pauta.filter(x=>x.status!=='Concluída'&&x.status!=='No ar');return{open:p.length,late:p.filter(x=>x.due<t).length};
+  const ip=adsPend(),dec=S.campanhas.filter(c=>c.ativa&&c.invest).map(c=>veredito(c)).filter(v=>v&&(v.v==='Pausar'||v.v==='Ajustar')).length;return{open:(ip?1:0)+dec,late:ip&&ip.atraso?1:0};
 }
 function statusOf(k){
   const m=M();
   if(k==='comercial')return `${m.fu.length} follow-ups · ${m.tr.filter(l=>l.fu===m.t).length} test rides`;
   if(k==='oficina')return `${m.emRev} em revisão · ${agendaDia(today()).length} agendado(s) hoje`;
   if(k==='financeiro'){const das=S.contas.find(c=>c.id==='c4'&&!c.ok);return `${das?'DAS '+ddmm(das.venc):'DAS pago'} · caixa ${m.reservaOk?'ok':'baixo'}`}
-  const g=jornada().garg;return g?`Gargalo: ${ETAPA_LBL[FUNIL[FUNIL.indexOf(g.e)-1]]} → ${g.lbl}`:`${S.pauta.filter(p=>p.status==='No ar').length} peças no ar`;
+  const ip=adsPend();return ip?`importar relatório (${ip.lbl})`:(()=>{const u=adsImports().pop();return u?`última importação ${ddmm(u)}`:'sem importação ainda'})();
 }
 
 /* =========================================================
@@ -1596,12 +1748,12 @@ function quando(l){if(!l.fu)return 'conforme combinado';const n=diffDays(l.fu),h
 function leadMsg(l){
   const n=first(l.nome),m=l.modelo,pix=BRL0(MODELOS[m]?.pix);
   switch(l.etapa){
-    case 'Novo':return `Oi, ${n}! Tudo bem? ${quem()}, loja de mobilidade elétrica no Estreito. Vi seu interesse na ${m}${l.origem==='Site'?' pelo nosso site':''}. Quer agendar um test ride sem compromisso? Aqui você experimenta antes de decidir.`;
-    case 'Contato':return `Oi, ${n}! ${quem()}. Passando pra saber se ficou alguma dúvida sobre a ${m}. Tenho horários de test ride essa semana aqui no Estreito. Qual dia fica melhor pra você?`;
-    case 'Test Ride':return `Oi, ${n}! ${quem()}. Confirmando seu test ride da ${m} ${quando(l)} na loja do Estreito. É só trazer um documento com foto. Qualquer coisa, me chama aqui.`;
-    case 'Proposta':{const tb=MODELOS[m]?.tabela;return `Oi, ${n}! ${quem()}. ${tb?`A ${m} tem valor de tabela de ${BRL0(tb)} (em até 12x no cartão), e no PIX sai por ${pix}, uma condição exclusiva.`:`A ${m} sai por ${pix} no PIX, uma condição exclusiva.`} Já vem com Passaporte Digital (PACE ID) e plano Essencial; o Completo, que eu recomendo, é + R$ 490. Também dá para financiar com nossos parceiros. Quer que eu monte a proposta certinha pra você?`}
+    case 'Novo':return `Oi, ${n}! Tudo bem? ${quem()}, loja de mobilidade elétrica ${LNO()}. Vi seu interesse na ${m}${l.origem==='Site'?' pelo nosso site':''}. Quer agendar um test ride sem compromisso? Aqui você experimenta antes de decidir.`;
+    case 'Contato':return `Oi, ${n}! ${quem()}. Passando pra saber se ficou alguma dúvida sobre a ${m}. Tenho horários de test ride essa semana aqui ${LNO()}. Qual dia fica melhor pra você?`;
+    case 'Test Ride':return `Oi, ${n}! ${quem()}. Confirmando seu test ride da ${m} ${quando(l)} na loja ${LDO()}. É só trazer um documento com foto. Qualquer coisa, me chama aqui.`;
+    case 'Proposta':{const tb=MODELOS[m]?.tabela;return `Oi, ${n}! ${quem()}. ${tb?`A ${m} tem valor de tabela de ${BRL0(tb)} (em até 12x no cartão), e no PIX sai por ${pix}, uma condição exclusiva.`:`A ${m} sai por ${pix} no PIX, uma condição exclusiva.`} Já vem com Passaporte Digital (PACE ID), garantia de 12 meses da loja e oficina própria. Também dá para financiar com nossos parceiros. Quer que eu monte a proposta certinha pra você?`}
     case 'Fechado':return `Oi, ${n}! Obrigado por escolher a PACE. O Passaporte Digital da sua ${m} já está ativo, com revisões e garantia registradas. Quem vende, cuida: qualquer coisa, é só chamar. Se puder, deixa sua avaliação no Google? Ajuda muito a gente.`;
-    default:return `Oi, ${n}! ${quem()}. A ${m} segue disponível pra test ride aqui no Estreito, e dá para parcelar no cartão ou financiar com nossos parceiros. Se fizer sentido, me avisa que eu separo um horário!`;
+    default:return `Oi, ${n}! ${quem()}. A ${m} segue disponível pra test ride aqui ${LNO()}, e dá para parcelar no cartão ou financiar com nossos parceiros. Se fizer sentido, me avisa que eu separo um horário!`;
   }
 }
 function osMsg(o){
@@ -1665,6 +1817,7 @@ function leadCard(l){
       <div class="form-grid">
         <label class="field">Campanha<select class="inp-sm" data-change="lead-camp" data-id="${esc(l.id)}">${opt([['','—'],...S.campanhas.map(c=>[c.id,c.nome])],l.camp||'')}</select></label>
         ${multiLoja()?`<label class="field">Transferir para<select class="inp-sm" data-change="lead-transf" data-id="${esc(l.id)}"><option value="">— outra loja —</option>${S.lojas.filter(x=>x.id!==S.lojaAtual).map(x=>`<option value="${esc(x.id)}">${esc(x.nome)}</option>`).join('')}</select></label>`:''}
+        <label class="field">Planeja investir (R$)<input class="inp-sm" type="number" min="0" step="100" inputmode="numeric" value="${l.orc||''}" placeholder="ex.: 6000" data-change="lead-orc" data-id="${esc(l.id)}"></label>
         <label class="field">Arquivar como<select class="inp-sm" data-change="lead-arq" data-id="${esc(l.id)}"><option value="">— escolher motivo —</option>${opt(MOTIVOS,'__')}</select></label>
       </div>
       <div class="row" style="justify-content:flex-end">${delBtn('leads',l.id)}</div>
@@ -1681,7 +1834,7 @@ function arqCard(l){
 function reengageMsg(l){
   const n=first(l.nome);
   if(l.arqMotivo==='Comprou')return `Oi, ${n}! Aqui é da PACE. Como está a sua ${l.modelo}? Lembrando que as revisões ficam registradas no seu Passaporte Digital. Se precisar de algo, é só chamar. Quem vende, cuida!`;
-  return `Oi, ${n}! Aqui é da PACE, no Estreito. Faz um tempo que você olhou a ${l.modelo}. Temos novidades e horários de test ride essa semana. Quer dar uma volta sem compromisso?`;
+  return `Oi, ${n}! Aqui é da PACE, ${LNO()}. Faz um tempo que você olhou a ${l.modelo}. Temos novidades e horários de test ride essa semana. Quer dar uma volta sem compromisso?`;
 }
 function arqList(){
   return S.leads.filter(l=>l.arq&&(UI.arqMotivo==='Todos'||l.arqMotivo===UI.arqMotivo)&&(UI.arqOrigem==='Todas'||l.origem===UI.arqOrigem)&&(UI.arqModelo==='Todos'||l.modelo===UI.arqModelo)&&
@@ -1705,16 +1858,6 @@ function renderComercial(){
   const sec=UI.sec;
   return `
   ${sec==='scripts'?scriptsSection():''}
-  ${sec==='prefs'?`<section class="d-sec"><div class="card stack">
-    <label class="field">Assinatura das mensagens<input class="inp-sm" data-change="vendedor" value="${esc(S.cfg.vendedor)}" maxlength="30"></label>
-    <label class="field">Abrir WhatsApp em<select class="inp-sm" data-change="waMode">${opt([['app','App do aparelho (wa.me)'],['web','WhatsApp Web no navegador']],S.cfg.waMode||'web')}</select></label>
-    <span class="meta">No computador: WhatsApp Business Web aberto no navegador. No celular, os links abrem sempre o app.</span>
-    <label class="field">Alerta de lead sem resposta após (minutos)<input class="inp-sm" type="number" min="1" max="120" value="${S.cfg.tprAlert||5}" data-change="tpr-min"></label>
-    <span class="meta">Vale para leads cadastrados como Novo, sem a primeira resposta marcada.</span></div>
-    <h3 style="margin-top:16px">Respostas rápidas <span class="meta" style="text-transform:none;font-family:Inter">aparecem na fila de vendas · use {nome} para o primeiro nome</span></h3>
-    <div class="stack">${respList().map((r,i)=>`<div class="card stack" style="gap:6px"><div class="row between"><input class="inp-sm grow" data-change="resp-f" data-i="${i}" data-f="t" value="${esc(r.t)}" aria-label="Título">${delBtn('resp',String(i))}</div><textarea class="inp" rows="2" data-change="resp-f" data-i="${i}" data-f="x" aria-label="Texto">${esc(r.x)}</textarea></div>`).join('')}</div>
-    <form data-form="resp" class="card stack" style="gap:6px;margin-top:8px"><input class="inp-sm" name="t" required maxlength="40" placeholder="Título (ex.: Troca de bateria)"><textarea class="inp" name="x" rows="2" required placeholder="Texto da resposta"></textarea><div class="row" style="justify-content:flex-end"><button class="btn btn-sm btn-primary" type="submit">Adicionar resposta</button></div></form>
-  </section>`:''}
   <section class="d-sec">
     <div class="row between lead-bar">
       <div class="toggle" role="group" aria-label="Ativos ou arquivo">
@@ -1729,7 +1872,7 @@ function renderComercial(){
         <button type="button" data-action="lead-export" title="O arquivo exportado tem os telefones de leads e clientes. Guarde em local privado e não envie em grupos.">Exportar planilha (ativos + arquivados)</button>
         ${UI.view==='ativos'?'<button type="button" data-action="sel-mode">Atribuir campanha em lote</button>':''}
         <button type="button" data-action="sec" data-v="scripts">Scripts de venda</button>
-        <button type="button" data-action="sec" data-v="prefs">Preferências</button>
+        <button type="button" data-action="cfg" data-v="comercial">Configurações do atendimento</button>
         ${UI.view==='ativos'&&stale.length?`<button type="button" data-action="arq-bulk">${arqArmed?`Confirmar: arquivar ${stale.length}`:`Arquivar parados (${stale.length})`}</button>`:''}
       </div></details>
       <button class="btn btn-sm btn-primary" data-action="lead-new" title="Atalho: N">+ Novo lead</button>
@@ -1773,15 +1916,15 @@ function vendaTel(v){if(v.tel)return v.tel;const l=v.leadId&&findLead(v.leadId);
 function vendaPass(v){return S.passaportes.find(p=>p.cliente===v.cliente&&p.modelo===v.modelo)}
 function cliList(){
   const mes=today().slice(0,7),q=UI.cliQ.trim().toLowerCase();
-  return S.vendas.filter(v=>(UI.cliPer==='todos'||v.data.slice(0,7)===mes)&&(!q||[v.cliente,v.modelo,v.canal,v.plano].join(' ').toLowerCase().includes(q)))
+  return S.vendas.filter(v=>(UI.cliPer==='todos'||v.data.slice(0,7)===mes)&&(!q||[v.cliente,v.modelo,v.canal].join(' ').toLowerCase().includes(q)))
     .sort((a,b)=>b.data.localeCompare(a.data));
 }
 function cliCard(v){
   const tel=vendaTel(v),pp=vendaPass(v),n=first(v.cliente);
-  const msg=`Oi, ${n}! Aqui é da PACE, no Estreito. Como está sendo rodar com a sua ${v.modelo}? Qualquer coisa, é só chamar: quem vende, cuida!`;
+  const msg=`Oi, ${n}! Aqui é da PACE, ${LNO()}. Como está sendo rodar com a sua ${v.modelo}? Qualquer coisa, é só chamar: quem vende, cuida!`;
   return `<div class="card stack" style="gap:5px">
     <div class="row between"><span class="t-name">${esc(v.cliente)}</span><b class="mono" style="color:var(--neon)">${BRL(valorVenda(v))}</b></div>
-    <div class="row" style="gap:5px"><span class="mono" style="color:var(--muted)">${ddmm(v.data)}/${v.data.slice(2,4)}</span><b style="font-size:13px">${esc(v.modelo)}</b><span class="tagp t-plan">${esc(v.plano)}</span><span class="tagp t-muted">${esc(v.pag)}</span>${origemTag(v.canal)}</div>
+    <div class="row" style="gap:5px"><span class="mono" style="color:var(--muted)">${ddmm(v.data)}/${v.data.slice(2,4)}</span><b style="font-size:13px">${esc(v.modelo)}</b><span class="tagp t-muted">${esc(v.pag)}</span>${origemTag(v.canal)}</div>
     ${tel?`<div class="meta mono">${esc(fmtTel(tel))}</div>`:''}
     <div class="row" style="justify-content:space-between">
       <div class="row" style="gap:10px"><label class="chk"><input type="checkbox" data-change="cli-aval" data-id="${esc(v.id)}" ${v.aval?'checked':''}><span>Avaliou no Google</span></label><label class="chk"><input type="checkbox" data-change="cli-ind" data-id="${esc(v.id)}" ${v.ind?'checked':''}><span>Indicou alguém</span></label></div>
@@ -1792,7 +1935,8 @@ function renderClientes(){
   const m=M(),list=cliList(),total=sum(list,valorVenda);
   const clientes=new Set(S.vendas.map(v=>v.cliente.trim().toLowerCase())).size;
   const disp=k=>S.estoque.filter(u=>u.modelo===k&&u.status==='Disponível').length;
-  return `
+  const vc=vendasConf();
+  return `${vc.length?`<section class="d-sec vc-box"><h3>Vendas a confirmar <span class="count late">${vc.length}</span></h3><p class="note" style="margin:0 0 6px">Fechadas pelo funil: confirme pagamento, valor e baixa no estoque para o faturamento e o estoque ficarem certos.</p>${vc.map(vendaConfHTML).join('')}</section>`:''}
   <div class="tiles">
     <div class="card"><div class="l">Clientes (todas as vendas)</div><div class="v">${clientes}</div></div>
     <div class="card"><div class="l">Vendas no mês</div><div class="v">${m.vendasMes.length}</div></div>
@@ -1936,8 +2080,8 @@ function cadMsg(l){
   if(l.etapa!=='Novo'&&l.etapa!=='Contato')return leadMsg(l);
   const n=first(l.nome),m=l.modelo,pix=BRL0(MODELOS[m]?.pix),tb=MODELOS[m]?.tabela,t=toqueN(l),q=quem();
   switch(Math.min(t,5)){
-    case 1:return `Oi, ${n}! Tudo bem? ${q}, loja de mobilidade elétrica no Estreito. Vi seu interesse na ${m}${l.origem==='Site'?' pelo nosso site':''}. Quer agendar um test ride sem compromisso? Aqui você experimenta antes de decidir.`;
-    case 2:return `Oi, ${n}! ${q}. Separei horários de test ride da ${m} essa semana aqui no Estreito: é rapidinho e você sente na prática como ela anda na cidade. Qual dia fica melhor pra você?`;
+    case 1:return `Oi, ${n}! Tudo bem? ${q}, loja de mobilidade elétrica ${LNO()}. Vi seu interesse na ${m}${l.origem==='Site'?' pelo nosso site':''}. Quer agendar um test ride sem compromisso? Aqui você experimenta antes de decidir.`;
+    case 2:return `Oi, ${n}! ${q}. Separei horários de test ride da ${m} essa semana aqui ${LNO()}: é rapidinho e você sente na prática como ela anda na cidade. Qual dia fica melhor pra você?`;
     case 3:return `Oi, ${n}! Uma coisa que nossos clientes mais gostam: toda bike da PACE sai com o Passaporte Digital (PACE ID), com revisões e garantia registradas, e a oficina fica aqui na loja. Quem vende, cuida. Quer conhecer a ${m} de perto?`;
     case 4:return `Oi, ${n}! A ${m} está saindo por ${pix} no PIX, uma condição exclusiva${tb?`, ou ${BRL0(tb)} em até 12x no cartão`:''}. Também dá para financiar com nossos parceiros. Se quiser, te mando uma simulação.`;
     default:return `Oi, ${n}! Não quero te incomodar, então esse é meu último contato por agora. Se a ${m} voltar a fazer sentido, é só me chamar aqui que eu te atendo. Abraço!`;
@@ -1960,6 +2104,17 @@ const PERFIL={
   obj:{t:'Objeção',o:[['preco','Preço'],['bateria','Bateria'],['roubo','Roubo/segurança'],['guardar','Guardar/carregar'],['manut','Manutenção'],['lei','Legislação'],['nenhuma','Nenhuma']]}
 };
 const PERF_KEYS=Object.keys(PERFIL);
+const PERF_ESSENCIAL=['estilo','invest','pag'];
+function pagKey(p){p=normTxt(p||'');return /financ/.test(p)?'fin':/cart/.test(p)?'cartao':/pix/.test(p)?'pix':null}
+/* respostas automáticas: só fatos certos, nunca suposições */
+function perfAuto(l){const o={};const md=(S.catalogo||CATALOGO_PADRAO).find(c=>c.nome===l.modelo);if(md&&/scooter/i.test(md.cat||''))o.estilo='scooter';
+  if(l.etapa==='Fechado'){const v=S.vendas.find(x=>x.leadId===l.id&&!x.pagDef);const k=v&&pagKey(v.pag);if(k)o.pag=k}
+  if(Number(l.orc)>0){const f=PERFIL.invest.o.find(x=>Number(l.orc)<=x[2]);if(f)o.invest=f[0]}return o}
+function perfEff(l){return{...perfAuto(l),...(l.perf||{})}}
+const perfEffN=l=>PERF_KEYS.filter(k=>perfEff(l)[k]).length;
+const essOk=l=>PERF_ESSENCIAL.every(k=>perfEff(l)[k]);
+const PERG={estilo:'Você imagina mais uma e-bike para a cidade, uma scooter ou algo para trilha ou praia?',invest:'Pra eu te mostrar as melhores opções: quanto você pensa em investir, mais ou menos?',pag:'Você pensa em pagar no PIX, no cartão em 12x ou financiado?',uso:'Vai usar mais no dia a dia, no lazer ou para trabalhar com entrega?',obj:'Tem alguma dúvida que ainda te segura? Bateria, segurança, onde guardar…',dist:'Quantos km, mais ou menos, você faria por dia?'};
+function perguntaDaVez(l){const e=perfEff(l);return ['estilo','invest','pag','uso','obj','dist'].find(k=>!e[k])||null}
 const perfN=l=>PERF_KEYS.filter(k=>l.perf&&l.perf[k]).length;
 const perfLbl=(k,v)=>(PERFIL[k].o.find(o=>o[0]===v)||[])[1]||'—';
 function perfChips(l,compact){ /* 1 clique por resposta; clicar de novo desmarca */
@@ -1968,29 +2123,29 @@ function perfChips(l,compact){ /* 1 clique por resposta; clicar de novo desmarca
 const isWon=l=>l.etapa==='Fechado';
 function wonDays(l){const h=(l.hist||[]).find(x=>x.e==='Fechado');return h&&l.criado?Math.max(0,Math.round((new Date(h.d)-new Date(l.criado))/864e5)):null}
 function intel(){
-  const base=S.leads.filter(l=>l.perf&&perfN(l)>0),all=S.leads.length;
-  const dist=k=>PERFIL[k].o.map(([v,t])=>{const ls=base.filter(l=>l.perf[k]===v),w=ls.filter(isWon).length;return{v,t,n:ls.length,conv:ls.length?w/ls.length:null,w}});
+  const base=S.leads.filter(l=>perfEffN(l)>0),all=S.leads.length;
+  const dist=k=>PERFIL[k].o.map(([v,t])=>{const ls=base.filter(l=>perfEff(l)[k]===v),w=ls.filter(isWon).length;return{v,t,n:ls.length,conv:ls.length?w/ls.length:null,w}});
   const D=Object.fromEntries(PERF_KEYS.map(k=>[k,dist(k)]));
   /* orçamento abaixo do PIX do modelo de interesse */
-  const comInv=base.filter(l=>l.perf.invest&&MODELOS[l.modelo]);
-  const gap=comInv.filter(l=>{const o=PERFIL.invest.o.find(x=>x[0]===l.perf.invest);return o&&o[2]<MODELOS[l.modelo].pix});
+  const comInv=base.filter(l=>perfEff(l).invest&&MODELOS[l.modelo]);
+  const gap=comInv.filter(l=>{const o=PERFIL.invest.o.find(x=>x[0]===perfEff(l).invest);return o&&o[2]<MODELOS[l.modelo].pix});
   /* objeções x etapa onde está */
-  const obj=PERFIL.obj.o.filter(o=>o[0]!=='nenhuma').map(([v,t])=>{const ls=base.filter(l=>l.perf.obj===v&&!isWon(l));const et={};ls.forEach(l=>et[l.etapa]=(et[l.etapa]||0)+1);const top=Object.entries(et).sort((a,b)=>b[1]-a[1])[0];return{v,t,n:ls.length,etapa:top?top[0]:null}}).filter(x=>x.n).sort((a,b)=>b.n-a.n);
+  const obj=PERFIL.obj.o.filter(o=>o[0]!=='nenhuma').map(([v,t])=>{const ls=base.filter(l=>perfEff(l).obj===v&&!isWon(l));const et={};ls.forEach(l=>et[l.etapa]=(et[l.etapa]||0)+1);const top=Object.entries(et).sort((a,b)=>b[1]-a[1])[0];return{v,t,n:ls.length,etapa:top?top[0]:null}}).filter(x=>x.n).sort((a,b)=>b.n-a.n);
   /* tempo até decidir por estilo */
-  const tempo=PERFIL.estilo.o.map(([v,t])=>{const ds=base.filter(l=>l.perf.estilo===v&&isWon(l)).map(wonDays).filter(x=>x!=null);return{t,n:ds.length,dias:ds.length?Math.round(ds.reduce((a,b)=>a+b,0)/ds.length):null}}).filter(x=>x.n);
+  const tempo=PERFIL.estilo.o.map(([v,t])=>{const ds=base.filter(l=>perfEff(l).estilo===v&&isWon(l)).map(wonDays).filter(x=>x!=null);return{t,n:ds.length,dias:ds.length?Math.round(ds.reduce((a,b)=>a+b,0)/ds.length):null}}).filter(x=>x.n);
   /* demanda x estoque */
   const disp=k=>S.estoque.filter(u=>u.modelo===k&&(u.status==='Disponível'||u.status==='Demonstração')).length;
   const demanda=Object.keys(MODELOS).map(k=>({k,leads:S.leads.filter(l=>!l.arq&&!isWon(l)&&l.modelo===k).length,disp:disp(k)})).filter(x=>x.leads);
-  const foraCatalogo=['mtb','cargo'].map(v=>({t:perfLbl('estilo',v),n:base.filter(l=>l.perf.estilo===v).length})).filter(x=>x.n);
+  const foraCatalogo=['mtb','cargo'].map(v=>({t:perfLbl('estilo',v),n:base.filter(l=>perfEff(l).estilo===v).length})).filter(x=>x.n);
   /* bairros */
   const bm={};S.leads.forEach(l=>{const b=(l.bairro||'').trim();if(!b)return;(bm[b]=bm[b]||{n:0,w:0}).n++;if(isWon(l))bm[b].w++});
   const bairros=Object.entries(bm).map(([b,x])=>({b,n:x.n,conv:x.n?x.w/x.n:0})).sort((a,b)=>b.n-a.n).slice(0,6);
-  return{all,com:base.length,completos:S.leads.filter(l=>perfN(l)>=4).length,D,gap:{n:gap.length,de:comInv.length},obj,tempo,demanda,foraCatalogo,bairros};
+  return{all,com:base.length,completos:S.leads.filter(l=>perfEffN(l)>=4).length,ess:S.leads.filter(essOk).length,auto:S.leads.filter(l=>Object.keys(perfAuto(l)).some(k=>!(l.perf||{})[k])).length,D,gap:{n:gap.length,de:comInv.length},obj,tempo,demanda,foraCatalogo,bairros};
 }
 function intelInsights(I){
   const out=[],pct=x=>Math.round(x*100)+'%';
   if(I.com<5)out.push(`Só ${I.com} lead(s) com perfil. Marque o perfil durante os follow-ups; com 15+ os números ficam confiáveis.`);
-  const best=I.D.estilo.filter(x=>x.n>=2&&x.conv!=null).sort((a,b)=>b.conv-a.conv)[0];if(best&&best.conv>0)out.push(`<b>${esc(best.t)}</b> é o estilo que mais converte (${pct(best.conv)}): priorize esse público nas campanhas.`);
+  const best=I.D.estilo.filter(x=>x.n>=3&&x.conv!=null).sort((a,b)=>b.conv-a.conv)[0];if(best&&best.conv>0)out.push(`<b>${esc(best.t)}</b> é o estilo que mais converte (${pct(best.conv)}): priorize esse público nas campanhas.`);
   if(I.gap.de>=3&&I.gap.n/I.gap.de>=.3)out.push(`<b>${pct(I.gap.n/I.gap.de)}</b> dos leads têm orçamento abaixo do PIX do modelo que querem: destaque o financiamento e a N77 como entrada.`);
   if(I.obj[0])out.push(`Objeção nº 1: <b>${esc(I.obj[0].t)}</b> (${I.obj[0].n} leads, mais em ${esc(I.obj[0].etapa)}). Vale uma peça e uma resposta rápida sobre isso.`);
   const fin=I.D.pag.find(x=>x.v==='fin'),totP=I.D.pag.reduce((a,b)=>a+b.n,0);if(fin&&totP>=4&&fin.n/totP>=.35)out.push(`${pct(fin.n/totP)} preferem financiamento: negocie condição melhor com a financeira parceira.`);
@@ -1998,24 +2153,56 @@ function intelInsights(I){
   const falta=I.demanda.filter(x=>x.disp===0);if(falta.length)out.push(`Sem unidade disponível para ${falta.map(x=>`<b>${esc(x.k)}</b> (${x.leads} leads)`).join(', ')}: pauta de compras.`);
   return out;
 }
-function barRow(x,tot){const w=tot?x.n/tot*100:0;return `<div class="ib-row"><span class="ib-t">${esc(x.t)}</span><span class="ib-bar"><i style="width:${w}%"></i></span><span class="mono ib-n">${x.n}</span><span class="mono ib-c">${x.conv==null?'—':Math.round(x.conv*100)+'%'}</span></div>`}
+function barRow(x,tot,dest){const w=tot?x.n/tot*100:0,poucos=x.n>0&&x.n<3;return `<div class="ib-row ${dest?'dest':''} ${x.n?'':'zero'}"><span class="ib-t">${esc(x.t)}</span><span class="ib-bar"><i style="width:${w}%"></i></span><span class="mono ib-n">${x.n}</span><span class="mono ib-c ${poucos?'poucos':''}" ${poucos?'title="Menos de 3 respostas: ainda pouco para tirar conclusão"':''}>${!x.n?'':poucos?'poucos':x.conv==null?'—':Math.round(x.conv*100)+'%'}</span></div>`}
 function renderIntel(){
-  const I=intel(),ins=intelInsights(I),pc=I.all?I.completos/I.all:0;
-  const block=(k)=>{const rows=I.D[k],tot=rows.reduce((a,b)=>a+b.n,0);return `<div class="card ib"><div class="row between"><b>${PERFIL[k].t}</b><span class="meta">leads · conv.</span></div>${rows.map(r=>barRow(r,tot)).join('')}</div>`};
+  const I=intel(),ins=intelInsights(I),atv=I.all||0,mt=S.cfg.metaPerfil||70;
+  const ativos=S.leads.filter(l=>!l.arq&&ATIVAS(l.etapa)),essA=ativos.filter(essOk).length,essP=ativos.length?Math.round(essA/ativos.length*100):0;
+  /* orçamento: faixa da loja R$ 5 a 9 mil */
+  const comOrc=S.leads.filter(l=>perfEff(l).invest),abaixo=comOrc.filter(l=>perfEff(l).invest==='ate5'),acima=comOrc.filter(l=>perfEff(l).invest==='9mais');
+  const rec=S.leads.filter(l=>l.arq&&l.arqMotivo==='Recusa financeira'),recV=rec.filter(l=>l.orc>0),recM=recV.length?Math.round(sum(recV,'orc')/recV.length):0;
+  const recGap=recV.filter(l=>MODELOS[l.modelo]).map(l=>MODELOS[l.modelo].pix-l.orc).filter(x=>x>0),gapM=recGap.length?Math.round(recGap.reduce((a,b)=>a+b,0)/recGap.length):0;
+  const linha=k=>{const rows=I.D[k],tot=rows.reduce((a,b)=>a+b.n,0),cob=atv?tot/atv:0,top=[...rows].sort((a,b)=>b.n-a.n)[0],best=rows.filter(r=>r.n>=3&&r.conv>0).sort((a,b)=>b.conv-a.conv)[0];
+    return `<details class="pq"><summary><span class="pq-n">${PERFIL[k].t}${PERF_ESSENCIAL.includes(k)?'<i title="Pergunta essencial">●</i>':''}</span>
+      <span class="pq-top">${tot?`${esc(top.t)} <small>${Math.round(top.n/tot*100)}%</small>`:'<small>sem respostas</small>'}</span>
+      <span class="pq-best">${best?`<b>${esc(best.t)}</b> <small>${Math.round(best.conv*100)}% compram</small>`:`<small>${tot?'poucos dados':'—'}</small>`}</span>
+      <span class="pq-cob"><span class="ib-cob"><i style="width:${Math.round(cob*100)}%"></i></span><small>${tot}/${atv}</small></span></summary>
+      <div class="pq-b">${tot?rows.filter(r=>r.n).sort((a,b)=>b.n-a.n).map(r=>barRow(r,tot,best&&r===best)).join(''):'<div class="ib-vazio">Ninguém respondeu ainda.</div>'}</div></details>`};
+  const mini=(t,body)=>`<div class="card pb"><b class="pb-t">${t}</b>${body}</div>`;
   return `
-  <div class="kgrid">
-    <div class="kcard ${pc>=.6?'ok':pc>=.3?'':'bad'}"><span>Perfis completos</span><b>${Math.round(pc*100)}%</b><small>${I.completos} de ${I.all} leads com 4+ respostas</small></div>
-    <div class="kcard ${I.gap.de&&I.gap.n/I.gap.de>=.3?'bad':''}"><span>Orçamento abaixo do PIX</span><b>${I.gap.de?Math.round(I.gap.n/I.gap.de*100)+'%':'—'}</b><small>${I.gap.n} de ${I.gap.de} com investimento informado</small></div>
+  <div class="kgrid kg3">
+    <div class="kcard ${essP>=mt?'ok':''}"><span>Perfil essencial</span><b>${essP}%</b><small>${essA} de ${ativos.length} leads ativos com estilo, investimento e pagamento · meta ${mt}%</small></div>
+    <div class="kcard ${comOrc.length>=3&&abaixo.length/comOrc.length>=.3?'bad':''}"><span>Orçamento abaixo do esperado</span><b>${comOrc.length?Math.round(abaixo.length/comOrc.length*100)+'%':'—'}</b><small>${comOrc.length?`${abaixo.length} de ${comOrc.length} planejam menos de R$ 5 mil${acima.length?` · ${acima.length} acima de R$ 9 mil`:''}`:'ninguém informou orçamento ainda'} · faixa da loja R$ 5–9 mil</small></div>
+    <div class="kcard"><span>Recusa financeira</span><b>${rec.length}</b><small>${rec.length?(recV.length?`planejavam em média ${BRL0(recM)}${gapM?` · faltaram ~${BRL0(gapM)} para o PIX`:''}`:'informe quanto planejavam investir no card do lead'):'nenhum lead arquivado por esse motivo'}</small></div>
   </div>
-  ${ins.length?`<div class="insight"><b>O que os dados dizem</b><ul class="ins-list">${ins.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:''}
-  <section class="d-sec"><h3>Perfil da base · conversão por resposta</h3><div class="ib-grid">${PERF_KEYS.map(block).join('')}</div>
-    <p class="note">Conversão = % desses leads que já fecharam venda. Marque o perfil com 1 clique no card do lead (botão Perfil) ou na fila de follow-up.</p></section>
-  ${I.obj.length?`<section class="d-sec"><h3>Objeções em aberto · onde travam</h3><div class="card" style="padding:4px 12px">${I.obj.map(o=>`<div class="row between ib-line"><span>${esc(o.t)}</span><span class="meta">${o.n} lead${o.n===1?'':'s'} · mais em <b>${esc(o.etapa||'—')}</b></span></div>`).join('')}</div></section>`:''}
-  <section class="d-sec"><h3>Demanda × estoque</h3><div class="card" style="padding:4px 12px">${I.demanda.map(d=>`<div class="row between ib-line"><span>${esc(d.k)}</span><span class="meta">${d.leads} lead${d.leads===1?'':'s'} em aberto · <b style="color:${d.disp?'var(--off)':'var(--late)'}">${d.disp} disponível${d.disp===1?'':'is'}</b></span></div>`).join('')||'<div class="meta" style="padding:8px 0">Sem leads em aberto.</div>'}
-    ${I.foraCatalogo.length?`<div class="meta" style="padding:8px 0">Procuram estilos fora do catálogo: ${I.foraCatalogo.map(x=>`${esc(x.t)} (${x.n})`).join(', ')}.</div>`:''}</div></section>
-  ${I.tempo.length?`<section class="d-sec"><h3>Tempo até a decisão</h3><div class="card" style="padding:4px 12px">${I.tempo.map(x=>`<div class="row between ib-line"><span>${esc(x.t)}</span><span class="meta">${x.dias} dias em média · ${x.n} venda${x.n===1?'':'s'}</span></div>`).join('')}</div></section>`:''}
-  ${I.bairros.length?`<section class="d-sec"><h3>Bairros com mais leads</h3><div class="card" style="padding:4px 12px">${I.bairros.map(b=>`<div class="row between ib-line"><span>${esc(b.b)}</span><span class="meta">${b.n} lead${b.n===1?'':'s'} · conv. ${Math.round(b.conv*100)}%</span></div>`).join('')}</div><p class="note">Use os bairros fortes para anúncio com raio no Meta e convites de test ride.</p></section>`:''}`;
+  ${ins[0]?`<p class="pq-say">${ins[0]}</p>`:''}
+  <section class="d-sec"><h3>Perfil da base <span class="sp"></span><span class="pq-leg">mais comum · quem mais compra · respondido</span></h3>
+    <div class="pq-list">${PERF_KEYS.map(linha).join('')}</div>
+    <p class="note">Clique numa pergunta para ver todas as respostas. Conta só quem respondeu; a % de compra aparece com 3+ respostas. ${I.auto?`${I.auto} lead${I.auto===1?'':'s'} com resposta automática certa (scooter pelo modelo, pagamento da venda registrada ou faixa pelo valor informado). `:''}Para completar, use a "pergunta da vez" na fila de follow-up.</p></section>
+  <div class="pb-grid">
+    ${perdasHTML()}
+    ${compraHTML()}
+    ${I.obj.length?mini('Objeções em aberto',I.obj.map(o=>`<div class="pb-r"><span>${esc(o.t)}</span><span class="meta">${o.n} · mais em ${esc(o.etapa||'—')}</span></div>`).join('')):''}
+    ${I.tempo.length?mini('Tempo até a decisão',I.tempo.map(x=>`<div class="pb-r"><span>${esc(x.t)}</span><span class="meta">${x.dias} dias · ${x.n} venda${x.n===1?'':'s'}</span></div>`).join('')):''}
+  </div>`;
 }
+/* Por que perdemos: motivos de arquivamento dos últimos 90 dias e onde o lead parou */
+function perdasHTML(){const L=S.leads.filter(l=>((l.arq&&l.arqMotivo&&l.arqMotivo!=='Comprou')||(!l.arq&&l.etapa==='Perdido'))&&(!l.arqEm||diffDays(l.arqEm)>=-90));
+  if(!L.length)return `<div class="card pb"><b class="pb-t">Por que perdemos leads</b><div class="meta">Nenhum lead perdido nos últimos 90 dias. Ao arquivar, escolha o motivo para este quadro se formar.</div></div>`;
+  const by={};L.forEach(l=>{const m=l.arq?l.arqMotivo:'Perdido (sem motivo)';let e=l.arqEtapa||l.etapa;if(e==='Perdido'||e==='Sem Perfil')e=((l.hist||[]).filter(h=>h.e!=='Perdido'&&h.e!=='Sem Perfil').pop()||{}).e||'Novo';const x=by[m]||(by[m]={m,n:0,et:{}});x.n++;x.et[e]=(x.et[e]||0)+1});
+  const R=Object.values(by).sort((a,b)=>b.n-a.n),top=R[0],et=x=>Object.entries(x.et).sort((a,b)=>b[1]-a[1])[0][0];
+  return `<div class="card pb"><b class="pb-t">Por que perdemos leads <span class="meta">· últimos 90 dias · ${L.length} lead${L.length===1?'':'s'}</span></b>
+    <p class="pb-say">Principal motivo: <b>${esc(top.m)}</b> (${Math.round(top.n/L.length*100)}%), a maioria parou em <b>${esc(ETAPA_LBL[et(top)]||et(top))}</b>.</p>
+    ${R.map((x,i)=>`<div class="pl-r ${i===0?'dest':''}"><span class="pl-m">${esc(x.m)}</span><span class="ib-bar"><i style="width:${Math.round(x.n/top.n*100)}%"></i></span><span class="mono pl-n">${x.n} · ${Math.round(x.n/L.length*100)}%</span><span class="pl-e">parou em ${esc(ETAPA_LBL[et(x)]||et(x))}</span></div>`).join('')}</div>`}
+/* Quem compra × quem não compra: resposta mais comum em cada grupo */
+function compraHTML(){const won=S.leads.filter(l=>isWon(l)||l.arqMotivo==='Comprou'),lost=S.leads.filter(l=>(l.arq&&l.arqMotivo&&l.arqMotivo!=='Comprou')||l.etapa==='Perdido');
+  const top=(G,k)=>{const c={};let n=0;G.forEach(l=>{const v=perfEff(l)[k];if(v){c[v]=(c[v]||0)+1;n++}});const t=Object.entries(c).sort((a,b)=>b[1]-a[1])[0];return n>=3&&t?{t:perfLbl(k,t[0]),p:t[1]/n,n}:{n}};
+  const rows=['estilo','invest','uso','pag'].map(k=>({k,a:top(won,k),b:top(lost,k)}));
+  const cel=x=>x.t?`<b>${esc(x.t)}</b> <small>${Math.round(x.p*100)}% · ${x.n} resp.</small>`:`<small>${x.n?`só ${x.n} resposta${x.n===1?'':'s'}`:'sem respostas'}</small>`;
+  const dif=rows.find(r=>r.a.t&&r.b.t&&r.a.t!==r.b.t);
+  return `<div class="card pb"><b class="pb-t">Quem compra × quem não compra <span class="meta">· ${won.length} compraram · ${lost.length} perdidos</span></b>
+    <p class="pb-say">${dif?`A maior diferença está em <b>${esc(PERFIL[dif.k].t.toLowerCase())}</b>: quem compra é mais <b>${esc(dif.a.t)}</b>; quem não compra, <b>${esc(dif.b.t)}</b>.`:'Ainda poucos dados para comparar: cada grupo precisa de 3+ respostas por pergunta.'}</p>
+    <div class="cm-h"><span></span><span>Quem compra</span><span>Quem não compra</span></div>
+    ${rows.map(r=>`<div class="cm-r ${dif&&r===dif?'dest':''}"><span class="pl-m">${PERFIL[r.k].t}</span><span>${cel(r.a)}</span><span>${cel(r.b)}</span></div>`).join('')}</div>`}
 function intelCtx(){const I=intel();return{perfisCompletos:`${I.completos}/${I.all}`,distribuicao:Object.fromEntries(PERF_KEYS.map(k=>[PERFIL[k].t,I.D[k].filter(x=>x.n).map(x=>({resposta:x.t,leads:x.n,conversao:x.conv==null?null:Math.round(x.conv*100)+'%'}))])),orcamentoAbaixoDoPix:I.gap,objecoes:I.obj.map(o=>({objecao:o.t,leads:o.n,etapaMaisComum:o.etapa})),demandaXestoque:I.demanda,tempoAteDecisao:I.tempo,bairros:I.bairros}}
 
 function fqCard(l){
@@ -2031,6 +2218,7 @@ function fqCard(l){
     </div>
     <div class="meta"><span class="mono">${esc(fmtTel(l.tel))}</span>${l.bairro?' · '+esc(l.bairro):''}${l.obs?' · '+esc(l.obs):''}</div>
     ${hist.length?`<div class="fq-hist">${hist.map(h=>`<span>${ddmm(h.d)} · ${esc(h.r)}</span>`).join('')}</div>`:''}
+    ${(()=>{const k=perguntaDaVez(l);if(!k)return '';const e=perfEff(l);return `<div class="pdv"><div class="pdv-h"><b>Pergunta da vez · ${PERFIL[k].t}</b><span class="meta">${PERF_ESSENCIAL.filter(x=>e[x]).length}/3 essenciais</span><button type="button" class="dc-btn" data-action="pdv-msg" data-id="${esc(l.id)}" data-k="${k}">+ na mensagem</button></div><div class="pdv-q">“${esc(PERG[k])}”</div><div class="perf-o">${PERFIL[k].o.map(([v,t])=>`<button type="button" class="chip" data-action="perf" data-id="${esc(l.id)}" data-k="${k}" data-v="${v}">${esc(t)}</button>`).join('')}</div></div>`})()}
     <label class="field">${l.etapa==='Novo'||l.etapa==='Contato'?`Mensagem do ${t}º toque`:`Mensagem de ${l.etapa==='Proposta'?'proposta':l.etapa==='Test Ride'?'confirmação do test ride':'acompanhamento'}`} <span style="font-size:10px">(pode editar antes de enviar)</span>
       <textarea class="inp" rows="4" data-input="fq-msg" data-id="${esc(l.id)}">${esc(msg)}</textarea></label>
     <div class="row between">
@@ -2038,7 +2226,7 @@ function fqCard(l){
       <a class="btn btn-wa" id="fq-wa" href="${esc(waLink(l.tel,msg))}" target="${S.cfg.waMode==='web'&&!matchMedia('(pointer:coarse)').matches?'pace-whatsapp':'_blank'}" rel="noopener noreferrer" data-wa-lead="${esc(l.id)}">Enviar no WhatsApp</a>
     </div>
     <details class="resp-d"><summary>Respostas rápidas <span class="mono">${respList().length}</span></summary><div class="resp-row">${respList().map((r,i)=>`<button class="btn btn-sm" data-action="resp-use" data-id="${esc(l.id)}" data-i="${i}" title="${esc(r.x)}">${esc(r.t)}</button>`).join('')}</div></details>
-    <details class="perf-d"><summary>Perfil do lead <span class="mono">${perfN(l)}/${PERF_KEYS.length}</span> <span class="meta">marque enquanto conversa</span></summary>${perfChips(l,true)}</details>
+    <details class="perf-d"><summary>Perfil do lead <span class="mono">${perfEffN(l)}/${PERF_KEYS.length}</span> <span class="meta">marque enquanto conversa</span></summary>${perfChips(l,true)}</details>
     <div class="fq-res">
       <span class="meta">Depois do contato, qual foi o resultado?</span>
       <div class="fq-grid">
@@ -2083,6 +2271,10 @@ function hbars(rows,max){
     <div class="track"><div class="bar" style="width:${Math.max(0,r.v)/max*100}%;background:${r.color}" title="${esc(r.tip||r.label+': '+r.txt)}"></div></div>
     <span class="val">${r.txt}${r.sub?`<small>${r.sub}</small>`:''}</span>${r.after||''}`).join('')}</div>`;
 }
+/* linha de ranking: nome, contexto (de onde vem o número), barra 0–100% e valor; neon só no destaque */
+function rankRow(o){const p=o.pct==null?null:Math.max(0,Math.min(1,o.pct));
+  return `<div class="rk-r ${o.dest?'dest':''}"><div class="rk-t"><span class="rk-n">${o.dot?`<i style="background:${o.dot}"></i>`:''}${esc(o.nome)}</span><span class="rk-ctx">${o.ctx}</span></div>
+  <div class="rk-m"><div class="rk-bar"><i style="width:${p==null?0:p*100}%"></i></div><b class="rk-v">${p==null?'—':PCT(p)}</b>${o.fim?`<span class="rk-x ${o.fimDest?'dest':''}">${esc(o.fim)}</span>`:''}</div></div>`}
 function pairBars(rows,max){
   max=max||Math.max(1,...rows.flatMap(r=>[r.a,r.b]));
   return `<div class="hb">${rows.map(r=>`<span class="lab">${esc(r.label)}</span>
@@ -2104,39 +2296,26 @@ function renderIndicadores(){
   const modelos=Object.keys(MODELOS).map(k=>({label:k,a:S.leads.filter(l=>l.modelo===k).length,b:S.vendas.filter(v=>v.modelo===k).length}));
   const best=ORIGENS.filter(o=>m.byOrig[o]).sort((a,b)=>vendasOrig(b)/m.byOrig[b]-vendasOrig(a)/m.byOrig[a])[0];
   return `${metas}
-  <div class="tiles">
-    <div class="card"><div class="l">Leads no mês</div><div class="v">${NUM(totalLeads)}</div></div>
-    <button class="card" style="text-align:left;cursor:pointer" data-action="go-cli" title="Ver clientes e vendas no Comercial"><div class="l">Vendas no mês · ver lista →</div><div class="v">${m.vendasMes.length}</div></button>
-    <div class="card"><div class="l">Conversão lead → venda</div><div class="v" style="color:var(--neon)">${PCT(m.conv)}</div></div>
-  </div>
-  <div class="viz-grid">
-    <div class="viz"><h4>Leads por origem</h4><p class="cap">Mês atual · participação no total</p>
-      ${hbars(ORIGENS.map(o=>({label:o,v:m.byOrig[o],color:ORIG_COLOR[o],txt:NUM(m.byOrig[o]),sub:PCT(m.byOrig[o]/Math.max(1,totalLeads))})))}
-    </div>
-    <div class="viz"><h4>Conversão por origem</h4><p class="cap">Vendas ÷ leads de cada canal</p>
-      ${hbars(ORIGENS.map(o=>{const c=m.byOrig[o]?vendasOrig(o)/m.byOrig[o]:0;return{label:o,v:c,color:ORIG_COLOR[o],txt:PCT(c),sub:`${vendasOrig(o)} vendas`}}))}
-    </div>
-  </div>
-  ${best?`<div class="insight"><b>${best}</b> é o canal que mais converte em venda neste mês. Compare com o CAC na sala Financeiro antes de mudar o investimento.</div>`:''}
-  <div class="viz"><h4>Funil de vendas</h4><p class="cap">Leads do CRM que chegaram a cada etapa · % em relação à etapa anterior</p>
-    ${hbars(steps.map((s2,i)=>({label:s2.e,v:s2.n,color:'var(--neon)',txt:NUM(s2.n),sub:i?(steps[i-1].n?PCT(s2.n/steps[i-1].n):'—'):''})),steps[0].n)}
-    <p class="note">Perdidos contam até a etapa que alcançaram. ${S.leads.filter(l=>l.etapa==='Sem Perfil').length} lead(s) Sem Perfil ficam fora do funil.</p>
-  </div>
-  <div class="viz"><h4>Leads × vendas por semana</h4><p class="cap">Últimas 4 semanas · leads cadastrados no CRM e vendas registradas</p>
-    <div class="vb">${weeks.map(w=>`<div class="g"><div class="c" style="height:${w.l/wmax*100}%;background:var(--s-leads)" title="${w.label}: ${w.l} leads"><span>${w.l}</span></div><div class="c" style="height:${w.v/wmax*100}%;background:var(--s-vendas)" title="${w.label}: ${w.v} vendas"><span>${w.v}</span></div></div>`).join('')}</div>
-    <div class="vb-x">${weeks.map(w=>`<span>${w.label}</span>`).join('')}</div>
-    <div class="legend"><span><i style="background:var(--s-leads)"></i>Leads</span><span><i style="background:var(--s-vendas)"></i>Vendas</span></div>
-  </div>
-  <div class="viz"><h4>Interesse × vendas por modelo</h4><p class="cap">Leads interessados · vendas · conversão</p>
-    ${pairBars(modelos)}
-    <div class="legend"><span><i style="background:var(--s-leads)"></i>Leads</span><span><i style="background:var(--s-vendas)"></i>Vendas</span></div>
-  </div>
-  <details class="tbl"><summary>Ver números em tabela</summary>
-    <div class="card tbl-wrap" style="margin-top:8px"><table>
-      <thead><tr><th>Origem</th><th class="num">Leads</th><th class="num">Vendas</th><th class="num">Conv.</th><th class="num">Invest.</th><th class="num">CAC</th></tr></thead>
-      <tbody>${ORIGENS.map(o=>{const inv=o==='Site'?0:investCanal(o),v=vendasOrig(o);return `<tr><td>${origemTag(o)}</td><td class="num">${m.byOrig[o]}</td><td class="num">${v}</td><td class="num">${PCT(m.byOrig[o]?v/m.byOrig[o]:0)}</td><td class="num">${inv?BRL0(inv):'—'}</td><td class="num">${inv&&v?BRL0(inv/v):'—'}</td></tr>`}).join('')}</tbody>
-    </table></div>
-  </details>`;
+  ${(()=>{
+    /* Canais: quem converte e quem traz venda mais barata */
+    const cn=ORIGENS.map(c=>{const inv=c==='Site'||c==='Oficina'?0:investCanal(c),l=m.byOrig[c]||0,v=vendasOrig(c);return{c,l,v,inv,conv:l?v/l:null,cac:inv&&v?inv/v:null}}).filter(x=>x.l||x.v);
+    const pagos=cn.filter(x=>x.cac!=null),barato=pagos.sort((a,b)=>a.cac-b.cac)[0],melhorConv=[...cn].filter(x=>x.conv!=null&&x.l>=2).sort((a,b)=>b.conv-a.conv)[0];
+    const cnRows=[...cn].sort((a,b)=>(b.conv??-1)-(a.conv??-1)).map(x=>rankRow({nome:x.c,dot:ORIG_COLOR[x.c],ctx:`${x.l} lead${x.l===1?'':'s'} → ${x.v} venda${x.v===1?'':'s'}`,pct:x.conv,dest:x===melhorConv,fim:x.inv?(x.cac!=null?`CAC ${BRL0(x.cac)}`:'sem venda'):'orgânico',fimDest:x===barato}));
+    const cnTxt=barato&&melhorConv?(barato===melhorConv?`<b>${barato.c}</b> converte mais e traz a venda mais barata.`:`<b>${melhorConv.c}</b> converte mais; <b>${barato.c}</b> traz a venda mais barata (CAC ${BRL0(barato.cac)}).`):melhorConv?`<b>${melhorConv.c}</b> é o canal que mais converte neste mês.`:'Ainda sem vendas suficientes para comparar canais.';
+    /* Semanas: a semana atual em destaque, as anteriores como contexto */
+    const W=weeks,cur=W[W.length-1],prev=W[W.length-2]||{l:0,v:0};
+    const dlt=(a,b)=>a===b?'<span class="tr-eq">(=)</span>':`<span class="${a>b?'tr-up':'tr-dn'}">${a>b?'▲':'▼'}${Math.abs(a-b)}</span>`;
+    const wkRow=(lab,k)=>{const mx=Math.max(1,...W.map(w=>w[k]));return `<div class="wk-r"><span class="wk-l">${lab}</span><div class="wk-bars">${W.map((w,i)=>`<div class="wk-c ${i===W.length-1?'cur':''}" title="${w.label}: ${w[k]} ${lab.toLowerCase()}"><span>${w[k]}</span><i style="height:${Math.max(3,Math.round(w[k]/mx*34))}px"></i></div>`).join('')}</div></div>`};
+    /* Modelos: interesse que vira venda */
+    const md=modelos.filter(r=>r.a||r.b).map(r=>({...r,conv:r.a?r.b/r.a:null})),mdBest=[...md].filter(r=>r.a>=2).sort((a,b)=>b.conv-a.conv||b.b-a.b)[0];
+    const mdRows=[...md].sort((a,b)=>b.b-a.b||(b.conv??0)-(a.conv??0)).map(r=>rankRow({nome:r.label,ctx:`${r.a} interessado${r.a===1?'':'s'} → ${r.b} venda${r.b===1?'':'s'}`,pct:r.conv,dest:r===mdBest}));
+    return `<div class="mt-charts">
+    <section class="viz mt-c"><h4>Canais no mês <button type="button" class="mt-go" data-action="tab" data-v="canais">CAC completo →</button></h4><p class="mt-say">${cnTxt}</p><div class="rk">${cnRows.join('')||'<div class="empty">Sem leads no mês.</div>'}</div><p class="mt-foot">% = vendas ÷ leads do canal</p></section>
+    <section class="viz mt-c"><h4>Últimas 4 semanas</h4><p class="mt-say">Esta semana: <b>${cur.l} leads</b> ${dlt(cur.l,prev.l)} e <b>${cur.v} vendas</b> ${dlt(cur.v,prev.v)} em relação à semana passada.</p>
+      ${wkRow('Leads','l')}${wkRow('Vendas','v')}<div class="wk-x"><span></span><div class="wk-bars">${W.map((w,i)=>`<span class="${i===W.length-1?'cur':''}">${i===W.length-1?'esta':w.label.split('–')[0]}</span>`).join('')}</div></div></section>
+    <section class="viz mt-c"><h4>Modelos: interesse que vira venda</h4><p class="mt-say">${mdBest?`<b>${mdBest.label}</b> converte melhor: ${mdBest.b} de ${mdBest.a} interessados compraram.`:'Ainda sem vendas suficientes para comparar modelos.'}</p><div class="rk">${mdRows.join('')}</div><p class="mt-foot">% = vendas ÷ leads interessados no modelo</p></section>
+  </div>`})()}
+`;
 }
 
 /* ---------- Sala 2 · Oficina & Passaporte Digital ---------- */
@@ -2147,7 +2326,7 @@ function osCard(o,compact){
     <div class="row between"><span class="id">${esc(o.id)}</span>${dueTag(o.prazo,o.status==='Pronta'?'Pronta':'')}</div>
     <div class="meta">${esc(o.cliente)} · ${esc(o.modelo)} · ${esc(o.status)}</div></div>`;
   return `<div class="card stack ${late?'is-late':''}">
-    <div class="row between"><span class="id">${esc(o.id)}</span><div class="row">${o.plano!=='—'?`<span class="tagp t-plan">${esc(o.plano)}</span>`:''}${dueTag(o.prazo,o.status==='Pronta'?'Pronta':'')}</div></div>
+    <div class="row between"><span class="id">${esc(o.id)}</span><div class="row">${dueTag(o.prazo,o.status==='Pronta'?'Pronta':'')}</div></div>
     <div><div class="t-name">${esc(o.cliente)} · ${esc(o.modelo)}</div><div class="meta">${esc(o.servico)}${o.km?` · ${NUM(o.km)} km`:''}${o.nota?' · '+esc(o.nota):''}</div></div>
     <div class="steps" role="group" aria-label="Status de ${esc(o.id)}">${OS_ST.map((s,j)=>`<button data-action="os-status" data-id="${esc(o.id)}" data-v="${s}" aria-pressed="${o.status===s}" class="${i>j?'done':''}">${s}</button>`).join('')}</div>
     ${osPecasHTML(o)}
@@ -2188,11 +2367,11 @@ function renderOficina(){
     ...h.map(a=>item('',`${esc(a.hora)} · ${esc(a.cliente)}`,`${esc(a.servico)} · ${esc(a.modelo)} · ${esc(a.status)}`,(a.tel?waBtn(a.tel,agMsg(a),'Confirmar'):'')+(a.osId?'':`<button class="btn btn-sm btn-primary" data-action="ag-entrada" data-id="${esc(a.id)}">Chegou</button>`))),
     ...rv.map(r=>item(r.dd<0?'is-late':'',`Manutenção · ${esc(r.p.cliente)}`,`${esc(r.marco.n)} · ${r.dd<0?'venceu':'vence'} ${ddmm(r.venc)}`,(r.tel?waBtn(r.tel,revMsg(r),'Convidar'):'')+`<button class="btn btn-sm" data-action="rev-agendar" data-id="${esc(r.p.id)}">Agendar</button>`))];
   return `
-  <div class="summary">
-    <div><b>${m.ativos.length}</b><span>na bancada</span></div>
-    <div><b class="${m.osLate.length?'red':''}">${m.osLate.length}</b><span>atrasadas</span></div>
-    <div><b class="ok">${m.prontas.length}</b><span>prontas</span></div>
-    <div><b>${h.length}</b><span>agendados hoje</span></div>
+  <div class="go-row of-chips">
+    <button type="button" class="go-chip" data-action="tab" data-v="banc"><b>${m.ativos.length}</b> na bancada</button>
+    <button type="button" class="go-chip ${m.osLate.length?'is-red':''}" data-action="tab" data-v="banc"><b>${m.osLate.length}</b> atrasada${m.osLate.length===1?'':'s'}</button>
+    <button type="button" class="go-chip ${m.prontas.length?'is-ok':''}" data-action="tab" data-v="banc"><b>${m.prontas.length}</b> pronta${m.prontas.length===1?'':'s'}</button>
+    <button type="button" class="go-chip" data-action="tab" data-v="ag"><b>${h.length}</b> agendado${h.length===1?'':'s'} hoje</button>
   </div>
   <section class="d-sec"><h3>Para fazer hoje <span class="count">${todo.length}</span></h3>
     <div class="stack">${todo.join('')||'<div class="empty">Nada pendente na oficina hoje.</div>'}</div>
@@ -2264,11 +2443,7 @@ function ofReceitaHTML(){
         ${(()=>{const r=ofRisco();return r.n?`<div class="row between of-ln of-risk"><span>Receita em risco <small class="meta" style="display:block">manutenções da garantia que vencem no mês sem agendamento</small></span><span class="meta">${r.n}</span><b class="mono">${BRL0(r.v)}</b></div>${r.n?`<button class="btn btn-sm" data-action="tab" data-v="pass" style="align-self:flex-start;margin-top:4px">Convidar em Pós-venda</button>`:''}`:''})()}
       </div>
       ${(()=>{const t=ofTicket(o.ent);return t.length?`<div class="of-tk">${t.map(x=>`<span><small class="meta">${esc(x.k)}</small><b class="mono">${BRL0(x.m)}</b><small class="meta">${x.n} OS</small></span>`).join('')}</div><div class="meta" style="font-size:11px;margin-top:-4px">Ticket médio por serviço no mês (mão de obra + peças)</div>`:''})()}
-      <details class="of-precos"><summary>Valores dos serviços</summary>
-        <div class="stack" style="gap:6px;margin-top:8px">${SERVICOS.map(sv=>`<label class="row between of-ln"><span>${esc(sv)}<small class="meta" style="display:block">${esc(SERV_DESC[sv]||'')}</small></span><span class="meta" style="white-space:nowrap">R$ <input class="val-in" style="width:80px" type="number" min="0" step="10" value="${Number((S.cfg.servPreco||{})[sv])||''}" placeholder="0" data-change="serv-preco" data-s="${esc(sv)}" aria-label="Valor ${esc(sv)}"></span></label>`).join('')}</div>
-        <label class="row between of-ln" style="margin-top:6px"><span>Lucro da oficina sobre preventiva e avançada<small class="meta" style="display:block">faixa estimada, com o profissional pago por diária</small></span><span class="meta" style="white-space:nowrap"><input class="val-in" style="width:44px" type="number" min="0" max="100" value="${S.cfg.ofMin??''}" data-change="of-min" aria-label="Mínimo"> a <input class="val-in" style="width:44px" type="number" min="0" max="100" value="${S.cfg.ofMax??''}" data-change="of-max" aria-label="Máximo"> %</span></label>
-        <p class="note">A previsão usa estes valores para as manutenções agendadas. Em cada OS da bancada dá para ajustar o valor.</p>
-      </details>
+      <button type="button" class="cfg-link" data-action="cfg" data-v="oficina">⚙ Valores dos serviços e faixa de lucro</button>
     </div>
   </section>`;
 }
@@ -2422,8 +2597,12 @@ function csSaude(){const A=S.passaportes.map(p=>csInfo(p)),n=A.length,emDia=A.fi
    ========================================================= */
 const LOJA_ARR=['leads','vendas','contas','admin','campanhas','adsHist','nps','inbox'];
 const LOJA_OBJ=['aval','diaHist','dias','fechAI'];
-const LOJA_CFG=['meta','metaVendas','metaAval','metaOficina','saldo','custoFixo','vendedor','trSlots','trFechado','trExc','tprAlert','googleReview','cad','sla','rotina','metaContatos','metaTR','lastBackup'];
+const LOJA_CFG=['adsDias','tetoCPL','tetoCAC','meta','metaVendas','metaAval','metaOficina','saldo','custoFixo','vendedor','trSlots','trFechado','trExc','tprAlert','googleReview','cad','sla','rotina','metaContatos','metaTR','lastBackup'];
 const lojaAtual=()=>(S.lojas||[]).find(l=>l.id===S.lojaAtual)||(S.lojas||[])[0]||{id:'estreito',nome:'Loja Estreito',cidade:'Florianópolis'};
+/* bairro da loja ativa para as mensagens de venda (a oficina continua no Estreito, compartilhada pela rede) */
+const LNO=(l=lojaAtual())=>l.msg||('no '+(String(l.local||'').split(',')[0].trim()||String(l.cidade||'').split(/[,·]/)[0].trim()||'Estreito'));
+const LDO=(l=lojaAtual())=>LNO(l).replace(/^no /,'do ').replace(/^na /,'da ').replace(/^em /,'de ').replace(/^nos /,'dos ').replace(/^nas /,'das ');
+const LB=()=>{const l=lojaAtual();return String(l.local||'').split(',')[0].trim()||String(l.cidade||'').split(/[,·]/)[0].trim()||'Estreito'};
 const lojaNome=id=>((S.lojas||[]).find(l=>l.id===id)||{}).nome||id||'—';
 const multiLoja=()=>(S.lojas||[]).length>1;
 function lojaPack(){const o={cfg:{}};LOJA_ARR.forEach(k=>o[k]=S[k]||[]);LOJA_OBJ.forEach(k=>{if(S[k]!==undefined)o[k]=S[k]});LOJA_CFG.forEach(k=>{if(S.cfg[k]!==undefined)o.cfg[k]=S.cfg[k]});return o}
@@ -2440,12 +2619,9 @@ function novaLoja(nome,cidade){const id=normTxt(nome).replace(/[^a-z0-9]+/g,'-')
 function transferirLead(id,dest){const l=findLead(id);if(!l||dest===S.lojaAtual)return;S.leads=S.leads.filter(x=>x.id!==id);
   (l.log=l.log||[]).push({d:today(),r:`transferido de ${lojaNome(S.lojaAtual)} para ${lojaNome(dest)}`});l.de=S.lojaAtual;
   const R=(S.redeLojas=S.redeLojas||{});R[dest]=R[dest]||{leads:[],cfg:{}};(R[dest].leads=R[dest].leads||[]).unshift(l);UI.openLead=null;toast(`${first(l.nome)||'Lead'} transferido para ${lojaNome(dest)}`);refresh()}
-function syncLojaBtn(){const b=$('#loja-btn');if(!b)return;const l=lojaAtual();b.innerHTML=`<b>${esc(l.nome)}</b><span>${esc(l.cidade||'')}${multiLoja()?` · ${S.lojas.length} lojas`:''}</span><i aria-hidden="true">▾</i>`}
+function syncLojaBtn(){const mr=$('#menu-rede');if(mr)mr.hidden=!multiLoja();const b=$('#loja-btn');if(!b)return;const l=lojaAtual();b.innerHTML=`<b>${esc(l.nome)}</b><span>${esc(l.cidade||'')}${multiLoja()?` · ${S.lojas.length} lojas`:''}</span><i aria-hidden="true">▾</i>`}
 function lojaMenuHTML(){const L=S.lojas||[];return `<div class="lj-pop">
   ${L.map(l=>`<button type="button" data-action="loja-set" data-v="${esc(l.id)}" aria-pressed="${l.id===S.lojaAtual}"><b>${esc(l.nome)}</b><small>${esc(l.cidade||'')}</small></button>`).join('')}
-  ${L.length>1?`<button type="button" data-action="loja-rede"><b>Visão da rede</b><small>RevOps de todas as lojas</small></button>`:''}
-  <hr><span class="lj-lbl">Nova loja</span><form data-form="loja-new" class="lj-new"><input class="inp-sm" name="nome" required maxlength="40" placeholder="Nome da nova loja"><input class="inp-sm" name="cidade" maxlength="40" placeholder="Bairro, cidade"><button class="btn btn-sm btn-primary" type="submit">+ Criar loja</button><small class="lj-hint">O clima da loja é ajustado sozinho pelo bairro e cidade.</small></form>
-  <span class="lj-lbl">Editar ${esc(lojaAtual().nome)}</span><form data-form="loja-ren" class="lj-new"><input class="inp-sm" name="nome" maxlength="40" value="${esc(lojaAtual().nome)}" aria-label="Nome da loja atual"><input class="inp-sm" name="cidade" maxlength="40" value="${esc(lojaAtual().cidade||'')}" aria-label="Cidade da loja atual"><label class="lj-f">Local do clima<input class="inp-sm" name="local" maxlength="80" value="${esc(lojaAtual().local||'')}" placeholder="Automático pelo bairro e cidade"></label><div id="lj-geo" class="lj-geo" hidden></div><button class="btn btn-sm" type="submit">Salvar loja atual</button></form>
   </div>`}
 /* visão da rede (RevOps consolidado) */
 function redeData(a,b){return (S.lojas||[]).map(l=>comLoja(l.id,()=>{const R=revData(a,b),m=midiaResumo(),pp=pipeline();return{l,R,inv:m.inv,cac:m.cac,pond:pp.pond,meta:(S.cfg.meta||0),fatMes:M().fat}}))}
@@ -2478,7 +2654,7 @@ function renderRevOps(){const P=UI.revP||'semana',[a,b]=revRange(P,0),[a2,b2]=re
     <span class="meta">${ddmm(a)} a ${ddmm(b)} · comparado com ${ddmm(a2)} a ${ddmm(b2)}</span><button class="btn btn-sm" data-action="rev-copy">Copiar para os sócios</button></div>
   ${(()=>{const pp=pipeline(),mm=M(),metaT=(S.cfg.meta||0)+(S.cfg.metaOficina||0),realM=mm.fat+oficinaMes().real;return `<section class="d-sec"><h3>Receita</h3><div class="rv-g">
     ${tile('Receita total',BRL0(R.rec),dl(R.rec,Q.rec,false,BRL0),`vendas ${BRL0(R.fat)} · oficina ${BRL0(R.of)}`)}
-    ${tile('Meta do mês',metaT?PCT(realM/metaT):'—','',metaT?`${BRL0(realM)} de ${BRL0(metaT)} (vendas + oficina)`:'defina as metas em Metas')}
+    <button type="button" class="rv-t rv-link" data-action="tab" data-v="ind" title="Ver metas do mês"><span>Meta do mês · vendas + oficina</span><b>${metaT?PCT(realM/metaT):'—'}</b><em>${metaT?`${BRL0(realM)} de ${BRL0(metaT)} · metas →`:'defina as metas em Metas →'}</em></button>
     ${tile('Pipeline ponderado',BRL0(pp.pond),'',`${BRL0(pp.total)} em aberto no preço PIX`)}
     ${tile('Receita recorrente prevista',BRL0(csSaude().rec90),'','manutenções da carteira nos próximos 90 dias')}
   </div>
@@ -2563,14 +2739,7 @@ function renderPassaporte(){
         <div class="row" style="gap:6px"><button class="btn btn-sm" data-action="cs-copy">Copiar lista</button><button class="btn btn-sm btn-primary" data-action="cs-csv">Baixar CSV</button></div></div>
       <p class="note">O botão Convidar de cada cliente já usa esta mensagem. A exportação leva PACE ID, primeiro nome, modelo, próxima manutenção e status da garantia${UI.csTel?` e telefone. 🔒 ${AVISO_BK}`:''}. Nada de CPF, endereço ou e-mail.</p>
     </div></details></section>
-  <section class="d-sec"><details class="inline"><summary>Regras da garantia</summary>
-    <div style="padding:12px" class="stack">
-      <div class="meta">3 meses pelo fabricante + 12 meses pela loja. A garantia da loja exige manutenção a cada 3 meses (3, 6, 9 e 12 meses), preventiva ou avançada. Quando a carteira vem do painel, as datas das manutenções são as do painel.</div>
-      <form data-form="gar-cfg" class="form-grid">
-        <label class="field">Tolerância após o vencimento (dias)<input name="tol" type="number" min="0" max="60" value="${garTol()}"></label>
-        <label class="field">Bateria coberta pela garantia da loja?<select name="bat">${opt([['não','Não: só pelo fabricante (3 meses)'],['sim','Sim'],['a confirmar','A confirmar']],S.cfg.garBateria||'não')}</select></label>
-        <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary btn-sm" type="submit">Salvar regras</button></div>
-      </form></div></details></section>`;
+  <section class="d-sec"><button type="button" class="cfg-link" data-action="cfg" data-v="garantia">⚙ Regras da garantia</button></section>`;
 }
 
 
@@ -2633,7 +2802,7 @@ function revisoesHTML(){
   return `<div class="stack">${rs.map(r=>`<div class="card stack ${r.dd<0&&!r.agendada?'is-late':''}" style="gap:5px">
     <div class="row between"><div class="row"><span class="t-name">${esc(r.p.cliente)}</span><span class="id">${esc(r.p.id)}</span></div>
       ${r.agendada?`<span class="tagp t-soon">Agendada ${ddmm(r.agendada.data)} ${esc(r.agendada.hora)}</span>`:dueTag(r.venc)}</div>
-    <div class="meta">${esc(r.p.modelo)} · ${esc(r.marco.n)} · plano ${esc(r.p.plano)}</div>
+    <div class="meta">${esc(r.p.modelo)} · ${esc(r.marco.n)}</div>
     ${r.agendada?'':`<div class="row" style="justify-content:flex-end">${r.tel?waBtn(r.tel,revMsg(r),'Convidar no WhatsApp'):'<span class="meta">sem telefone cadastrado</span>'}<button class="btn btn-sm btn-primary" data-action="rev-agendar" data-id="${esc(r.p.id)}">Agendar</button></div>`}
   </div>`).join('')}</div>`;
 }
@@ -2675,7 +2844,7 @@ function trHistDia(dt){const o=[];S.leads.forEach(l=>(l.trH||[]).forEach(h=>{if(
 function trLivres(dt){if(isClosedTR(dt))return[];const occ=new Set(trDia(dt).map(l=>l.hora));const now=new Date(),hm=pad(now.getHours())+':'+pad(now.getMinutes());return trSlots().filter(h=>!occ.has(h)&&!(dt===today()&&h<=hm))}
 function trStats(mes){mes=mes||today().slice(0,7);let c=0,f=0,v=0;S.leads.forEach(l=>{const hs=(l.trH||[]).filter(h=>h.d.slice(0,7)===mes);hs.forEach(h=>{if(h.st==='Compareceu')c++;else if(h.st==='Faltou')f++});if(hs.some(h=>h.st==='Compareceu')&&l.etapa==='Fechado')v++});return{c,f,v,taxa:c+f?c/(c+f):null,conv:c?v/c:null}}
 function trMsg(l){const n=first(l.nome),d=l.fu===today()?'hoje':l.fu===rel(1)?'amanhã':`no dia ${ddmm(l.fu)}`;
-  return `Oi${n?', '+n:''}! ${quem()}. Passando para confirmar seu test ride ${d}${l.hora?` às ${l.hora}`:''} aqui na loja do Estreito. A ${l.modelo} já vai estar separada e carregada para você. Posso confirmar?`}
+  return `Oi${n?', '+n:''}! ${quem()}. Passando para confirmar seu test ride ${d}${l.hora?` às ${l.hora}`:''} aqui na loja ${LDO()}. A ${l.modelo} já vai estar separada e carregada para você. Posso confirmar?`}
 function trPosMsg(l){const n=first(l.nome);return `Oi${n?', '+n:''}! Que bom que você veio andar na ${l.modelo}. O que achou? Se quiser, já te mando a proposta com as condições de pagamento.`}
 function trFaltouMsg(l){const n=first(l.nome);return `Oi${n?', '+n:''}! Sentimos sua falta no test ride. Imprevistos acontecem! Quer remarcar? Tenho horários ${trLivres(rel(1)).slice(0,3).join(', ')||'durante a semana'}. A ${l.modelo} fica separada pra você.`}
 function trCard(l){
@@ -2758,15 +2927,11 @@ function renderTestRides(){
         <div class="full row between"><label class="chk"><input type="checkbox" name="conf"><span>Já confirmado com o cliente</span></label><button class="btn btn-primary" type="submit">Agendar</button></div>
       </form>
     </details>
-    <details class="inline" style="margin-top:8px"><summary>Horários e dias de test ride</summary>
-      <div style="padding:12px 12px 0">${diasHTML('tr')}</div>
-      <form data-form="tr-cfg" class="form-grid"><label class="field full">Horários (separados por vírgula)<input name="slots" value="${esc(trSlots().join(', '))}"></label>
-        <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary" type="submit">Salvar horários</button></div></form>
-    </details>
+    <button type="button" class="cfg-link" data-action="cfg" data-v="tr">⚙ Horários e dias de test ride</button>
   </section>`;
 }
 function trFreeText(){const out=[];for(let i=0;i<10&&out.length<5;i++){const dt=rel(i),l=trLivres(dt);if(l.length)out.push(`${WD[new Date(dt+'T12:00:00').getDay()]} ${ddmm(dt)}: ${l.join(', ')}`)}
-  return `Horários para test ride na PACE (Estreito):\n${out.join('\n')}\nMe diz o melhor pra você que eu já reservo a bike carregada.`}
+  return `Horários para test ride na PACE (${LB()}):\n${out.join('\n')}\nMe diz o melhor pra você que eu já reservo a bike carregada.`}
 function trResult(l,v){
   const h={d:l.fu||today(),h:l.hora||'',m:l.modelo};
   if(v==='veio'||v==='venda'){(l.trH=l.trH||[]).push({...h,st:'Compareceu'});logLead(l,'compareceu ao test ride');l.trSt=null;
@@ -2871,13 +3036,7 @@ function renderAgenda(){
   <section class="d-sec"><details class="inline"><summary>Manutenções da garantia <span class="meta">${rv.length} para convidar · pela data de compra no PACE ID</span></summary><div style="padding:12px">${revisoesHTML()}</div></details></section>
   <section class="d-sec">
     ${agFormHTML(sel,livresSel)}
-    <details class="inline" style="margin-top:8px"><summary>Horários e dias de atendimento</summary>
-      <form data-form="ag-cfg" class="form-grid">
-        <label class="field full">Horários de agendamento (separados por vírgula)<input name="slots" value="${esc(S.cfg.slots.join(', '))}"></label>
-        <div class="full">${diasHTML('of')}</div>
-        <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary" type="submit">Salvar horários</button></div>
-      </form>
-    </details>
+    <button type="button" class="cfg-link" data-action="cfg" data-v="oficina">⚙ Horários e dias da oficina</button>
   </section>`;
 }
 
@@ -2933,9 +3092,8 @@ function renderFinanceiro(){
   const m=M(),d=new Date(),dias=new Date(d.getFullYear(),d.getMonth()+1,0).getDate(),proj=m.fat/d.getDate()*dias,pp=S.cfg.meta?proj/S.cfg.meta:0,e=estoqueValor();
   const t=today(),contas=S.contas.filter(c=>!c.ok&&diffDays(c.venc)<=7).sort((a,b)=>a.venc.localeCompare(b.venc)),adm=S.admin.filter(a=>!a.ok&&a.due<=t);
   return `
-  <div class="kgrid">
-    <button class="kcard" data-action="tab" data-v="ind"><span>Meta do mês</span><b>${Math.round(m.pct*100)}%</b><small>${BRL0(m.fat)} de ${BRL0(S.cfg.meta)}</small><div class="pixbar" aria-hidden="true">${pixbar(m.pct)}</div></button>
-    <div class="kcard ${pp>=1?'ok':'bad'}"><span>Projeção do mês</span><b>${BRL0(proj)}</b><small>${PCT(pp)} da meta no ritmo atual</small></div>
+  <div class="kgrid kg3">
+    <button class="kcard ${pp>=1?'ok':'bad'}" data-action="tab" data-v="ind" title="Ver metas do mês"><span>Projeção do mês</span><b>${BRL0(proj)}</b><small>${PCT(pp)} da meta no ritmo atual · metas →</small></button>
     <button class="kcard ${m.reservaOk?'ok':'bad'}" data-action="fin-contas"><span>Caixa previsto · 30 dias</span><b>${BRL0(m.previsto)}</b><small>saldo hoje ${BRL0(S.cfg.saldo)} · ${m.reservaOk?'cobre':'não cobre'} 1 mês fixo</small></button>
     <button class="kcard" data-action="tab" data-v="est"><span>Saldo em estoque</span><b>${e.tabela>0?BRL0(e.tabela):BRL0(e.pix)}</b><small>${e.n} bikes · ${e.tabela>0?'tabela':'PIX'}${e.piso>0?' · piso '+BRL0(e.piso):''}</small></button>
   </div>
@@ -2978,7 +3136,7 @@ function renderFinContas(){
       <button class="btn btn-primary" type="submit">Adicionar</button>
     </form>
   </section>
-    <div class="note">Saldo previsto fica verde quando cobre 1 mês de custo fixo: R$ <input class="val-in" style="width:90px" type="number" min="0" step="100" value="${S.cfg.custoFixo}" data-change="custoFixo" aria-label="Custo fixo mensal">. Planos Completo/Total no mês: ${m.planosAltos} de ${m.vendasMes.length} vendas.</div>`;
+    <div class="note">Saldo previsto fica verde quando cobre 1 mês de custo fixo: R$ <input class="val-in" style="width:90px" type="number" min="0" step="100" value="${S.cfg.custoFixo}" data-change="custoFixo" aria-label="Custo fixo mensal">.</div>`;
 }
 function renderFinCanais(){
   const m=M();
@@ -3000,18 +3158,27 @@ function renderFinCanais(){
     <div class="insight">${insight}</div></div>
     <div class="note">Investimento vem das campanhas da Sala Criativo. Leads e vendas contam o mês atual.</div>
   </section>
-  <section class="d-sec"><h3>Vendas do mês <span class="count">${m.vendasMes.length}</span></h3>
-    <div class="card tbl-wrap"><table>
-      <thead><tr><th>Data</th><th>Cliente</th><th>Modelo</th><th>Plano</th><th>Pagto.</th><th class="num">Valor</th></tr></thead>
-      <tbody>${[...m.vendasMes].sort((a,b)=>b.data.localeCompare(a.data)).map(v=>`<tr><td class="mono">${ddmm(v.data)}</td><td>${esc(v.cliente)}</td><td>${esc(v.modelo)}</td><td>${esc(v.plano)}</td><td>${esc(v.pag)}</td><td class="num">${BRL(valorVenda(v))}</td></tr>`).join('')||'<tr><td colspan="6" class="meta">Nenhuma venda no mês.</td></tr>'}</tbody>
+  <div class="viz-grid">
+    <div class="viz"><h4>Leads por origem</h4><p class="cap">Mês atual · participação no total</p>
+      ${hbars(canais.map(c=>({label:c.c,v:c.leads,color:ORIG_COLOR[c.c],txt:NUM(c.leads),sub:PCT(c.leads/Math.max(1,m.leads))})))}
+    </div>
+    <div class="viz"><h4>Conversão por origem</h4><p class="cap">Vendas ÷ leads de cada canal</p>
+      ${hbars(canais.map(c=>({label:c.c,v:c.conv,color:ORIG_COLOR[c.c],txt:PCT(c.conv),sub:`${c.vendas} venda${c.vendas===1?'':'s'}`})))}
+    </div>
+  </div>
+  ${(()=>{const b=canais.filter(c=>c.leads).sort((x,y)=>y.conv-x.conv)[0];return b&&b.vendas?`<div class="insight"><b>${b.c}</b> é o canal que mais converte em venda neste mês.</div>`:''})()}
+  <details class="tbl"><summary>Vendas do mês (${m.vendasMes.length})</summary>
+    <div class="card tbl-wrap" style="margin-top:8px"><table>
+      <thead><tr><th>Data</th><th>Cliente</th><th>Modelo</th><th>Canal</th><th>Pagto.</th><th class="num">Valor</th></tr></thead>
+      <tbody>${[...m.vendasMes].sort((a,b)=>b.data.localeCompare(a.data)).map(v=>`<tr><td class="mono">${ddmm(v.data)}</td><td>${esc(v.cliente)}</td><td>${esc(v.modelo)}</td><td>${esc(v.canal||'—')}</td><td>${esc(v.pag)}</td><td class="num">${BRL(valorVenda(v))}</td></tr>`).join('')||'<tr><td colspan="6" class="meta">Nenhuma venda no mês.</td></tr>'}</tbody>
     </table></div>
-    <div class="note">Valor = preço PIX (se pago no PIX) ou de tabela (cartão/financiamento) + plano. Para ver todos os clientes, registrar ou excluir vendas: <button class="btn btn-sm" data-action="go-cli">Comercial → Clientes</button></div>
-  </section>`;
+    <div class="note">Valor = preço PIX (se pago no PIX) ou de tabela (cartão/financiamento). Para registrar ou excluir vendas: <button class="btn btn-sm" data-action="go-cli">Comercial → Clientes</button></div>
+  </details>`;
 }
 
 /* ---------- Sala 4 · Criativo & Marketing ---------- */
 const SCRIPTS=[
-  {t:'Primeiro contato · lead de anúncio',q:'Assim que o lead chega do Google Ads ou Meta.',m:v=>`Oi${v.c}! Tudo bem? ${quem()}, loja de mobilidade elétrica no Estreito. Vi que você se interessou pela ${v.m}. Posso te mandar os detalhes e já reservar um test ride sem compromisso?`},
+  {t:'Primeiro contato · lead de anúncio',q:'Assim que o lead chega do Google Ads ou Meta.',m:v=>`Oi${v.c}! Tudo bem? ${quem()}, loja de mobilidade elétrica ${LNO()}. Vi que você se interessou pela ${v.m}. Posso te mandar os detalhes e já reservar um test ride sem compromisso?`},
   {t:'Pós test ride',q:'No mesmo dia do test ride, à noite.',m:v=>`Oi${v.c}! Gostou de andar na ${v.m}? Ela sai por ${v.p} no PIX, já com o Passaporte Digital (PACE ID). Se quiser, já te mando a proposta com as condições de pagamento.`},
   {t:'Objeção de preço → valor e pagamento',q:'Quando o cliente acha o valor alto à vista.',m:v=>`Entendo${v.c}. Vale lembrar que a ${v.m} já sai com o Passaporte Digital, garantia e oficina própria aqui no Estreito: quem vende, cuida. E dá para parcelar no cartão ou financiar com nossos parceiros. Quer que eu simule as parcelas pra você?`},
   {t:'“E se der problema?” → Passaporte Digital',q:'Quando a dúvida é manutenção e pós-venda.',m:v=>`Boa pergunta${v.c}! Toda bike da PACE tem um Passaporte Digital (PACE ID) com revisões, garantia e histórico. A oficina é aqui na loja do Estreito. Nosso lema é: quem vende, cuida.`},
@@ -3070,12 +3237,11 @@ function renderJornada(){
         <div class="j-bar"><i style="width:${x.n/max*100}%"></i></div>
         <div class="meta">${x.e==='Fechado'?`${j.pos.aval} avaliações · ${j.pos.ind} indicações`:`${x.parados} parado${x.parados===1?'':'s'}${x.dias!=null?` · ${x.dias}d em média`:''}`}</div>
         ${S.cfg.sla[x.e]?`<div class="meta">Prazo ${S.cfg.sla[x.e].d}d · ${esc(S.cfg.sla[x.e].r)}${(()=>{const n=S.leads.filter(l=>l.etapa===x.e&&(slaInfo(l)||{}).fora).length;return n?` · <b style="color:var(--late)">${n} fora do prazo</b>`:''})()}</div>`:''}
-        <div class="meta ${x.pecas?'':'warn'}">${x.pecas?`${x.pecas} peça${x.pecas===1?'':'s'} no ar`:'nenhuma peça no ar'}</div>
       </div>`).join('')}
       <div class="j-arrow"><span>${j.pos.vendas?PCT(j.pos.aval/j.pos.vendas):'—'}</span></div>
       <div class="j-step"><div class="row between"><b>Pós-venda</b><span class="mono">${j.pos.aval}</span></div><div class="j-bar"><i style="width:${j.pos.aval/max*100}%"></i></div><div class="meta">avaliaram (90 dias) · ${j.pos.ind} indicaram</div><div class="meta">marque em Comercial → Clientes</div></div>
     </div>
-    <p class="note">Cada etapa mostra quantos leads chegaram até ela, a % que passou da etapa anterior, quantos estão parados ali agora (e há quanto tempo) e se existe peça no ar para ajudar.</p>
+    <p class="note">Cada etapa mostra quantos leads chegaram até ela, a % que passou da etapa anterior, quantos estão parados ali agora e há quanto tempo.</p>
   </section>
 `;
 }
@@ -3101,7 +3267,7 @@ function eventos(){
       [iso(cm),'Cyber Monday','Última chamada da Black Friday no digital.'],
       [`${yy}-12-25`,'Natal','Presente de Natal: entrega garantida e Passaporte Digital.'],
       [`${yy}-12-21`,'Início do verão','Temporada em SC: lazer, praia e mobilidade.'])}
-  return out.filter(e=>diffDays(e[0])>=0).sort((a,b)=>a[0].localeCompare(b[0])).slice(0,8);
+  return out.filter(e=>diffDays(e[0])>=0).sort((a,b)=>a[0].localeCompare(b[0])).slice(0,12);
 }
 function renderEventos(){
   return `<section class="d-sec"><h3>Datas e eventos para campanhas</h3>
@@ -3179,7 +3345,8 @@ function runAds(){let n=0,novas=0;const em=today();
 function campFull(c){const r=campResult(c),ls=S.leads.filter(l=>l.camp===c.id),sp=ls.filter(l=>l.etapa==='Sem Perfil'||l.arqMotivo==='Fora do perfil').length;
   return{...r,ctr:c.impr?c.cliques/c.impr:null,cpc:c.cliques?c.invest/c.cliques:null,cplPlat:c.leads?c.invest/c.leads:null,aprov:c.leads?r.leads/c.leads:null,semPerfil:r.leads?sp/r.leads:null,trRate:r.leads?r.tr/r.leads:null}}
 function campRec(c,f,ref){
-  if(!c.invest)return null;
+  if(!c.invest)return null;ref={...ref,cac:Number(S.cfg.tetoCAC)||ref.cac};const tCPL=Number(S.cfg.tetoCPL)||0;
+  if(tCPL&&f.cpl&&f.leads>=5&&!f.vendas&&f.cpl>tCPL*1.3)return{t:'Ajustar ou pausar',k:'t-late',x:`Custo por lead no CRM de ${BRL0(f.cpl)}, acima do teto de ${BRL0(tCPL)}, e ainda sem venda.`};
   if((c.leads||f.leads)<5&&!f.vendas)return{t:'Aguardar dados',k:'t-muted',x:'Menos de 5 leads: ainda cedo para decidir.'};
   if(f.aprov!=null&&f.aprov<0.3&&c.leads>=5)return{t:'Lead se perde',k:'t-late',x:`Só ${f.leads} de ${c.leads} leads da plataforma estão no CRM com esta campanha (${PCT(f.aprov)}). Marque a campanha no cadastro do lead ou confira o formulário/WhatsApp.`};
   if(f.vendas&&ref.cac&&f.cac<=ref.cac*0.9)return{t:'Escalar',k:'t-soon',x:`CAC ${BRL0(f.cac)}, abaixo da média (${BRL0(ref.cac)}). Teste aumentar a verba aos poucos (até 20% por semana).`};
@@ -3223,43 +3390,130 @@ function adsHistHTML(){const L=adsMeses();if(!L.length)return '';const ml=m=>{co
     ${L.map((x,i)=>{const p=L[i+1];return `<div class="md-r ah-r"><b>${ml(x.mes)}</b><span class="mono">${BRL0(x.inv)}${p?dl(x.inv,p.inv,true):''}</span><span class="mono">${x.lp}${p?dl(x.lp,p.lp):''}</span><span class="mono">${x.lc}${p?dl(x.lc,p.lc):''}</span><span class="mono">${x.cpl?BRL0(x.cpl):'—'}${p?dl(x.cpl,p.cpl,true):''}</span><span class="mono">${x.v}${p?dl(x.v,p.v):''}</span><b class="mono">${x.cac?BRL0(x.cac):'—'}${p?dl(x.cac,p.cac,true):''}</b></div>`}).join('')}
     <p class="note">Cada mês usa a última importação de cada campanha naquele período. Leads e vendas vêm do CRM (leads com a campanha marcada).</p></div></details>`}
 
+/* ===== Growth · Decisão: importações seg/qua/sex, o que mudou e o veredito de cada campanha ===== */
+const ADS_DIAS_PADRAO=[1,3,5];
+function adsDias(){const d=S.cfg.adsDias;return Array.isArray(d)&&d.length?d:ADS_DIAS_PADRAO}
+function adsImports(){const mes=today().slice(0,7);return [...new Set((S.adsHist||[]).map(h=>h.em).filter(e=>e&&e.slice(0,7)===mes))].sort()}
+function adsPend(){const t=today(),D=adsDias(),all=[...new Set((S.adsHist||[]).map(h=>h.em).filter(Boolean))].sort(),last=all[all.length-1]||'';
+  for(let i=0;i<7;i++){const dt=rel(-i),dw=new Date(dt+'T12:00:00').getDay();if(D.includes(dw)){if(last>=dt)return null;return{dia:dt,atraso:i>0,lbl:i===0?'hoje':`desde ${WD[dw].toLowerCase()} ${ddmm(dt)}`}}}return null}
+function proxImport(){const D=adsDias();for(let i=1;i<=7;i++){const dt=rel(i),dw=new Date(dt+'T12:00:00').getDay();if(D.includes(dw))return dt}return null}
+/* fotos de cada importação no mês: soma por data */
+function adsFotos(){const mes=today().slice(0,7),by={};(S.adsHist||[]).filter(h=>(h.em||'').slice(0,7)===mes).forEach(h=>{const k=h.em,x=by[k]||(by[k]={em:k,c:{}});x.c[normTxt(h.nome)]=h});
+  return Object.values(by).sort((a,b)=>a.em.localeCompare(b.em)).map(f=>{const L=Object.values(f.c);return{em:f.em,inv:sum(L,h=>Number(h.invest)||0),leads:sum(L,h=>Number(h.leads)||0),n:L.length,c:f.c}})}
+function adsDelta(){const F=adsFotos();if(F.length<2)return null;const a=F[F.length-2],b=F[F.length-1],di=b.inv-a.inv,dl=b.leads-a.leads;
+  const cplP=dl>0?di/dl:null,cplA=a.leads?a.inv/a.leads:null,crm=S.leads.filter(l=>l.camp&&l.criado>a.em&&l.criado<=b.em).length;return{de:a.em,ate:b.em,di,dl,cplP,cplA,crm}}
+function veredito(c){if(!c.invest)return null;const f=campFull(c),r=campRec(c,f,midiaResumo());if(!r)return null;
+  const v=r.t==='Escalar'?'Escalar':r.t==='Ajustar ou pausar'?'Pausar':r.t==='Manter'||r.t==='Aguardar dados'?'Manter':'Ajustar';return{v,r,f}}
+function campEvo(c){const F=adsFotos().map(f=>({em:f.em,h:f.c[normTxt(c.nome)]})).filter(x=>x.h);if(F.length<2)return '';
+  const P=F.slice(1).map((x,i)=>{const a=F[i].h,dl=(Number(x.h.leads)||0)-(Number(a.leads)||0),di=(Number(x.h.invest)||0)-(Number(a.invest)||0);return{em:x.em,dl:Math.max(0,dl),cpl:dl>0?di/dl:null}}).slice(-6),mx=Math.max(1,...P.map(x=>x.dl));
+  return `<div class="evo"><span class="evo-l">A cada importação:<br>novos leads na plataforma e custo por lead</span><div class="evo-b">${P.map((x,i)=>`<div class="wk-c ${i===P.length-1?'cur':''}" title="Até ${ddmm(x.em)}: +${x.dl} leads${x.cpl?' · '+BRL0(x.cpl)+' por lead':''}"><span>+${x.dl}</span><i style="height:${Math.max(3,Math.round(x.dl/mx*28))}px"></i><small>${ddmm(x.em)}</small><small class="evo-c">${x.cpl?BRL0(x.cpl).replace('R$ ','R$'):'—'}</small></div>`).join('')}</div></div>`}
+function renderDecisao(){const t=today(),ip=adsPend(),D=adsDelta(),m=midiaResumo(),px=proxImport(),dias=adsDias(),WDF=['dom','seg','ter','qua','qui','sex','sáb'];
+  const vs=S.campanhas.filter(c=>c.ativa&&c.invest).map(c=>({c,...veredito(c)})).filter(x=>x.v);
+  const ord={Pausar:0,Ajustar:1,Escalar:2,Manter:3},cnt=k=>vs.filter(x=>x.v===k).length;vs.sort((a,b)=>ord[a.v]-ord[b.v]);
+  const pct=(a,b)=>b?Math.round((a-b)/b*100):0;
+  const ult=[...new Set((S.adsHist||[]).map(h=>h.em))].sort().pop();
+  const head=`<div class="dc-imp ${ip?'pend':''}">${ip?`<i class="dc-dot ${ip.atraso?'late':''}" aria-hidden="true"></i><span><b>${ip.atraso?'Importação atrasada':'Dia de importar o relatório'}</b> · período "este mês até hoje"</span>`:`<span>Relatório ${ult?`importado em ${ddmm(ult)}`:'ainda não importado'}${px?` · próximo ${WDF[new Date(px+'T12:00:00').getDay()]} ${ddmm(px)}`:''}</span>`}<button type="button" class="dc-btn" data-action="ads-imp" title="Importar relatório de anúncios (CSV ou XLSX do Meta ou Google)">↑ Importar</button></div>`;
+  const delta=D?`<p class="mt-say dc-say">Desde ${WDF[new Date(D.de+'T12:00:00').getDay()]} ${ddmm(D.de)}: <b>+${BRL0(D.di)}</b> investidos e <b>+${D.dl} leads</b> na plataforma${D.cplP?` (${BRL0(D.cplP)} por lead na plataforma${D.cplA?`, <span class="${D.cplP<=D.cplA?'tr-up':'tr-dn'}">${D.cplP<=D.cplA?'▼':'▲'}${Math.abs(pct(D.cplP,D.cplA))}%</span> em relação à média do mês até então`:''})`:''}; <b>${D.crm}</b> ${D.crm===1?'chegou':'chegaram'} ao CRM com campanha marcada.</p>`
+    :`<p class="mt-say dc-say">${adsFotos().length?'Com a próxima importação aparece aqui o que mudou desde a anterior.':'Depois de duas importações no mês, aparece aqui o que mudou entre uma e outra.'}</p>`;
+  const resumo=vs.length?`${cnt('Pausar')?`<b>${cnt('Pausar')}</b> para pausar · `:''}${cnt('Ajustar')?`<b>${cnt('Ajustar')}</b> para ajustar · `:''}${cnt('Escalar')?`<b>${cnt('Escalar')}</b> para escalar · `:''}${cnt('Manter')?`<b>${cnt('Manter')}</b> para manter`:''}`.replace(/ · $/,''):'';
+  const funil=f=>`${f.aprov!=null?`${NUM(f.leads)} de ${NUM(Math.max(f.leads,0)+0)}`:''}`;
+  const card=({c,v,r,f})=>`<div class="dc-card dc-${v.toLowerCase()}"><div class="dc-top"><span class="dc-v">${v}</span><b>${esc(c.nome)}</b>${origemTag(c.canal)}</div>
+    <div class="dc-why">${r.x}</div>
+    <div class="dc-path">${BRL0(c.invest)} → ${c.leads?`${NUM(c.leads)} leads na plataforma → `:''}${f.leads} no CRM → ${f.tr} test ride${f.tr===1?'':'s'} → <b>${f.vendas} venda${f.vendas===1?'':'s'}</b>${f.cpl?` · ${BRL0(f.cpl)} por lead no CRM`:''}${f.cac?` · CAC ${BRL0(f.cac)}`:''}</div></div>`;
+  const tCPL=Number(S.cfg.tetoCPL)||0,tCAC=Number(S.cfg.tetoCAC)||0;
+  return `${head}${delta}
+  <div class="kgrid dc-k kg4">
+    <div class="kcard"><span>Investido no mês</span><b>${BRL0(m.inv)}</b><small>${m.lp?`${NUM(m.lp)} leads na plataforma`:'importe o relatório'}</small></div>
+    <div class="kcard"><span>Leads no CRM</span><b>${m.lc}</b><small>${m.aprov!=null?`${PCT(m.aprov)} dos leads da plataforma chegaram`:'com campanha marcada'}</small></div>
+    <div class="kcard"><span>Custo por lead no CRM</span><b>${m.cpl?BRL0(m.cpl):'—'}</b><small>${tCPL?`teto ${BRL0(tCPL)}`:'sem teto: a média é a referência'}</small></div>
+    <div class="kcard"><span>Custo por venda (CAC)</span><b>${m.cac?BRL0(m.cac):'—'}</b><small>${m.roas?`cada R$ 1 virou ${BRL(m.roas)} em vendas`:'sem venda atribuída'}</small></div>
+  </div>
+  <div class="dc-dias-r"><span class="meta">Importar às ${dias.map(d=>WDF[d]).join(', ')}</span><button type="button" class="cfg-link" data-action="cfg" data-v="growth">⚙ alterar</button></div>
+  ${renderEventos30()}`}
+function renderEventos30(){const L=eventos().filter(([d])=>diffDays(d)>=0).slice(0,9);if(!L.length)return '';
+  return `<section class="d-sec"><h3>Próximas datas para campanhas</h3><div class="ev6">${L.map(([d,n,dica])=>{const dd=diffDays(d),hot=dd<=30;return `<div class="ev6-c ${hot?'ev6-hot':''}" title="${esc(dica)}"><div class="ev6-d"><b>${d.slice(8,10)}</b><span>${new Date(d+'T12:00:00').toLocaleDateString('pt-BR',{month:'short'}).replace('.','')}</span></div><div class="ev6-t"><div class="ev6-h"><b>${esc(n)}</b><em>${dd===0?'hoje':dd===1?'amanhã':'em '+dd+' dias'}</em></div><small>${esc(dica)}</small></div></div>`}).join('')}</div>
+    </section>`}
+/* funil de um canal ou campanha: plataforma (relatório) + CRM (leads marcados) */
+function funilAds(cs,extra){const inv=sum(cs,'invest'),im=sum(cs,c=>c.impr||0),cl=sum(cs,c=>c.cliques||0),lp=sum(cs,c=>c.leads||0),R=cs.map(c=>campResult(c)),lc=sum(R,'leads'),tr=sum(R,'tr'),v=sum(R,'vendas'),fat=sum(R,'fat');
+  return{inv,im,cl,lp,lc,tr,v,fat,ctr:im?cl/im:null,cpc:cl?inv/cl:null,cpm:im?inv/im*1000:null,cplP:lp?inv/lp:null,clToL:cl?lp/cl:null,aprov:lp?lc/lp:null,cpl:lc?inv/lc:null,lcToTr:lc?tr/lc:null,trToV:tr?v/tr:null,cac:v?inv/v:null,roas:inv?fat/inv:null}}
 function renderCampanhas(){
-  const rows=S.campanhas.map(c=>({c,r:campResult(c)}));
-  const best=rows.filter(x=>x.r.vendas).sort((a,b)=>(a.r.cac||1e9)-(b.r.cac||1e9))[0];
-  const zero=rows.filter(x=>x.c.ativa&&x.c.invest>0&&!x.r.vendas);
-  const ref=midiaResumo();
-  return `
-  ${renderMidia()}
-  ${renderEventos()}
-  ${best||zero.length?`<div class="insight" style="margin-top:0">${best?`<b>${esc(best.c.nome)}</b> traz venda mais barata: CAC ${BRL0(best.r.cac)}${best.r.roas?` · cada R$ 1 investido virou ${BRL(best.r.roas)} em vendas`:''}.`:''}${zero.length?` ${zero.length} campanha${zero.length===1?'':'s'} ativa${zero.length===1?'':'s'} ainda sem venda: ${esc(zero.map(x=>x.c.nome).join(', '))}.`:''}</div>`:''}
-  <section class="d-sec"><h3>Resultado por campanha · do lead à venda</h3>
-    <div class="stack">${rows.map(({c,r})=>`<div class="card">
-      <div class="row between"><div class="row"><span class="t-name">${esc(c.nome)}</span>${origemTag(c.canal)}<span class="tagp t-plan">${esc(c.etapa||'Descoberta')}</span></div>
-        <div class="row" style="gap:6px"><button class="btn btn-sm ${c.ativa?'pill-on':''}" data-action="camp" data-id="${esc(c.id)}" aria-pressed="${c.ativa}">${c.ativa?'Ativa':'Pausada'}</button>${delBtn('campanhas',c.id)}</div></div>
-      ${(()=>{const f=campFull(c),rc=campRec(c,f,ref);return `<div class="meta" style="margin-top:3px">CTA: ${esc(c.cta||'—')}${c.atualizado?` · dados de ${ddmm(c.atualizado)}`:''}</div>
-      ${rc?`<div class="camp-rec"><span class="tagp ${rc.k}">${rc.t}</span><span>${rc.x}</span></div>`:''}
-      ${c.impr||c.cliques?`<div class="meta camp-ads">${c.impr?`${NUM(c.impr)} impressões`:''}${c.cliques?` · ${NUM(c.cliques)} cliques`:''}${f.ctr!=null?` · CTR ${(f.ctr*100).toFixed(2).replace('.',',')}%`:''}${f.cpc?` · CPC ${BRL(f.cpc)}`:''}${f.cplPlat?` · CPL plataforma ${BRL(f.cplPlat)}`:''}${f.semPerfil?` · ${PCT(f.semPerfil)} sem perfil`:''}</div>`:''}`})()}
-      <div class="metrics" style="grid-template-columns:repeat(6,1fr)">
-        <div><label><input type="number" min="0" step="10" value="${c.invest}" data-change="camp-f" data-id="${esc(c.id)}" data-f="invest" aria-label="Investimento"></label><span>Invest. (R$)</span></div>
-        <div><b>${r.leads}</b><span>Leads CRM</span></div>
-        <div><b>${r.tr}</b><span>Test rides</span></div>
-        <div><b style="color:${r.vendas?'var(--neon)':'var(--off)'}">${r.vendas}</b><span>Vendas</span></div>
-        <div><b>${r.cac?BRL0(r.cac):'—'}</b><span>CAC</span></div>
-        <div><b>${r.roas?r.roas.toLocaleString('pt-BR',{maximumFractionDigits:1})+'×':'—'}</b><span>Retorno</span></div>
-      </div>
-      <div class="meta" style="margin-top:6px">Leads na plataforma: <input class="val-in" style="width:60px" type="number" min="0" value="${c.leads}" data-change="camp-f" data-id="${esc(c.id)}" data-f="leads" aria-label="Leads informados pela plataforma"> · CPL CRM ${r.cpl?BRL(r.cpl):'—'} · faturamento ${BRL0(r.fat)}</div>
-    </div>`).join('')||'<div class="empty">Nenhuma campanha cadastrada.</div>'}</div>
-    <details class="inline" style="margin-top:8px"><summary>+ Nova campanha ou peça paga</summary>
+  const tCPL=Number(S.cfg.tetoCPL)||0,tCAC=Number(S.cfg.tetoCAC)||0,F=adsFotos(),ord={Pausar:0,Ajustar:1,Escalar:2,Manter:3},fil=UI.cpCanal||'Todos';
+  const canalOk=c=>fil==='Todos'||(fil==='Meta'?c.canal==='Meta':c.canal!=='Meta');
+  const pc=v=>v==null?'—':PCT(v),pcf=v=>v==null?'—':(v*100).toLocaleString('pt-BR',{maximumFractionDigits:v<.1?1:0})+'%';
+  /* Meta × Google */
+  const CH=[['Meta',S.campanhas.filter(c=>c.canal==='Meta')],['Google Ads',S.campanhas.filter(c=>c.canal!=='Meta')]].filter(([n])=>fil==='Todos'||(fil==='Meta')===(n==='Meta'));
+  const mes=today().slice(0,7),siteL=S.leads.filter(l=>l.origem==='Site'&&!l.camp&&!l.codOrig&&(l.criado||'').slice(0,7)===mes),siteV=S.vendas.filter(v=>v.canal==='Site'&&!v.camp&&(v.data||'').slice(0,7)===mes);
+  const cov=o=>{const L=S.leads.filter(l=>l.origem===o&&(l.criado||'').slice(0,7)===mes);return L.length?{n:L.filter(l=>l.codOrig).length,de:L.length}:null};
+  const step=(lbl,val,ctx,cls='')=>`<div class="fa-s ${cls}"><span class="fa-l">${lbl}</span><b>${val}</b><small>${ctx||''}</small></div>`;
+  const chCard=([n,cs])=>{const f=funilAds(cs);if(!cs.length)return `<div class="fa-card"><div class="fa-h"><i class="cp-dot" style="background:${ORIG_COLOR[n]}"></i><b>${n}</b></div><div class="meta">Nenhuma campanha.</div></div>`;
+    const cv=cov(n),g=n==='Google Ads';
+    const prov=g&&siteL.length?(()=>{const lc=f.lc+siteL.length,v=f.v+siteV.length;return `<div class="fa-prov"><b>Provável, incluindo leads de Site sem origem confirmada:</b> ${lc} leads no CRM · custo por lead ${lc?BRL0(f.inv/lc):'—'} · CAC ${v?BRL0(f.inv/v):'—'}<br><span>Leads novos do site já chegam dizendo "no Google" ou "no site" e não entram aqui; esta faixa vale para os leads antigos, de antes da mudança.</span></div>`})():'';
+    return `<div class="fa-card"><div class="fa-h"><i class="cp-dot" style="background:${ORIG_COLOR[n]}"></i><b>${n}</b><span class="meta">${cs.filter(c=>c.ativa).length} ativa${cs.filter(c=>c.ativa).length===1?'':'s'}</span>${cv?`<span class="fa-cov" title="Leads do mês com origem confirmada pela mensagem do site ou por código">${cv.n} de ${cv.de} confirmados</span>`:''}</div>
+      <div class="fa-f">
+        ${step('Investido',BRL0(f.inv),f.cpm?`${BRL0(f.cpm)} por mil impressões`:'')}
+        ${step('Impressões',f.im?NUM(f.im):'—','')}
+        ${step('Cliques',f.cl?NUM(f.cl):'—',f.ctr!=null?`${pcf(f.ctr)} clicaram (CTR) · ${BRL(f.cpc)} por clique`:'')}
+        ${step('Leads na plataforma',f.lp?NUM(f.lp):'—',f.cplP?`${BRL0(f.cplP)} por lead${f.clToL!=null?` · ${pcf(f.clToL)} dos cliques`:''}`:'')}
+        ${step('Leads no CRM',f.lc,f.aprov!=null?`${pc(f.aprov)} chegaram${f.cpl?` · ${BRL0(f.cpl)} por lead`:''}`:'',f.aprov!=null&&f.aprov<.5?'weak':'')}
+        ${step('Test rides',f.tr,f.lcToTr!=null?`${pc(f.lcToTr)} dos leads do CRM`:'')}
+        ${step('Vendas',f.v,f.v?`${f.trToV!=null&&f.trToV<=1?pc(f.trToV)+' dos test rides · ':''}CAC ${BRL0(f.cac)}`:'sem venda atribuída','strong')}
+        ${step('Faturamento',BRL0(f.fat),f.roas?`cada R$ 1 virou ${BRL(f.roas)}`:'')}
+      </div>${prov}</div>`};
+  const fs=CH.map(([n,cs])=>({n,f:funilAds(cs)})).filter(x=>x.f.inv);
+  const say=fs.length===2?(()=>{const[a,b]=fs,bl=[a,b].filter(x=>x.f.cpl).sort((x,y)=>x.f.cpl-y.f.cpl)[0],bv=[a,b].filter(x=>x.f.cac).sort((x,y)=>x.f.cac-y.f.cac)[0];
+    return bl&&bv?(bl===bv?`<b>${bl.n}</b> traz lead e venda mais baratos.`:`<b>${bl.n}</b> traz lead mais barato; <b>${bv.n}</b> traz venda mais barata.`):''})():'';
+  /* campanhas */
+  const rows=S.campanhas.filter(canalOk).map(c=>({c,f:funilAds([c]),r:campFull(c),vd:c.ativa?veredito(c):null})).sort((a,b)=>(b.c.ativa-a.c.ativa)||((a.vd?ord[a.vd.v]:9)-(b.vd?ord[b.vd.v]:9))||(b.c.invest-a.c.invest));
+  const evo=c=>{const P=F.map(f=>f.c[normTxt(c.nome)]).filter(Boolean);if(P.length<2)return '';
+    const d=P.slice(1).map((h,i)=>Math.max(0,(Number(h.leads)||0)-(Number(P[i].leads)||0))).slice(-6),mx=Math.max(1,...d);
+    return `<span class="cq-i">Novos leads por importação <span class="cp-sp">${d.map((x,i)=>`<i class="${i===d.length-1?'cur':''}" style="height:${Math.max(2,Math.round(x/mx*16))}px" title="+${x}"></i>`).join('')}</span></span>`};
+  const camp=({c,f,r,vd})=>{const ls=S.leads.filter(l=>l.camp===c.id),orc=ls.filter(l=>perfEff(l).invest),baixo=orc.filter(l=>perfEff(l).invest==='ate5').length;
+    const pass=[['aprov',f.aprov,f.lp>=5],['lcToTr',f.lcToTr,f.lc>=3],['trToV',f.trToV!=null&&f.trToV<=1?f.trToV:null,f.tr>=2]].filter(x=>x[1]!=null&&x[2]).sort((a,b)=>a[1]-b[1])[0];
+    const w=k=>pass&&pass[0]===k&&pass[1]<.5?'weak':'';
+    return `<div class="cc2 ${c.ativa?'':'off'} dc-${vd?vd.v.toLowerCase():'none'}">
+    <div class="cc2-h"><span class="dc-v dc-${vd?vd.v.toLowerCase():'none'}">${vd?vd.v:c.ativa?'—':'Pausada'}</span><b>${esc(c.nome)}</b><span class="cc2-ch"><i class="cp-dot" style="background:${ORIG_COLOR[c.canal]||'#8b95a3'}"></i>${esc(c.canal)}</span><span class="cc2-cod" title="Código da campanha para a mensagem pronta do WhatsApp">${codTag(c)}</span>${c.atualizado?`<span class="meta">dados de ${ddmm(c.atualizado)}</span>`:''}</div>
+    ${vd?`<div class="cc2-why">${vd.r.x}</div>`:''}
+    <div class="cc2-f">
+      ${step('Investido',BRL0(c.invest),'')}<i class="fa-ar">›</i>
+      ${step('Cliques',c.cliques?NUM(c.cliques):'—',f.ctr!=null?`CTR ${pcf(f.ctr)}`:'')}<i class="fa-ar">›</i>
+      ${step('Leads plataforma',c.leads?NUM(c.leads):'—',f.cplP?`${BRL0(f.cplP)} cada`:'')}<i class="fa-ar">›</i>
+      ${step('No CRM',f.lc,f.aprov!=null?`${pc(f.aprov)} chegaram`:'',w('aprov'))}<i class="fa-ar">›</i>
+      ${step('Test ride',f.tr,f.lcToTr!=null?`${pc(f.lcToTr)} do CRM`:'',w('lcToTr'))}<i class="fa-ar">›</i>
+      ${step('Venda',f.v,f.v?`CAC ${BRL0(f.cac)}`:f.tr?'nenhuma ainda':'',(w('trToV')||'')+(f.v?' strong':''))}<i class="fa-ar">›</i>
+      ${step('Retorno',f.roas?f.roas.toLocaleString('pt-BR',{maximumFractionDigits:1})+'×':'—',f.fat?BRL0(f.fat):'')}
+    </div>
+    <div class="cc2-q">${r.semPerfil?`<span class="cq-i ${r.semPerfil>=.3?'bad':''}">${PCT(r.semPerfil)} sem perfil</span>`:''}${orc.length?`<span class="cq-i ${baixo/orc.length>=.3?'bad':''}">${baixo} de ${orc.length} com orçamento abaixo de R$ 5 mil</span>`:''}${evo(c)}
+      <button type="button" class="dc-btn cp-edb" data-action="cp-edit" data-id="${esc(c.id)}" aria-expanded="${UI.cpEdit===c.id}">${UI.cpEdit===c.id?'Fechar edição':'Editar'}</button></div>
+    ${UI.cpEdit===c.id?`<div class="cp-form">
+      <label class="field">Nome<input class="inp-sm" maxlength="60" value="${esc(c.nome)}" data-change="camp-t" data-id="${esc(c.id)}" data-f="nome"></label>
+      <label class="field">Canal<select class="inp-sm" data-change="camp-t" data-id="${esc(c.id)}" data-f="canal">${opt(['Meta','Google Ads'],c.canal==='Meta'?'Meta':'Google Ads')}</select></label>
+      <label class="field">Código (o mesmo do utm_campaign)<input class="inp-sm mono" maxlength="30" value="${esc(campCod(c))}" data-change="camp-t" data-id="${esc(c.id)}" data-f="cod" placeholder="ex.: bike-eletrica-floripa"></label>
+      <label class="field">CTA<input class="inp-sm" maxlength="40" value="${esc(c.cta||'')}" data-change="camp-t" data-id="${esc(c.id)}" data-f="cta"></label>
+      <label class="field">Investido no mês (R$)<input class="inp-sm" type="number" min="0" step="10" value="${c.invest}" data-change="camp-f" data-id="${esc(c.id)}" data-f="invest"></label>
+      <label class="field">Leads na plataforma<input class="inp-sm" type="number" min="0" value="${c.leads||0}" data-change="camp-f" data-id="${esc(c.id)}" data-f="leads"></label>
+      <div class="cp-form-a"><button class="btn btn-sm ${c.ativa?'pill-on':''}" data-action="camp" data-id="${esc(c.id)}" aria-pressed="${c.ativa}">${c.ativa?'Ativa · pausar':'Pausada · ativar'}</button><span class="meta">Os números são substituídos na próxima importação do relatório.</span>${delBtn('campanhas',c.id)}</div>
+    </div>`:''}
+  </div>`};
+  const cnt=k=>rows.filter(x=>x.vd&&x.vd.v===k).length,resumo=['Pausar','Ajustar','Escalar','Manter'].filter(cnt).map(k=>`<b>${cnt(k)}</b> para ${k.toLowerCase()}`).join(' · ');
+  const ult=[...new Set((S.adsHist||[]).map(h=>h.em))].sort().pop();
+  return `<div class="cp-top"><div class="toggle" role="group" aria-label="Canal">${['Todos','Meta','Google'].map(k=>`<button type="button" data-action="cp-canal" data-v="${k}" aria-pressed="${fil===k}">${k}</button>`).join('')}</div><span class="meta">${ult?`relatório de ${ddmm(ult)}`:'sem relatório no mês'}</span><button type="button" class="dc-btn" data-action="ads-imp">↑ Importar</button></div>
+  ${say?`<p class="mt-say" style="margin:0 2px 8px">${say}</p>`:''}
+  <div class="fa-grid ${CH.length===1?'one':''}">${CH.map(chCard).join('')}</div>
+  <section class="d-sec"><h3>Campanhas ${resumo?`<span class="sp"></span><span class="dc-res">${resumo}</span>`:''}</h3>
+    <div class="cc2-list">${rows.map(camp).join('')||'<div class="empty">Nenhuma campanha neste filtro. Importe o relatório para começar.</div>'}</div>
+    <p class="note">Leads no CRM = leads com a campanha marcada no cadastro (ou reconhecida pelo código da mensagem). Em vermelho, a etapa onde mais leads se perdem.</p>
+    <div class="dc-tetos"><span>Tetos do veredito: custo por lead ${tCPL?BRL0(tCPL):'sem teto'} · custo por venda ${tCAC?BRL0(tCAC):'sem teto'}</span><button type="button" class="cfg-link" data-action="cfg" data-v="growth">⚙ alterar</button></div>
+    ${adsHistHTML()}
+    <details class="inline" style="margin-top:8px"><summary>+ Nova campanha</summary>
       <form data-form="camp" class="form-grid">
         <label class="field full">Nome<input name="nome" required maxlength="60" placeholder="Ex.: Reels Beira-Mar · test ride"></label>
-        <label class="field">Canal<select name="canal">${opt(ORIGENS,'Meta')}</select></label>
+        <label class="field">Canal<select name="canal">${opt(['Meta','Google Ads'],'Meta')}</select></label>
         <label class="field">Etapa da jornada<select name="etapa">${opt(ETAPAS_PECA,'Descoberta')}</select></label>
         <label class="field">CTA<input name="cta" maxlength="40" value="Agendar test ride"></label>
         <label class="field">Investimento no mês (R$)<input name="invest" type="number" min="0" step="10" value="0"></label>
         <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary" type="submit">Criar campanha</button></div>
       </form>
     </details>
-    <p class="note">Para a campanha receber o crédito, escolha a campanha no cadastro do lead (ou no cartão do lead). A venda herda a campanha do lead. “Leads na plataforma” é o número que o Meta/Google informa, para comparar com os que chegaram de fato ao CRM.</p>
   </section>`;
 }
 function pecaCard(p){
@@ -3338,7 +3592,7 @@ function renderPocket(){
 /* =========================================================
    7. DRAWER · MODAL · TOAST
    ========================================================= */
-const RENDER={comercial:renderComercial,oficina:renderOficina,financeiro:renderFinanceiro,criativo:renderCampanhas};
+const RENDER={comercial:renderComercial,oficina:renderOficina,financeiro:renderFinanceiro,criativo:renderDecisao};
 let lastFocus=null;
 function openDrawer(k,tab){
   if(!ROOMS[k])return;
@@ -3355,21 +3609,86 @@ function openDrawer(k,tab){
 }
 function renderTabs(){
   const r=ROOMS[UI.room];
-  const T={comercial:[['panel','Leads'],['fu','Follow-ups'],['tr','Test Rides'],['jor','Jornada'],['cli','Clientes']],
+  const T={comercial:[['panel','Leads'],['fu','Follow-ups'],['tr','Test Rides'],['cli','Clientes']],
     oficina:[['panel','Hoje'],['banc','Bancada'],['ag','Agenda'],['pass','Pós-venda'],['pc','Peças']],
     financeiro:[['panel','Visão geral'],['rev','RevOps'],['ind','Metas'],['est','Estoque'],['canais','Canais']],
-    criativo:[['camp','Campanhas'],['intel','Inteligência'],['pecas','Peças'],['fluxo','Fluxo']]}[UI.room]||[['panel','Painel']];
+    criativo:[['camp','Geral'],['cmp','Campanhas'],['jor','Jornada'],['intel','Público']]}[UI.room]||[['panel','Painel']];
   const badge=v=>UI.room==='comercial'&&v==='tr'?(()=>{const n=S.leads.filter(l=>!l.arq&&l.etapa==='Test Ride'&&!l.trOk&&l.fu<=today()).length;return n?` <span class="tab-n">${n}</span>`:''})():UI.room==='comercial'&&v==='fu'?(()=>{const f=followups(),late=f.filter(l=>l.fu<today()).length;return f.length?` <span class="tab-n ${late?'late':''}">${f.length}</span>`:''})():'';
   $('#d-tabs').innerHTML=T.map(([v,l])=>`<button role="tab" data-action="tab" data-v="${v}" aria-selected="${UI.tab===v}">${l}${badge(v)}</button>`).join('')+`<button role="tab" class="tab-chat" data-action="tab" data-v="chat" aria-selected="${UI.tab==='chat'}"><span class="dot-ai" aria-hidden="true"></span>${esc(r.agente)}</button>`;
 }
-const TABR=()=>UI.tab==='pc'&&UI.room==='oficina'?renderPecasOf():UI.tab==='rev'?renderRevOps():UI.tab==='tr'?renderTestRides():UI.tab==='intel'?renderIntel():UI.tab==='jor'?renderJornada():UI.tab==='fu'?renderFollowups():UI.tab==='banc'?renderBancada():UI.tab==='pass'?renderPassaporte():UI.tab==='contas'?renderFinanceiro():UI.tab==='canais'?renderFinCanais():UI.tab==='fluxo'?renderFluxo():UI.tab==='camp'?renderCampanhas():UI.tab==='pecas'?renderPecas():UI.tab==='ag'?renderAgenda():UI.tab==='cli'?renderClientes():UI.tab==='ind'?renderIndicadores():UI.tab==='est'?renderEstoque():RENDER[UI.room]();
+const TABR=()=>UI.tab==='pc'&&UI.room==='oficina'?renderPecasOf():UI.tab==='rev'?renderRevOps():UI.tab==='tr'?renderTestRides():UI.tab==='intel'?renderIntel():UI.tab==='jor'?renderJornada():UI.tab==='fu'?renderFollowups():UI.tab==='banc'?renderBancada():UI.tab==='pass'?renderPassaporte():UI.tab==='contas'?renderFinanceiro():UI.tab==='canais'?renderFinCanais():UI.tab==='fluxo'?renderFluxo():UI.tab==='camp'?renderDecisao():UI.tab==='cmp'?renderCampanhas():UI.tab==='ag'?renderAgenda():UI.tab==='cli'?renderClientes():UI.tab==='ind'?renderIndicadores():UI.tab==='est'?renderEstoque():RENDER[UI.room]();
 function renderBody(){$('#d-body').innerHTML=UI.tab==='chat'?chatHTML(UI.room):TABR()}
 function closeDrawer(){
   UI.room=null;$('#drawer').classList.remove('open');$('#drawer').setAttribute('aria-hidden','true');$('#scrim').classList.remove('open');
   syncLabels();if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
 }
+
+/* ===== Configurações: tudo o que é ajuste do escritório num lugar só ===== */
+const CFG_TABS=[['lojas','Lojas'],['comercial','Atendimento'],['tr','Test rides'],['oficina','Oficina'],['garantia','Garantia'],['growth','Growth'],['dados','Dados e conexão']];
+function openCfg(tab){UI.cfgTab=tab||UI.cfgTab||'lojas';UI.armed=null;renderCfg();const d=$('#cfg-modal');if(!d.open)d.showModal()}
+function renderCfg(){const t=UI.cfgTab||'lojas';$('#cfg-nav').innerHTML=CFG_TABS.map(([k,l])=>`<button type="button" data-action="cfg" data-v="${k}" aria-pressed="${k===t}">${l}</button>`).join('');
+  const b=$('#cfg-body'),st=b.scrollTop;b.innerHTML=({lojas:cfgLojas,comercial:cfgComercial,tr:cfgTR,oficina:cfgOficina,garantia:cfgGar,growth:cfgGrowth,dados:cfgDados}[t]||cfgLojas)();b.scrollTop=st}
+function cfgLojas(){const L=S.lojas||[];return `<h3 class="cfg-h">Lojas da rede</h3>
+  ${L.map(l=>{const ed=UI.lojaEd===l.id,armed=UI.armed==='loja:'+l.id;return `<div class="cfg-loja ${l.id===S.lojaAtual?'cur':''}"><div class="row between"><span><b>${esc(l.nome)}</b> <small class="meta">${esc(l.cidade||'')}${l.id===S.lojaAtual?' · loja aberta agora':''}</small></span>
+    <span class="row" style="gap:6px"><button type="button" class="dc-btn" data-action="loja-ed" data-id="${esc(l.id)}">${ed?'Fechar':'Editar'}</button>${L.length>1?`<button type="button" class="del-v ${armed?'armed':''}" data-action="loja-del" data-id="${esc(l.id)}">${armed?'Confirmar: excluir loja e os dados dela':'Excluir'}</button>`:''}</span></div>
+    ${ed?`<form data-form="loja-ed" data-id="${esc(l.id)}" class="form-grid" style="margin-top:8px">
+      <label class="field">Nome<input class="inp-sm" name="nome" required maxlength="40" value="${esc(l.nome)}"></label>
+      <label class="field">Bairro, cidade<input class="inp-sm" name="cidade" maxlength="40" value="${esc(l.cidade||'')}"></label>
+      <label class="field">Local do clima<input class="inp-sm" name="local" maxlength="80" value="${esc(l.local||'')}" placeholder="automático pelo bairro e cidade"></label>
+      <label class="field">Como aparece nas mensagens<input class="inp-sm" name="msg" maxlength="40" value="${esc(l.msg||'')}" placeholder="${esc(LNO(l))}"><small class="meta">ex.: "no Estreito", "na Pedra Branca"</small></label>
+      <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary btn-sm" type="submit">Salvar</button></div><div id="lj-geo" class="lj-geo full" hidden></div></form>`:''}
+    ${armed?`<p class="note" style="color:#ff9a8f">Apaga leads, vendas, contas, campanhas e metas desta loja. Estoque, agenda e bancada da oficina passam para a loja ${esc((L.find(x=>x.id!==l.id)||{}).nome||'')}. Faça um backup antes.</p>`:''}</div>`}).join('')}
+  <h3 class="cfg-h">Nova loja</h3><form data-form="loja-new" class="form-grid"><label class="field">Nome<input class="inp-sm" name="nome" required maxlength="40" placeholder="Ex.: Loja Centro"></label><label class="field">Bairro, cidade<input class="inp-sm" name="cidade" maxlength="40" placeholder="Ex.: Centro, Florianópolis"></label><div class="full row" style="justify-content:space-between"><span class="meta">O clima da loja é ajustado sozinho pelo bairro e cidade.</span><button class="btn btn-primary btn-sm" type="submit">+ Criar loja</button></div></form>`}
+function cfgComercial(){const sec=null;return `<h3 class="cfg-h">Atendimento comercial</h3><section><div class="card stack">
+    <label class="field">Assinatura das mensagens<input class="inp-sm" data-change="vendedor" value="${esc(S.cfg.vendedor)}" maxlength="30"></label>
+    <label class="field">Abrir WhatsApp em<select class="inp-sm" data-change="waMode">${opt([['app','App do aparelho (wa.me)'],['web','WhatsApp Web no navegador']],S.cfg.waMode||'web')}</select></label>
+    <span class="meta">No computador: WhatsApp Business Web aberto no navegador. No celular, os links abrem sempre o app.</span>
+    <label class="field">Alerta de lead sem resposta após (minutos)<input class="inp-sm" type="number" min="1" max="120" value="${S.cfg.tprAlert||5}" data-change="tpr-min"></label>
+    <span class="meta">Vale para leads cadastrados como Novo, sem a primeira resposta marcada.</span></div>
+    <h3 style="margin-top:16px">Respostas rápidas <span class="meta" style="text-transform:none;font-family:Inter">aparecem na fila de vendas · use {nome} para o primeiro nome</span></h3>
+    <div class="stack">${respList().map((r,i)=>`<div class="card stack" style="gap:6px"><div class="row between"><input class="inp-sm grow" data-change="resp-f" data-i="${i}" data-f="t" value="${esc(r.t)}" aria-label="Título">${delBtn('resp',String(i))}</div><textarea class="inp" rows="2" data-change="resp-f" data-i="${i}" data-f="x" aria-label="Texto">${esc(r.x)}</textarea></div>`).join('')}</div>
+    <form data-form="resp" class="card stack" style="gap:6px;margin-top:8px"><input class="inp-sm" name="t" required maxlength="40" placeholder="Título (ex.: Troca de bateria)"><textarea class="inp" name="x" rows="2" required placeholder="Texto da resposta"></textarea><div class="row" style="justify-content:flex-end"><button class="btn btn-sm btn-primary" type="submit">Adicionar resposta</button></div></form>
+  </section>${renderFluxo()}`}
+function cfgTR(){return `<h3 class="cfg-h">Test rides</h3>    <div class="card" style="padding:4px 0 8px">
+      <div style="padding:12px 12px 0">${diasHTML('tr')}</div>
+      <form data-form="tr-cfg" class="form-grid"><label class="field full">Horários (separados por vírgula)<input name="slots" value="${esc(trSlots().join(', '))}"></label>
+        <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary" type="submit">Salvar horários</button></div></form>
+    </div>
+`}
+function cfgOficina(){const o=oficinaMes();return `<h3 class="cfg-h">Oficina</h3>    <div class="card" style="padding:8px 0">
+      <form data-form="ag-cfg" class="form-grid">
+        <label class="field full">Horários de agendamento (separados por vírgula)<input name="slots" value="${esc(S.cfg.slots.join(', '))}"></label>
+        <div class="full">${diasHTML('of')}</div>
+        <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary" type="submit">Salvar horários</button></div>
+      </form>
+    </div>
+<h3 class="cfg-h">Valores dos serviços</h3>      <div>
+        <div class="stack" style="gap:6px;margin-top:8px">${SERVICOS.map(sv=>`<label class="row between of-ln"><span>${esc(sv)}<small class="meta" style="display:block">${esc(SERV_DESC[sv]||'')}</small></span><span class="meta" style="white-space:nowrap">R$ <input class="val-in" style="width:80px" type="number" min="0" step="10" value="${Number((S.cfg.servPreco||{})[sv])||''}" placeholder="0" data-change="serv-preco" data-s="${esc(sv)}" aria-label="Valor ${esc(sv)}"></span></label>`).join('')}</div>
+        <label class="row between of-ln" style="margin-top:6px"><span>Lucro da oficina sobre preventiva e avançada<small class="meta" style="display:block">faixa estimada, com o profissional pago por diária</small></span><span class="meta" style="white-space:nowrap"><input class="val-in" style="width:44px" type="number" min="0" max="100" value="${S.cfg.ofMin??''}" data-change="of-min" aria-label="Mínimo"> a <input class="val-in" style="width:44px" type="number" min="0" max="100" value="${S.cfg.ofMax??''}" data-change="of-max" aria-label="Máximo"> %</span></label>
+        <p class="note">A previsão usa estes valores para as manutenções agendadas. Em cada OS da bancada dá para ajustar o valor.</p>
+      </div>
+`}
+function cfgGar(){return `<h3 class="cfg-h">Garantia</h3>  <div>
+    <div style="padding:12px" class="stack">
+      <div class="meta">3 meses pelo fabricante + 12 meses pela loja. A garantia da loja exige manutenção a cada 3 meses (3, 6, 9 e 12 meses), preventiva ou avançada. Quando a carteira vem do painel, as datas das manutenções são as do painel.</div>
+      <form data-form="gar-cfg" class="form-grid">
+        <label class="field">Tolerância após o vencimento (dias)<input name="tol" type="number" min="0" max="60" value="${garTol()}"></label>
+        <label class="field">Bateria coberta pela garantia da loja?<select name="bat">${opt([['não','Não: só pelo fabricante (3 meses)'],['sim','Sim'],['a confirmar','A confirmar']],S.cfg.garBateria||'não')}</select></label>
+        <div class="full row" style="justify-content:flex-end"><button class="btn btn-primary btn-sm" type="submit">Salvar regras</button></div>
+      </form></div></div>`}
+function cfgGrowth(){const dias=adsDias(),WDF=['dom','seg','ter','qua','qui','sex','sáb'],tCPL=Number(S.cfg.tetoCPL)||0,tCAC=Number(S.cfg.tetoCAC)||0;return `<h3 class="cfg-h">Growth · anúncios</h3>
+  <div class="dc-dias-r"><span class="meta">Dias de importar o relatório:</span>${[1,2,3,4,5,6,0].map(d=>`<button type="button" class="dc-d" data-action="ads-dia" data-v="${d}" aria-pressed="${dias.includes(d)}">${WDF[d]}</button>`).join('')}</div>
+  <div class="dc-tetos"><span>Tetos para o veredito:</span><label>custo por lead R$ <input class="val-in" type="number" min="0" step="5" value="${tCPL||''}" placeholder="—" data-change="teto" data-k="tetoCPL" aria-label="Teto de custo por lead"></label><label>custo por venda R$ <input class="val-in" type="number" min="0" step="50" value="${tCAC||''}" placeholder="—" data-change="teto" data-k="tetoCAC" aria-label="Teto de custo por venda"></label></div>
+  <p class="note">Sem teto, o veredito compara cada campanha com a média do mês. Os dias de importar valem para o lembrete no Meu dia e o selo da sala Growth.</p>`}
+function cfgDados(){return `<h3 class="cfg-h">Conexão com o Claude</h3><p class="note">Onde os agentes das salas buscam as respostas (servidor da Vercel ou o próprio Claude).</p><button type="button" class="btn btn-sm" data-action="ai-setup">Configurar conexão</button>
+  <h3 class="cfg-h">Backup</h3><p class="note">🔒 ${AVISO_BK}</p><div class="row" style="gap:6px;flex-wrap:wrap"><button type="button" class="btn btn-sm" data-action="backup-dl">Exportar tudo (arquivo)</button><button type="button" class="btn btn-sm" data-action="backup-import">Importar tudo</button><button type="button" class="btn btn-sm" data-action="import-undo">Desfazer última importação</button></div>
+  <h3 class="cfg-h">Dados de exemplo</h3><div class="row" style="gap:6px;flex-wrap:wrap"><button type="button" class="btn btn-sm" data-action="data-clear">Começar do zero (apagar exemplos)</button><button type="button" class="btn btn-sm" data-action="backup-reset">Restaurar dados de exemplo</button></div>`}
+function excluirLoja(id){const L=S.lojas||[];if(L.length<2)return;const resto=L.find(x=>x.id!==id);if(id===S.lojaAtual)trocarLoja(resto.id,true);
+  const alvo=(S.lojaAtual===resto.id?resto.id:S.lojaAtual);['estoque','agenda','os'].forEach(k=>(S[k]||[]).forEach(x=>{if(x.loja===id)x.loja=alvo}));
+  if(S.redeLojas)delete S.redeLojas[id];S.lojas=L.filter(x=>x.id!==id);try{if(localStorage.getItem('pace-hq-loja')===id)localStorage.setItem('pace-hq-loja',S.lojaAtual)}catch(e){}
+  syncLojaBtn();loadWX();clock();refresh();toast('Loja excluída')}
 function refresh(){
-  save();syncBackupBar();renderHUD();syncDayBtn();if(UI.mode==='pocket')renderPocket();if($('#day-modal').open)renderDay();
+  save();syncBackupBar();renderHUD();syncDayBtn();if(UI.mode==='pocket')renderPocket();if($('#day-modal').open)renderDay();if($('#cfg-modal')&&$('#cfg-modal').open)renderCfg();
   if(UI.room&&UI.tab==='chat'){$('#d-sub').textContent=`${ROOMS[UI.room].agente} · ${ROOMS[UI.room].papel} · ${statusOf(UI.room)}`}
   else if(UI.room){
     const body=$('#d-body'),st=body.scrollTop;
@@ -3400,6 +3719,16 @@ function findModelo(t){const n=normTxt(t).replace(/\s+/g,'');for(const k of Obje
   for(const k of Object.keys(MODELOS)){const base=normTxt(k).split(' ')[0];if(base.length>=3&&new RegExp('\\b'+base+'\\b').test(normTxt(t)))return k}return ''}
 function findOrigem(t){const n=normTxt(t);if(/instagram|\big\b|facebook|\bfb\b|meta|lead ads|formulario instantaneo/.test(n))return 'Meta';if(/google|adwords|pesquisa/.test(n))return 'Google Ads';if(/site|lojapace|landing|formulario do site/.test(n))return 'Site';return ''}
 function findBairro(t){const n=normTxt(t);for(const b of BAIRROS){const k=normTxt(b.split('·')[0]);if(k&&n.includes(k))return b}return ''}
+/* código de origem na 1ª mensagem: [G] Google Ads · [M] Meta · [S] site orgânico · [G-XXX]/[M-XXX] com a campanha */
+const COD_RE=/\[\s*(G|M|S)(?:\s*-\s*([A-Za-z0-9_-]{1,30}))?\s*\]/i;
+function campCod(c){if(c.cod)return c.cod;const ini=normTxt(c.nome).replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(w=>w.length>2&&!['para','com','dos','das','gratis'].includes(w)).map(w=>w[0]).join('').toUpperCase().slice(0,3)||'C';
+  let k=ini,i=2;while(S.campanhas.some(x=>x!==c&&x.cod===k))k=ini+(i++);c.cod=k;return k}
+function codTag(c){return `[${c.canal==='Meta'?'M':'G'}-${campCod(c)}]`}
+/* o site já troca "no site"/"pelo site" por "no Google"/"pelo Google" quando a visita veio de anúncio do Google */
+const SITE_MSG_RE=/(?:vi (?:a |o |os )?.{0,40}?\b(no|pelo) (google|site)\b|vim pel[oa] (google|site)\b)/i;
+function findCodigo(t){const x=String(t||'').match(SITE_MSG_RE);if(x&&!COD_RE.test(t)){const g=/google/i.test(x[2]||x[3]||'');return{origem:g?'Google Ads':'Site',camp:'',site:1}}
+  const m=String(t||'').match(COD_RE);if(!m)return null;const o={origem:{G:'Google Ads',M:'Meta',S:'Site'}[m[1].toUpperCase()],camp:''};
+  if(m[2]){const k=m[2].toLowerCase(),c=S.campanhas.find(x=>campCod(x).toLowerCase()===k);if(c)o.camp=c.id}return o}
 function findCamp(t){const n=normTxt(t);if(!n)return '';const c=S.campanhas.find(c=>n.includes(normTxt(c.nome))||normTxt(c.nome).includes(n));return c?c.id:''}
 /* Lê um bloco de texto (mensagem, notificação de formulário, card do Meta) e devolve os campos do lead */
 const LBL={nome:/^(nome( completo)?|full[ _]?name|name|cliente)$/,tel:/^(telefone|celular|whats(app)?|phone([ _]number)?|fone|contato)$/,email:/^(e-?mail|email)$/,bairro:/^(bairro|cidade|city|regiao|endereco)$/,modelo:/^(modelo|produto|interesse|qual modelo.*|bike|veiculo)$/,origem:/^(origem|platform|plataforma|source|canal)$/,camp:/^(campanha|campaign([ _]name)?|anuncio|ad[ _]name)$/,obs:/^(mensagem|obs(ervacao)?|comentario|message|duvida)$/};
@@ -3414,6 +3743,7 @@ function parseLeadText(txt){
   if(!o.nome){const c=rest.find(l=>!/\d{4}|@|http/.test(l)&&/^[A-Za-zÀ-ÿ'´`]+(\s+[A-Za-zÀ-ÿ'´`]+){1,4}$/.test(l)&&!/^(ola|oi|bom dia|boa tarde|boa noite)\b/i.test(normTxt(l)));if(c)o.nome=c}
   if(!o.nome){const m=all.match(/(?:sou (?:o|a)|meu nome e|aqui e (?:o|a)?)\s+([A-Za-zÀ-ÿ]+(?:\s+[A-Za-zÀ-ÿ]+)?)/i);if(m)o.nome=m[1]}
   o.tel=normTel(o.tel);o.modelo=findModelo(o.modelo||all);o.origem=findOrigem(o.origem)||findOrigem(all);o.bairro=o.bairro?(findBairro(o.bairro)||o.bairro):findBairro(all);o.camp=findCamp(o.camp);
+  {const cd=findCodigo(all);if(cd){o.origem=cd.origem;if(cd.camp)o.camp=cd.camp;o.cod=1}}
   if(!o.obs){const m=rest.filter(l=>l.length>20&&!/\d{8}/.test(l)).slice(0,1)[0];if(m)o.obs=m.slice(0,160)}
   o.nome=titleCase(o.nome).slice(0,80);
   return o;
@@ -3453,7 +3783,9 @@ function splitLeadBlocks(txt){
   return withTel.length>1?withTel:[String(txt)];
 }
 const telExiste=t=>S.leads.find(l=>digits(l.tel)===t);
-function novoLead(d){return Object.assign(_novoLead(d),{ts:d.ts||null})}
+/* o mesmo telefone em outra loja da rede (só para avisar; o lead fica na loja dele) */
+function telOutraLoja(t){const R=S.redeLojas||{};for(const id of Object.keys(R)){const x=(R[id].leads||[]).find(l=>digits(l.tel)===t);if(x)return{l:x,loja:lojaNome(id)}}return null}
+function novoLead(d){const l=Object.assign(_novoLead(d),{ts:d.ts||null});if(d.cod)l.codOrig=1;return l}
 function _novoLead(d){const et=ETAPAS.includes(d.etapa)?d.etapa:'Novo',hi=[{e:'Novo',d:d.criado||today()}];if(et!=='Novo')hi.push({e:et,d:today()});return{id:uid(),camp:d.camp||'',hist:hi,criado:d.criado||today(),nome:d.nome,tel:d.tel,email:d.email||'',origem:ORIGENS.includes(d.origem)?d.origem:(LAST_ORIGEM||'Meta'),modelo:MODELOS[d.modelo]?d.modelo:(Object.keys(MODELOS)[1]||Object.keys(MODELOS)[0]),etapa:et,bairro:d.bairro||'',fu:d.fu!==undefined?d.fu:today(),hora:'',obs:d.obs||''}}
 let LAST_ORIGEM=null,IMP=null;
 /* colar no cadastro: 1 lead preenche o formulário; vários abrem a conferência em lote */
@@ -3468,7 +3800,7 @@ function fillLeadForm(o,fromWa){
   [['nome','nome'],['email','email'],['bairro','bairro'],['obs','obs']].forEach(([k,fk])=>{if(o[k]){f[fk].value=o[k];n++}});
   if(o.tel){f.tel.value=fmtTel(o.tel);n++}
   if(o.tpr!=null){f.tpr.value=o.tpr;n++}
-  if(o.modelo){f.modelo.value=o.modelo;n++}if(o.origem){f.origem.value=o.origem;n++}if(o.camp){f.camp.value=o.camp;n++}
+  if(o.modelo){f.modelo.value=o.modelo;n++}if(o.origem){f.origem.value=o.origem;n++}if(o.camp){f.camp.value=o.camp;n++}if(o.cod)f.dataset.cod='1';
   if(!o.tel){setTimeout(()=>{f.tel.focus();f.tel.classList.add('need')},30)}else f.tel.classList.remove('need');
   const dup=o.tel&&telExiste(o.tel);$('#lm-paste-msg').innerHTML=dup?`<b style="color:var(--late)">Telefone já cadastrado:</b> ${esc(dup.nome)} (${esc(dup.etapa)}). <button type="button" class="btn btn-sm" data-action="lead-open-dup" data-id="${esc(dup.id)}">Ver lead</button>`:n?`${fromWa?'Conversa do WhatsApp lida. ':''}${n} campo(s) preenchido(s)${!o.tel?'. <b>Falta o telefone</b>: o contato está salvo com nome no WhatsApp, copie o número no perfil dele':''}${!o.nome?'. <b>Falta o nome</b>: o contato não está salvo, digite como ele se apresentou':''}. Confira e salve.`:'Não reconheci os dados. Preencha manualmente.';
 }
@@ -3510,7 +3842,7 @@ async function importSheetFile(file){
 }
 function openImportPreview(list,fonte){
   const seen=new Set();
-  IMP=list.map(o=>{let st='novo';if(!o.nome&&!o.tel)st='vazio';else if(!telOk(o.tel))st='sem tel';else if(telExiste(o.tel)||seen.has(o.tel))st='duplicado';if(o.tel)seen.add(o.tel);return{...o,st,on:st==='novo'}}).filter(x=>x.st!=='vazio');
+  IMP=list.map(o=>{let st='novo';if(!o.nome&&!o.tel)st='vazio';else if(!telOk(o.tel))st='sem tel';else if(telExiste(o.tel)||seen.has(o.tel)||telOutraLoja(o.tel))st='duplicado';if(o.tel)seen.add(o.tel);return{...o,st,on:st==='novo'}}).filter(x=>x.st!=='vazio');
   renderImport(fonte);$('#imp-modal').showModal();
 }
 function renderImport(fonte){
@@ -3542,8 +3874,9 @@ function leadSaved(l){ /* depois de salvar: boas-vindas no WhatsApp em 1 clique 
       <button type="button" class="btn" data-action="lead-again">Cadastrar outro</button><button type="button" class="btn" data-action="modal-close">Fechar</button></div>`;
 }
 function openLeadModal(){
-  const f=$('#lead-modal form');f.reset();f.classList.remove('saved');f.tel.classList.remove('need');const dn=$('#lm-done');if(dn)dn.remove();
+  const f=$('#lead-modal form');f.reset();delete f.dataset.cod;f.classList.remove('saved');f.tel.classList.remove('need');const dn=$('#lm-done');if(dn)dn.remove();
   f.origem.innerHTML=opt(ORIGENS,LAST_ORIGEM||'Meta');$('#lm-paste').value='';$('#lm-paste-msg').textContent='';f.camp.innerHTML=opt([['','Nenhuma / orgânico'],...S.campanhas.map(c=>[c.id,`${c.nome} (${c.canal})`])],'');f.modelo.innerHTML=opt(Object.keys(MODELOS),'V40 Pro');f.etapa.innerHTML=opt(ETAPAS.slice(0,4),'Novo');
+  $('#lm-q').innerHTML='<span class="meta">Se já souber (opcional, 1 clique):</span>'+['invest','pag','uso'].map(k=>`<div class="lm-qr"><span>${PERFIL[k].t}</span>${PERFIL[k].o.map(([v,t])=>`<label class="chip-r"><input type="radio" name="q_${k}" value="${v}"><span>${esc(t)}</span></label>`).join('')}</div>`).join('');
   $('#lead-modal').showModal();setTimeout(()=>f.nome.focus(),30);
 }
 function nextHalfHour(){const d=new Date();d.setMinutes(d.getMinutes()<30?30:60,0,0);const h=Math.min(18,Math.max(9,d.getHours()));return `${pad(h)}:${h===d.getHours()?pad(d.getMinutes()):'00'}`}
@@ -3643,7 +3976,7 @@ const AGENT_AI={
 - Impostos (DAS/Simples), contratos e questões jurídicas: organize e sugira confirmar com o contador ou um advogado.
 - Ação que você pode propor: <acao tipo="admin" titulo="…" data="AAAA-MM-DD"/> (nova tarefa no checklist administrativo).`,
     ctx:()=>{const m=M();return{metas:metasCtx(),metaDoMes:S.cfg.meta,faturamentoMes:m.fat,percentualMeta:Math.round(m.pct*100),
-      vendasDoMes:m.vendasMes.map(v=>({data:v.data,modelo:v.modelo,plano:v.plano,pagamento:v.pag,canal:v.canal,valorPix:valorVenda(v)})),
+      vendasDoMes:m.vendasMes.map(v=>({data:v.data,modelo:v.modelo,pagamento:v.pag,canal:v.canal,valorPix:valorVenda(v)})),
       saldoEmCaixa:S.cfg.saldo,custoFixoMensal:S.cfg.custoFixo,saldoPrevisto30d:m.previsto,
       contas:S.contas.map(c=>({descricao:c.desc,tipo:c.tipo,valor:c.valor,vencimento:c.venc,quitada:c.ok})),
       canais:ORIGENS.map(c=>({canal:c,investimento:c==='Site'?0:investCanal(c),leads:m.byOrig[c],vendas:m.vendasMes.filter(v=>v.canal===c).length})),
@@ -3653,7 +3986,7 @@ const AGENT_AI={
     intro:'Oi! Sou o agente de Growth & Marca. Leio o funil para achar onde a venda trava, transformo isso em briefs criativos no padrão da PACE e acompanho quais campanhas e peças viram venda, não só curtida.',
     chips:['Qual o gargalo do funil e que experimento você sugere para esta semana?','Escreva um brief criativo para a etapa com pior conversão','Com o último relatório de anúncios, onde coloco a verba da próxima semana?','Que peça de prova social posso fazer com os clientes recentes?'],
     papel:`Você é o agente de Growth & Marca da PACE. Você conversa com um sócio especialista em marketing e estética, que precisa de um olhar de vendas. Sua meta é conectar cada peça a uma etapa da jornada de compra e a um resultado (test ride, proposta, venda, avaliação).
-- Comece pelos números da jornada: aponte o gargalo (menor % de passagem entre etapas) e onde não há peça no ar.
+- Comece pelos números das campanhas: o que escalar, ajustar ou pausar, e se a importação do relatório está em dia.
 - Experimentos: 1 por vez, com hipótese, peça, etapa, CTA, métrica e prazo (ex.: 2 semanas).
 - Brief criativo: objetivo · etapa do funil · público · mensagem-chave · formato · referências visuais na identidade PACE · CTA · métrica de sucesso.
 - Identidade PACE: cores Daintree #022226 (fundo), Ignite Neon #E1EF59 (só como acento e CTA; texto sobre neon em Daintree), Off White #F0EEE7 (texto), Core Graphite #20262F (cards). Fonte Inter, títulos fortes com tracking negativo. Logotipo no topo ou símbolo P. Tom direto, próximo e local (Estreito, Beira-Mar Continental, Ponte Hercílio Luz, Coqueiros, Kobrasol). Assinatura "Quem vende, cuida."
@@ -3668,7 +4001,7 @@ const AGENT_AI={
       campanhas:S.campanhas.map(c=>{const f=campFull(c),rc=campRec(c,f,midiaResumo());return{nome:c.nome,canal:c.canal,etapa:c.etapa,cta:c.cta,ativa:c.ativa,periodo:c.ini?`${c.ini} a ${c.fim}`:null,investimento:c.invest,impressoes:c.impr||null,cliques:c.cliques||null,ctr:f.ctr,cpc:f.cpc,leadsNaPlataforma:c.leads,leadsNoCRM:f.leads,aproveitamento:f.aprov,percentualSemPerfil:f.semPerfil,testRides:f.tr,vendas:f.vendas,faturamento:f.fat,cac:f.cac,retorno:f.roas,leituraAutomatica:rc&&rc.t}}),
       midiaPorCanal:midiaResumo().canais,
       pecas:S.pauta.map(p=>({titulo:p.t,formato:p.formato,etapa:p.etapa,status:p.status,cta:p.cta,data:p.due})),
-      clientesRecentes:S.vendas.filter(v=>diffDays(v.data)>=-45).map(v=>({nome:first(v.cliente),modelo:v.modelo,plano:v.plano,avaliou:!!v.aval,indicou:!!v.ind})),
+      clientesRecentes:S.vendas.filter(v=>diffDays(v.data)>=-45).map(v=>({nome:first(v.cliente),modelo:v.modelo,avaliou:!!v.aval,indicou:!!v.ind})),
       leadsArquivadosParaCampanha:MOTIVOS.map(mo=>({motivo:mo,total:S.leads.filter(l=>l.arq&&l.arqMotivo===mo).length,modelos:[...new Set(S.leads.filter(l=>l.arq&&l.arqMotivo===mo).map(l=>l.modelo))]})).filter(x=>x.total),
       metas:metasCtx(),datasComerciais:{blackFriday:blackFriday(),natal:natal()},leadsPorOrigem:m.byOrig,inteligenciaComercial:intelCtx()}}
 
@@ -3987,6 +4320,8 @@ function agoraHTML(){
       (S.nps||[]).filter(x=>x.nota!=null&&x.nota<=6&&!x.tratado).slice(0,max).map(x=>`<div class="ag-r"><span class="grow"><b>${esc(x.nome||'Cliente')} · nota ${x.nota}</b><small>${x.tipo==='venda'?'compra':'oficina'} · ${esc(x.modelo||'')}</small></span>${x.tel?waBtn(x.tel,`Oi${x.nome?', '+x.nome:''}! Obrigado pela sinceridade. Quero entender o que não foi bem e resolver: posso te ligar hoje?`,'Falar'):''}<button class="btn btn-sm" data-action="nps-ok" data-id="${esc(x.id)}">Tratado</button></div>`).join(''),'')+
     blk('tr','Pesquisas para enviar',(S.nps||[]).filter(x=>x.st==='pendente'&&x.envio<=t&&x.tel).length,
       (S.nps||[]).filter(x=>x.st==='pendente'&&x.envio<=t&&x.tel).slice(0,max).map(x=>`<div class="ag-r"><span class="grow"><b>${esc(x.nome||'Cliente')}</b><small>${x.tipo==='venda'?'pós-compra':'pós-oficina'} · ${esc(x.modelo||'')}</small></span>${waBtn(x.tel,npsMsg(x),'Enviar',`data-nps-env="${esc(x.id)}"`)}</div>`).join(''),'')+
+    (()=>{const ip=adsPend();return ip?blk(ip.atraso?'late':'tr','Relatório de anúncios',1,`<div class="ag-r"><span class="grow"><b>${ip.atraso?'Importação atrasada':'Dia de importar'}</b><small>período "este mês até hoje" · ${ip.lbl}</small></span><button class="btn btn-sm btn-primary" data-action="ads-imp">Importar</button></div>`,''):''})()+
+    (()=>{const vc=vendasConf();return vc.length?blk('late','Vendas a confirmar',vc.length,vc.slice(0,max).map(vendaConfHTML).join(''),more(vc.length,'cli','Ver todas')):''})()+
     blk('nm','Quentes sem nome',semN.length,
       semN.slice(0,max).map(l=>`<div class="ag-r"><span class="grow">${nameField(l)}<small>${esc(l.etapa)}${l.fu?` · contato ${l.fu===t?'hoje':ddmm(l.fu)}`:''}</small></span>${waBtn(l.tel,'','Conversa')}</div>`).join(''),
       more(semN.length,'semnome','Nomear todos'));
@@ -4089,14 +4424,13 @@ const norm=x=>String(x||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''
 function gsIndex(){
   const it=[];const add=(tipo,titulo,sub,go,txt)=>it.push({tipo,titulo,sub,go,txt:norm([titulo,sub,txt].join(' '))});
   S.leads.forEach(l=>add(l.arq?'Lead arquivado':'Lead',l.nome,`${l.modelo} · ${l.etapa}${l.arq?' · '+(l.arqMotivo||''):''} · ${l.origem}`,()=>{UI.view=l.arq?'arquivo':'ativos';UI.q=l.nome;UI.etapa='Todos';UI.origem='Todas';UI.dFil='Todos';openDrawer('comercial','panel')},[l.tel,digits(l.tel),l.email,l.bairro,l.obs].join(' ')));
-  S.vendas.forEach(v=>add('Cliente',v.cliente,`${v.modelo} · ${v.plano} · ${ddmm(v.data)}/${v.data.slice(2,4)}`,()=>{UI.cliPer='todos';UI.cliQ=v.cliente;openDrawer('comercial','cli')},[v.tel,v.canal].join(' ')));
+  S.vendas.forEach(v=>add('Cliente',v.cliente,`${v.modelo} · ${ddmm(v.data)}/${v.data.slice(2,4)}`,()=>{UI.cliPer='todos';UI.cliQ=v.cliente;openDrawer('comercial','cli')},[v.tel,v.canal].join(' ')));
   S.os.filter(o=>o.status!=='Entregue').forEach(o=>add('Oficina',`${o.id} · ${o.cliente}`,`${o.modelo} · ${o.servico} · ${o.status}`,()=>{openDrawer('oficina','banc')},o.tel));
-  S.passaportes.forEach(p=>add('Passaporte',`${p.id} · ${p.cliente}`,`${p.modelo} · plano ${p.plano}`,()=>{UI.pass=p.id;openDrawer('oficina','pass')},''));
+  S.passaportes.forEach(p=>add('Passaporte',`${p.id} · ${p.cliente}`,`${p.modelo}`,()=>{UI.pass=p.id;openDrawer('oficina','pass')},''));
   S.agenda.filter(a=>a.status!=='Cancelado').forEach(a=>add('Agenda',a.cliente,`${ddmm(a.data)} ${a.hora} · ${a.servico} · ${a.status}`,()=>{UI.agDia=a.data;UI.agMes=a.data.slice(0,7);openDrawer('oficina','ag')},[a.pid,a.modelo,a.tel].join(' ')));
   S.estoque.forEach(u=>add('Estoque',`${u.modelo} ${u.ident||''}`,`${u.status}${u.obs?' · '+u.obs:''}`,()=>openDrawer('financeiro','est'),''));
   S.contas.forEach(c=>add(c.tipo==='pagar'?'Conta a pagar':'Conta a receber',c.desc,`${BRL(c.valor)} · ${ddmm(c.venc)}${c.ok?' · quitada':''}`,()=>openDrawer('financeiro','panel'),''));
   S.campanhas.forEach(c=>add('Campanha',c.nome,`${c.canal} · ${c.ativa?'ativa':'pausada'}`,()=>openDrawer('criativo','camp'),c.cta));
-  S.pauta.forEach(p=>add('Peça',p.t,`${p.formato} · ${p.etapa} · ${p.status}`,()=>openDrawer('criativo','pecas'),''));
   S.admin.forEach(a=>add('Tarefa admin',a.t,`${ddmm(a.due)}${a.ok?' · feita':''}`,()=>openDrawer('financeiro','panel'),''));
   return it;
 }
@@ -4227,7 +4561,7 @@ ${NEGOCIO()}
 ${perfilPrompt('financeiro')}
 Formato (sem tabelas, sem títulos com #): **Resumo:** 2 frases. **O que foi bem:** 2 itens com "- ". **O que preocupa:** 2 itens. **Decisões para os sócios:** 2 ou 3 itens práticos para o próximo mês. Use só os dados abaixo, com valores em R$ e porcentagens. Impostos: sugerir confirmar com o contador. Máximo ~200 palavras.
 ## Dados do mês
-${JSON.stringify({...f,vendas:f.vendas.map(v=>({data:v.data,modelo:v.modelo,plano:v.plano,pagamento:v.pag,canal:v.canal,valor:valorVenda(v)}))})}`;
+${JSON.stringify({...f,vendas:f.vendas.map(v=>({data:v.data,modelo:v.modelo,pagamento:v.pag,canal:v.canal,valor:valorVenda(v)}))})}`;
   try{const txt=await tr.call(sys,[{role:'user',content:`Faça a análise do fechamento de ${mesLabel(f.mes)}.`}],t=>{out.innerHTML=`<div class="meet-ai">${fmtMsg(t)}</div>`});(S.fechAI=S.fechAI||{})[f.mes]=txt;save();out.innerHTML=`<div class="meet-ai">${fmtMsg(txt)}</div>`}
   catch(e){out.innerHTML=`<div class="meet-ai" style="color:#ffb0a6">Não consegui fazer a análise agora${e&&e.message?': '+esc(e.message):''}.</div>`}
   UI.cmBusy=false;btn.disabled=false;btn.textContent='Atualizar análise';
@@ -5285,6 +5619,7 @@ function weekHTML(){
     ${card('Test rides',w.tr,'leads que chegaram ao test ride',w.tr,p.tr)}
     ${card('Vendas',w.vendas,`${BRL0(w.fat)}`,w.vendas,p.vendas)}
     ${card('Contatos feitos',w.toques,'registros de follow-up',w.toques,p.toques)}
+    ${(()=>{const L=S.leads.filter(l=>!l.arq&&ATIVAS(l.etapa)),ok=L.filter(essOk).length,mt=S.cfg.metaPerfil||70;return card('Perfil essencial',L.length?Math.round(ok/L.length*100)+'%':'—',`${ok} de ${L.length} leads ativos com estilo, investimento e pagamento · meta ${mt}%`)})()}
     ${(()=>{const t=tprStats(w.a,w.b);return t?card('TPR médio',String(t.media).replace('.',',')+' min',`${Math.round(t.ok/t.n*100)}% em até 2 min`):''})()}
   </div>
   <div class="insight"><b>Leitura rápida</b><ul class="ins-list">
@@ -5318,10 +5653,12 @@ function frame(now){
 const findLead=id=>S.leads.find(x=>x.id===id);
 function archiveLead(l,motivo){l.arq=true;l.arqEm=today();l.arqMotivo=motivo;l.arqEtapa=l.etapa}
 function setEtapa(l,etapa){
-  const prev=l.etapa;l.etapa=etapa;(l.hist=l.hist||[]).push({e:etapa,d:today()});
+  const prev=l.etapa;
+  if(prev==='Fechado'&&etapa!=='Fechado'){const vv=S.vendas.find(v=>v.leadId===l.id&&v.conf);if(vv&&UI.armed!=='vdel:'+l.id){UI.armed='vdel:'+l.id;toast(`A venda de ${first(l.nome)} já foi confirmada. Escolha "${etapa}" de novo para apagar a venda.`,7000);return false}UI.armed=null}
+  l.etapa=etapa;(l.hist=l.hist||[]).push({e:etapa,d:today()});
   if(etapa==='Fechado'&&prev!=='Fechado'&&!S.vendas.some(v=>v.leadId===l.id)){
-    S.vendas.push({id:uid(),leadId:l.id,camp:l.camp||'',data:today(),cliente:l.nome,modelo:l.modelo,plano:'Essencial',pag:'PIX',canal:l.origem});npsQueue('venda','L'+l.id,l.nome,l.tel,l.modelo);
-    toast(`Venda registrada: ${first(l.nome)} · ${l.modelo} (${BRL0(MODELOS[l.modelo]?.pix)}) → Financeiro`);
+    S.vendas.push({id:uid(),leadId:l.id,camp:l.camp||'',data:today(),cliente:l.nome,modelo:l.modelo,plano:'Essencial',pag:'PIX',pagDef:true,canal:l.origem});npsQueue('venda','L'+l.id,l.nome,l.tel,l.modelo);
+    toast(`Venda registrada: ${first(l.nome)} · ${l.modelo}${dispMod(l.modelo)?'':' · atenção: sem unidade disponível no estoque'} · confirme pagamento e estoque em Clientes`,6000);
   }else if(prev==='Fechado'&&etapa!=='Fechado'){S.vendas=S.vendas.filter(v=>v.leadId!==l.id);toast(`${first(l.nome)} → ${etapa} · venda removida do mês`)}
   else toast(`${first(l.nome)} → ${etapa}`);
   if(ATIVAS(etapa)&&!l.fu)l.fu=today();
@@ -5377,8 +5714,19 @@ document.addEventListener('click',e=>{
   else if(a==='loja-export'){$('#data-menu').open=false;exportarLoja()}
   else if(a==='loja-geo'){const l=(S.lojas||[]).find(x=>x.id===el.dataset.id);if(l)aplicarLocal(l,+el.dataset.lat,+el.dataset.lon,el.dataset.n)}
   else if(a==='kb-help'){el.closest('details')&&(el.closest('details').open=false);$('#kb-modal').showModal()}
+  else if(a==='ads-dia'){const d=+el.dataset.v,L=new Set(adsDias());L.has(d)?L.delete(d):L.add(d);if(!L.size){toast('Deixe pelo menos um dia de importação');return}S.cfg.adsDias=[...L].sort();refresh()}
+  else if(a==='pdv-msg'){const l=findLead(el.dataset.id);if(l){const cur=UI.fqMsg[l.id]??cadMsg(l);UI.fqMsg[l.id]=cur.trim()+'\n\n'+PERG[el.dataset.k];refresh();toast('Pergunta adicionada à mensagem')}}
+  else if(a==='venda-conf'){const v=S.vendas.find(x=>x.id===el.dataset.id),row=el.closest('[data-vc]');if(!v||!row)return;
+    v.pag=row.querySelector('[data-vc-pag]').value;const val=Number(row.querySelector('[data-vc-val]').value);if(val>0)v.valor=Math.round(val*100)/100;delete v.pagDef;v.conf=true;let ex='';
+    if(row.querySelector('[data-vc-bx]').checked){const u=S.estoque.find(x=>x.modelo===v.modelo&&x.status==='Disponível');if(u){u.status='Vendida';u.obs=(u.obs?u.obs+' · ':'')+'Vendida p/ '+v.cliente;ex=' · baixa no estoque'}}
+    toast(`Venda confirmada: ${first(v.cliente)} · ${v.modelo} · ${BRL(valorVenda(v))}${ex}`);refresh()}
+  else if(a==='cfg'){const m=$('#data-menu');if(m)m.open=false;const dm=$('#day-modal');openCfg(el.dataset.v)}
+  else if(a==='loja-ed'){UI.lojaEd=UI.lojaEd===el.dataset.id?null:el.dataset.id;UI.armed=null;renderCfg()}
+  else if(a==='loja-del'){const k='loja:'+el.dataset.id;if(UI.armed!==k){UI.armed=k;renderCfg();return}UI.armed=null;excluirLoja(el.dataset.id)}
+  else if(a==='cp-edit'){UI.cpEdit=UI.cpEdit===el.dataset.id?null:el.dataset.id;UI.armed=null;refresh()}
+  else if(a==='cp-canal'){UI.cpCanal=el.dataset.v;refresh()}
   else if(a==='loja-set'){$('#loja-menu').open=false;trocarLoja(el.dataset.v)}
-  else if(a==='loja-rede'){$('#loja-menu').open=false;UI.revRede=true;openDrawer('financeiro','rev')}
+  else if(a==='loja-rede'){$('#loja-menu').open=false;$('#data-menu').open=false;UI.revRede=true;openDrawer('financeiro','rev')}
   else if(a==='rev-rede'){UI.revRede=!UI.revRede;refresh()}
   else if(a==='lead-export'){$$('details.more-menu').forEach(d=>d.open=false);exportLeads()}
   else if(a==='lead-export-rede'){$$('details.more-menu').forEach(d=>d.open=false);exportLeads(true)}
@@ -5619,6 +5967,7 @@ document.addEventListener('change',e=>{
   if(k==='diaria'){S.cfg.diaria=Math.max(0,Number(el.value)||0);toast('Valor da diária atualizado');refresh()}
   if(k==='of-min'||k==='of-max'){const v=el.value===''?null:Math.max(0,Math.min(100,Number(el.value)||0));S.cfg[k==='of-min'?'ofMin':'ofMax']=v;if(S.cfg.ofMin!=null&&S.cfg.ofMax!=null&&S.cfg.ofMin>S.cfg.ofMax){const t=S.cfg.ofMin;S.cfg.ofMin=S.cfg.ofMax;S.cfg.ofMax=t}toast('Faixa de lucro da oficina atualizada');refresh()}
   if(k==='of-pct'){const v=el.value===''?null:Math.max(0,Math.min(100,Number(el.value)||0));S.cfg.ofPct=v;toast(v==null?'% da oficina removido':`Oficina fica com ${v}%`);refresh()}
+  if(k==='teto'){S.cfg[el.dataset.k]=Math.max(0,Number(el.value)||0);refresh();return}
   if(k==='pc-min'){const p=(S.pecas||[]).find(x=>x.id===el.dataset.id);if(p){p.minimo=Math.max(0,Number(el.value)||0)}refresh()}
   if(k==='os-pc-gar'){UI.pcGar=el.checked?el.dataset.id:null}
   if(k==='os-pc-add'&&el.value){const o=S.os.find(x=>x.id===el.dataset.id),pc=(S.pecas||[]).find(x=>x.id===el.value);if(o&&pc){const gar=UI.pcGar===o.id;(o.pecas=o.pecas||[]).push({id:pc.id,nome:pc.nome,qtd:1,preco:Number(pc.preco)||0,gar});toast(`${pc.nome} na ${o.id}${gar?' (garantia)':''}`)}refresh()}
@@ -5649,8 +5998,13 @@ document.addEventListener('change',e=>{
   else if(k==='admin-ok'){S.admin.find(x=>x.id===id).ok=el.checked;refresh()}
   else if(k==='pauta-ok'){S.pauta.find(x=>x.id===id).ok=el.checked;refresh()}
   else if(k==='peca-st'){const p=S.pauta.find(x=>x.id===id);p.status=el.value;p.ok=el.value==='Concluída';toast(`${p.t.slice(0,40)} → ${p.status}`);refresh()}
-  else if(k==='camp-f'){const c=S.campanhas.find(x=>x.id===id);c[el.dataset.f]=Math.max(0,Number(el.value)||0);refresh()}
-  else if(k==='lead-arq'){if(!el.value)return;const l=findLead(id);archiveLead(l,el.value);toast(`${first(l.nome)} arquivado · ${el.value}`);refresh()}
+  else if(k==='camp-f'){const c=S.campanhas.find(x=>x.id===id);if(c){c[el.dataset.f]=Math.max(0,Number(el.value)||0);refresh()}}
+  else if(k==='camp-t'){const c=S.campanhas.find(x=>x.id===id);if(!c)return;const f=el.dataset.f;let v=String(el.value||'').trim();
+    if(f==='cod'){v=v.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9_-]/g,'').slice(0,30);if(!v){refresh();return}if(S.campanhas.some(x=>x!==c&&(x.cod||'').toLowerCase()===v)){toast('Esse código já é de outra campanha');refresh();return}c.cod=v}
+    else if(f==='nome'){if(!v){refresh();return}const old=c.nome;c.nome=v.slice(0,60);(S.adsHist||[]).forEach(h=>{if(normTxt(h.nome)===normTxt(old))h.nome=c.nome})}
+    else c[f]=v;save();refresh()}
+  else if(k==='lead-orc'){const l=findLead(id);if(l){const v=Math.max(0,Number(el.value)||0);if(v)l.orc=v;else delete l.orc;save();refresh()}}
+  else if(k==='lead-arq'){if(!el.value)return;const l=findLead(id);archiveLead(l,el.value);toast(`${first(l.nome)} arquivado · ${el.value}${el.value==='Recusa financeira'&&!l.orc?' · informe quanto planejava investir no card':''}`);refresh()}
   else if(k==='cli-aval'){const v=S.vendas.find(x=>x.id===id),mes=today().slice(0,7);v.aval=el.checked;S.aval[mes]=Math.max(0,(S.aval[mes]||0)+(el.checked?1:-1));toast(el.checked?`Avaliação de ${first(v.cliente)} registrada · meta do mês atualizada`:'Avaliação removida');refresh()}
   else if(k==='cli-ind'){const v=S.vendas.find(x=>x.id===id);v.ind=el.checked;toast(el.checked?`${first(v.cliente)} indicou alguém`:'Indicação removida');refresh()}
   else if(k==='lead-camp'){const l=findLead(id);l.camp=el.value;S.vendas.forEach(v=>{if(v.leadId===l.id)v.camp=el.value});toast('Campanha do lead atualizada');refresh()}
@@ -5676,11 +6030,12 @@ document.addEventListener('submit',e=>{
   const d=Object.fromEntries(new FormData(f)),kind=f.dataset.form;
   if(kind==='lead'){
     const tel=normTel(d.tel);if(!telOk(tel)){toast('Telefone inválido: use DDD + número');f.tel.focus();return}
-    {const dup=telExiste(tel);if(dup){toast(`Esse telefone já é do lead ${first(dup.nome)} (${dup.etapa}). Nada foi duplicado.`);return}}
+    {const dup=telExiste(tel);if(dup){toast(`Esse telefone já é do lead ${first(dup.nome)} (${dup.etapa}). Nada foi duplicado.`);return}const ou=telOutraLoja(tel);if(ou){toast(`Esse telefone já é do lead ${first(ou.l.nome)} na ${ou.loja} (${ou.l.etapa}). Use “Transferir para” lá, em vez de cadastrar de novo.`,8000);return}}
     LAST_ORIGEM=d.origem;
     const l={id:uid(),ts:Date.now(),camp:d.camp||'',hist:[{e:d.etapa,d:today()}],criado:today(),nome:d.nome.trim(),tel,email:d.email.trim(),origem:d.origem,modelo:d.modelo,etapa:d.etapa,bairro:d.bairro.trim(),fu:today(),hora:'',obs:d.obs.trim(),criado:today()};
     const tpr=d.tpr!==''&&d.tpr!=null?Math.max(0,Math.round(+d.tpr)):null;if(tpr!=null&&!isNaN(tpr))l.tpr=tpr;
     if(d.resp){l.toques=1;(l.log=l.log||[]).push({d:today(),r:'primeira resposta no WhatsApp'+(l.tpr!=null?` (TPR ${l.tpr} min)`:'')});l.ultimo=today();if(l.etapa==='Novo'){l.etapa='Contato';l.hist.push({e:'Contato',d:today()})}l.fu=nextByCad(l)}
+    ['invest','pag','uso'].forEach(k=>{if(d['q_'+k]){(l.perf=l.perf||{})[k]=d['q_'+k]}});if(f.dataset.cod==='1')l.codOrig=1;
     S.leads.unshift(l);UI.etapa='Todos';UI.origem='Todas';UI.q='';
     const again=UI.leadAgain;$('#lead-modal').close();refresh();
     toast(`${first(l.nome)} salvo${d.resp?` · 1º contato registrado · próximo follow-up ${l.fu===rel(1)?'amanhã':ddmm(l.fu)}`:' · primeiro contato hoje'}${l.tpr!=null?` · TPR ${l.tpr} min`:''}`);
@@ -5698,12 +6053,14 @@ document.addEventListener('submit',e=>{
       a={id:uid(),data:d.data,hora:d.hora,cliente:titleCase(first(d.cliente.trim())),tel,modelo:`${d.veic}${d.marca?' · '+d.marca.trim():''}`,veic:d.veic,pid:'',servico:d.servico,obs:(d.obs||'').trim(),tipo:'avulso',status:d.conf?'Confirmado':'Agendado'}}
     a.loja=S.lojaAtual;S.agenda.push(a);UI.agDia=d.data;UI.agMes=d.data.slice(0,7);UI.agForm=null;UI.agTipo=null;UI.agQ='';toast(`Agendado: ${a.cliente} · ${ddmm(d.data)} ${d.hora}`);refresh();
   }
-  else if(kind==='loja-new'){const id=novaLoja(d.nome,d.cidade);if(id){$('#loja-menu').open=false;trocarLoja(id);if((d.cidade||'').trim()){const nl=S.lojas.find(x=>x.id===id);if(nl)nl.geoTentou=1;setTimeout(()=>definirLocal(id,d.cidade,true),300)}toast(`${d.nome.trim()} criada · estoque, oficina, PACE ID e catálogo já são compartilhados`)}}
+  else if(kind==='loja-new'){const id=novaLoja(d.nome,d.cidade);if(id){$('#loja-menu').open=false;const cm=$('#cfg-modal');if(cm&&cm.open)cm.close();trocarLoja(id);if((d.cidade||'').trim()){const nl=S.lojas.find(x=>x.id===id);if(nl)nl.geoTentou=1;setTimeout(()=>definirLocal(id,d.cidade,true),300)}toast(`${d.nome.trim()} criada · estoque, oficina, PACE ID e catálogo já são compartilhados`)}}
+  else if(kind==='loja-ed'){const l=(S.lojas||[]).find(x=>x.id===f.dataset.id);if(!l)return;l.nome=(d.nome||'').trim()||l.nome;l.cidade=(d.cidade||'').trim();const mg=(d.msg||'').trim();if(mg)l.msg=mg;else delete l.msg;syncLojaBtn();save();
+    const q=(d.local||'').trim()||l.cidade;if(q&&q!==(l.local||''))definirLocal(l.id,q);else toast('Loja atualizada');UI.lojaEd=null;refresh()}
   else if(kind==='loja-ren'){const l=lojaAtual();if(d.nome&&d.nome.trim())l.nome=d.nome.trim();l.cidade=(d.cidade||'').trim();syncLojaBtn();save();const q=(d.local||'').trim()||l.cidade;if(q&&q!==(l.local||''))definirLocal(l.id,q);else{$('#loja-menu').open=false;toast('Loja atualizada')}}
   else if(kind==='peca-new'){(S.pecas=S.pecas||[]).push({id:uid(),nome:d.nome.trim(),cat:d.cat,preco:Math.max(0,Number(d.preco)||0),estoque:Math.max(0,parseInt(d.estoque)||0),minimo:Math.max(0,parseInt(d.minimo)||0)});toast('Peça cadastrada');refresh()}
-  else if(kind==='tr-rem'){const l=findLead(f.dataset.id);l.fu=d.d;l.hora=d.h;l.trSt=null;l.trOk=null;logLead(l,`test ride remarcado para ${ddmm(d.d)} ${d.h}`);UI.trRem=null;UI.trDia=d.d;UI.trMes=d.d.slice(0,7);toast(`Test ride remarcado: ${ddmm(d.d)} às ${d.h}`);refresh()}
+  else if(kind==='tr-rem'){if(isClosedTR(d.d)){toast('A loja não faz test ride nesse dia (marcado como fechado)');return}if(trDia(d.d).some(x=>x.hora===d.h&&x.id!==f.dataset.id))toast(`Atenção: já existe test ride às ${d.h} nesse dia`);const l=findLead(f.dataset.id);l.fu=d.d;l.hora=d.h;l.trSt=null;l.trOk=null;logLead(l,`test ride remarcado para ${ddmm(d.d)} ${d.h}`);UI.trRem=null;UI.trDia=d.d;UI.trMes=d.d.slice(0,7);toast(`Test ride remarcado: ${ddmm(d.d)} às ${d.h}`);refresh()}
   else if(kind==='tr-cfg'){const sl=String(d.slots||'').split(/[,;\s]+/).map(x=>x.trim()).filter(x=>/^\d{1,2}:\d{2}$/.test(x)).map(x=>x.padStart(5,'0')).sort();if(sl.length){S.cfg.trSlots=sl;toast('Horários de test ride salvos')}refresh()}
-  else if(kind==='tr-new'){let l=d.lead?findLead(d.lead):null;
+  else if(kind==='tr-new'){if(isClosedTR(d.data)){toast('A loja não faz test ride nesse dia (marcado como fechado)');return}let l=d.lead?findLead(d.lead):null;
     if(!l){const tel=normTel(d.tel||'');if(!telOk(tel)){toast('Escolha um lead ou informe o telefone do novo cliente');return}const dup=telExiste(tel);if(dup)l=dup;else{l=novoLead({nome:titleCase((d.nome||'').trim())||('Lead '+digits(tel).slice(-4)),tel,modelo:d.modelo});S.leads.unshift(l)}}
     if(trDia(d.data).some(x=>x.hora===d.hora&&x.id!==l.id))toast(`Atenção: já existe test ride às ${d.hora} nesse dia`);
     if(d.modelo)l.modelo=d.modelo;logLead(l,`agendou test ride ${ddmm(d.data)} ${d.hora}`);if(l.etapa!=='Test Ride')setEtapa(l,'Test Ride');l.fu=d.data;l.hora=d.hora;l.trOk=null;l.trSt=d.conf?'Confirmado':null;
@@ -5721,7 +6078,8 @@ document.addEventListener('submit',e=>{
   else if(kind==='venda'){
     const v={id:uid(),camp:d.camp||'',data:d.data||today(),cliente:d.cliente.trim(),tel:digits(d.tel),modelo:d.modelo,plano:'Essencial',pag:d.pag,canal:d.canal};
     if(d.valor!=='')v.valor=Math.round(Number(d.valor)*100)/100;
-    S.vendas.push(v);npsQueue('venda','V'+v.id,v.cliente,v.tel,v.modelo);let extra='';
+    v.conf=true;{const ld=v.tel&&telExiste(normTel(v.tel));if(ld){v.leadId=ld.id;if(!v.camp&&ld.camp)v.camp=ld.camp}}
+    S.vendas.push(v);npsQueue('venda','V'+v.id,v.cliente,v.tel,v.modelo);let extra='';{const ld=v.leadId&&findLead(v.leadId);if(ld&&ld.etapa!=='Fechado'){logLead(ld,'venda registrada em Clientes');setEtapa(ld,'Fechado');extra+=' · lead '+first(ld.nome)+' fechado no funil'}}
     if(d.baixa){const u=S.estoque.find(x=>x.modelo===d.modelo&&x.status==='Disponível');if(u){u.status='Vendida';u.obs=(u.obs?u.obs+' · ':'')+'Vendida p/ '+v.cliente;extra=' · baixa no estoque'}else extra=' · sem unidade disponível p/ baixa'}
     toast(`Venda registrada: ${first(v.cliente)} · ${v.modelo} · ${BRL(valorVenda(v))}${extra}`);refresh();
   }
