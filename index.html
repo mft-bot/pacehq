@@ -1108,6 +1108,7 @@ dialog#week-modal{max-width:min(720px,96vw)}
           <button type="button" data-action="meet" id="meet-btn">Reunião diária<span class="dot-ai" id="meet-dot" aria-hidden="true"></span></button>
           <button type="button" data-action="week">Resumo da semana</button>
           <button type="button" data-action="close-month">Fechamento do mês</button>
+          <button type="button" data-action="loja-rede">Visão da rede</button>
           <hr>
           <span class="menu-lbl" id="bk-txt">Backup</span>
           <span class="menu-av" title="O arquivo exportado tem os telefones de leads e clientes. Guarde em local privado e não envie em grupos.">🔒 Contém telefones: guarde em local privado</span>
@@ -1116,10 +1117,6 @@ dialog#week-modal{max-width:min(720px,96vw)}
           <button type="button" data-action="loja-export">Exportar só a loja atual</button>
           <button type="button" data-action="backup-import">Importar tudo (de outra versão)</button>
           <button type="button" data-action="import-undo">Desfazer última importação</button>
-          <hr>
-          <span class="menu-lbl">Lojas</span>
-          <button type="button" data-action="loja-rede" id="menu-rede">Visão da rede</button>
-          <button type="button" data-action="cfg" data-v="lojas">Nova loja ou editar lojas</button>
           <hr>
           <button type="button" data-action="cfg" data-v="lojas">⚙ Configurações</button>
         </div>
@@ -2619,7 +2616,7 @@ function novaLoja(nome,cidade){const id=normTxt(nome).replace(/[^a-z0-9]+/g,'-')
 function transferirLead(id,dest){const l=findLead(id);if(!l||dest===S.lojaAtual)return;S.leads=S.leads.filter(x=>x.id!==id);
   (l.log=l.log||[]).push({d:today(),r:`transferido de ${lojaNome(S.lojaAtual)} para ${lojaNome(dest)}`});l.de=S.lojaAtual;
   const R=(S.redeLojas=S.redeLojas||{});R[dest]=R[dest]||{leads:[],cfg:{}};(R[dest].leads=R[dest].leads||[]).unshift(l);UI.openLead=null;toast(`${first(l.nome)||'Lead'} transferido para ${lojaNome(dest)}`);refresh()}
-function syncLojaBtn(){const mr=$('#menu-rede');if(mr)mr.hidden=!multiLoja();const b=$('#loja-btn');if(!b)return;const l=lojaAtual();b.innerHTML=`<b>${esc(l.nome)}</b><span>${esc(l.cidade||'')}${multiLoja()?` · ${S.lojas.length} lojas`:''}</span><i aria-hidden="true">▾</i>`}
+function syncLojaBtn(){const b=$('#loja-btn');if(!b)return;const l=lojaAtual();b.innerHTML=`<b>${esc(l.nome)}</b><span>${esc(l.cidade||'')}${multiLoja()?` · ${S.lojas.length} lojas`:''}</span><i aria-hidden="true">▾</i>`}
 function lojaMenuHTML(){const L=S.lojas||[];return `<div class="lj-pop">
   ${L.map(l=>`<button type="button" data-action="loja-set" data-v="${esc(l.id)}" aria-pressed="${l.id===S.lojaAtual}"><b>${esc(l.nome)}</b><small>${esc(l.cidade||'')}</small></button>`).join('')}
   </div>`}
@@ -2650,7 +2647,7 @@ function renderRevOps(){const P=UI.revP||'semana',[a,b]=revRange(P,0),[a2,b2]=re
   const tile=(l,v,d,sub='')=>`<div class="rv-t"><span>${l}</span><b>${v}</b>${d}${sub?`<em>${sub}</em>`:''}</div>`;
   const conv=(x,y)=>y?x/y:null;
   const steps=[['Lead',R.leads,Q.leads],['Contato',R.contato,Q.contato],['Proposta',R.proposta,Q.proposta],['Test ride',R.tr,Q.tr],['Venda',R.venda,Q.venda]];
-  return `${multiLoja()?`<div class="row between" style="margin-bottom:8px"><div class="toggle" role="group"><button type="button" data-action="rev-rede" aria-pressed="${!UI.revRede}">${esc(lojaAtual().nome)}</button><button type="button" data-action="rev-rede" aria-pressed="${!!UI.revRede}">Rede (todas)</button></div></div>`:''}${multiLoja()&&UI.revRede?redeHTML():''}<div class="row between" style="margin-bottom:10px;flex-wrap:wrap;gap:8px"><div class="toggle" role="group"><button type="button" data-action="rev-p" data-v="semana" aria-pressed="${P==='semana'}">7 dias</button><button type="button" data-action="rev-p" data-v="mes" aria-pressed="${P==='mes'}">Mês</button></div>
+  return `<div class="row between" style="margin-bottom:8px"><div class="toggle" role="group"><button type="button" data-action="rev-rede" aria-pressed="${!UI.revRede}">${esc(lojaAtual().nome)}</button><button type="button" data-action="rev-rede" aria-pressed="${!!UI.revRede}">Rede (todas)</button></div>${!multiLoja()&&UI.revRede?`<span class="meta">Só uma loja na rede por enquanto · crie outra em ${'<button type="button" class="cfg-link" data-action="cfg" data-v="lojas">⚙ Configurações → Lojas</button>'}</span>`:''}</div>${UI.revRede?redeHTML():''}<div class="row between" style="margin-bottom:10px;flex-wrap:wrap;gap:8px"><div class="toggle" role="group"><button type="button" data-action="rev-p" data-v="semana" aria-pressed="${P==='semana'}">7 dias</button><button type="button" data-action="rev-p" data-v="mes" aria-pressed="${P==='mes'}">Mês</button></div>
     <span class="meta">${ddmm(a)} a ${ddmm(b)} · comparado com ${ddmm(a2)} a ${ddmm(b2)}</span><button class="btn btn-sm" data-action="rev-copy">Copiar para os sócios</button></div>
   ${(()=>{const pp=pipeline(),mm=M(),metaT=(S.cfg.meta||0)+(S.cfg.metaOficina||0),realM=mm.fat+oficinaMes().real;return `<section class="d-sec"><h3>Receita</h3><div class="rv-g">
     ${tile('Receita total',BRL0(R.rec),dl(R.rec,Q.rec,false,BRL0),`vendas ${BRL0(R.fat)} · oficina ${BRL0(R.of)}`)}
