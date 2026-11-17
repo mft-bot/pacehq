@@ -1109,6 +1109,51 @@ html,body{overflow-x:clip}
 .pc2-sell{grid-column:1/-1;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;padding:8px 10px;border:1px dashed var(--line-2);border-radius:8px}.pc2-sell label{display:flex;flex-direction:column;gap:3px;font-size:11px;color:var(--muted)}
 .pc-aj{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}@media (max-width:720px){.pc-aj{grid-template-columns:1fr}}
 .wx-set{background:none;border:1px dashed var(--line-2);border-radius:8px;padding:4px 9px;font:500 11.5px Inter,system-ui,sans-serif;color:var(--muted);cursor:pointer;align-self:center}.wx-set:hover{color:var(--neon);border-color:var(--neon)}
+.trw-week{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr)) repeat(2,minmax(0,1.35fr));gap:6px}
+@media (max-width:720px){.trw-week{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.trw-week .trw{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:8px 9px;border:1px solid var(--line);border-radius:10px;background:var(--graphite);min-width:0}
+.trw-week .trw-l{font-size:11.5px;font-weight:600}.trw-week .trw-l small{font-weight:400;color:var(--muted);font-size:10.5px}
+.trw-week .trw-i svg{width:20px;height:20px}.trw-week .trw-t{font-size:15px;font-weight:700}.trw-week .trw-t small{font-size:11px;color:var(--muted);margin-left:4px;font-weight:500}
+.trw-week .trw-r{font-size:10.5px;color:var(--muted)}.trw-week .trw-n{font-size:10.5px;color:var(--muted);min-height:13px}
+.trw-week .trw.fds{border-color:rgba(225,239,89,.5);background:linear-gradient(0deg,rgba(225,239,89,.05),rgba(225,239,89,.05)),var(--graphite)}.trw-week .trw.fds .trw-l{color:var(--neon)}.trw-week .trw.fds .trw-t{font-size:18px}
+.trw-week .trw.hoje{box-shadow:inset 0 0 0 1px rgba(240,238,231,.35)}
+.trw-week .trw.past{opacity:.45}
+.trw-week .trw.wet .trw-r{color:#7fd4c8}
+.trw-say{font-size:12px;color:var(--muted);margin:6px 2px 0}
+.tr-top .sp{flex:1}.tr-top{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;margin-bottom:10px;font-size:12.5px;color:var(--muted)}.tr-k b{font:700 14px "JetBrains Mono",monospace;color:var(--offwhite,#F0EEE7);margin-right:3px}
+.tr-wrap{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:10px;align-items:start}@media (max-width:980px){.tr-wrap{grid-template-columns:1fr}}
+.tr-cal{padding:12px}.tr-cal .cal-c{min-height:58px}.cal-h.fds{color:var(--neon)}
+.tr-c.fds:not(.closed){background:linear-gradient(0deg,rgba(225,239,89,.045),rgba(225,239,89,.045)),var(--black)}
+.tr-c .cal-wx{width:auto;height:auto;display:flex;align-items:center;gap:2px}.tr-c .cal-wx svg{width:13px;height:13px}.tr-c .cal-wx small{font:600 10px "JetBrains Mono",monospace;color:var(--muted)}
+.tr-c.wet .cal-wx{color:#7fd4c8}.cal-off{color:var(--muted)!important}
+.cal-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#ff8a80;margin-left:4px;vertical-align:middle}
+.tr-leg{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-top:8px;font-size:11px;color:var(--muted)}.tr-leg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}.tr-leg .lg-occ{background:var(--neon)}.tr-leg .lg-fds{background:rgba(225,239,89,.18);border:1px solid rgba(225,239,89,.4)}.tr-leg .lg-dot{background:#ff8a80;border-radius:50%}.tr-leg .cfg-link{margin-left:auto;font-size:11px}
+.tr-day{padding:12px 14px;display:flex;flex-direction:column;gap:8px;position:sticky;top:0}
+.tr-day-h{display:flex;align-items:center;justify-content:space-between;gap:8px}.tr-day-h b{font-size:14px;text-transform:none}
+.tr-day-wx{display:inline-flex;align-items:center;gap:5px;font:500 11.5px "JetBrains Mono",monospace;color:var(--muted)}.tr-day-wx svg{width:16px;height:16px}.tr-day-wx.wet{color:#7fd4c8}
+.tr-day-tip{font-size:11.5px;color:#7fd4c8}
+.tr-day .tr-card{padding:9px 10px}
+.tr-hist{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;padding:6px 0;border-top:1px solid var(--line)}
+.tr-free{display:flex;align-items:center;gap:5px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:8px}
+.tr-slot{background:none;border:1px solid var(--line-2);border-radius:7px;padding:3px 8px;font:600 11.5px "JetBrains Mono",monospace;color:var(--offwhite,#F0EEE7);cursor:pointer}.tr-slot:hover{border-color:var(--neon);color:var(--neon)}.tr-free .cfg-link{font-size:11px;margin-left:auto}
+.tr-form{border-top:1px dashed var(--line);padding-top:8px;grid-template-columns:1fr 1fr}
+.tr-day-f{display:flex;justify-content:flex-end}.tr-day-f .btn{font-size:11px}
+.tr-fds{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border:1px solid rgba(225,239,89,.45);border-radius:9px;background:linear-gradient(0deg,rgba(225,239,89,.06),rgba(225,239,89,.06)),var(--graphite);color:var(--offwhite,#F0EEE7);font:500 12px Inter,system-ui,sans-serif;cursor:pointer}
+.tr-fds b{color:var(--neon);font-weight:700}.tr-fds svg{width:15px;height:15px;color:var(--muted)}.tr-fds span{font-family:"JetBrains Mono",monospace;font-size:11.5px}.tr-fds small{font-size:10.5px;color:var(--muted)}.tr-fds.wet svg,.tr-fds.wet span{color:#7fd4c8}.tr-fds.on,.tr-fds:hover{border-color:var(--neon)}
+.tr-sug{display:flex;flex-direction:column;gap:4px;margin-top:-4px}.tr-pick{display:flex;justify-content:space-between;gap:8px;align-items:baseline;text-align:left;background:var(--black);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;font:inherit;color:inherit}.tr-pick:hover{border-color:var(--neon)}.tr-pick b{font-size:12.5px}.tr-pick span{font-size:11px;color:var(--muted)}
+.tr-found{display:flex;align-items:baseline;gap:8px;padding:6px 10px;border:1px solid rgba(225,239,89,.45);border-radius:8px;font-size:12.5px;color:var(--neon)}.tr-found b{color:var(--offwhite,#F0EEE7)}.tr-found .cfg-link{margin-left:auto;font-size:11px}
+.tr-left{min-width:0}.wxs{margin-top:10px;padding:12px 14px}.wxs-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:10px}.wxs-h b{font-size:13px}.wxs-h .meta{font-size:11px}
+.wxs-g{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.wxs-d{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px 7px;border:1px solid transparent;border-radius:10px;background:none;cursor:pointer;font:inherit;color:inherit}
+.wxs-d:hover{border-color:var(--line-2)}.wxs-d.on{border-color:var(--line-2);background:rgba(240,238,231,.04)}
+.wxs-d.fds{background:rgba(225,239,89,.05);border-color:rgba(225,239,89,.25)}.wxs-d.fds .wxs-n{color:var(--neon)}.wxs-d.fds.on{border-color:var(--neon)}
+.wxs-d.hoje .wxs-n{font-weight:700}.wxs-d.past{opacity:.4}
+.wxs-n{font-size:11.5px;color:var(--muted)}.wxs-i svg{width:24px;height:24px;color:var(--offwhite,#F0EEE7)}.wxs-d.wet .wxs-i svg{color:#7fd4c8}
+.wxs-t{display:flex;align-items:baseline;gap:4px}.wxs-t b{font:700 15px "JetBrains Mono",monospace}.wxs-t small{font:500 11px "JetBrains Mono",monospace;color:var(--muted)}
+.wxs-r{width:70%;height:3px;border-radius:2px;background:rgba(240,238,231,.08);overflow:hidden}.wxs-r i{display:block;height:100%;background:#8b95a3}.wxs-d.wet .wxs-r i{background:#7fd4c8}
+.wxs-p{font:500 10.5px "JetBrains Mono",monospace;color:var(--muted);min-height:13px}
+.wxs-d.best{box-shadow:inset 0 -2px 0 var(--neon)}
+.wxs-say{margin:10px 2px 0;font-size:12px;color:var(--muted)}.wxs-say b{color:var(--offwhite,#F0EEE7)}
 .lj-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 2px 0}
 </style>
 </head>
@@ -2956,67 +3001,94 @@ function trCard(l){
 function nextDow(dow){const d=new Date();d.setHours(12,0,0,0);do{d.setDate(d.getDate()+1)}while(d.getDay()!==dow);return iso(d)}
 function wxDia(dt){const w=WX_CUR;if(!w)return null;const d=(w.days||[]).find(x=>x.date===dt)||(w.tomorrow&&(w.tomorrow.date===dt||(!w.tomorrow.date&&dt===rel(1)))?w.tomorrow:null);
   if(!d)return null;return{...d,kind:d.kind||wxKindFromText(d.cond,true)}}
-function trWxDias(){const a=rel(1),sat=nextDow(6),sun=nextDow(0);return[...new Set([a,sat,sun])].sort()}
+function trWxDias(){const d=new Date();d.setHours(12,0,0,0);const seg=(d.getDay()+6)%7;return Array.from({length:7},(_,i)=>rel(i-seg))}
 function trWxHTML(){
-  const ds=trWxDias(),t1=rel(1);
-  const lbl=dt=>{const wd=WD[new Date(dt+'T12:00:00').getDay()];return dt===t1?`Amanhã · ${wd}`:`${wd} ${ddmm(dt)}`};
-  const cards=ds.map(dt=>{const d=wxDia(dt),n=trDia(dt).length;
-    return `<div class="trw ${d&&d.rain>=60?'wet':''}"><span class="trw-l">${lbl(dt)}</span>${d?`<span class="trw-i" title="${WX_TXT[d.kind]||''}">${WX_SVG[d.kind]||WX_SVG.nuvem}</span><span class="trw-t mono">${Math.round(d.lo)}° / ${Math.round(d.hi)}°</span><span class="trw-r mono" title="Chance de chuva">chuva ${Math.round(d.rain)}%</span>`:`<span class="trw-na">previsão ainda não disponível</span>`}<span class="trw-n">${n?`${n} test ride${n===1?'':'s'}`:'livre'}</span></div>`}).join('');
-  const wet=ds.filter(dt=>{const d=wxDia(dt);return d&&d.rain>=60&&trDia(dt).length});
-  const tip=wet.length?`<div class="trw-tip">Chuva provável ${wet.map(dt=>dt===t1?'amanhã':['no domingo','na segunda','na terça','na quarta','na quinta','na sexta','no sábado'][new Date(dt+'T12:00:00').getDay()]).join(' e ')}: confirme esses test rides mais cedo e ofereça um horário alternativo, para manter o comparecimento.</div>`:'';
-  if(!wxPos())return `<div id="tr-wx" class="trw-strip"><span class="trw-na">Buscando o clima desta loja… Se não aparecer, confira o bairro e cidade no seletor de loja (topo).</span></div>`;
-  return `<div id="tr-wx" class="trw-strip">${cards}</div>${tip?tip.replace('<div class="trw-tip">','<div class="trw-tip" id="tr-wx-tip">'):''}`;
+  if(!wxPos())return `<div id="tr-wx" class="trw-strip"><span class="trw-na">Buscando o clima desta loja… Se não aparecer, confira o local em ⚙ Configurações → Lojas.</span></div>`;
+  const ds=trWxDias(),t=today(),fut=ds.filter(dt=>dt>=t);
+  const cards=ds.map(dt=>{const d=wxDia(dt),n=trDia(dt).length,dw=new Date(dt+'T12:00:00').getDay(),fds=dw===0||dw===6,past=dt<t,wet=d&&(d.kind==='chuva'||d.kind==='tempestade');
+    return `<div class="trw ${fds?'fds':''} ${past?'past':''} ${dt===t?'hoje':''} ${wet&&!past?'wet':''}" title="${d?`${WX_TXT[d.kind]||''} · ${Math.round(d.lo)}° a ${Math.round(d.hi)}°${d.mm!=null?` · ${String(Math.round(d.mm*10)/10).replace('.',',')} mm`:''} · ${Math.round(d.rain)}% de chance de chuva`:'sem previsão'}">
+      <span class="trw-l">${dt===t?'Hoje':WD[dw]} <small>${ddmm(dt)}</small></span>
+      ${d?`<span class="trw-i">${WX_SVG[d.kind]||WX_SVG.nuvem}</span><span class="trw-t mono">${Math.round(d.hi)}°<small>${Math.round(d.lo)}°</small></span>${past?'':`<span class="trw-r mono">${Math.round(d.rain)}%</span>`}`:`<span class="trw-na">—</span>`}
+      <span class="trw-n">${past?'':n?`${n} test ride${n===1?'':'s'}`:fds?'livre':''}</span></div>`}).join('');
+  const wet=fut.filter(dt=>{const d=wxDia(dt);return d&&(d.kind==='chuva'||d.kind==='tempestade')&&trDia(dt).length});
+  const fdsTxt=fut.filter(dt=>[0,6].includes(new Date(dt+'T12:00:00').getDay())).map(dt=>{const d=wxDia(dt);return d?`${WD[new Date(dt+'T12:00:00').getDay()].toLowerCase()} ${WX_TXT[d.kind].toLowerCase()}, ${Math.round(d.hi)}°`:''}).filter(Boolean);
+  const tip=wet.length?`<div class="trw-tip" id="tr-wx-tip">Chuva provável ${wet.map(dt=>dt===t?'hoje':dt===rel(1)?'amanhã':['no domingo','na segunda','na terça','na quarta','na quinta','na sexta','no sábado'][new Date(dt+'T12:00:00').getDay()]).join(' e ')}: confirme esses test rides mais cedo e ofereça um horário alternativo.</div>`:'';
+  return `<div id="tr-wx" class="trw-strip trw-week">${cards}</div>${fdsTxt.length?`<p class="trw-say">Fim de semana: ${fdsTxt.join(' · ')}.</p>`:''}${tip}`;
 }
+/* busca do agendamento: telefone (parte ou inteiro) ou nome; mostra no máximo 5 leads */
+function trSugHTML(q,sel){if(sel){const l=findLead(sel);if(l)return `<div class="tr-found">✓ <b>${esc(l.nome)}</b> <span class="meta">${esc(fmtTel(l.tel))} · ${esc(l.etapa)} · ${esc(l.modelo)}</span><button type="button" class="cfg-link" data-action="tr-unpick">trocar</button></div>`}
+  q=String(q||'').trim();if(!q)return '<span class="meta">Comece pelo telefone: o lead cadastrado aparece na hora. Se não existir, vira um cliente novo.</span>';
+  const dg=digits(q),nq=normTxt(q),L=S.leads.filter(l=>!l.arq&&(dg.length>=3?digits(l.tel).includes(dg):normTxt(l.nome).includes(nq))).sort((a,b)=>(b.etapa!=='Fechado')-(a.etapa!=='Fechado')||(b.criado||'').localeCompare(a.criado||'')).slice(0,5);
+  if(!L.length)return `<span class="meta">${dg.length>=10?'Telefone novo: preencha o nome e agende.':'Nenhum lead encontrado.'}</span>`;
+  return L.map(l=>`<button type="button" class="tr-pick" data-action="tr-pick" data-id="${esc(l.id)}"><b>${esc(l.nome)}</b><span>${esc(fmtTel(l.tel))} · ${esc(l.etapa)} · ${esc(l.modelo)}</span></button>`).join('')}
+/* HUD do clima da semana (seg a dom) para planejar test rides */
+function wxSemanaHTML(){const t=today(),ds=trWxDias(),W=ds.map(dt=>({dt,w:wxDia(dt),dw:new Date(dt+'T12:00:00').getDay()}));
+  const temW=W.some(x=>x.w),fut=W.filter(x=>x.dt>=t&&x.w),loc=wxLocal()||lojaAtual().nome;
+  const score=x=>(x.w.rain||0)+(Number(x.w.mm)||0)*8-(x.dw===0||x.dw===6?15:0);
+  const best=fut.length?[...fut].sort((a,b)=>score(a)-score(b))[0]:null;
+  const ruins=fut.filter(x=>x.w.kind==='chuva'||x.w.kind==='tempestade');
+  const upd=WX_CUR&&WX_CUR.updated?new Date(WX_CUR.updated).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}):'';
+  const say=!temW?'Previsão indisponível no momento. Ela volta sozinha quando a conexão com o serviço de clima responder.':
+    `${best?`Melhor dia para test ride: <b>${(best.dt===t?'hoje':DIAS_NOME[best.dw].toLowerCase())}</b> (${Math.round(best.w.hi)}°, ${Math.round(best.w.rain)}% de chuva).`:''}${ruins.length?` Chuva provável ${ruins.map(x=>x.dt===t?'hoje':WD[x.dw].toLowerCase()).join(', ')}.`:' Semana sem chuva forte prevista.'}`;
+  return `<div class="card wxs"><div class="wxs-h"><b>Clima da semana</b><span class="meta">${esc(loc)}${upd?` · atualizado ${upd}`:''}</span></div>
+    <div class="wxs-g">${W.map(({dt,w,dw})=>{const fds=dw===0||dw===6,past=dt<t,wet=w&&(w.kind==='chuva'||w.kind==='tempestade');return `<button type="button" class="wxs-d ${fds?'fds':''} ${past?'past':''} ${dt===t?'hoje':''} ${dt===UI.trDia?'on':''} ${wet?'wet':''} ${best&&best.dt===dt?'best':''}" data-action="tr-dia" data-v="${dt}" title="${w?`${WX_TXT[w.kind]} · ${Math.round(w.lo)}° a ${Math.round(w.hi)}°${w.mm!=null?` · ${String(Math.round(w.mm*10)/10).replace('.',',')} mm`:''}`:''}">
+      <span class="wxs-n">${dt===t?'Hoje':WD[dw]}</span><span class="wxs-i">${w?WX_SVG[w.kind]||'':''}</span>
+      <span class="wxs-t">${w?`<b>${Math.round(w.hi)}°</b><small>${Math.round(w.lo)}°</small>`:'—'}</span>
+      <span class="wxs-r">${w&&!past?`<i style="width:${Math.round(w.rain)}%"></i>`:''}</span><span class="wxs-p">${w&&!past?`${Math.round(w.rain)}%`:''}</span></button>`}).join('')}</div>
+    <p class="wxs-say">${say}</p></div>`}
 function renderTestRides(){
   if(!UI.trMes)UI.trMes=today().slice(0,7);if(!UI.trDia)UI.trDia=today();
   const [y,mo]=UI.trMes.split('-').map(Number),f1=new Date(y,mo-1,1),dias=new Date(y,mo,0).getDate(),t=today(),cap=trSlots().length;
-  const cells=[];for(let i=0;i<f1.getDay();i++)cells.push('<div class="cal-c empty"></div>');
-  for(let d=1;d<=dias;d++){const dt=`${y}-${pad(mo)}-${pad(d)}`,n=trDia(dt).length,hs=trHistDia(dt),ok=hs.filter(x=>x.h.st==='Compareceu').length,closed=isClosedTR(dt);
-    cells.push(`<button type="button" class="cal-c tr-c ${dt===t?'today':''} ${dt===UI.trDia?'sel':''} ${closed?'closed':''} ${dt<t?'past':''}" data-action="tr-dia" data-v="${dt}" aria-label="${ddmm(dt)}: ${n} test ride(s)">
-      <span class="d">${d}</span>${trWxDias().includes(dt)&&wxDia(dt)?`<span class="cal-wx" title="${WX_TXT[wxDia(dt).kind]||''} · chuva ${Math.round(wxDia(dt).rain)}%">${WX_SVG[wxDia(dt).kind]||''}</span>`:''}${n?`<span class="n">${n} TR</span><i style="width:${Math.min(100,n/cap*100)}%"></i>`:hs.length?`<span class="n tr-done">${ok}/${hs.length} vieram</span>`:closed?'<span class="n" style="color:var(--muted)">fechado</span>':''}</button>`)}
-  const sel=UI.trDia,lista=trDia(sel),hist=trHistDia(sel),liv=trLivres(sel);
-  const pend=S.leads.filter(l=>!l.arq&&l.etapa==='Test Ride'&&!l.trOk&&l.fu<t);
+  const pend=S.leads.filter(l=>!l.arq&&l.etapa==='Test Ride'&&!l.trOk&&l.fu<t).sort((a,b)=>a.fu.localeCompare(b.fu));
   const conf=S.leads.filter(l=>!l.arq&&l.etapa==='Test Ride'&&!l.trOk&&(l.fu===t||l.fu===rel(1))&&l.trSt!=='Confirmado').sort((a,b)=>(a.fu+a.hora).localeCompare(b.fu+b.hora));
   const prox7=S.leads.filter(l=>!l.arq&&l.etapa==='Test Ride'&&!l.trOk&&l.fu>=t&&diffDays(l.fu)<=7).length,st=trStats();
+  /* calendário: ocupação, clima dos dias com previsão e fim de semana em destaque */
+  const cells=[];for(let i=0;i<f1.getDay();i++)cells.push('<div class="cal-c empty"></div>');
+  for(let d=1;d<=dias;d++){const dt=`${y}-${pad(mo)}-${pad(d)}`,n=trDia(dt).length,hs=trHistDia(dt),ok=hs.filter(x=>x.h.st==='Compareceu').length,closed=isClosedTR(dt),dw=new Date(dt+'T12:00:00').getDay(),w=dt>=t?wxDia(dt):null,pd=pend.some(l=>l.fu===dt);
+    cells.push(`<button type="button" class="cal-c tr-c ${dw===0||dw===6?'fds':''} ${dt===t?'today':''} ${dt===UI.trDia?'sel':''} ${closed?'closed':''} ${dt<t?'past':''} ${w&&(w.kind==='chuva'||w.kind==='tempestade')?'wet':''}" data-action="tr-dia" data-v="${dt}" aria-label="${ddmm(dt)}: ${n} test ride(s)">
+      <span class="d">${d}${pd?'<i class="cal-dot" title="test ride sem resultado"></i>':''}</span>${w?`<span class="cal-wx" title="${WX_TXT[w.kind]||''} · ${Math.round(w.lo)}° a ${Math.round(w.hi)}° · chuva ${Math.round(w.rain)}%">${WX_SVG[w.kind]||''}<small>${Math.round(w.hi)}°</small></span>`:''}
+      ${closed?'<span class="n cal-off">fechado</span>':n?`<span class="n">${n} test ride${n===1?'':'s'}</span><i style="width:${Math.min(100,n/cap*100)}%"></i>`:hs.length?`<span class="n tr-done">${ok}/${hs.length} vieram</span>`:''}</button>`)}
+  const sel=UI.trDia,lista=trDia(sel),hist=trHistDia(sel),liv=trLivres(sel),sw=sel>=t?wxDia(sel):null,closedSel=isClosedTR(sel);
   const mesL=f1.toLocaleDateString('pt-BR',{month:'long',year:'numeric'});
   const cand=S.leads.filter(l=>!l.arq&&ATIVAS(l.etapa)&&l.etapa!=='Test Ride').sort((a,b)=>a.nome.localeCompare(b.nome));
-  return `
-  <div class="tiles">
-    <div class="card"><div class="l">Hoje</div><div class="v">${trDia(t).length}</div></div>
-    <div class="card"><div class="l">Próximos 7 dias</div><div class="v">${prox7}</div></div>
-    <div class="card"><div class="l">Comparecimento no mês</div><div class="v" style="color:var(--neon)">${st.taxa==null?'—':PCT(st.taxa)}</div><div class="meta" style="font-size:11px">${st.c} vieram · ${st.f} faltaram${st.c?` · ${st.v} fecharam`:''}</div></div>
-  </div>
-  ${trWxHTML()}
-  ${(()=>{const f=UI.trFaltou&&findLead(UI.trFaltou);return f?`<div class="card row between tr-faltou" style="padding:10px 12px"><div class="grow"><b style="font-size:13px">${esc(f.nome)} faltou</b><div class="meta">Mande agora uma mensagem leve para remarcar.</div></div><div class="row" style="gap:6px">${waBtn(f.tel,trFaltouMsg(f),'Remarcar no WhatsApp')}<button class="btn btn-sm" data-action="tr-faltou-x">Depois</button></div></div>`:''})()}
-  ${pend.length?`<section class="d-sec"><h3>Sem resultado <span class="count late">${pend.length}</span></h3><p class="meta" style="margin:-4px 0 8px">Test rides que já passaram: marque se o cliente veio ou faltou.</p><div class="stack">${pend.map(trCard).join('')}</div></section>`:''}
-  ${conf.length?`<section class="d-sec"><h3>Confirmar hoje e amanhã <span class="count">${conf.length}</span></h3><div class="stack">${conf.map(l=>`<div class="card row between" style="padding:9px 12px"><div class="grow"><b style="font-size:13px">${l.fu===t?'Hoje':'Amanhã'} ${esc(l.hora||'')} · ${esc(l.nome)}</b><div class="meta">${esc(l.modelo)}</div></div><div class="row" style="gap:6px"><button class="btn btn-sm" data-action="tr-conf" data-id="${esc(l.id)}">Confirmado</button>${waBtn(l.tel,trMsg(l),'Confirmar',`data-wa-tr="${esc(l.id)}"`)}</div></div>`).join('')}</div></section>`:''}
-  <section class="d-sec">
-    <div class="card">
-      <div class="row between" style="margin-bottom:8px"><button class="btn btn-sm" data-action="tr-mes" data-v="-1" aria-label="Mês anterior">‹</button><b>${mesL.charAt(0).toUpperCase()+mesL.slice(1)}</b><button class="btn btn-sm" data-action="tr-mes" data-v="1" aria-label="Próximo mês">›</button></div>
-      <div class="cal">${WD.map(w=>`<div class="cal-h">${w}</div>`).join('')}${cells.join('')}</div>
-      <div class="legend"><span><i style="background:var(--neon)"></i>test rides agendados (ocupação dos ${cap} horários)</span><span><i style="background:#8fe8ad"></i>dias passados: quantos vieram</span></div>
-    </div>
-  </section>
-  <section class="d-sec"><h3>${WD[new Date(sel+'T12:00:00').getDay()]}, ${ddmm(sel)} <span class="count">${lista.length}</span><span class="sp"></span>${sel>=t?excBtn('tr',sel):''}${liv.length?`<button class="btn btn-sm" data-action="tr-copy" style="text-transform:none;font-family:Inter">Copiar horários livres p/ cliente</button>`:''}</h3>
-    ${isClosedTR(sel)?'<div class="empty">Loja fechada neste dia.</div>':''}
-    <div class="stack">${lista.map(trCard).join('')}${!lista.length&&!hist.length&&!isClosedTR(sel)?'<div class="empty">Nenhum test ride neste dia.</div>':''}</div>
-    ${hist.length?`<div class="stack" style="margin-top:8px">${hist.map(({l,h})=>`<div class="card row between tr-hist" style="padding:8px 12px"><span><span class="mono">${esc(h.h||'--:--')}</span> · ${esc(l.nome)} · <span class="meta">${esc(h.m||l.modelo)}</span></span><span class="tagp ${h.st==='Compareceu'?'t-soon':'t-late'}">${h.st}</span></div>`).join('')}</div>`:''}
-    ${liv.length&&sel>=t?`<div class="row" style="margin-top:8px;flex-wrap:wrap;gap:5px"><span class="meta">Livres:</span>${liv.map(h=>`<button class="btn btn-sm" data-action="tr-slot" data-v="${h}">${h}</button>`).join('')}</div>`:''}
-  </section>
-  <section class="d-sec">
-    <details class="inline" id="tr-form-wrap" ${UI.trForm?'open':''}><summary>+ Agendar test ride</summary>
-      <form data-form="tr-new" class="form-grid">
-        <label class="field full">Lead<select name="lead"><option value="">— novo cliente (preencha abaixo) —</option>${cand.map(l=>`<option value="${esc(l.id)}" ${UI.trForm?.lead===l.id?'selected':''}>${esc(l.nome)} · ${esc(fmtTel(l.tel))}</option>`).join('')}</select></label>
-        <label class="field">Nome (se novo)<input name="nome" maxlength="80"></label>
-        <label class="field">Telefone (se novo)<input name="tel" inputmode="tel" maxlength="20" placeholder="(48) 99999-0000"></label>
+  const dLbl=`${sel===t?'Hoje · ':sel===rel(1)?'Amanhã · ':''}${DIAS_NOME[new Date(sel+'T12:00:00').getDay()]}, ${ddmm(sel)}`;
+  const form=UI.trForm?`<form data-form="tr-new" class="tr-form form-grid">
+        <label class="field full">Telefone ou nome do lead<input name="q" data-input="tr-q" autocomplete="off" maxlength="60" placeholder="Digite o telefone (ou parte do nome)" value="${esc(UI.trForm?.q||'')}"></label>
+        <input type="hidden" name="lead" value="${esc(UI.trForm?.lead||'')}">
+        <div class="full tr-sug" id="tr-sug">${trSugHTML(UI.trForm?.q||'',UI.trForm?.lead)}</div>
+        <label class="field full tr-novo" ${UI.trForm?.lead?'hidden':''}>Nome (se for cliente novo)<input name="nome" maxlength="80"></label>
         <label class="field">Modelo<select name="modelo">${opt(Object.keys(MODELOS),'V40 Pro')}</select></label>
-        <label class="field">Data<input name="data" type="date" min="${t}" required value="${UI.trForm?.data||(sel>=t?sel:t)}"></label>
-        <label class="field">Horário<select name="hora">${opt(trSlots(),UI.trForm?.hora||liv[0]||trSlots()[0])}</select></label>
-        <div class="full row between"><label class="chk"><input type="checkbox" name="conf"><span>Já confirmado com o cliente</span></label><button class="btn btn-primary" type="submit">Agendar</button></div>
-      </form>
-    </details>
-    <button type="button" class="cfg-link" data-action="cfg" data-v="tr">⚙ Horários e dias de test ride</button>
-  </section>`;
+        <label class="field">Data<input name="data" type="date" min="${t}" required value="${UI.trForm.data||(sel>=t?sel:t)}"></label>
+        <label class="field">Horário<select name="hora">${opt(trSlots(),UI.trForm.hora||liv[0]||trSlots()[0])}</select></label>
+        <label class="chk"><input type="checkbox" name="conf"><span>Já confirmado</span></label>
+        <div class="full row" style="justify-content:flex-end;gap:6px"><button type="button" class="btn btn-sm" data-action="tr-form-x">Cancelar</button><button class="btn btn-primary btn-sm" type="submit">Agendar</button></div>
+      </form>`:'';
+  return `
+  <div class="tr-top">
+    <span class="tr-k"><b>${trDia(t).length}</b> hoje</span><span class="tr-k"><b>${prox7}</b> em 7 dias</span><span class="tr-k">comparecimento <b>${st.taxa==null?'—':PCT(st.taxa)}</b></span>
+    ${pend.length?`<button type="button" class="go-chip is-red" data-action="tr-dia" data-v="${pend[0].fu}"><b>${pend.length}</b> sem resultado</button>`:''}
+    ${conf.length?`<button type="button" class="go-chip" data-action="tr-dia" data-v="${conf[0].fu}"><b>${conf.length}</b> para confirmar</button>`:''}
+    <span class="sp"></span>
+    <button type="button" class="btn btn-sm btn-primary" data-action="tr-slot" data-v="">+ Agendar</button>
+  </div>
+  ${(()=>{const f=UI.trFaltou&&findLead(UI.trFaltou);return f?`<div class="card row between tr-faltou" style="padding:10px 12px;margin-bottom:8px"><div class="grow"><b style="font-size:13px">${esc(f.nome)} faltou</b><div class="meta">Mande agora uma mensagem leve para remarcar.</div></div><div class="row" style="gap:6px">${waBtn(f.tel,trFaltouMsg(f),'Remarcar no WhatsApp')}<button class="btn btn-sm" data-action="tr-faltou-x">Depois</button></div></div>`:''})()}
+  <div class="tr-wrap">
+    <div class="tr-left"><div class="card tr-cal">
+      <div class="row between" style="margin-bottom:8px"><button class="btn btn-sm" data-action="tr-mes" data-v="-1" aria-label="Mês anterior">‹</button><b>${mesL.charAt(0).toUpperCase()+mesL.slice(1)}</b><button class="btn btn-sm" data-action="tr-mes" data-v="1" aria-label="Próximo mês">›</button></div>
+      <div class="cal">${WD.map((w,i)=>`<div class="cal-h ${i===0||i===6?'fds':''}">${w}</div>`).join('')}${cells.join('')}</div>
+      <div class="tr-leg"><span><i class="lg-occ"></i>ocupação dos ${cap} horários</span><span><i class="lg-fds"></i>fim de semana</span><span><i class="lg-dot"></i>sem resultado</span><button type="button" class="cfg-link" data-action="cfg" data-v="tr">⚙ horários e dias</button></div>
+    </div>
+    ${wxSemanaHTML()}</div>
+    <div class="card tr-day">
+      <div class="tr-day-h"><b>${dLbl}</b>${sw?`<span class="tr-day-wx ${sw.kind==='chuva'||sw.kind==='tempestade'?'wet':''}">${WX_SVG[sw.kind]||''}${Math.round(sw.hi)}° · chuva ${Math.round(sw.rain)}%</span>`:''}</div>
+      ${sw&&(sw.kind==='chuva'||sw.kind==='tempestade')&&lista.length?`<div class="tr-day-tip">Chuva provável: confirme cedo e ofereça outro horário.</div>`:''}
+      ${closedSel?'<div class="empty">Loja fechada para test ride neste dia.</div>':''}
+      <div class="stack">${lista.map(trCard).join('')}${hist.map(({l,h})=>`<div class="tr-hist"><span><span class="mono">${esc(h.h||'--:--')}</span> · ${esc(l.nome)} <span class="meta">${esc(h.m||l.modelo)}</span></span><span class="tagp ${h.st==='Compareceu'?'t-soon':'t-late'}">${h.st}</span></div>`).join('')}${!lista.length&&!hist.length&&!closedSel?`<div class="meta" style="padding:6px 0">Nenhum test ride${sel<t?' neste dia':' marcado'}.</div>`:''}</div>
+      ${liv.length&&sel>=t&&!UI.trForm?`<div class="tr-free"><span class="meta">Livres</span>${liv.map(h=>`<button class="tr-slot" data-action="tr-slot" data-v="${h}" title="Agendar às ${h}">${h}</button>`).join('')}<button type="button" class="cfg-link" data-action="tr-copy" title="Copiar os horários livres dos próximos dias para mandar ao cliente">copiar p/ cliente</button></div>`:''}
+      ${form}
+      ${sel>=t?`<div class="tr-day-f">${excBtn('tr',sel)}</div>`:''}
+    </div>
+  </div>`;
 }
 function trFreeText(){const out=[];for(let i=0;i<10&&out.length<5;i++){const dt=rel(i),l=trLivres(dt);if(l.length)out.push(`${WD[new Date(dt+'T12:00:00').getDay()]} ${ddmm(dt)}: ${l.join(', ')}`)}
   return `Horários para test ride na PACE (${LB()}):\n${out.join('\n')}\nMe diz o melhor pra você que eu já reservo a bike carregada.`}
@@ -5650,22 +5722,25 @@ function wxKindFromText(c,isDay){c=String(c||'').toLowerCase();
   if(/thunder|storm|trovo/.test(c))return'tempestade';if(/rain|drizzle|shower|chuv|garoa/.test(c))return'chuva';
   if(/wind|vento/.test(c))return'vento';if(/cloud|overcast|fog|mist|nubl|neblina/.test(c))return'nuvem';
   return isDay===false?'lua':'sol'}
+/* ícone pelo que de fato chove (mm), não pelo pior código do dia: evita "temporal" com 1 mm e "chuva" com garoa fraca */
+function wxKindDia(code,mm,prob){mm=Number(mm)||0;prob=prob??(mm>0?70:0);if(code==null)return'nuvem';if(code>=95&&mm>=5&&prob>=60)return'tempestade';if((mm>=3&&prob>=50)||mm>=8)return'chuva';return code<=1?'sol':'nuvem'}
+function wxKindAgora(code,mm,cloud,isDay){mm=Number(mm)||0;if(code>=95&&mm>0.5)return'tempestade';if(mm>=0.3||(code>=61&&code<95))return'chuva';if(cloud!=null?cloud<35:code<=1)return isDay===false?'lua':'sol';return'nuvem'}
 function wxKindFromCode(code,isDay){if(code==null)return'nuvem';if(code>=95)return'tempestade';if(code>=51)return'chuva';if(code>=2)return'nuvem';return isDay===false?'lua':'sol'}
 const WX_TXT={sol:'Céu limpo',lua:'Céu limpo',nuvem:'Nublado',chuva:'Chuva',tempestade:'Temporal',vento:'Vento forte'};
 let WX_CUR=null;
 function renderWX(w){{const sb=$('#wx-set');if(sb&&w)sb.hidden=true}
-  const el=$('#wx');if(!el)return;const trw=()=>setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);if(!w){el.hidden=true;WX_CUR=null;trw();return}WX_CUR=w;setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);
+  const el=$('#wx');if(!el)return;const trw=()=>setTimeout(()=>{if(UI.room==='comercial'&&UI.tab==='tr'&&!UI.trForm&&!document.activeElement.closest?.('#d-body')){const b=$('#d-body'),st=b.scrollTop;renderBody();b.scrollTop=st}const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);if(!w){el.hidden=true;WX_CUR=null;trw();return}WX_CUR=w;setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);
   const age=(Date.now()-new Date(w.updated).getTime())/36e5,rain=w.today?.rain??0;
   $('#wx-i').innerHTML=WX_SVG[w.kind]||WX_SVG.nuvem;$('#wx-t').textContent=Math.round(w.now.temp)+'°';$('#wx-r').textContent=`${rain}%`;
-  el.classList.toggle('rainy',rain>=40||w.kind==='chuva'||w.kind==='tempestade');el.classList.toggle('stale',age>8);
+  el.classList.toggle('rainy',w.kind==='chuva'||w.kind==='tempestade');el.classList.toggle('stale',age>8);
   const hh=new Date(w.updated).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
   el.title=`${WX_TXT[w.kind]} em ${wxLocal()} · hoje ${Math.round(w.today.lo)}°/${Math.round(w.today.hi)}°, chuva ${rain}%`+(w.tomorrow?` · amanhã ${Math.round(w.tomorrow.lo)}°/${Math.round(w.tomorrow.hi)}°, chuva ${w.tomorrow.rain}%`:'')+` · atualizado às ${hh}`;
   el.setAttribute('aria-label',el.title);el.removeAttribute('title');el.hidden=false;
-  const days=(w.days&&w.days.length?w.days:[{date:w.today.date||today(),...w.today},...(w.tomorrow?[{date:w.tomorrow.date||rel(1),...w.tomorrow}]:[])]).slice(0,5);
+  const days=(w.days&&w.days.length?w.days.filter(x=>x.date>=today()):[{date:w.today.date||today(),...w.today},...(w.tomorrow?[{date:w.tomorrow.date||rel(1),...w.tomorrow}]:[])]).slice(0,5);
   const lbl=d=>{const n=diffDays(d);if(n===0)return'Hoje';if(n===1)return'Amanhã';const x=new Date(d+'T12:00:00');return x.toLocaleDateString('pt-BR',{weekday:'short'}).replace('.','').replace(/^./,c=>c.toUpperCase())+' '+ddmm(d)};
   const lo=Math.min(...days.map(d=>d.lo)),hi=Math.max(...days.map(d=>d.hi)),sp=Math.max(1,hi-lo);
   $('#wx-pop').innerHTML=`<div class="wxp-h"><b>${WX_TXT[w.kind]||''} · ${Math.round(w.now.temp)}°</b><span>${esc(wxLocal())} · ${hh}</span></div>`+
-    days.map(d=>{const k=d.kind||wxKindFromText(d.cond,true);return `<div class="wxp-r ${d.rain>=40?'rainy':''}"><span class="wxp-d">${lbl(d.date)}</span><span class="wxp-i" title="${WX_TXT[k]||''}">${WX_SVG[k]||WX_SVG.nuvem}</span>
+    days.map(d=>{const k=d.kind||wxKindFromText(d.cond,true);return `<div class="wxp-r ${(d.kind||'')==='chuva'||(d.kind||'')==='tempestade'?'rainy':''}" title="${d.mm!=null?`${String(Math.round(d.mm*10)/10).replace('.',',')} mm previstos · `:''}${Math.round(d.rain)}% de chance de chuva"><span class="wxp-d">${lbl(d.date)}</span><span class="wxp-i" title="${WX_TXT[k]||''}">${WX_SVG[k]||WX_SVG.nuvem}</span>
       <span class="wxp-rain">${Math.round(d.rain)}%</span><span class="wxp-lo">${Math.round(d.lo)}°</span><span class="wxp-bar"><i style="left:${(d.lo-lo)/sp*100}%;right:${(hi-d.hi)/sp*100}%"></i></span><span class="wxp-hi">${Math.round(d.hi)}°</span></div>`}).join('')+
     (age>8?`<div class="wxp-f">Dado de ${Math.round(age)} h atrás</div>`:'');
 }
@@ -5679,10 +5754,10 @@ async function loadWX(){const tk=++WX_REQ,P=wxPos(),vale=()=>tk===WX_REQ;
   const key='pace-hq-wx:'+P.id,guarda=w=>{try{localStorage.setItem(key,JSON.stringify({...w,lat:P.lat,lon:P.lon}))}catch(e){}};
   let cache=null;try{cache=JSON.parse(localStorage.getItem(key)||'null')}catch(e){}
   if(cache&&cache.now&&cache.lat!=null&&wxPerto(cache.lat,cache.lon,P.lat,P.lon)){cache.kind=cache.kind||wxKindFromText(cache.now.cond,cache.now.is_day);renderWX(cache)}else{cache=null;WX_CUR=null;const el=$('#wx');if(el)el.hidden=true}
-  try{const j=await wxFetch(`https://api.open-meteo.com/v1/forecast?latitude=${P.lat}&longitude=${P.lon}&current=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America%2FSao_Paulo&forecast_days=8`,`/api/clima?lat=${P.lat}&lon=${P.lon}`),d=j.daily;if(!vale())return;
-    const w={updated:new Date().toISOString(),kind:wxKindFromCode(j.current.weather_code,!!j.current.is_day),now:{temp:j.current.temperature_2m,cond:'',is_day:!!j.current.is_day},
-      today:{hi:d.temperature_2m_max[0],lo:d.temperature_2m_min[0],rain:d.precipitation_probability_max[0]??0},tomorrow:{hi:d.temperature_2m_max[1],lo:d.temperature_2m_min[1],rain:d.precipitation_probability_max[1]??0},
-      days:d.time.map((t,i)=>({date:t,kind:wxKindFromCode(d.weather_code[i],true),hi:d.temperature_2m_max[i],lo:d.temperature_2m_min[i],rain:d.precipitation_probability_max[i]??0}))};
+  try{const j=await wxFetch(`https://api.open-meteo.com/v1/forecast?latitude=${P.lat}&longitude=${P.lon}&current=temperature_2m,weather_code,is_day,precipitation,cloud_cover&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum&timezone=America%2FSao_Paulo&past_days=6&forecast_days=8`,`/api/clima?lat=${P.lat}&lon=${P.lon}&v=3`),d=j.daily;if(!vale())return;const ti=Math.max(0,d.time.indexOf(today())),t1=ti+1;
+    const w={updated:new Date().toISOString(),kind:wxKindAgora(j.current.weather_code,j.current.precipitation,j.current.cloud_cover,!!j.current.is_day),now:{temp:j.current.temperature_2m,cond:'',is_day:!!j.current.is_day},
+      today:{hi:d.temperature_2m_max[ti],lo:d.temperature_2m_min[ti],rain:d.precipitation_probability_max[ti]??0,mm:(d.precipitation_sum||[])[ti]??null},tomorrow:{date:d.time[t1],hi:d.temperature_2m_max[t1],lo:d.temperature_2m_min[t1],rain:d.precipitation_probability_max[t1]??0},
+      days:d.time.map((t,i)=>({date:t,mm:(d.precipitation_sum||[])[i]??null,kind:wxKindDia(d.weather_code[i],(d.precipitation_sum||[])[i],d.precipitation_probability_max[i]),hi:d.temperature_2m_max[i],lo:d.temperature_2m_min[i],rain:d.precipitation_probability_max[i]??0}))};
     guarda(w);return renderWX(w);
   }catch(e){}
   /* reserva: clima.json do GitHub, que traz uma previsão por loja (lojas.json) */
@@ -5790,7 +5865,10 @@ document.addEventListener('click',e=>{
   }
   else if(a==='tr-dia'){UI.trDia=el.dataset.v;UI.trForm=null;refresh()}
   else if(a==='tr-mes'){const [y,m]=(UI.trMes||today().slice(0,7)).split('-').map(Number),d=new Date(y,m-1+Number(el.dataset.v),1);UI.trMes=`${d.getFullYear()}-${pad(d.getMonth()+1)}`;refresh()}
-  else if(a==='tr-slot'){UI.trForm={data:UI.trDia,hora:el.dataset.v};refresh();setTimeout(()=>{const f=$('form[data-form=tr-new]');if(f){f.closest('details').scrollIntoView({block:'center'});f.lead.focus()}},50)}
+  else if(a==='tr-slot'){if(UI.trDia<today())UI.trDia=today();UI.trForm={data:UI.trDia,hora:el.dataset.v||''};refresh();setTimeout(()=>{const f=$('form[data-form=tr-new]');if(f){f.scrollIntoView({block:'nearest'});f.lead.focus()}},50)}
+  else if(a==='tr-form-x'){UI.trForm=null;refresh()}
+  else if(a==='tr-pick'||a==='tr-unpick'){const f=$('form[data-form=tr-new]');if(!f)return;const l=a==='tr-pick'?findLead(el.dataset.id):null;f.lead.value=l?l.id:'';UI.trForm={...(UI.trForm||{}),lead:l?l.id:'',q:l?fmtTel(l.tel):f.q.value};if(l){f.q.value=fmtTel(l.tel);if(MODELOS[l.modelo])f.modelo.value=l.modelo}
+    $('#tr-sug').innerHTML=trSugHTML(f.q.value,f.lead.value);const nv=f.querySelector('.tr-novo');if(nv)nv.hidden=!!l;if(!l)f.q.focus()}
   else if(a==='tr-copy'){copyText(trFreeText(),'Horários de test ride copiados · cole no WhatsApp do cliente')}
   else if(a==='cs-imp'){const f=$('#cs-file');f.value='';f.click()}
   else if(a==='cs-run'){runCSI()}
@@ -6130,7 +6208,9 @@ document.addEventListener('change',e=>{
   else if(k==='sc-modelo'){UI.sc.modelo=el.value;refresh()}
   else if(k==='sc-nome'){UI.sc.nome=el.value;refresh()}
 });
-document.addEventListener('input',e=>{if(e.target.dataset.input==='fq-msg'){const id=e.target.dataset.id,l=findLead(id);UI.fqMsg[id]=e.target.value;const a=$('#fq-wa');if(a&&l)a.href=waLink(l.tel,e.target.value);return}if(e.target.dataset.input==='cli-q'){UI.cliQ=e.target.value;const b=$('#cli-list');if(b){const l=cliList();b.innerHTML=l.map(cliCard).join('')||'<div class="empty">Nenhuma venda encontrada.</div>'}return}if(e.target.dataset.input==='ag-q'){UI.agQ=e.target.value;UI.agTipo='pace';const st=e.target.selectionStart;refresh();const n=$('[data-input=ag-q]');if(n){n.focus();n.setSelectionRange(st,st)}return}if(e.target.dataset.input==='cs-q'){UI.csQ=e.target.value;const st=e.target.selectionStart;refresh();const n=$('[data-input=cs-q]');if(n){n.focus();n.setSelectionRange(st,st)}return}if(e.target.dataset.input==='cs-msg'){UI.csMsgTxt=e.target.value;return}if(e.target.dataset.input==='lead-q'){UI.q=e.target.value;const box=$('#lead-list');if(box)box.innerHTML=leadListHTML()}});
+document.addEventListener('input',e=>{if(e.target.dataset.input==='tr-q'){const f=e.target.form;f.lead.value='';if(UI.trForm)UI.trForm.lead='';const q=e.target.value,dg=digits(q);let auto=null;if(dg.length>=10){auto=telExiste(normTel(q))}
+    if(auto){f.lead.value=auto.id;if(MODELOS[auto.modelo])f.modelo.value=auto.modelo}$('#tr-sug').innerHTML=trSugHTML(q,auto&&auto.id);const nv=f.querySelector('.tr-novo');if(nv)nv.hidden=!!auto;return}
+  if(e.target.dataset.input==='fq-msg'){const id=e.target.dataset.id,l=findLead(id);UI.fqMsg[id]=e.target.value;const a=$('#fq-wa');if(a&&l)a.href=waLink(l.tel,e.target.value);return}if(e.target.dataset.input==='cli-q'){UI.cliQ=e.target.value;const b=$('#cli-list');if(b){const l=cliList();b.innerHTML=l.map(cliCard).join('')||'<div class="empty">Nenhuma venda encontrada.</div>'}return}if(e.target.dataset.input==='ag-q'){UI.agQ=e.target.value;UI.agTipo='pace';const st=e.target.selectionStart;refresh();const n=$('[data-input=ag-q]');if(n){n.focus();n.setSelectionRange(st,st)}return}if(e.target.dataset.input==='cs-q'){UI.csQ=e.target.value;const st=e.target.selectionStart;refresh();const n=$('[data-input=cs-q]');if(n){n.focus();n.setSelectionRange(st,st)}return}if(e.target.dataset.input==='cs-msg'){UI.csMsgTxt=e.target.value;return}if(e.target.dataset.input==='lead-q'){UI.q=e.target.value;const box=$('#lead-list');if(box)box.innerHTML=leadListHTML()}});
 document.addEventListener('submit',e=>{
   const f=e.target.closest('form[data-form]');if(!f)return;e.preventDefault();
   const d=Object.fromEntries(new FormData(f)),kind=f.dataset.form;
@@ -6174,7 +6254,7 @@ document.addEventListener('submit',e=>{
     (S.vendasAcc=S.vendasAcc||[]).push(v);p.estoque=(Number(p.estoque)||0)-q;UI.accSell=null;toast(`Venda registrada: ${p.nome} ×${q} · ${BRL(v.preco*q)}`);refresh()}
   else if(kind==='tr-rem'){if(isClosedTR(d.d)){toast('A loja não faz test ride nesse dia (marcado como fechado)');return}if(trDia(d.d).some(x=>x.hora===d.h&&x.id!==f.dataset.id))toast(`Atenção: já existe test ride às ${d.h} nesse dia`);const l=findLead(f.dataset.id);l.fu=d.d;l.hora=d.h;l.trSt=null;l.trOk=null;logLead(l,`test ride remarcado para ${ddmm(d.d)} ${d.h}`);UI.trRem=null;UI.trDia=d.d;UI.trMes=d.d.slice(0,7);toast(`Test ride remarcado: ${ddmm(d.d)} às ${d.h}`);refresh()}
   else if(kind==='tr-cfg'){const sl=String(d.slots||'').split(/[,;\s]+/).map(x=>x.trim()).filter(x=>/^\d{1,2}:\d{2}$/.test(x)).map(x=>x.padStart(5,'0')).sort();if(sl.length){S.cfg.trSlots=sl;toast('Horários de test ride salvos')}refresh()}
-  else if(kind==='tr-new'){if(isClosedTR(d.data)){toast('A loja não faz test ride nesse dia (marcado como fechado)');return}let l=d.lead?findLead(d.lead):null;
+  else if(kind==='tr-new'){if(!d.lead&&d.q){const dg=digits(d.q);if(dg.length>=10)d.tel=d.q;else{toast('Escolha o lead na lista ou digite o telefone completo');return}}if(isClosedTR(d.data)){toast('A loja não faz test ride nesse dia (marcado como fechado)');return}let l=d.lead?findLead(d.lead):null;
     if(!l){const tel=normTel(d.tel||'');if(!telOk(tel)){toast('Escolha um lead ou informe o telefone do novo cliente');return}const dup=telExiste(tel);if(dup)l=dup;else{l=novoLead({nome:titleCase((d.nome||'').trim())||('Lead '+digits(tel).slice(-4)),tel,modelo:d.modelo});S.leads.unshift(l)}}
     if(trDia(d.data).some(x=>x.hora===d.hora&&x.id!==l.id))toast(`Atenção: já existe test ride às ${d.hora} nesse dia`);
     if(d.modelo)l.modelo=d.modelo;logLead(l,`agendou test ride ${ddmm(d.data)} ${d.hora}`);if(l.etapa!=='Test Ride')setEtapa(l,'Test Ride');l.fu=d.data;l.hora=d.hora;l.trOk=null;l.trSt=d.conf?'Confirmado':null;
@@ -6238,7 +6318,7 @@ syncBackupBar();syncDayBtn();
 /* no celular abre sempre no modo Bolso; no computador, lembra a última escolha */
 const EH_CELULAR=()=>Math.min(screen.width,screen.height)<=600||innerWidth<=720||(matchMedia('(pointer:coarse)').matches&&!matchMedia('(hover:hover)').matches&&Math.min(screen.width,screen.height)<=820);
 {let m0=null;try{m0=localStorage.getItem('pace-hq-mode')}catch(e){}if(EH_CELULAR())m0='pocket';else if(m0!=='office'&&m0!=='pocket')m0='office';if(m0==='pocket')setMode('pocket')}
-initMap();loadWX();weekAuto();setInterval(loadWX,20*60000);
+initMap();loadWX();weekAuto();setInterval(loadWX,15*60000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&WX_CUR&&Date.now()-new Date(WX_CUR.updated).getTime()>10*60000)loadWX()});
 requestAnimationFrame(frame);
 function semResposta(){const lim=(S.cfg.tprAlert||5)*60000,now=Date.now();return S.leads.filter(l=>!l.arq&&l.etapa==='Novo'&&!(l.toques>0)&&l.ts&&now-l.ts>lim).sort((a,b)=>a.ts-b.ts)}
 function tprAlert(){const L=semResposta(),b=$('#tpr-al');if(!b)return;if(!L.length){b.hidden=true;return}const m=Math.round((Date.now()-L[0].ts)/60000);
