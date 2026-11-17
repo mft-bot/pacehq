@@ -5698,11 +5698,12 @@ const UF={'Santa Catarina':'SC','Paraná':'PR','Rio Grande do Sul':'RS','São Pa
 const WX_SVG=(()=>{const a='fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
   const cloud='<path d="M7 18h10.5a3.5 3.5 0 0 0 .4-7A5 5 0 0 0 8.3 9.6 4.2 4.2 0 0 0 7 18z"/>';
   return{
-    sol:`<svg viewBox="0 0 24 24" ${a}><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>`,
+    sol:`<svg viewBox="0 0 24 24" ${a} style="color:#F2C94C"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>`,
+    parcial:`<svg viewBox="0 0 24 24" ${a}><g stroke="#F2C94C"><circle cx="9" cy="8.5" r="3"/><path d="M9 2.8v1.4M3.3 8.5h1.4M5 4.5l1 1M13 4.5l-1 1"/></g><path d="M9 20h9a3.2 3.2 0 0 0 .4-6.4A4.6 4.6 0 0 0 9.6 12.4 3.8 3.8 0 0 0 9 20z"/></svg>`,
     lua:`<svg viewBox="0 0 24 24" ${a}><path d="M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z"/></svg>`,
     nuvem:`<svg viewBox="0 0 24 24" ${a}>${cloud}</svg>`,
-    chuva:`<svg viewBox="0 0 24 24" ${a}><path d="M7 15h10.5a3.5 3.5 0 0 0 .4-7A5 5 0 0 0 8.3 6.6 4.2 4.2 0 0 0 7 15z"/><path d="M9 18l-1 2.5M13 18l-1 2.5M17 18l-1 2.5"/></svg>`,
-    tempestade:`<svg viewBox="0 0 24 24" ${a}><path d="M8 15H7a4.2 4.2 0 0 1 1.3-8.4A5 5 0 0 1 17.9 8a3.5 3.5 0 0 1-.4 7H16"/><path d="M12.5 12l-2 4h3l-2 4.5"/></svg>`,
+    chuva:`<svg viewBox="0 0 24 24" ${a}><path d="M7 15h10.5a3.5 3.5 0 0 0 .4-7A5 5 0 0 0 8.3 6.6 4.2 4.2 0 0 0 7 15z"/><path d="M9 18l-1 2.5M13 18l-1 2.5M17 18l-1 2.5" stroke="#7FD4C8"/></svg>`,
+    tempestade:`<svg viewBox="0 0 24 24" ${a}><path d="M8 15H7a4.2 4.2 0 0 1 1.3-8.4A5 5 0 0 1 17.9 8a3.5 3.5 0 0 1-.4 7H16"/><path d="M12.5 12l-2 4h3l-2 4.5" stroke="#F2C94C"/></svg>`,
     vento:`<svg viewBox="0 0 24 24" ${a}><path d="M3 9h11a2.5 2.5 0 1 0-2.5-2.5M3 13h15a2.5 2.5 0 1 1-2.5 2.5M3 17h8"/></svg>`};
 })();
 function wxKindFromText(c,isDay){c=String(c||'').toLowerCase();
@@ -5710,10 +5711,10 @@ function wxKindFromText(c,isDay){c=String(c||'').toLowerCase();
   if(/wind|vento/.test(c))return'vento';if(/cloud|overcast|fog|mist|nubl|neblina/.test(c))return'nuvem';
   return isDay===false?'lua':'sol'}
 /* ícone pelo que de fato chove (mm), não pelo pior código do dia: evita "temporal" com 1 mm e "chuva" com garoa fraca */
-function wxKindDia(code,mm,prob){mm=Number(mm)||0;prob=prob??(mm>0?70:0);if(code==null)return'nuvem';if(code>=95&&mm>=5&&prob>=60)return'tempestade';if((mm>=3&&prob>=50)||mm>=8)return'chuva';return code<=1?'sol':'nuvem'}
-function wxKindAgora(code,mm,cloud,isDay){mm=Number(mm)||0;if(code>=95&&mm>0.5)return'tempestade';if(mm>=0.3||(code>=61&&code<95))return'chuva';if(cloud!=null?cloud<35:code<=1)return isDay===false?'lua':'sol';return'nuvem'}
+function wxKindDia(code,mm,prob,cloud){mm=Number(mm)||0;prob=prob??(mm>0?70:0);if(code==null)return'nuvem';if(code>=95&&mm>=5&&prob>=60)return'tempestade';if((mm>=3&&prob>=50)||mm>=8)return'chuva';const c=cloud??(code<=1?20:code<=2?50:85);return c<30?'sol':c<75?'parcial':'nuvem'}
+function wxKindAgora(code,mm,cloud,isDay){mm=Number(mm)||0;if(code>=95&&mm>0.5)return'tempestade';if(mm>=0.3||(code>=61&&code<95))return'chuva';if(cloud!=null?cloud<30:code<=1)return isDay===false?'lua':'sol';if(isDay!==false&&(cloud!=null?cloud<70:code===2))return'parcial';return'nuvem'}
 function wxKindFromCode(code,isDay){if(code==null)return'nuvem';if(code>=95)return'tempestade';if(code>=51)return'chuva';if(code>=2)return'nuvem';return isDay===false?'lua':'sol'}
-const WX_TXT={sol:'Céu limpo',lua:'Céu limpo',nuvem:'Nublado',chuva:'Chuva',tempestade:'Temporal',vento:'Vento forte'};
+const WX_TXT={parcial:'Sol entre nuvens',sol:'Céu limpo',lua:'Céu limpo',nuvem:'Nublado',chuva:'Chuva',tempestade:'Temporal',vento:'Vento forte'};
 let WX_CUR=null;
 function renderWX(w){{const sb=$('#wx-set');if(sb&&w)sb.hidden=true}
   const el=$('#wx');if(!el)return;const trw=()=>setTimeout(()=>{if(UI.room==='comercial'&&UI.tab==='tr'&&!UI.trForm&&!document.activeElement.closest?.('#d-body')){const b=$('#d-body'),st=b.scrollTop;renderBody();b.scrollTop=st}const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);if(!w){el.hidden=true;WX_CUR=null;trw();return}WX_CUR=w;setTimeout(()=>{const x=$('#tr-wx');if(x){const tp=$('#tr-wx-tip');tp&&tp.remove();x.outerHTML=trWxHTML()}},0);
@@ -5741,10 +5742,10 @@ async function loadWX(){const tk=++WX_REQ,P=wxPos(),vale=()=>tk===WX_REQ;
   const key='pace-hq-wx:'+P.id,guarda=w=>{try{localStorage.setItem(key,JSON.stringify({...w,lat:P.lat,lon:P.lon}))}catch(e){}};
   let cache=null;try{cache=JSON.parse(localStorage.getItem(key)||'null')}catch(e){}
   if(cache&&cache.now&&cache.lat!=null&&wxPerto(cache.lat,cache.lon,P.lat,P.lon)){cache.kind=cache.kind||wxKindFromText(cache.now.cond,cache.now.is_day);renderWX(cache)}else{cache=null;WX_CUR=null;const el=$('#wx');if(el)el.hidden=true}
-  try{const j=await wxFetch(`https://api.open-meteo.com/v1/forecast?latitude=${P.lat}&longitude=${P.lon}&current=temperature_2m,weather_code,is_day,precipitation,cloud_cover&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum&timezone=America%2FSao_Paulo&past_days=6&forecast_days=8`,`/api/clima?lat=${P.lat}&lon=${P.lon}&v=3`),d=j.daily;if(!vale())return;const ti=Math.max(0,d.time.indexOf(today())),t1=ti+1;
+  try{const j=await wxFetch(`https://api.open-meteo.com/v1/forecast?latitude=${P.lat}&longitude=${P.lon}&current=temperature_2m,weather_code,is_day,precipitation,cloud_cover&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,cloud_cover_mean&timezone=America%2FSao_Paulo&past_days=6&forecast_days=8`,`/api/clima?lat=${P.lat}&lon=${P.lon}&v=4`),d=j.daily;if(!vale())return;const ti=Math.max(0,d.time.indexOf(today())),t1=ti+1;
     const w={updated:new Date().toISOString(),kind:wxKindAgora(j.current.weather_code,j.current.precipitation,j.current.cloud_cover,!!j.current.is_day),now:{temp:j.current.temperature_2m,cond:'',is_day:!!j.current.is_day},
       today:{hi:d.temperature_2m_max[ti],lo:d.temperature_2m_min[ti],rain:d.precipitation_probability_max[ti]??0,mm:(d.precipitation_sum||[])[ti]??null},tomorrow:{date:d.time[t1],hi:d.temperature_2m_max[t1],lo:d.temperature_2m_min[t1],rain:d.precipitation_probability_max[t1]??0},
-      days:d.time.map((t,i)=>({date:t,mm:(d.precipitation_sum||[])[i]??null,kind:wxKindDia(d.weather_code[i],(d.precipitation_sum||[])[i],d.precipitation_probability_max[i]),hi:d.temperature_2m_max[i],lo:d.temperature_2m_min[i],rain:d.precipitation_probability_max[i]??0}))};
+      days:d.time.map((t,i)=>({date:t,mm:(d.precipitation_sum||[])[i]??null,kind:wxKindDia(d.weather_code[i],(d.precipitation_sum||[])[i],d.precipitation_probability_max[i],(d.cloud_cover_mean||[])[i]),hi:d.temperature_2m_max[i],lo:d.temperature_2m_min[i],rain:d.precipitation_probability_max[i]??0}))};
     guarda(w);return renderWX(w);
   }catch(e){}
   /* reserva: clima.json do GitHub, que traz uma previsão por loja (lojas.json) */
