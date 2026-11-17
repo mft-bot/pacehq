@@ -1154,6 +1154,12 @@ html,body{overflow-x:clip}
 .wxs-p{font:500 10.5px "JetBrains Mono",monospace;color:var(--muted);min-height:13px}
 .wxs-d.best{box-shadow:inset 0 -2px 0 var(--neon)}
 .wxs-say{margin:10px 2px 0;font-size:12px;color:var(--muted)}.wxs-say b{color:var(--offwhite,#F0EEE7)}
+.fq2{gap:12px}.fq2-h{display:flex;gap:10px}.fq2-m{margin-top:4px;line-height:1.5}.fq2-m b{color:var(--offwhite,#F0EEE7);font-weight:600}.fq2-o{margin-top:2px;font-style:italic}.fq2-hist{font-size:11px;color:var(--muted);margin-top:4px}
+.fq2-msg{display:flex;flex-direction:column;gap:8px}.fq2-ma{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.fq2-ma .btn-wa{padding:9px 18px;font-weight:700}.fq2-tools{display:inline-flex;align-items:center;gap:12px;margin-left:auto}.fq2-resp{max-width:180px;font-size:12px}
+.fq2-q{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:8px 10px;border:1px dashed rgba(225,239,89,.35);border-radius:10px}.fq2-q.done{border-style:solid;border-color:var(--line)}.fq2-ql{font-size:12px;font-weight:600;margin-right:4px;cursor:help}.fq2-q .cfg-link{font-size:11px;margin-left:6px}.fq2-ess{margin-left:auto;font-size:11px}
+.fq2-res{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px}.fq2-rg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.fq2-rg .btn{justify-content:center;padding:9px 8px}@media (max-width:720px){.fq2-rg{grid-template-columns:1fr 1fr}}
+.fq2-rs{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.fq2-rs .sp{flex:1}
+.fq2-q-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:-4px 0 0}.fq2-p{background:var(--graphite);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font:500 12px Inter,system-ui,sans-serif;color:var(--offwhite,#F0EEE7);cursor:pointer}.fq2-p:hover{border-color:var(--line-2)}.fq2-p.on{border-color:var(--neon);color:var(--neon)}.fq2-p.late{border-color:rgba(255,138,128,.5)}
 .lj-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 2px 0}
 </style>
 </head>
@@ -2301,40 +2307,23 @@ function compraHTML(){const won=S.leads.filter(l=>isWon(l)||l.arqMotivo==='Compr
 function intelCtx(){const I=intel();return{perfisCompletos:`${I.completos}/${I.all}`,distribuicao:Object.fromEntries(PERF_KEYS.map(k=>[PERFIL[k].t,I.D[k].filter(x=>x.n).map(x=>({resposta:x.t,leads:x.n,conversao:x.conv==null?null:Math.round(x.conv*100)+'%'}))])),orcamentoAbaixoDoPix:I.gap,objecoes:I.obj.map(o=>({objecao:o.t,leads:o.n,etapaMaisComum:o.etapa})),demandaXestoque:I.demanda,tempoAteDecisao:I.tempo,bairros:I.bairros}}
 
 function fqCard(l){
-  const md=MODELOS[l.modelo],t=toqueN(l),tot=(S.cfg.cad||CAD_PADRAO).length,sl=slaInfo(l);
-  const msg=UI.fqMsg[l.id]??cadMsg(l);
-  const hist=(l.log||[]).slice(-3).reverse();
-  return `<div class="fq">
-    <div class="row between"><div class="row" style="gap:8px"><span class="t-name" style="font-size:17px">${esc(l.nome)}</span>${statusTag(l)}</div>${origemTag(l.origem)}</div>
-    <div class="fq-facts">
-      <div><span>Interesse</span><b>${esc(l.modelo)}</b><small>${md?BRL0(md.pix)+' no PIX'+(md.tabela?' · '+BRL0(md.tabela)+' tabela':''):''}</small></div>
-      <div><span>Etapa</span><b>${esc(l.etapa)}</b><small>${sl?`${sl.dias}d na etapa · limite ${sl.lim}d`:''}</small></div>
-      <div><span>Cadência</span><b>${dBucket(l)}${l.etapa==='Novo'||l.etapa==='Contato'?` · ${t}º toque`:''}</b><small>${l.etapa==='Novo'||l.etapa==='Contato'?`${esc(TOQUE_NOME[Math.min(t,5)-1])} · ${t} de ${tot}`:`${leadIdade(l)} dias desde o cadastro`}</small></div>
-    </div>
-    <div class="meta"><span class="mono">${esc(fmtTel(l.tel))}</span>${l.bairro?' · '+esc(l.bairro):''}${l.obs?' · '+esc(l.obs):''}</div>
-    ${hist.length?`<div class="fq-hist">${hist.map(h=>`<span>${ddmm(h.d)} · ${esc(h.r)}</span>`).join('')}</div>`:''}
-    ${(()=>{const k=perguntaDaVez(l);if(!k)return '';const e=perfEff(l);return `<div class="pdv"><div class="pdv-h"><b>Pergunta da vez · ${PERFIL[k].t}</b><span class="meta">${PERF_ESSENCIAL.filter(x=>e[x]).length}/3 essenciais</span><button type="button" class="dc-btn" data-action="pdv-msg" data-id="${esc(l.id)}" data-k="${k}">+ na mensagem</button></div><div class="pdv-q">“${esc(PERG[k])}”</div><div class="perf-o">${PERFIL[k].o.map(([v,t])=>`<button type="button" class="chip" data-action="perf" data-id="${esc(l.id)}" data-k="${k}" data-v="${v}">${esc(t)}</button>`).join('')}</div></div>`})()}
-    <label class="field">${l.etapa==='Novo'||l.etapa==='Contato'?`Mensagem do ${t}º toque`:`Mensagem de ${l.etapa==='Proposta'?'proposta':l.etapa==='Test Ride'?'confirmação do test ride':'acompanhamento'}`} <span style="font-size:10.5px">(pode editar antes de enviar)</span>
-      <textarea class="inp" rows="4" data-input="fq-msg" data-id="${esc(l.id)}">${esc(msg)}</textarea></label>
-    <div class="row between">
-      <div class="row" style="gap:6px"><button class="btn btn-sm" data-action="fq-ai" data-id="${esc(l.id)}">Personalizar com IA</button><button class="btn btn-sm" data-action="fq-reset" data-id="${esc(l.id)}">Texto padrão</button></div>
-      <a class="btn btn-wa" id="fq-wa" href="${esc(waLink(l.tel,msg))}" target="${S.cfg.waMode==='web'&&!matchMedia('(pointer:coarse)').matches?'pace-whatsapp':'_blank'}" rel="noopener noreferrer" data-wa-lead="${esc(l.id)}">Enviar no WhatsApp</a>
-    </div>
-    <details class="resp-d"><summary>Respostas rápidas <span class="mono">${respList().length}</span></summary><div class="resp-row">${respList().map((r,i)=>`<button class="btn btn-sm" data-action="resp-use" data-id="${esc(l.id)}" data-i="${i}" title="${esc(r.x)}">${esc(r.t)}</button>`).join('')}</div></details>
-    <details class="perf-d"><summary>Perfil do lead <span class="mono">${perfEffN(l)}/${PERF_KEYS.length}</span> <span class="meta">marque enquanto conversa</span></summary>${perfChips(l,true)}</details>
-    <div class="fq-res">
-      <span class="meta">Depois do contato, qual foi o resultado?</span>
-      <div class="fq-grid">
-        <button class="btn" data-action="fq-res" data-v="semresp" data-id="${esc(l.id)}">Sem resposta<small>próximo toque na cadência</small></button>
-        <button class="btn" data-action="fq-res" data-v="conversa" data-id="${esc(l.id)}">Respondeu<small>segue em Contato</small></button>
-        <button class="btn" data-action="fq-res" data-v="prop" data-id="${esc(l.id)}">Pediu proposta<small>vai para Proposta</small></button>
-        <button class="btn" data-action="fq-res" data-v="tr" data-id="${esc(l.id)}">Agendou test ride<small>escolher dia e hora</small></button>
-        <button class="btn btn-primary" data-action="fq-res" data-v="venda" data-id="${esc(l.id)}">Fechou venda<small>registra no Financeiro</small></button>
-        <button class="btn" data-action="fq-res" data-v="perdido" data-id="${esc(l.id)}">Perdido<small>tinha potencial · arquiva p/ campanhas</small></button>
-        <button class="btn" data-action="fq-res" data-v="semperfil" data-id="${esc(l.id)}">Sem perfil<small>fora do público · sai do funil</small></button>
-      </div>
+  const md=MODELOS[l.modelo],t=toqueN(l),sl=slaInfo(l),cad=l.etapa==='Novo'||l.etapa==='Contato';
+  const msg=UI.fqMsg[l.id]??cadMsg(l),hist=(l.log||[]).slice(-2).reverse(),k=perguntaDaVez(l),e=perfEff(l);
+  const res=(v,lbl,cls='')=>`<button class="btn ${cls}" data-action="fq-res" data-v="${v}" data-id="${esc(l.id)}">${lbl}</button>`;
+  return `<div class="fq fq2">
+    <div class="fq2-h"><div class="grow"><div class="row" style="gap:8px;flex-wrap:wrap"><span class="t-name" style="font-size:17px">${esc(l.nome)}</span>${statusTag(l)}${origemTag(l.origem)}</div>
+      <div class="meta fq2-m"><b>${esc(l.modelo)}</b>${md?` · ${BRL0(md.pix)} PIX`:''} · <b>${esc(l.etapa)}</b>${sl?` há ${sl.dias}d (limite ${sl.lim}d)`:''} · ${cad?`${t}º toque · ${dBucket(l)}`:`${leadIdade(l)}d de cadastro`} · <span class="mono">${esc(fmtTel(l.tel))}</span>${l.bairro?' · '+esc(l.bairro):''}</div>
+      ${l.obs?`<div class="meta fq2-o">${esc(l.obs)}</div>`:''}${hist.length?`<div class="fq2-hist">${hist.map(h=>`${ddmm(h.d)} ${esc(h.r)}`).join(' · ')}</div>`:''}</div></div>
+    <div class="fq2-msg"><textarea class="inp" rows="4" data-input="fq-msg" data-id="${esc(l.id)}" aria-label="Mensagem">${esc(msg)}</textarea>
+      <div class="fq2-ma"><a class="btn btn-wa" id="fq-wa" href="${esc(waLink(l.tel,msg))}" target="${S.cfg.waMode==='web'&&!matchMedia('(pointer:coarse)').matches?'pace-whatsapp':'_blank'}" rel="noopener noreferrer" data-wa-lead="${esc(l.id)}">Enviar no WhatsApp</a>
+        <span class="fq2-tools"><button type="button" class="cfg-link" data-action="fq-ai" data-id="${esc(l.id)}">✦ IA</button><button type="button" class="cfg-link" data-action="fq-reset" data-id="${esc(l.id)}">texto padrão</button>${respList().length?`<select class="inp-sm fq2-resp" data-change="resp-pick" data-id="${esc(l.id)}" aria-label="Resposta rápida"><option value="">resposta rápida…</option>${respList().map((r,i)=>`<option value="${i}">${esc(r.t)}</option>`).join('')}</select>`:''}</span></div></div>
+    ${k?`<div class="fq2-q"><span class="fq2-ql" title="${esc(PERG[k])}">❓ ${PERFIL[k].t}</span>${PERFIL[k].o.map(([v,tx])=>`<button type="button" class="chip" data-action="perf" data-id="${esc(l.id)}" data-k="${k}" data-v="${v}" data-pdv="1">${esc(tx)}</button>`).join('')}<button type="button" class="cfg-link" data-action="pdv-msg" data-id="${esc(l.id)}" data-k="${k}" title="Coloca a pergunta no fim da mensagem">+ perguntar na mensagem</button><span class="meta fq2-ess">${PERF_ESSENCIAL.filter(x=>e[x]).length}/3</span></div>`:`<div class="fq2-q done"><span class="meta">✓ Perfil essencial completo</span></div>`}
+    <div class="fq2-res"><span class="meta">Resultado do contato</span>
+      <div class="fq2-rg">${res('semresp','Sem resposta')}${res('conversa','Respondeu')}${res('tr','Agendou test ride')}${res('venda','Fechou venda','btn-primary')}</div>
+      <div class="fq2-rs">${res('prop','Pediu proposta','btn-sm')}${res('perdido','Perdido','btn-sm')}${res('semperfil','Sem perfil','btn-sm')}<span class="sp"></span><button class="btn btn-sm" data-action="fu-snooze" data-id="${esc(l.id)}">Adiar p/ amanhã</button><button class="btn btn-sm" data-action="fq-skip" data-id="${esc(l.id)}">Pular</button></div>
       ${UI.fqTR===l.id?`<form data-form="fq-tr" data-id="${esc(l.id)}" class="row fq-trf"><span class="meta">Test ride em</span><input class="inp-sm" type="date" name="d" value="${rel(1)}" required><select class="inp-sm" name="h">${opt(trSlots(),trSlots().includes('10:00')?'10:00':trSlots()[0])}</select><button class="btn btn-sm btn-primary" type="submit">Confirmar</button></form>`:''}
     </div>
+    <details class="perf-d"><summary>Perfil completo <span class="mono">${perfEffN(l)}/${PERF_KEYS.length}</span></summary>${perfChips(l,true)}</details>
   </div>`;
 }
 function renderFollowups(){
@@ -2352,10 +2341,8 @@ function renderFollowups(){
   }
   if(!q.length)return progress+`<div class="fq fq-done"><b>Fila do dia concluída.</b><span class="meta">${prox.length?`Próximo: ${ddmm(prox[0].fu)} · ${esc(first(prox[0].nome))}. `:''}Aproveite para cadastrar novos leads ou revisar os parados.</span><div class="row"><button class="btn btn-primary" data-action="lead-new">+ Novo lead</button><button class="btn" data-action="tab" data-v="panel">Ver base de leads</button></div></div>`;
   const cur=q[0];
-  return progress+`<div class="meta" style="margin-top:-10px">${q.length} na fila · ${q.filter(l=>l.fu<t).length} atrasado(s)${q.length>1?` · próximo: ${esc(first(q[1].nome))}`:''}</div>
-    ${fqCard(cur)}
-    <div class="row between"><button class="btn btn-sm" data-action="fq-skip" data-id="${esc(cur.id)}">Pular por enquanto</button><button class="btn btn-sm" data-action="fu-snooze" data-id="${esc(cur.id)}">Adiar para amanhã</button></div>
-    ${q.length>1?`<section class="d-sec"><h3>Na fila</h3><div class="fq-next">${q.slice(1,7).map(l=>`<button data-action="fq-pick" data-id="${esc(l.id)}"><b>${esc(l.hora||'--:--')} ${esc(first(l.nome))}</b><span>${esc(l.etapa)} · ${dBucket(l)}${l.fu<t?' · atrasado':''}</span></button>`).join('')}</div></section>`:''}`;
+  return progress+`<div class="fq2-q-row"><span class="meta">${q.length} na fila${q.filter(l=>l.fu<t).length?` · <b style="color:#ff9a8f">${q.filter(l=>l.fu<t).length} atrasado${q.filter(l=>l.fu<t).length===1?'':'s'}</b>`:''}</span>${q.slice(0,8).map((l,i)=>`<button type="button" class="fq2-p ${i===0?'on':''} ${l.fu<t?'late':''}" data-action="fq-pick" data-id="${esc(l.id)}" title="${esc(l.etapa)} · ${dBucket(l)}">${esc(l.hora||'')}${l.hora?' ':''}${esc(first(l.nome))}</button>`).join('')}${q.length>8?`<span class="meta">+${q.length-8}</span>`:''}</div>
+    ${fqCard(cur)}`;
 }
 
 /* ---------- Comercial · Indicadores (comparativos visuais) ---------- */
@@ -6036,6 +6023,7 @@ document.addEventListener('click',e=>{
   else if(a==='f-tog'){UI.fOpen=!UI.fOpen;refresh()}
   else if(a==='perf-open'){UI.perfLead=UI.perfLead===id?null:id;refresh()}
   else if(a==='perf'){const l=findLead(id),k=el.dataset.k,v=el.dataset.v;l.perf=l.perf||{};if(l.perf[k]===v)delete l.perf[k];else l.perf[k]=v;save();
+    if(el.dataset.pdv){toast(`${PERFIL[k].t}: ${perfLbl(k,v)} ✓`);const b=$('#d-body'),st=b.scrollTop;renderBody();b.scrollTop=st;return}
     const box=el.closest('.perf');if(box)box.querySelectorAll(`[data-k="${k}"]`).forEach(b=>b.setAttribute('aria-pressed',String(l.perf[k]===b.dataset.v)));
     const n=`${perfN(l)}/${PERF_KEYS.length}`,b1=document.querySelector(`[data-action="perf-open"][data-id="${id}"] .mono`),b2=el.closest('.fq')?.querySelector('.perf-d summary .mono');if(b1)b1.textContent=n;if(b2)b2.textContent=n}
   else if(a==='lead-fu-open'){UI.fuLead=UI.fuLead===id?null:id;refresh()}
@@ -6151,6 +6139,7 @@ document.addEventListener('change',e=>{
   if(k==='of-min'||k==='of-max'){const v=el.value===''?null:Math.max(0,Math.min(100,Number(el.value)||0));S.cfg[k==='of-min'?'ofMin':'ofMax']=v;if(S.cfg.ofMin!=null&&S.cfg.ofMax!=null&&S.cfg.ofMin>S.cfg.ofMax){const t=S.cfg.ofMin;S.cfg.ofMin=S.cfg.ofMax;S.cfg.ofMax=t}toast('Faixa de lucro da oficina atualizada');refresh()}
   if(k==='of-pct'){const v=el.value===''?null:Math.max(0,Math.min(100,Number(el.value)||0));S.cfg.ofPct=v;toast(v==null?'% da oficina removido':`Oficina fica com ${v}%`);refresh()}
   if(k==='teto'){S.cfg[el.dataset.k]=Math.max(0,Number(el.value)||0);refresh();return}
+  if(k==='resp-pick'&&el.value!==''){const r=respList()[+el.value],l=findLead(el.dataset.id);if(r&&l){const txt=r.x.replace(/\{nome\}/g,first(l.nome)||'');UI.fqMsg[l.id]=txt;const ta=document.querySelector(`[data-input=fq-msg][data-id="${l.id}"]`);if(ta)ta.value=txt;const wa=$('#fq-wa');if(wa)wa.href=waLink(l.tel,txt);el.value=''}return}
   if(k==='pc-f'){const p=(S.pecas||[]).find(x=>x.id===el.dataset.id);if(p){const v=Math.max(0,Number(el.value)||0);if(v)p[el.dataset.f]=Math.round(v*100)/100;else delete p[el.dataset.f]}refresh();return}
   if(k==='pc-min'){const p=(S.pecas||[]).find(x=>x.id===el.dataset.id);if(p){p.minimo=Math.max(0,Number(el.value)||0)}refresh()}
   if(k==='os-pc-gar'){UI.pcGar=el.checked?el.dataset.id:null}
