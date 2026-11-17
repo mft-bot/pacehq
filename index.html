@@ -1231,6 +1231,15 @@ html,body{overflow-x:clip}
 .fq2-q-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:-4px 0 0}.fq2-p{background:var(--graphite);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font:500 12px Inter,system-ui,sans-serif;color:var(--offwhite,#F0EEE7);cursor:pointer}.fq2-p:hover{border-color:var(--line-2)}.fq2-p.on{border-color:var(--neon);color:var(--neon)}.fq2-p.late{border-color:rgba(255,138,128,.5)}
 .lj-lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:6px 2px 0}
 
+@media (min-width:721px){
+  dialog#day-modal{max-width:none;width:fit-content;margin:auto;padding:0;max-height:none}
+  #day-modal .modal-card{width:min(96vw,max(1100px,72vw),1320px);height:calc(100dvh - 32px);max-height:none}
+  #day-modal .mbody{max-height:none;flex:1 1 auto}
+  dialog#res-modal{max-width:none;width:fit-content;margin:auto;padding:0}
+  #res-modal .modal-card{width:min(94vw,860px);max-height:calc(100dvh - 32px)}
+  #res-modal .mbody{max-height:none}
+}
+@media (min-width:2200px){#day-modal .modal-card{height:calc((100dvh - 40px)/1.12)}}
 /* =================== Celular (≤720px): painéis em tela cheia, toques confortáveis, nada estourando para o lado =================== */
 @media (max-width:720px){
   html,body{overflow-x:hidden}
